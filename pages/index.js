@@ -13,7 +13,7 @@ export default function Home() {
 			</Head>
 
 			<main>
-				<Image src={bg1} alt='background' className='absolute z-[-1]' />
+				<Image src={bg1} alt='background' className='absolute z-[-1]' width='100%' height='100%' />
 
 				<nav className='w-min bg-black bg-opacity-70 p-6'>
 					<div>

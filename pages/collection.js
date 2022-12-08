@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import imageUrlBuilder from '@sanity/image-url';
 import { useNextSanityImage } from 'next-sanity-image';
-import { sanity } from '../sanityClient';
-import { createClient } from 'next-sanity';
+import { sanityClient } from '../lib/sanityClient';
 import bg1 from '../public/bg1.jpg';
 
 import Image from 'next/image';
 
 const Blog = ({ products }) => {
-	const imageBuilder = imageUrlBuilder(sanity);
+	const imageBuilder = imageUrlBuilder({ projectId: 'r1wp5yv2', dataset: 'production' });
 
-	function urlFor(source) {
+	const urlFor = (source) => {
 		return imageBuilder.image(source);
-	}
+	};
 
-	useEffect(() => {}, []);
+	const imageProps = useNextSanityImage(sanityClient, products[0].image);
 
 	return (
 		<div className='container'>
@@ -27,7 +26,13 @@ const Blog = ({ products }) => {
 					products.length &&
 					products.map((product, index) => (
 						<>
-							<img src={urlFor(product.images)} alt='product thumbnail' />
+							<Image
+								{...imageProps}
+								alt='Image produit'
+								style={{ width: '100%', height: 'auto' }} // layout="responsive" prior to Next 13.0.0
+								sizes='(max-width: 800px) 100vw, 800px'
+							/>
+							<Image src={urlFor(product.image).url()} alt='Image produit' width='300' height='300' />
 							<h2 key={product.title}>{product.title}</h2>
 						</>
 					))}
@@ -37,14 +42,7 @@ const Blog = ({ products }) => {
 };
 
 export const getServerSideProps = async () => {
-	const client = createClient({
-		projectId: 'r1wp5yv2',
-		dataset: 'production',
-		apiVersion: '2022-03-14',
-		useCdn: false,
-	});
-
-	const products = await client.fetch(`*[_type == "product"]`);
+	const products = await sanityClient.fetch(`*[_type == "product"]`);
 
 	return {
 		props: {
