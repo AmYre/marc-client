@@ -1,0 +1,55 @@
+.wrapanim {
+	animation: fadout 10s linear infinite;
+}
+
+.anim {
+	animation: moving-image 10s ease-in-out infinite alternate;
+}
+
+@keyframes fadout {
+	0% {
+		opacity: 0.1;
+	}
+	2% {
+		opacity: 0.2;
+	}
+	4% {
+		opacity: 0.3;
+	}
+	6% {
+		opacity: 0.4;
+	}
+	8% {
+		opacity: 0.5;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	90% {
+		opacity: 0.95;
+	}
+	95% {
+		opacity: 0.7;
+	}
+	97% {
+		opacity: 0.6;
+	}
+	98% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 0.1;
+	}
+}
+
+@keyframes moving-image {
+	from {
+		object-position: 5% 5%;
+	}
+
+	to {
+		object-position: 100% 100%;
+	}
+}
