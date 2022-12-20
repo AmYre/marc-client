@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { useGlobalContext } from '../components/GlobalContext';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,19 +8,25 @@ import imageUrlBuilder from '@sanity/image-url';
 import { BsYoutube } from 'react-icons/bs';
 import { AiFillInstagram } from 'react-icons/ai';
 import { ImFacebook2 } from 'react-icons/im';
+import locales from '../lang/locales.js';
+import flagFR from '../public/fr.png';
+import flagEN from '../public/en.png';
+import flagRU from '../public/ru.png';
+import flagCN from '../public/cn.png';
 
 export default function Home({ walls }) {
-	const imageBuilder = imageUrlBuilder({ projectId: 'r1wp5yv2', dataset: 'production' });
+	const { lang, setLang } = useGlobalContext();
 
+	const imageBuilder = imageUrlBuilder({ projectId: 'r1wp5yv2', dataset: 'production' });
 	const urlFor = (source) => {
 		return imageBuilder.image(source);
 	};
 
 	const [currentSlide, setCurrentSlide] = useState(0);
-	// useRef does not cause a re-render
 	let sliderInterval = useRef();
 
 	useEffect(() => {
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 		sliderInterval = setInterval(() => {
 			if (currentSlide < walls.length - 1) {
 				setCurrentSlide(currentSlide + 1);
@@ -35,13 +42,8 @@ export default function Home({ walls }) {
 	return (
 		<div>
 			<Head>
-				<title>Marc Maison 19ème</title>
-				<meta name='description' content='La Galerie Marc Maison' />
-				<link rel='icon' href='/favicon.ico' />
-				<link rel='preconnect' href='https://fonts.googleapis.com' />
-				<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
-				<link href='https://fonts.googleapis.com/css2?family=Splash&display=swap' rel='stylesheet' />
-				<link href='https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap' rel='stylesheet' />
+				<title>{locales.title[lang]}</title>
+				<meta name='description' content={locales.desc[lang]} />
 			</Head>
 			<main>
 				<div className='wrapanim h-screen -z-10 absolute overflow-hidden'>
@@ -55,22 +57,67 @@ export default function Home({ walls }) {
 					</div>
 					<div className='z-10 w-full bg-black bg-opacity-80 flex flex-col'>
 						<Link className='p-6 font-nunito text-sm  hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-gray-900' href='/creations'>
-							Créations
+							{locales.menu1[lang]}
 						</Link>
 						<Link className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-gray-900' href='/artists'>
-							Artistes
+							{locales.menu2[lang]}
 						</Link>
 						<Link className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-gray-900' href='/museum'>
-							Ventes au musée
+							{locales.menu3[lang]}
 						</Link>
 						<Link className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-gray-900' href='/notable'>
-							Ventes notables
+							{locales.menu4[lang]}
+						</Link>
+						<Link className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-gray-900' href='/galerie'>
+							{locales.menu5[lang]}
 						</Link>
 						<Link className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-gray-900' href='/contact'>
-							Contact
+							{locales.menu6[lang]}
 						</Link>
 					</div>
-					<div className='text-center pb-6'>
+					<div className='text-center pt-6'>
+						<div className='flex justify-center items-center gap-6'>
+							<Image
+								onClick={() => {
+									setLang('fr');
+								}}
+								className='hover:cursor-pointer'
+								src={flagFR}
+								alt='langue française'
+								width='20'
+								height='20'
+							/>
+							<Image
+								onClick={() => {
+									setLang('en');
+								}}
+								className='hover:cursor-pointer'
+								src={flagEN}
+								alt='English'
+								width='20'
+								height='20'
+							/>
+							<Image
+								onClick={() => {
+									setLang('ru');
+								}}
+								className='hover:cursor-pointer'
+								src={flagRU}
+								alt='Russian'
+								width='20'
+								height='20'
+							/>
+							<Image
+								onClick={() => {
+									setLang('cn');
+								}}
+								className='hover:cursor-pointer'
+								src={flagCN}
+								alt='Chinese'
+								width='20'
+								height='20'
+							/>
+						</div>
 						<p className=' text-md p-6 font-nunito tracking-widest font-medium'>PARIS</p>
 						<div className='flex justify-center items-center gap-6'>
 							<Link href='https://www.facebook.com/marcmaisongalerie/' target='_blank'>
@@ -94,7 +141,7 @@ export default function Home({ walls }) {
 }
 
 export const getServerSideProps = async () => {
-	const walls = await sanityClient.fetch(`*[_type == "home"]`);
+	const walls = await sanityClient.fetch(`*[_type == "walls"]`);
 
 	return {
 		props: {

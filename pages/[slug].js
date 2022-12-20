@@ -1,20 +1,32 @@
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import { useGlobalContext } from '../components/GlobalContext';
 
 import { sanityClient } from '../lib/sanityClient';
 
-const Creation = (props) => {
-	const creation = props.creation[0];
+const Creation = () => {
+	const { lang, setLang } = useGlobalContext();
+	const [slugLang, setSlugLang] = useState();
+	const [creation, setCreation] = useState();
 
-	return <div>Ajouter la fiche pour {creation.title.fr}</div>;
-};
-export const getServerSideProps = async (context) => {
-	const creation = await sanityClient.fetch(`*[ _type == "products" && slug.current == "${context.query.slug}" ]`);
+	const router = useRouter();
+	const slug = router.query.slug;
 
-	return {
-		props: {
-			creation,
-		},
-	};
+	useEffect(() => {
+		if (lang == 'fr') {
+			sanityClient.fetch(`*[ _type == "products" && slugfr.current == "${slug}" ]`).then((res) => setCreation(res[0]));
+		} else if (lang == 'en') {
+			sanityClient.fetch(`*[ _type == "products" && slugen.current == "${slug}" ]`).then((res) => setCreation(res[0]));
+		} else if (lang == 'ru') {
+			sanityClient.fetch(`*[ _type == "products" && slugru.current == "${slug}" ]`).then((res) => setCreation(res[0]));
+		} else {
+			sanityClient.fetch(`*[ _type == "products" && slugcn.current == "${slug}" ]`).then((res) => setCreation(res[0]));
+		}
+	}, []);
+
+	console.log(creation);
+
+	return <div>Ajouter la fiche pour {creation?.title[lang]} </div>;
 };
 
 export default Creation;
