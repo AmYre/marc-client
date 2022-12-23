@@ -42,7 +42,7 @@ export default function Home({ walls }) {
 				<div className='wrapanim h-screen -z-10 absolute overflow-hidden'>
 					<Image src={urlFor(walls[currentSlide].image).url()} className='anim -z-10 object-cover h-screen w-screen' alt='bg' width='500' height='500' />;
 				</div>
-				<nav className='w-[320px] text-white z-10 relative top-10 left-10 bg-black bg-opacity-70'>
+				<nav className='w-[320px] text-white z-10 relative top-12 left-12 bg-black bg-opacity-70'>
 					<Nav />
 				</nav>
 			</main>

@@ -32,16 +32,22 @@ const Creations = ({ products }) => {
 	let productsFR = products.map(
 		(product, index) =>
 			product?.slugen && (
-				<Link key={index} href={product.slugfr.current}>
-					<Image src={urlFor(product.image).url()} alt='Image produit' width='300' height='300' />
-					{/* <h2 key={product.title.fr}>{product.title.fr}</h2> */}
+				<Link key={index} href={product.slugfr.current} className='relative w-full'>
+					<div className='product-frame relative w-full overflow-hidden'>
+						<div className='overlay relative'>
+							<Image className='hover:scale-105 transition-all duration-1000 overflow-hidden' src={urlFor(product.image).url()} alt='Image produit' width='300' height='300'></Image>
+						</div>
+						<h2 className='absolute w-full bottom-0 translate-y-40 transition-all duration-1000 ease-in-out' key={product.title.fr}>
+							{product.title.fr}
+						</h2>
+					</div>
 				</Link>
 			)
 	);
 
 	return (
 		<div className='flex gap-12 bg-[#E7E1DA] p-12'>
-			<nav className='w-[320px] text-white bg-black bg-opacity-80'>
+			<nav className='w-[320px] h-fit text-white bg-black bg-opacity-80'>
 				<Nav />
 			</nav>
 			<main className='bg-black bg-opacity-90 text-white font-nunito p-12 text-center'>

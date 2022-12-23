@@ -25,6 +25,13 @@
 	margin-bottom: 30px;
 }
 
+.product-frame:hover h2 {
+	transform: translateY(0);
+}
+
+.product-frame:hover .overlay {
+}
+
 @keyframes fadout {
 	0% {
 		opacity: 0.1;
