@@ -8,6 +8,11 @@ const locales = {
 	menu4: { fr: 'Vente Notable', en: 'Notable Sales', ru: 'Vente Notable', cn: 'Vente Notable' },
 	menu5: { fr: 'Galerie A.Judic', en: 'A.Judic Gallery', ru: 'Galerie A.Judic', cn: 'Galerie A.Judic' },
 	menu6: { fr: 'Contact', en: 'Contact us', ru: 'Contact', cn: 'Contact' },
+	filter1: { fr: 'Tout', en: 'All', ru: 'Tout', cn: 'Tout' },
+	filter2: { fr: 'Artistes', en: 'Artists', ru: 'Artistes', cn: 'Artistes' },
+	filter3: { fr: 'Art-Nouveau', en: 'Modern Style', ru: 'Art-Nouveau', cn: 'Art-Nouveau' },
+	filter4: { fr: 'Art & Artisanats', en: 'Arts & Crafts', ru: 'Art & Artisanats', cn: 'Art & Artisanats' },
+	filter5: { fr: 'Autre', en: 'Other', ru: 'Autre', cn: 'Autre' },
 };
 
 export default locales;

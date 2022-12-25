@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { useGlobalContext } from '../components/GlobalContext';
-import Masonry from 'react-masonry-css';
-
-import Nav from '../components/Nav';
-
-import imageUrlBuilder from '@sanity/image-url';
 import Link from 'next/link';
-import { sanityClient } from '../lib/sanityClient';
-
 import Image from 'next/image';
+
+import { sanityClient } from '../lib/sanityClient';
+import imageUrlBuilder from '@sanity/image-url';
+import Products from '../components/Products';
+import Nav from '../components/Nav';
+import logo from '../public/logo.png';
 
 const Creations = ({ products }) => {
 	const { lang, setLang } = useGlobalContext();
 	const [slugLang, setSlugLang] = useState();
+	const [filter, setFilter] = useState();
+
+	console.log(products[0]);
 
 	useEffect(() => {
 		if (lang == 'fr') {
@@ -23,27 +25,26 @@ const Creations = ({ products }) => {
 		}
 	}, [lang]);
 
+	const filterByCat = (cat) => {
+		if (cat == 'art-nouveau') {
+			sanityClient
+				.fetch(
+					`*[_type == "categories"]{
+				_id, title,
+				"product": { "title" : *[_type == "products" && references(^._id)].title.fr,
+							"image": *[_type == "products" && references(^._id)].image,
+							"slug": *[_type == "products" && references(^._id)].slugfr}
+			  }`
+				)
+				.then((res) => console.log(res));
+		}
+	};
+
 	const imageBuilder = imageUrlBuilder({ projectId: 'r1wp5yv2', dataset: 'production' });
 
 	const urlFor = (source) => {
 		return imageBuilder.image(source);
 	};
-
-	let productsFR = products.map(
-		(product, index) =>
-			product?.slugen && (
-				<Link key={index} href={product.slugfr.current} className='relative w-full'>
-					<div className='product-frame relative w-full overflow-hidden'>
-						<div className='overlay relative'>
-							<Image className='hover:scale-105 transition-all duration-1000 overflow-hidden' src={urlFor(product.image).url()} alt='Image produit' width='300' height='300'></Image>
-						</div>
-						<h2 className='absolute w-full bottom-0 translate-y-40 transition-all duration-1000 ease-in-out' key={product.title.fr}>
-							{product.title.fr}
-						</h2>
-					</div>
-				</Link>
-			)
-	);
 
 	return (
 		<div className='flex gap-12 bg-[#E7E1DA] p-12'>
@@ -55,17 +56,14 @@ const Creations = ({ products }) => {
 				<div className='text-md p-4 mb-8 font-thin border-t-[1px] border-b-[1px] border-gray-100 flex justify-center gap-8'>
 					<p className='font-bold'>Tout</p>
 					<p>Artistes</p>
-					<p>Art Nouveau</p>
+					<p onClick={() => filterByCat('art-nouveau')}>Art-Nouveau</p>
+					<p onClick={() => setFilter('art-artisanats')}>Art & Artisanats</p>
 					<p>Autre</p>
 				</div>
 
 				{products && (
 					<div className=''>
-						{lang == 'fr' && (
-							<Masonry breakpointCols={3} className='my-masonry-grid' columnClassName='my-masonry-grid_column'>
-								{productsFR}
-							</Masonry>
-						)}
+						{lang == 'fr' && <Products products={products} />}
 
 						{lang == 'en' &&
 							products.map(
@@ -99,6 +97,13 @@ const Creations = ({ products }) => {
 							)}
 					</div>
 				)}
+				<div className='flex flex-row items-center justify-end mt-12'>
+					<Image src={logo} className='w-20' alt='logo Marc Maison XIX' />
+					<div className='flex flex-col'>
+						<h1 className='mb-0 pb-0 text-[1.5rem] text-gray-200 pt-6 px-6 font-splash'>Marc Maison</h1>
+						<h2 className='font-splash text-[#c49d50] text-[0.8rem] tracking-wide pb-4 text-gold'>- 19ème - </h2>
+					</div>
+				</div>
 			</main>
 		</div>
 	);
