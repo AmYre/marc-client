@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 import { sanityClient } from '../lib/sanityClient';
 import imageUrlBuilder from '@sanity/image-url';
-import Products from '../components/Products';
+import ProductsMasonry from '../components/ProductsMasonry';
 import Nav from '../components/Nav';
 import logo from '../public/logo.png';
 
@@ -13,8 +13,6 @@ const Creations = ({ products }) => {
 	const { lang, setLang } = useGlobalContext();
 	const [slugLang, setSlugLang] = useState();
 	const [filter, setFilter] = useState();
-
-	console.log(products[0]);
 
 	useEffect(() => {
 		if (lang == 'fr') {
@@ -26,17 +24,14 @@ const Creations = ({ products }) => {
 	}, [lang]);
 
 	const filterByCat = (cat) => {
-		if (cat == 'art-nouveau') {
-			sanityClient
-				.fetch(
-					`*[_type == "categories"]{
-				_id, title,
-				"product": { "title" : *[_type == "products" && references(^._id)].title.fr,
-							"image": *[_type == "products" && references(^._id)].image,
-							"slug": *[_type == "products" && references(^._id)].slugfr}
-			  }`
-				)
-				.then((res) => console.log(res));
+		if (cat == 'all') {
+			setFilter('');
+		}
+		if (cat == 'nouveau') {
+			setFilter('nouveau');
+		}
+		if (cat == 'artisanats') {
+			setFilter('artisanats');
 		}
 	};
 
@@ -51,19 +46,29 @@ const Creations = ({ products }) => {
 			<nav className='w-[320px] h-fit text-white bg-black bg-opacity-80'>
 				<Nav />
 			</nav>
-			<main className='bg-black bg-opacity-90 text-white font-nunito p-12 text-center'>
+			<main className='w-full bg-black bg-opacity-90 text-white font-nunito p-12 text-center'>
 				<h2 className='text-3xl tracking-widest font-thin mb-12'>Collection</h2>
 				<div className='text-md p-4 mb-8 font-thin border-t-[1px] border-b-[1px] border-gray-100 flex justify-center gap-8'>
-					<p className='font-bold'>Tout</p>
-					<p>Artistes</p>
-					<p onClick={() => filterByCat('art-nouveau')}>Art-Nouveau</p>
-					<p onClick={() => setFilter('art-artisanats')}>Art & Artisanats</p>
-					<p>Autre</p>
+					<button onClick={() => filterByCat('all')} className='cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300'>
+						Tout
+					</button>
+					<button onClick={() => filterByCat('artists')} className='cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300'>
+						Artistes
+					</button>
+					<button onClick={() => filterByCat('nouveau')} className='cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300'>
+						Art-Nouveau
+					</button>
+					<button onClick={() => filterByCat('artisanats')} className='cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300'>
+						Art & Artisanats
+					</button>
+					<button onClick={() => filterByCat('autre')} className='cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300'>
+						Autre
+					</button>
 				</div>
 
 				{products && (
 					<div className=''>
-						{lang == 'fr' && <Products products={products} />}
+						{lang == 'fr' && <ProductsMasonry data={products} filter={filter} />}
 
 						{lang == 'en' &&
 							products.map(
@@ -97,6 +102,7 @@ const Creations = ({ products }) => {
 							)}
 					</div>
 				)}
+
 				<div className='flex flex-row items-center justify-end mt-12'>
 					<Image src={logo} className='w-20' alt='logo Marc Maison XIX' />
 					<div className='flex flex-col'>
@@ -110,7 +116,7 @@ const Creations = ({ products }) => {
 };
 
 export const getServerSideProps = async () => {
-	const products = await sanityClient.fetch(`*[_type == "products"]`);
+	const products = await sanityClient.fetch(`*[_type == "products"]{ ..., category-> }`);
 
 	return {
 		props: {

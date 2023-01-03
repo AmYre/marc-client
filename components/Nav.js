@@ -15,10 +15,10 @@ const Nav = () => {
 
 	return (
 		<>
-			<div className='text-center'>
+			<div className='w-[320px] text-center'>
 				<Link href='/'>
-				<h1 className='mb-0 pb-0 text-[2.5rem] text-gray-200 pt-6 px-6 font-splash'>Marc Maison</h1>
-				<h2 className='font-splash text-[#c49d50] text-[1.3rem] tracking-wide pb-4 text-gold'>- 19ème - </h2>
+					<h1 className='mb-0 pb-0 text-[2.5rem] text-gray-200 pt-6 px-6 font-splash'>Marc Maison</h1>
+					<h2 className='font-splash text-[#c49d50] text-[1.3rem] tracking-wide pb-4 text-gold'>- 19ème - </h2>
 				</Link>
 			</div>
 			<div className='z-10 w-full bg-black bg-opacity-80 flex flex-col'>

@@ -31,6 +31,7 @@
 .my-masonry-grid_column img {
 	background: grey;
 	margin-bottom: 30px;
+	width: 100%;
 }
 
 .product-frame:hover h2 {
