@@ -11,7 +11,7 @@ import flagRU from '../public/ru.png';
 import flagCN from '../public/cn.png';
 
 const Nav = () => {
-	const { lang, setLang } = useGlobalContext();
+	const { nav, setNav, lang, setLang } = useGlobalContext();
 
 	return (
 		<>
@@ -22,22 +22,22 @@ const Nav = () => {
 				</Link>
 			</div>
 			<div className='z-10 w-full bg-black bg-opacity-80 flex flex-col'>
-				<Link className='p-6 font-nunito text-sm  hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-gray-900' href='/creations'>
+				<Link href='/creations' className='p-6 font-nunito text-sm  hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-gray-900' onClick={() => setNav('creations')}>
 					{locales.menu1[lang]}
 				</Link>
-				<Link className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-gray-900' href='/artists'>
+				<Link href='/creations' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-gray-900' onClick={() => setNav('artists')}>
 					{locales.menu2[lang]}
 				</Link>
-				<Link className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-gray-900' href='/museum'>
+				<Link href='/creations' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-gray-900' onClick={() => setNav('museum')}>
 					{locales.menu3[lang]}
 				</Link>
-				<Link className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-gray-900' href='/notable'>
+				<Link href='/creations' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-gray-900' onClick={() => setNav('notable')}>
 					{locales.menu4[lang]}
 				</Link>
-				<Link className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-gray-900' href='/galerie'>
+				<Link href='/creations' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-gray-900' onClick={() => setNav('gallery')}>
 					{locales.menu5[lang]}
 				</Link>
-				<Link className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-gray-900' href='/contact'>
+				<Link href='/creations' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-gray-900' onClick={() => setNav('creations')}>
 					{locales.menu6[lang]}
 				</Link>
 			</div>

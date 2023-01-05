@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState } from 'react';
 const GlobalContext = createContext();
 
 const ContextProvider = ({ children }) => {
-	const [nav, setNav] = useState('home');
+	const [nav, setNav] = useState('creations');
 	const [lang, setLang] = useState('fr');
 
 	return (
