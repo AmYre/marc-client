@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+::selection {
+	background-color: #a87e2d;
+}
+
+.MuiTextField-root label {
+	color: white !important;
+}
+.MuiTextField-root:focus-within label {
+	color: #a87e2d !important;
+}
+.MuiInputBase-input {
+	color: rgb(211, 211, 211) !important;
+}
+
+.MuiInput-root:after {
+	border-bottom: 1px solid white !important;
+}
+
+.MuiInput-root:before {
+	border-bottom: 1px solid rgb(126, 126, 126) !important;
+}

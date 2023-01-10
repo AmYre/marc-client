@@ -28,7 +28,7 @@ const Creations = ({ products, artists }) => {
 	}, [lang]);
 
 	return (
-		<div className='flex gap-12 bg-[#E7E1DA] p-12'>
+		<div className='flex gap-8 bg-[#E7E1DA] p-12'>
 			<nav className='w-[320px] h-fit text-white bg-black bg-opacity-80'>
 				<Nav />
 			</nav>

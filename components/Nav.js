@@ -37,7 +37,7 @@ const Nav = () => {
 				<Link href='/creations' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-gray-900' onClick={() => setNav('gallery')}>
 					{locales.menu5[lang]}
 				</Link>
-				<Link href='/creations' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-gray-900' onClick={() => setNav('creations')}>
+				<Link href='/creations' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-gray-900' onClick={() => setNav('contact')}>
 					{locales.menu6[lang]}
 				</Link>
 			</div>

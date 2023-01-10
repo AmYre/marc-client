@@ -11,6 +11,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/server": "^11.10.0",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.3",
     "@portabletext/react": "^2.0.0",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^3.4.1",
