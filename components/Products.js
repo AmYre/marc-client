@@ -92,36 +92,123 @@ const Products = ({ products }) => {
 						</Masonry>
 					)}
 
-					{lang == 'en' &&
-						products.map(
-							(product, index) =>
-								product?.slugen && (
-									<Link key={index} href={product.slugen.current}>
-										<Image src={urlFor(product.image).url()} alt='Image produit' width='300' height='300' />
-										<h2 key={product.title.en}>{product.title.en}</h2>
-									</Link>
+					{lang == 'en' && (
+						<Masonry breakpointCols={3} className='my-masonry-grid' columnClassName='my-masonry-grid_column'>
+							{products.map((product, index) =>
+								filter ? (
+									product.category?.slug.current == filter && (
+										<motion.div key={index} initial={{ y: '50%', opacity: 0, scale: 0.5, borderRadius: '1000%' }} animate={{ y: 0, opacity: 1, scale: 1, borderRadius: '50%' }} transition={{ duration: 0.5, ease: 'easeOut' }} exit={{ opacity: 0, scale: 0.1 }}>
+											{product?.slugen && (
+												<Link key={index} href={product.slugen.current} className='relative w-full'>
+													<div className='product-frame relative w-full overflow-hidden'>
+														<div className='overlay relative'>
+															<Image className='hover:scale-105 transition-all duration-1000 overflow-hidden' src={urlFor(product.image).url()} alt='Image produit' width='300' height='300'></Image>
+														</div>
+														<h2 className='absolute ellipse2 px-4 w-full bottom-0 translate-y-40 transition-all duration-1000 ease-in-out' key={product.title.en}>
+															{product.title.en}
+														</h2>
+													</div>
+												</Link>
+											)}
+										</motion.div>
+									)
+								) : (
+									<motion.div key={index} initial={{ y: '50%', opacity: 0, scale: 0.5, borderRadius: '1000%' }} animate={{ y: 0, opacity: 1, scale: 1, borderRadius: '50%' }} transition={{ duration: 0.5, ease: 'easeOut' }} exit={{ opacity: 0, scale: 0.1 }}>
+										{product?.slugen && (
+											<Link key={index} href={product.slugen.current} className='relative w-full'>
+												<div className='product-frame relative w-full overflow-hidden'>
+													<div className='overlay relative'>
+														<Image className='hover:scale-105 transition-all duration-1000 overflow-hidden' src={urlFor(product.image).url()} alt='Image produit' width='300' height='300'></Image>
+													</div>
+													<h2 className='absolute ellipse2 px-4 w-full bottom-0 translate-y-40 transition-all duration-1000 ease-in-out' key={product.title.en}>
+														{product.title.en}
+													</h2>
+												</div>
+											</Link>
+										)}
+									</motion.div>
 								)
-						)}
-					{lang == 'ru' &&
-						products.map(
-							(product, index) =>
-								product?.slugru && (
-									<Link key={index} href={product.slugru.current}>
-										<Image src={urlFor(product.image).url()} alt='Image produit' width='300' height='300' />
-										<h2 key={product.title.ru}>{product.title.ru}</h2>
-									</Link>
+							)}
+						</Masonry>
+					)}
+					{lang == 'ru' && (
+						<Masonry breakpointCols={3} className='my-masonry-grid' columnClassName='my-masonry-grid_column'>
+							{products.map((product, index) =>
+								filter ? (
+									product.category?.slug.current == filter && (
+										<motion.div key={index} initial={{ y: '50%', opacity: 0, scale: 0.5, borderRadius: '1000%' }} animate={{ y: 0, opacity: 1, scale: 1, borderRadius: '50%' }} transition={{ duration: 0.5, ease: 'easeOut' }} exit={{ opacity: 0, scale: 0.1 }}>
+											{product?.slugru && (
+												<Link key={index} href={product.slugru.current} className='relative w-full'>
+													<div className='product-frame relative w-full overflow-hidden'>
+														<div className='overlay relative'>
+															<Image className='hover:scale-105 transition-all duration-1000 overflow-hidden' src={urlFor(product.image).url()} alt='Image produit' width='300' height='300'></Image>
+														</div>
+														<h2 className='absolute ellipse2 px-4 w-full bottom-0 translate-y-40 transition-all duration-1000 ease-in-out' key={product.title.ru}>
+															{product.title.ru}
+														</h2>
+													</div>
+												</Link>
+											)}
+										</motion.div>
+									)
+								) : (
+									<motion.div key={index} initial={{ y: '50%', opacity: 0, scale: 0.5, borderRadius: '1000%' }} animate={{ y: 0, opacity: 1, scale: 1, borderRadius: '50%' }} transition={{ duration: 0.5, ease: 'easeOut' }} exit={{ opacity: 0, scale: 0.1 }}>
+										{product?.slugru && (
+											<Link key={index} href={product.slugru.current} className='relative w-full'>
+												<div className='product-frame relative w-full overflow-hidden'>
+													<div className='overlay relative'>
+														<Image className='hover:scale-105 transition-all duration-1000 overflow-hidden' src={urlFor(product.image).url()} alt='Image produit' width='300' height='300'></Image>
+													</div>
+													<h2 className='absolute ellipse2 px-4 w-full bottom-0 translate-y-40 transition-all duration-1000 ease-in-out' key={product.title.ru}>
+														{product.title.ru}
+													</h2>
+												</div>
+											</Link>
+										)}
+									</motion.div>
 								)
-						)}
-					{lang == 'cn' &&
-						products.map(
-							(product, index) =>
-								product?.slugcn && (
-									<Link key={index} href={product.slugcn.current}>
-										<Image src={urlFor(product.image).url()} alt='Image produit' width='300' height='300' />
-										<h2 key={product.title.cn}>{product.title.cn}</h2>
-									</Link>
+							)}
+						</Masonry>
+					)}
+					{lang == 'cn' && (
+						<Masonry breakpointCols={3} className='my-masonry-grid' columnClassName='my-masonry-grid_column'>
+							{products.map((product, index) =>
+								filter ? (
+									product.category?.slug.current == filter && (
+										<motion.div key={index} initial={{ y: '50%', opacity: 0, scale: 0.5, borderRadius: '1000%' }} animate={{ y: 0, opacity: 1, scale: 1, borderRadius: '50%' }} transition={{ duration: 0.5, ease: 'easeOut' }} exit={{ opacity: 0, scale: 0.1 }}>
+											{product?.slugcn && (
+												<Link key={index} href={product.slugcn.current} className='relative w-full'>
+													<div className='product-frame relative w-full overflow-hidden'>
+														<div className='overlay relative'>
+															<Image className='hover:scale-105 transition-all duration-1000 overflow-hidden' src={urlFor(product.image).url()} alt='Image produit' width='300' height='300'></Image>
+														</div>
+														<h2 className='absolute ellipse2 px-4 w-full bottom-0 translate-y-40 transition-all duration-1000 ease-in-out' key={product.title.cn}>
+															{product.title.cn}
+														</h2>
+													</div>
+												</Link>
+											)}
+										</motion.div>
+									)
+								) : (
+									<motion.div key={index} initial={{ y: '50%', opacity: 0, scale: 0.5, borderRadius: '1000%' }} animate={{ y: 0, opacity: 1, scale: 1, borderRadius: '50%' }} transition={{ duration: 0.5, ease: 'easeOut' }} exit={{ opacity: 0, scale: 0.1 }}>
+										{product?.slugcn && (
+											<Link key={index} href={product.slugcn.current} className='relative w-full'>
+												<div className='product-frame relative w-full overflow-hidden'>
+													<div className='overlay relative'>
+														<Image className='hover:scale-105 transition-all duration-1000 overflow-hidden' src={urlFor(product.image).url()} alt='Image produit' width='300' height='300'></Image>
+													</div>
+													<h2 className='absolute ellipse2 px-4 w-full bottom-0 translate-y-40 transition-all duration-1000 ease-in-out' key={product.title.cn}>
+														{product.title.cn}
+													</h2>
+												</div>
+											</Link>
+										)}
+									</motion.div>
 								)
-						)}
+							)}
+						</Masonry>
+					)}
 				</div>
 			)}
 		</>
