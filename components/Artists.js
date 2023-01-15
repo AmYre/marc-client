@@ -34,7 +34,7 @@ const Artists = ({ artists }) => {
 	return (
 		<>
 			<h2 className='text-3xl tracking-widest font-thin mb-12'>Artistes</h2>
-			<div className='text-sm p-4 mb-8 font-thin border-t-[1px] border-b-[1px] border-gray-100 flex justify-center gap-8'>
+			<div className='text-sm p-4 mb-8 font-thin border-t-[1px] border-b-[1px] border-gray-100 flex flex-wrap justify-center gap-8'>
 				<button onClick={() => filterByCat('all')} className='cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300'>
 					Tout
 				</button>

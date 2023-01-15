@@ -7,10 +7,10 @@ import { sanityClient } from '../lib/sanityClient';
 import logo from '../public/logo.png';
 
 import Nav from '../components/Nav';
+import NavBar from '../components/NavBar';
 import Products from '../components/Products';
 import Artists from '../components/Artists';
 import Museum from '../components/Museum';
-import Notable from '../components/Notable';
 import Gallery from '../components/Gallery';
 import Contact from '../components/Contact';
 
@@ -28,15 +28,20 @@ const Creations = ({ products, artists }) => {
 	}, [lang]);
 
 	return (
-		<div className='flex gap-8 bg-[#E7E1DA] p-12'>
-			<nav className='w-[320px] h-fit text-white bg-black bg-opacity-80'>
+		<div className='flex md:gap-8 bg-[#E7E1DA] md:p-12'>
+			<div className='md:hidden'>
+				<NavBar />
+			</div>
+			{/* 				<nav className='hidden md:block w-[320px] absolute text-white z-10 top-12 left-12 bg-black bg-opacity-70'>
+					<Nav />
+				</nav> */}
+			<nav className='hidden md:block w-[320px] h-fit text-white'>
 				<Nav />
 			</nav>
 			<main className='w-full bg-black bg-opacity-90 text-white font-nunito p-12 text-center'>
 				{nav == 'creations' && <Products products={products} />}
 				{nav == 'artists' && <Artists artists={artists} />}
 				{nav == 'museum' && <Museum products={products} />}
-				{nav == 'notable' && <Notable products={products} />}
 				{nav == 'gallery' && <Gallery />}
 				{nav == 'contact' && <Contact />}
 

@@ -1,11 +1,17 @@
 import { useState, useRef, useEffect } from 'react';
 import { useGlobalContext } from '../components/GlobalContext';
+import { Video, CloudinaryContext } from 'cloudinary-react';
+
 import Head from 'next/head';
 import Image from 'next/image';
+
 import { sanityClient } from '../lib/sanityClient';
 import imageUrlBuilder from '@sanity/image-url';
 import locales from '../lang/locales.js';
 import Nav from '../components/Nav';
+import NavBar from '../components/NavBar';
+import MobNav from '../components/MobNav';
+import poster from '../public/poster-home.png';
 
 export default function Home({ walls }) {
 	const { lang, setLang } = useGlobalContext();
@@ -15,11 +21,10 @@ export default function Home({ walls }) {
 		return imageBuilder.image(source);
 	};
 
-	const [currentSlide, setCurrentSlide] = useState(0);
+	/* 	const [currentSlide, setCurrentSlide] = useState(0);
 	let sliderInterval = useRef();
 
 	useEffect(() => {
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 		sliderInterval = setInterval(() => {
 			if (currentSlide < walls.length - 1) {
 				setCurrentSlide(currentSlide + 1);
@@ -30,7 +35,7 @@ export default function Home({ walls }) {
 		return () => {
 			clearInterval(sliderInterval);
 		};
-	});
+	}); */
 
 	return (
 		<div>
@@ -38,16 +43,23 @@ export default function Home({ walls }) {
 				<title>{locales.title[lang]}</title>
 				<meta name='description' content={locales.desc[lang]} />
 			</Head>
-			<main>
-				<div className='wrapanim h-screen -z-10 absolute overflow-hidden'>
+			<main className=''>
+				<CloudinaryContext cloud_name='amircloud'>
+					<Video className='h-screen w-full object-cover' publicId='marc/home' autoPlay loop poster={poster} />
+				</CloudinaryContext>
+				{/* 	<div className='h-screen -z-10 absolute overflow-hidden'>
+		
+
 					<Image src={urlFor(walls[currentSlide].image).quality(100).url()} className='anim -z-10 object-cover h-screen w-screen' alt='bg' width='2500' height='2500' />;
+				</div> */}
+
+				<div className='md:hidden'>
+					<NavBar />
 				</div>
-				<nav className='w-[320px] text-white z-10 relative top-12 left-12 bg-black bg-opacity-70'>
+				<nav className='hidden md:block w-[320px] absolute text-white z-10 top-12 left-12'>
 					<Nav />
 				</nav>
 			</main>
-
-			<footer></footer>
 		</div>
 	);
 }
