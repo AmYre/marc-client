@@ -28,7 +28,7 @@ const Creations = ({ products, artists }) => {
 	}, [lang]);
 
 	return (
-		<div className='flex md:gap-8 bg-[#E7E1DA] md:p-12'>
+		<div className='flex min-h-screen md:gap-8 bg-[#E7E1DA] md:p-12'>
 			<div className='md:hidden'>
 				<NavBar />
 			</div>
@@ -45,7 +45,7 @@ const Creations = ({ products, artists }) => {
 				{nav == 'gallery' && <Gallery />}
 				{nav == 'contact' && <Contact />}
 
-				<div className='flex flex-row items-center justify-end mt-12'>
+				<div className='flex flex-row items-center justify-end'>
 					<Image src={logo} className='w-20' alt='logo Marc Maison XIX' />
 					<div className='flex flex-col'>
 						<h1 className='mb-0 pb-0 text-[1.5rem] text-gray-200 pt-6 px-6 font-splash'>Marc Maison</h1>
