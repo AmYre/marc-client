@@ -22,7 +22,7 @@ const Contact = () => {
 	}, []);
 
 	return (
-		<>
+		<div className='p-12'>
 			<h2 className='text-3xl tracking-widest font-thin mb-12'>Contact</h2>
 			<div className='overflow-hidden w-full h-[400px]'>
 				<img src='https://res.cloudinary.com/amircloud/image/upload/v1673804913/marc/contact.jpg' className='anim -z-10 object-cover h-screen w-screen' alt='bg' width='2500' height='2500' />
@@ -39,7 +39,7 @@ const Contact = () => {
 				<TextField className='w-full max-w-[800px]' id='standard-textarea' label='Message' multiline variant='standard' />
 				<button className='bg-[#a87e2d] w-[200px] text-white px-8 py-4 rounded shadow shadow-black hover:shadow-none transition-all duration-300'>Envoyer</button>
 			</div>
-		</>
+		</div>
 	);
 };
 

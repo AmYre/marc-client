@@ -38,20 +38,22 @@ const Creations = ({ products, artists }) => {
 			<nav className='hidden md:block w-[320px] h-fit text-white'>
 				<Nav />
 			</nav>
-			<main className='w-full bg-black bg-opacity-90 text-white font-nunito p-12 text-center'>
+			<main className='w-full bg-black bg-opacity-90 text-white font-nunito text-center'>
 				{nav == 'creations' && <Products products={products} />}
 				{nav == 'artists' && <Artists artists={artists} />}
 				{nav == 'museum' && <Museum products={products} />}
 				{nav == 'gallery' && <Gallery />}
 				{nav == 'contact' && <Contact />}
 
-				<div className='flex flex-row items-center justify-end'>
-					<Image src={logo} className='w-20' alt='logo Marc Maison XIX' />
-					<div className='flex flex-col'>
-						<h1 className='mb-0 pb-0 text-[1.5rem] text-gray-200 pt-6 px-6 font-splash'>Marc Maison</h1>
-						<h2 className='font-splash text-[#c49d50] text-[0.8rem] tracking-wide pb-4 text-gold'>- 19ème - </h2>
+				{nav !== 'gallery' && (
+					<div className='flex flex-row items-center justify-end'>
+						<Image src={logo} className='w-20' alt='logo Marc Maison XIX' />
+						<div className='flex flex-col'>
+							<h1 className='mb-0 pb-0 text-[1.5rem] text-gray-200 pt-6 px-6 font-splash'>Marc Maison</h1>
+							<h2 className='font-splash text-[#c49d50] text-[0.8rem] tracking-wide pb-4 text-gold'>- 19ème - </h2>
+						</div>
 					</div>
-				</div>
+				)}
 			</main>
 		</div>
 	);
