@@ -58,7 +58,7 @@ const Creations = ({ products, artists }) => {
 
 export const getServerSideProps = async () => {
 	const products = await sanityClient.fetch(`*[_type == "products"]{ ..., category-> }`);
-	const artists = await sanityClient.fetch(`*[_type == "artistes"]`);
+	const artists = await sanityClient.fetch(`*[_type == "artists"]`);
 
 	return {
 		props: {

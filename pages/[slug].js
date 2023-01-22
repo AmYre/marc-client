@@ -33,8 +33,6 @@ const Creation = () => {
 	const slug = router.query.slug;
 
 	useEffect(() => {
-		sanityClient.fetch(`*[ _type == "products"]`).then((res) => console.log(res[0].artiste));
-
 		if (nav == 'creations') {
 			if (lang == 'fr') {
 				sanityClient.fetch(`*[ _type == "products" && slugfr.current == "${slug}" ]`).then((res) => setCreation(res[0]));
