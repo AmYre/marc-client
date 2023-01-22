@@ -22,7 +22,7 @@ const Contact = () => {
 	}, []);
 
 	return (
-		<div className='p-12'>
+		<div className='p-12 pt-28 md:pt-12'>
 			<h2 className='text-3xl tracking-widest font-thin mb-12'>Contact</h2>
 			<div className='overflow-hidden w-full h-[400px]'>
 				<img src='https://res.cloudinary.com/amircloud/image/upload/v1673804913/marc/contact.jpg' className='anim -z-10 object-cover h-screen w-screen' alt='bg' width='2500' height='2500' />
