@@ -8,6 +8,10 @@ module.exports = {
 				bodoni: ['Libre Bodoni'],
 				nunito: ['Nunito', 'sans-serif'],
 			},
+			backgroundColor: {
+				layout: '#682145',
+				bg: '#dfdee9',
+			},
 		},
 	},
 	plugins: [],

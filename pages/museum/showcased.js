@@ -36,14 +36,14 @@ const Showcased = ({ products }) => {
 		}
 	};
 	return (
-		<div className='flex min-h-screen md:gap-8 bg-[#682145] md:p-12'>
+		<div className='flex min-h-screen md:gap-8 bg-[#eed9e3] md:p-12'>
 			<div className='md:hidden'>
 				<NavBar />
 			</div>
 			<nav className='hidden md:block w-[320px] h-fit text-white'>
 				<Nav />
 			</nav>
-			<main className='w-full bg-black bg-opacity-90 text-white font-nunito text-center'>
+			<main className='w-full bg-layout bg-opacity-90 text-white font-nunito text-center'>
 				<div className='p-12 pt-28 md:pt-12'>
 					<h2 className='text-3xl tracking-widest font-thin font-bodoni mb-12'>{locales.showcased[lang]}</h2>
 					<div className='text-sm p-4 mb-12 font-thin border-t-[1px] border-b-[1px] border-gray-100 flex flex-wrap justify-center gap-8'>

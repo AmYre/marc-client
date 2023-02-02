@@ -21,27 +21,27 @@ const Nav = () => {
 		<>
 			<AnimatePresence>
 				{!drawer && (
-					<motion.div className='bg-black bg-opacity-70' key='1' initial={{ x: '-50%', opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.5, ease: 'easeOut' }} exit={{ x: '-50%', opacity: 0 }}>
+					<motion.div className='bg-layout bg-opacity-70' key='1' initial={{ x: '-50%', opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.5, ease: 'easeOut' }} exit={{ x: '-50%', opacity: 0 }}>
 						<div className='w-[320px] text-center'>
 							<Link href='/'>
 								<h1 className='mb-0 pb-0 text-[2rem] text-gray-200 pt-6 px-6 font-bodoni tracking-wide'>Marc Maison</h1>
 								<h2 className='font-splash text-[#c49d50] text-[1.3rem] tracking-wide pb-4 text-gold'>- 19ème - </h2>
 							</Link>
 						</div>
-						<div className='z-10 w-full bg-black bg-opacity-80 flex flex-col'>
-							<Link href='/creations' className='p-6 font-nunito text-sm  hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-gray-900' onClick={() => setNav('creations')}>
+						<div className='z-10 w-full bg-layout bg-opacity-80 flex flex-col'>
+							<Link href='/creations' className='p-6 font-nunito text-sm  hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg' onClick={() => setNav('creations')}>
 								{locales.menu1[lang]}
 							</Link>
-							<Link href='/creations' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-gray-900' onClick={() => setNav('artists')}>
+							<Link href='/creations' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg' onClick={() => setNav('artists')}>
 								{locales.menu2[lang]}
 							</Link>
-							<Link href='/creations' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-gray-900' onClick={() => setNav('museum')}>
+							<Link href='/creations' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg' onClick={() => setNav('museum')}>
 								{locales.menu3[lang]}
 							</Link>
-							<Link href='/creations' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-gray-900' onClick={() => setNav('gallery')}>
+							<Link href='/creations' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-bg' onClick={() => setNav('gallery')}>
 								{locales.menu5[lang]}
 							</Link>
-							<Link href='/creations' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-gray-900' onClick={() => setNav('contact')}>
+							<Link href='/creations' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-bg' onClick={() => setNav('contact')}>
 								{locales.menu6[lang]}
 							</Link>
 						</div>

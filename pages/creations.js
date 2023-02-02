@@ -28,14 +28,14 @@ const Creations = ({ products, artists }) => {
 	}, [lang]);
 
 	return (
-		<div className='flex min-h-screen md:gap-8 bg-[#682145] md:p-12'>
+		<div className='flex min-h-screen md:gap-8 bg-bg md:p-12'>
 			<div className='md:hidden'>
 				<NavBar />
 			</div>
 			<nav className='hidden md:block w-[320px] h-fit text-white'>
 				<Nav />
 			</nav>
-			<main className='w-full bg-black bg-opacity-90 text-white font-nunito text-center'>
+			<main className='w-full bg-layout bg-opacity-90 text-white font-nunito text-center'>
 				{nav == 'creations' && <Products products={products} />}
 				{nav == 'artists' && <Artists artists={artists} />}
 				{nav == 'museum' && <Museum products={products} />}

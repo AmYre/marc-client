@@ -61,7 +61,7 @@ const Creation = () => {
 	return (
 		<main>
 			{nav == 'artists' ? (
-				<div className='flex min-h-screen md:gap-8 bg-[#682145 ] md:p-12'>
+				<div className='flex min-h-screen md:gap-8 bg-[#eed9e3 ] md:p-12'>
 					<div className='md:hidden'>
 						<NavBar />
 					</div>
@@ -69,7 +69,7 @@ const Creation = () => {
 						<Nav />
 					</nav>
 
-					<main className='w-full bg-black bg-opacity-90 text-white font-nunito text-center flex flex-col items-center p-12 pt-32 md:pt-12 '>
+					<main className='w-full bg-layout bg-opacity-90 text-white font-nunito text-center flex flex-col items-center p-12 pt-32 md:pt-12 '>
 						<h2 className='text-3xl tracking-widest font-thin font-bodoni mb-12'>{artist?.title}</h2>
 						{artist?.image && (
 							<motion.div className='mb-12' initial={{ y: '50%', opacity: 0, scale: 0.5 }} animate={{ y: 0, opacity: 1, scale: 1 }} transition={{ duration: 0.5, ease: 'easeOut' }}>

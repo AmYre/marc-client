@@ -13,7 +13,7 @@ const NavBar = () => {
 
 	return (
 		<>
-			<div className={`absolute z-30 h-20 top-0 left-0 right-0 ${!isOpen && 'bg-black bg-opacity-95'} text-white flex ${!isOpen ? 'justify-between' : 'justify-end'} items-center px-9 py-2`}>
+			<div className={`absolute z-30 h-20 top-0 left-0 right-0 ${!isOpen && 'bg-layout bg-opacity-95'} text-white flex ${!isOpen ? 'justify-between' : 'justify-end'} items-center px-9 py-2`}>
 				{!isOpen && (
 					<>
 						<Link href='/'>
