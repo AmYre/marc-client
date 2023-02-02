@@ -36,7 +36,7 @@ const Showcased = ({ products }) => {
 		}
 	};
 	return (
-		<div className='flex min-h-screen md:gap-8 bg-[#eed9e3] md:p-12'>
+		<div className='flex min-h-screen md:gap-8 bg-bg md:p-12'>
 			<div className='md:hidden'>
 				<NavBar />
 			</div>
