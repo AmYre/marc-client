@@ -21,7 +21,7 @@ const NavBar = () => {
 						</Link>
 						<div className='text-center'>
 							<Link href='/'>
-								<h1 className='mb-0 pb-0 text-[1.2rem] text-gray-200 pt-6 px-6 font-splash text-center'>Marc Maison</h1>
+								<h1 className='mb-0 pb-0 text-[1.2rem] text-gray-200 pt-6 px-6 font-bodoni text-center'>Marc Maison</h1>
 								<h2 className='font-splash text-[#c49d50] text-[0.8rem] tracking-wide pb-4 text-gold'>- 19ème - </h2>
 							</Link>
 						</div>

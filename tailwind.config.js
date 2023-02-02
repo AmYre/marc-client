@@ -5,6 +5,7 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				splash: ['Splash'],
+				bodoni: ['Libre Bodoni'],
 				nunito: ['Nunito', 'sans-serif'],
 			},
 		},

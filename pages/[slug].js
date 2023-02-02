@@ -61,7 +61,7 @@ const Creation = () => {
 	return (
 		<main>
 			{nav == 'artists' ? (
-				<div className='flex min-h-screen md:gap-8 bg-[#E7E1DA] md:p-12'>
+				<div className='flex min-h-screen md:gap-8 bg-[#682145 ] md:p-12'>
 					<div className='md:hidden'>
 						<NavBar />
 					</div>

@@ -24,7 +24,7 @@ const Nav = () => {
 					<motion.div className='bg-black bg-opacity-70' key='1' initial={{ x: '-50%', opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.5, ease: 'easeOut' }} exit={{ x: '-50%', opacity: 0 }}>
 						<div className='w-[320px] text-center'>
 							<Link href='/'>
-								<h1 className='mb-0 pb-0 text-[2.5rem] text-gray-200 pt-6 px-6 font-splash'>Marc Maison</h1>
+								<h1 className='mb-0 pb-0 text-[2rem] text-gray-200 pt-6 px-6 font-bodoni tracking-wide'>Marc Maison</h1>
 								<h2 className='font-splash text-[#c49d50] text-[1.3rem] tracking-wide pb-4 text-gold'>- 19ème - </h2>
 							</Link>
 						</div>
