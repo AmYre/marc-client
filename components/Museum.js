@@ -34,7 +34,7 @@ const Museum = ({ products }) => {
 
 	return (
 		<div className='p-12 pt-28 md:pt-12'>
-			<h2 className='text-3xl tracking-widest font-thin mb-12'>Musée</h2>
+			<h2 className='text-3xl tracking-widest font-thin font-bodoni mb-12'>Musée</h2>
 
 			<div className='flex flex-col md:flex-row gap-12'>
 				<motion.div className='w-full' initial={{ y: '50%', opacity: 0, scale: 0.5, borderRadius: '1000%' }} animate={{ y: 0, opacity: 1, scale: 1, borderRadius: '50%' }} transition={{ duration: 0.5, ease: 'easeOut' }} exit={{ opacity: 0, scale: 0.1 }}>

@@ -70,7 +70,7 @@ const Creation = () => {
 					</nav>
 
 					<main className='w-full bg-black bg-opacity-90 text-white font-nunito text-center flex flex-col items-center p-12 pt-32 md:pt-12 '>
-						<h2 className='text-3xl tracking-widest font-thin mb-12'>{artist?.title}</h2>
+						<h2 className='text-3xl tracking-widest font-thin font-bodoni mb-12'>{artist?.title}</h2>
 						{artist?.image && (
 							<motion.div className='mb-12' initial={{ y: '50%', opacity: 0, scale: 0.5 }} animate={{ y: 0, opacity: 1, scale: 1 }} transition={{ duration: 0.5, ease: 'easeOut' }}>
 								<Image className='rounded-full w-48 shadow shadow-white' src={urlFor(artist?.image)?.url()} alt='Image produit' width='300' height='300' />
