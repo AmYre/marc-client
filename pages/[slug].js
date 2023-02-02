@@ -81,14 +81,15 @@ const Creation = () => {
 							<PortableText value={artist?.description[lang]} />
 						</div>
 						<div className='flex justify-center items-center'>
-							{creation?.map((creation, index) => (
-								<Link className='flex flex-col justify-center items-center' onClick={() => setNav('creations')} key={index} href={creation.slugfr.current}>
-									<img className='max-h-[100px]' src={urlFor(creation.image).width(400).url()} alt='Image produit' />
-									<h2 className='ellipse2 px-4 w-full text-center' key={creation.title[lang]}>
-										{creation.title[lang]}
-									</h2>
-								</Link>
-							))}
+							{creation &&
+								creation?.map((creation, index) => (
+									<Link className='flex flex-col justify-center items-center' onClick={() => setNav('creations')} key={index} href={creation.slugfr.current}>
+										<img className='max-h-[100px]' src={urlFor(creation.image).width(400).url()} alt='Image produit' />
+										<h2 className='ellipse2 px-4 w-full text-center' key={creation.title[lang]}>
+											{creation.title[lang]}
+										</h2>
+									</Link>
+								))}
 						</div>
 					</main>
 				</div>
