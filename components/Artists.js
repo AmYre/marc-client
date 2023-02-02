@@ -4,7 +4,7 @@ import { useGlobalContext } from './GlobalContext';
 import Link from 'next/link';
 import Image from 'next/image';
 import Masonry from 'react-masonry-css';
-
+import locales from '../lang/locales.js';
 import { motion } from 'framer-motion';
 import { sanityClient } from '../lib/sanityClient';
 import imageUrlBuilder from '@sanity/image-url';
@@ -33,7 +33,7 @@ const Artists = ({ artists }) => {
 
 	return (
 		<div className='p-12 pt-28 md:pt-12'>
-			<h2 className='text-3xl tracking-widest font-thin font-bodoni mb-12'>Artistes</h2>
+			<h2 className='text-3xl tracking-widest font-thin font-bodoni mb-12'>{locales.menu2[lang]}</h2>
 			<div className='text-sm p-4 mb-12 font-thin border-t-[1px] border-b-[1px] border-gray-100 flex flex-wrap justify-center gap-8'>
 				<button onClick={() => filterByCat('all')} className='cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300'>
 					Tout
