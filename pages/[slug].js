@@ -96,7 +96,9 @@ const Creation = () => {
 			) : (
 				<>
 					<CloudinaryContext cloud_name='amircloud'>
-						<Video className='h-screen w-full object-cover' publicId='marc/plategyptien' autoPlay loop poster={poster} />
+						<Video className='h-screen w-full object-cover' publicId={`marc/${slug}`} autoPlay loop poster={poster}>
+						<source src="https://res.cloudinary.com/amircloud/video/upload/v1673634198/marc/home.mp4" type="video/mp4" />
+						</Video>
 					</CloudinaryContext>
 					<div className='md:hidden'>
 						<NavBar />
