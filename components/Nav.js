@@ -29,19 +29,19 @@ const Nav = () => {
 							</Link>
 						</div>
 						<div className='z-10 w-full bg-layout bg-opacity-80 flex flex-col'>
-							<Link href='/creations' className='p-6 font-nunito text-sm  hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg' onClick={() => setNav('creations')}>
+							<Link href='/creations' className='p-6 font-nunito text-sm  hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg' /*onClick={() => setNav('creations')}*/>
 								{locales.menu1[lang]}
 							</Link>
-							<Link href='/creations' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg' onClick={() => setNav('artists')}>
+							<Link href='/artists' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg' /*onClick={() => setNav('artists')}*/>
 								{locales.menu2[lang]}
 							</Link>
-							<Link href='/creations' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg' onClick={() => setNav('museum')}>
+							<Link href='/museum' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg' /*onClick={() => setNav('museum')}*/>
 								{locales.menu3[lang]}
 							</Link>
-							<Link href='/creations' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-bg' onClick={() => setNav('gallery')}>
+							<Link href='/gallery' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-bg' /*onClick={() => setNav('gallery')}*/>
 								{locales.menu5[lang]}
 							</Link>
-							<Link href='/creations' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-bg' onClick={() => setNav('contact')}>
+							<Link href='/contact' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-bg' /*onClick={() => setNav('contact')}*/>
 								{locales.menu6[lang]}
 							</Link>
 						</div>

@@ -59,7 +59,7 @@ const Artists = ({ artists }) => {
 							{artists.map((artist, index) => (
 								<motion.div key={index} initial={{ y: '50%', opacity: 0, scale: 0.5, borderRadius: '1000%' }} animate={{ y: 0, opacity: 1, scale: 1, borderRadius: '50%' }} transition={{ duration: 0.5, ease: 'easeOut' }} exit={{ opacity: 0, scale: 0.1 }}>
 									{artist?.slug && (
-										<Link key={index} href={artist.slug.current} className='relative w-full'>
+										<Link key={index} href={`artists/${artist.slug.current}`} className='relative w-full'>
 											<div className='product-frame relative w-full overflow-hidden'>
 												<div className='overlay relative'>
 													<Image className='hover:scale-105 transition-all duration-1000 overflow-hidden' src={urlFor(artist.image).url()} alt='Image produit' width='300' height='300'></Image>
@@ -81,7 +81,7 @@ const Artists = ({ artists }) => {
 							{artists.map((artist, index) => (
 								<motion.div key={index} initial={{ y: '50%', opacity: 0, scale: 0.5, borderRadius: '1000%' }} animate={{ y: 0, opacity: 1, scale: 1, borderRadius: '50%' }} transition={{ duration: 0.5, ease: 'easeOut' }} exit={{ opacity: 0, scale: 0.1 }}>
 									{artist?.slug && (
-										<Link key={index} href={artist.slug.current} className='relative w-full'>
+										<Link key={index} href={`artists/${artist.slug.current}`} className='relative w-full'>
 											<div className='product-frame relative w-full overflow-hidden'>
 												<div className='overlay relative'>
 													<Image className='hover:scale-105 transition-all duration-1000 overflow-hidden' src={urlFor(artist.image).url()} alt='Image produit' width='300' height='300'></Image>
