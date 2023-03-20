@@ -1,12 +1,12 @@
-import React from "react";
-import Image from "next/image";
-import { sanityClient } from "../lib/sanityClient";
+import React from "react"
+import Image from "next/image"
+import { sanityClient } from "../lib/sanityClient"
 
-import logo from "../public/logo.png";
+import logo from "../public/logo.png"
 
-import Nav from "../components/Nav";
-import NavBar from "../components/NavBar";
-import Museum from "../components/Museum";
+import Nav from "../components/Nav"
+import NavBar from "../components/NavBar"
+import Museum from "../components/Museum"
 
 const MuseumPage = ({ products }) => {
 	return (
@@ -14,7 +14,7 @@ const MuseumPage = ({ products }) => {
 			<div className="md:hidden">
 				<NavBar />
 			</div>
-			<nav className="hidden md:block w-[320px] h-fit text-white">
+			<nav className="hidden md:block h-fit text-white">
 				<Nav />
 			</nav>
 			<main className="w-full bg-layout bg-opacity-90 text-white font-nunito text-center">
@@ -28,17 +28,17 @@ const MuseumPage = ({ products }) => {
 				</div>
 			</main>
 		</div>
-	);
-};
+	)
+}
 
 export const getServerSideProps = async () => {
-	const products = await sanityClient.fetch(`*[_type == "products"]{ ..., category-> }`);
+	const products = await sanityClient.fetch(`*[_type == "products"]{ ..., category-> }`)
 
 	return {
 		props: {
 			products,
 		},
-	};
-};
+	}
+}
 
-export default MuseumPage;
+export default MuseumPage

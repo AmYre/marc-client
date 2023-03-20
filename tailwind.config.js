@@ -1,18 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+	content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
 	theme: {
 		extend: {
 			fontFamily: {
-				splash: ['Splash'],
-				bodoni: ['Libre Bodoni'],
-				nunito: ['Nunito', 'sans-serif'],
+				splash: ["Splash"],
+				bodoni: ["Libre Bodoni"],
+				nunito: ["Nunito", "sans-serif"],
 			},
 			backgroundColor: {
-				layout: '#682145',
-				bg: '#dfdee9',
+				layout: "#6a465b",
+				bg: "#dfdee9",
 			},
 		},
 	},
 	plugins: [],
-};
+}

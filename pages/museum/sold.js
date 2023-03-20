@@ -28,7 +28,7 @@ const Sold = ({ products }) => {
 			<div className="md:hidden">
 				<NavBar />
 			</div>
-			<nav className="hidden md:block w-[320px] h-fit text-white">
+			<nav className="hidden md:block h-fit text-white">
 				<Nav />
 			</nav>
 			<main className="w-full bg-layout bg-opacity-90 text-white font-nunito text-center">

@@ -1,33 +1,33 @@
-import React, { useState, useEffect } from "react";
-import { useGlobalContext } from "../components/GlobalContext";
-import Image from "next/image";
-import { sanityClient } from "../lib/sanityClient";
+import React, { useState, useEffect } from "react"
+import { useGlobalContext } from "../components/GlobalContext"
+import Image from "next/image"
+import { sanityClient } from "../lib/sanityClient"
 
-import logo from "../public/logo.png";
+import logo from "../public/logo.png"
 
-import Nav from "../components/Nav";
-import NavBar from "../components/NavBar";
-import Artists from "../components/Artists";
+import Nav from "../components/Nav"
+import NavBar from "../components/NavBar"
+import Artists from "../components/Artists"
 
 const ArtistPage = ({ artists }) => {
-	const { nav, setNav, lang, setLang } = useGlobalContext();
-	const [slugLang, setSlugLang] = useState();
+	const { nav, setNav, lang, setLang } = useGlobalContext()
+	const [slugLang, setSlugLang] = useState()
 
 	useEffect(() => {
 		if (lang == "fr") {
-			setSlugLang("slugfr");
+			setSlugLang("slugfr")
 		}
 		if (lang == "en") {
-			setSlugLang("slugen");
+			setSlugLang("slugen")
 		}
-	}, [lang]);
+	}, [lang])
 
 	return (
 		<div className="flex min-h-screen md:gap-8 bg-bg md:p-12">
 			<div className="md:hidden">
 				<NavBar />
 			</div>
-			<nav className="hidden md:block w-[320px] h-fit text-white">
+			<nav className="hidden md:block h-fit text-white">
 				<Nav />
 			</nav>
 			<main className="w-full bg-layout bg-opacity-90 text-white font-nunito text-center">
@@ -41,17 +41,17 @@ const ArtistPage = ({ artists }) => {
 				</div>
 			</main>
 		</div>
-	);
-};
+	)
+}
 
 export const getServerSideProps = async () => {
-	const artists = await sanityClient.fetch(`*[_type == "artists"]`);
+	const artists = await sanityClient.fetch(`*[_type == "artists"]`)
 
 	return {
 		props: {
 			artists,
 		},
-	};
-};
+	}
+}
 
-export default ArtistPage;
+export default ArtistPage

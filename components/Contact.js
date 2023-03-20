@@ -37,7 +37,7 @@ const Contact = () => {
 					<TextField className="w-full max-w-[400px]" id="standard-basic" label="Téléphone" variant="standard" />
 				</div>
 				<TextField className="w-full max-w-[800px]" id="standard-textarea" label="Message" multiline variant="standard" />
-				<button className="bg-[#a87e2d] w-[200px] text-white px-8 py-4 rounded shadow shadow-black hover:shadow-none transition-all duration-300">Envoyer</button>
+				<button className="bg-[#a87e2d] w-[200px] text-white px-8 py-4 rounded shadow hover:shadow-none transition-all duration-300">Envoyer</button>
 			</div>
 		</div>
 	)

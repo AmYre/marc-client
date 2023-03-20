@@ -46,11 +46,11 @@ const Creation = () => {
 
 	return (
 		<main>
-			<div className="flex min-h-screen md:gap-8 bg-[#eed9e3 ] md:p-12">
+			<div className="flex min-h-screen md:gap-8 bg-bg md:p-12">
 				<div className="md:hidden">
 					<NavBar />
 				</div>
-				<nav className="hidden md:block w-[320px] h-fit text-white">
+				<nav className="hidden md:block h-fit text-white">
 					<Nav />
 				</nav>
 

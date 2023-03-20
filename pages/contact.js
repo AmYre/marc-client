@@ -1,11 +1,11 @@
-import React from "react";
-import Image from "next/image";
+import React from "react"
+import Image from "next/image"
 
-import logo from "../public/logo.png";
+import logo from "../public/logo.png"
 
-import Nav from "../components/Nav";
-import NavBar from "../components/NavBar";
-import Contact from "../components/Contact";
+import Nav from "../components/Nav"
+import NavBar from "../components/NavBar"
+import Contact from "../components/Contact"
 
 const ContactPage = () => {
 	return (
@@ -13,7 +13,7 @@ const ContactPage = () => {
 			<div className="md:hidden">
 				<NavBar />
 			</div>
-			<nav className="hidden md:block w-[320px] h-fit text-white">
+			<nav className="hidden md:block h-fit text-white">
 				<Nav />
 			</nav>
 			<main className="w-full bg-layout bg-opacity-90 text-white font-nunito text-center">
@@ -27,7 +27,7 @@ const ContactPage = () => {
 				</div>
 			</main>
 		</div>
-	);
-};
+	)
+}
 
-export default ContactPage;
+export default ContactPage

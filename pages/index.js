@@ -57,7 +57,7 @@ export default function Home({ walls }) {
 				<div className="md:hidden">
 					<NavBar />
 				</div>
-				<nav className="hidden md:block w-[320px] absolute text-white z-10 top-12 left-12">
+				<nav className="hidden md:block absolute text-white z-10 top-12 left-12">
 					<Nav />
 				</nav>
 			</main>
