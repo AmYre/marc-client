@@ -46,7 +46,7 @@ export default function Home({ walls }) {
 				<meta name="description" content={locales.desc[lang]} />
 			</Head>
 			<main className="">
-				<CloudinaryContext cloud_name="amircloud">
+				<CloudinaryContext cloud_name="amircloud" secure={true}>
 					<Video className="h-screen w-full object-cover" publicId="marc/home" autoPlay playsInline muted loop poster={poster} />
 				</CloudinaryContext>
 				{/* 	<div className='h-screen -z-10 absolute overflow-hidden'>

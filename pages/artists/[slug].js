@@ -17,7 +17,7 @@ import { sanityClient } from "../../lib/sanityClient"
 import poster from "../../public/poster-home.png"
 
 const Creation = () => {
-	const { nav, setNav, lang, setLang } = useGlobalContext()
+	const { nav, setNav, lang, setLang, isOpen, setIsOpen } = useGlobalContext()
 	const [slugLang, setSlugLang] = useState()
 	const [creation, setCreation] = useState()
 	const [artist, setArtist] = useState()
@@ -46,7 +46,7 @@ const Creation = () => {
 
 	return (
 		<main>
-			<div className="flex min-h-screen md:gap-8 bg-bg md:p-12">
+			<div className={`flex ${isOpen ? "h-screen overflow-hidden" : "min-h-screen"} md:gap-8 bg-bg md:p-12`}>
 				<div className="md:hidden">
 					<NavBar />
 				</div>
@@ -68,7 +68,7 @@ const Creation = () => {
 					<div className="flex justify-center items-center">
 						{creation &&
 							creation?.map((creation, index) => (
-								<Link className="flex flex-col justify-center items-center" onClick={() => setNav("creations")} key={index} href={`/${creation.slugfr.current}`}>
+								<Link className="flex flex-col justify-center items-center" key={index} href={`/${creation.slugfr.current}`}>
 									<img className="max-h-[100px]" src={urlFor(creation.image).width(400).url()} alt="Image produit" />
 									<h2 className="ellipse2 px-4 w-full text-center" key={creation.title[lang]}>
 										{creation.title[lang]}

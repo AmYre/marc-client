@@ -3,14 +3,17 @@ import Image from "next/image"
 import { sanityClient } from "../lib/sanityClient"
 
 import logo from "../public/logo.png"
+import { useGlobalContext } from "../components/GlobalContext"
 
 import Nav from "../components/Nav"
 import NavBar from "../components/NavBar"
 import Products from "../components/Products"
 
 const Creations = ({ products }) => {
+	const { nav, setNav, lang, setLang, isOpen, setIsOpen } = useGlobalContext()
+
 	return (
-		<div className="flex min-h-screen md:gap-8 bg-bg md:p-12">
+		<div className={`flex ${isOpen ? "h-screen overflow-hidden" : "min-h-screen"} md:gap-8 bg-bg md:p-12`}>
 			<div className="md:hidden">
 				<NavBar />
 			</div>

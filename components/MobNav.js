@@ -1,18 +1,18 @@
-import { useGlobalContext } from "./GlobalContext";
-import Image from "next/image";
-import Link from "next/link";
-import { BsYoutube } from "react-icons/bs";
-import { AiFillInstagram } from "react-icons/ai";
-import { ImFacebook2 } from "react-icons/im";
-import locales from "../lang/locales.js";
-import flagFR from "../public/fr.png";
-import flagEN from "../public/en.png";
-import flagRU from "../public/ru.png";
-import flagCN from "../public/cn.png";
-import { motion } from "framer-motion";
+import { useGlobalContext } from "./GlobalContext"
+import Image from "next/image"
+import Link from "next/link"
+import { BsYoutube } from "react-icons/bs"
+import { AiFillInstagram } from "react-icons/ai"
+import { ImFacebook2 } from "react-icons/im"
+import locales from "../lang/locales.js"
+import flagFR from "../public/fr.png"
+import flagEN from "../public/en.png"
+import flagRU from "../public/ru.png"
+import flagCN from "../public/cn.png"
+import { motion } from "framer-motion"
 
 const MobNav = () => {
-	const { nav, setNav, lang, setLang, isOpen, setIsOpen } = useGlobalContext();
+	const { nav, setNav, lang, setLang, isOpen, setIsOpen } = useGlobalContext()
 
 	return (
 		<div className="absolute z-10 h-screen w-screen inset-0 flex flex-col justify-around bg-black bg-opacity-90 text-white">
@@ -64,7 +64,7 @@ const MobNav = () => {
 					<div className="flex justify-center items-center gap-6">
 						<Image
 							onClick={() => {
-								setLang("fr");
+								setLang("fr")
 							}}
 							className="hover:cursor-pointer"
 							src={flagFR}
@@ -74,7 +74,7 @@ const MobNav = () => {
 						/>
 						<Image
 							onClick={() => {
-								setLang("en");
+								setLang("en")
 							}}
 							className="hover:cursor-pointer"
 							src={flagEN}
@@ -84,7 +84,7 @@ const MobNav = () => {
 						/>
 						<Image
 							onClick={() => {
-								setLang("ru");
+								setLang("ru")
 							}}
 							className="hover:cursor-pointer"
 							src={flagRU}
@@ -94,7 +94,7 @@ const MobNav = () => {
 						/>
 						<Image
 							onClick={() => {
-								setLang("cn");
+								setLang("cn")
 							}}
 							className="hover:cursor-pointer"
 							src={flagCN}
@@ -119,7 +119,7 @@ const MobNav = () => {
 				</div>
 			</motion.div>
 		</div>
-	);
-};
+	)
+}
 
-export default MobNav;
+export default MobNav

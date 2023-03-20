@@ -14,7 +14,7 @@ import Nav from "../../components/Nav"
 import NavBar from "../../components/NavBar"
 
 const Showcased = ({ products }) => {
-	const { nav, setNav, lang, setLang } = useGlobalContext()
+	const { nav, setNav, lang, setLang, isOpen, setIsOpen } = useGlobalContext()
 
 	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })
 
@@ -23,7 +23,7 @@ const Showcased = ({ products }) => {
 	}
 
 	return (
-		<div className="flex min-h-screen md:gap-8 bg-bg md:p-12">
+		<div className={`flex ${isOpen ? "h-screen overflow-hidden" : "min-h-screen"} md:gap-8 bg-bg md:p-12`}>
 			<div className="md:hidden">
 				<NavBar />
 			</div>
