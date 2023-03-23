@@ -1,73 +1,96 @@
-import { useGlobalContext } from './GlobalContext';
-import Image from 'next/image';
-import Link from 'next/link';
-import { BsYoutube } from 'react-icons/bs';
-import { AiFillInstagram } from 'react-icons/ai';
-import { ImFacebook2 } from 'react-icons/im';
-import { RxPinLeft, RxPinRight } from 'react-icons/rx';
-import locales from '../lang/locales.js';
-import flagFR from '../public/fr.png';
-import flagEN from '../public/en.png';
-import flagRU from '../public/ru.png';
-import flagCN from '../public/cn.png';
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useGlobalContext } from "./GlobalContext"
+import Image from "next/image"
+import Link from "next/link"
+import { BsYoutube } from "react-icons/bs"
+import { AiFillInstagram } from "react-icons/ai"
+import { ImFacebook2 } from "react-icons/im"
+import { RxPinLeft, RxPinRight } from "react-icons/rx"
+import locales from "../lang/locales.js"
+import flagFR from "../public/fr.png"
+import flagEN from "../public/en.png"
+import flagRU from "../public/ru.png"
+import flagCN from "../public/cn.png"
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 
 const Nav = () => {
-	const { nav, setNav, lang, setLang } = useGlobalContext();
-	const [drawer, setDrawer] = useState(false);
+	const { nav, setNav, lang, setLang } = useGlobalContext()
+	const [drawer, setDrawer] = useState(false)
 
 	return (
 		<>
 			<AnimatePresence>
 				{!drawer && (
-					<motion.div className='bg-layout bg-opacity-70' key='1' initial={{ x: '-50%', opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.5, ease: 'easeOut' }} exit={{ x: '-50%', opacity: 0 }}>
-						<div className='w-[320px] text-center'>
-							<Link href='/'>
-								<h1 className='mb-0 pb-0 text-[2rem] text-gray-200 pt-6 px-6 font-bodoni tracking-wide'>Marc Maison</h1>
-								<h2 className='font-splash text-[#c49d50] text-[1.3rem] tracking-wide pb-4 text-gold'>- 19ème - </h2>
+					<motion.div
+						className="bg-layout bg-opacity-70"
+						key="1"
+						initial={{ x: "-50%", opacity: 0 }}
+						animate={{ x: 0, opacity: 1 }}
+						transition={{ duration: 0.5, ease: "easeOut" }}
+						exit={{ x: "-50%", opacity: 0 }}
+					>
+						<div className="w-[320px] text-center">
+							<Link href="/">
+								<h1 className="mb-0 pb-0 text-[2rem] text-gray-200 pt-6 px-6 font-bodoni tracking-wide">Marc Maison</h1>
+								<h2 className="font-splash text-[#c49d50] text-[1.3rem] tracking-wide pb-4 text-gold">- 19ème - </h2>
 							</Link>
 						</div>
-						<div className='z-10 w-full bg-layout bg-opacity-80 flex flex-col'>
-							<Link href='/creations' className='p-6 font-nunito text-sm  hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg' /*onClick={() => setNav('creations')}*/>
+						<div className="z-10 w-full bg-layout bg-opacity-80 flex flex-col">
+							<Link
+								href="/creations"
+								className="p-6 font-nunito text-sm  hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg" /*onClick={() => setNav('creations')}*/
+							>
 								{locales.menu1[lang]}
 							</Link>
-							<Link href='/artists' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg' /*onClick={() => setNav('artists')}*/>
+							<Link
+								href="/artists"
+								className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg" /*onClick={() => setNav('artists')}*/
+							>
 								{locales.menu2[lang]}
 							</Link>
-							<Link href='/museum' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg' /*onClick={() => setNav('museum')}*/>
+							<Link
+								href="/museum"
+								className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg" /*onClick={() => setNav('museum')}*/
+							>
 								{locales.menu3[lang]}
 							</Link>
-							<Link href='/gallery' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-bg' /*onClick={() => setNav('gallery')}*/>
+							<Link
+								href="/gallery"
+								className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-bg" /*onClick={() => setNav('gallery')}*/
+							>
 								{locales.menu5[lang]}
 							</Link>
-							<Link href='/contact' className='p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-bg' /*onClick={() => setNav('contact')}*/>
+							<Link
+								href="/contact"
+								className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-bg" /*onClick={() => setNav('contact')}*/
+							>
 								{locales.menu6[lang]}
 							</Link>
 						</div>
-						<div className='text-center pt-6'>
-							<div className='flex justify-center items-center gap-6'>
+						<div className="text-center pt-6">
+							<div className="flex justify-center items-center gap-6">
 								<Image
 									onClick={() => {
-										setLang('fr');
+										setLang("fr")
 									}}
-									className='hover:cursor-pointer'
+									className="hover:cursor-pointer"
 									src={flagFR}
-									alt='langue française'
-									width='20'
-									height='20'
+									alt="langue française"
+									width="20"
+									height="20"
 								/>
 								<Image
 									onClick={() => {
-										setLang('en');
+										setLang("en")
 									}}
-									className='hover:cursor-pointer'
+									className="hover:cursor-pointer"
 									src={flagEN}
-									alt='English'
-									width='20'
-									height='20'
+									alt="English"
+									width="20"
+									height="20"
 								/>
-								<Image
+
+								{/* 				<Image
 									onClick={() => {
 										setLang('ru');
 									}}
@@ -86,25 +109,28 @@ const Nav = () => {
 									alt='Chinese'
 									width='20'
 									height='20'
-								/>
+								/> */}
 							</div>
-							<p className=' text-md p-6 font-nunito tracking-widest font-medium'>PARIS</p>
-							<div className='flex justify-center items-center gap-6'>
-								<Link href='https://www.facebook.com/marcmaisongalerie/' target='_blank'>
+							<p className=" text-md p-6 font-nunito tracking-widest font-medium">PARIS</p>
+							<div className="flex justify-center items-center gap-6">
+								<Link href="https://www.facebook.com/marcmaisongalerie/" target="_blank">
 									<ImFacebook2 />
 								</Link>
-								<Link href='https://www.instagram.com/marcmaison_antiques/' target='_blank'>
-									<AiFillInstagram className='text-[22px]' />
+								<Link href="https://www.instagram.com/marcmaison_antiques/" target="_blank">
+									<AiFillInstagram className="text-[22px]" />
 								</Link>
-								<Link href='https://www.youtube.com/@GalerieMarcMaison/featured' target='_blank'>
-									<BsYoutube className='text-[22px]' />
+								<Link href="https://www.youtube.com/@GalerieMarcMaison/featured" target="_blank">
+									<BsYoutube className="text-[22px]" />
 								</Link>
 							</div>
-							<p className=' text-xs p-6 text-gray-400 tracking-widest font-thin'>ALL RIGHTS RESERVED © 2023</p>
+							<p className=" text-xs p-6 text-gray-400 tracking-widest font-thin">ALL RIGHTS RESERVED © 2023</p>
 						</div>
 						<div>
-							<div onClick={() => setDrawer(true)} className='relative bottom-[-50px] w-[50px] h-[50px] m-auto bg-white rounded-full p-4 opacity-80 hover:opacity-100 transition-all duration-300 cursor-pointer'>
-								<RxPinLeft className='text-gray-500' />
+							<div
+								onClick={() => setDrawer(true)}
+								className="relative bottom-[-50px] w-[50px] h-[50px] m-auto bg-white rounded-full p-4 opacity-80 hover:opacity-100 transition-all duration-300 cursor-pointer"
+							>
+								<RxPinLeft className="text-gray-500" />
 							</div>
 						</div>
 					</motion.div>
@@ -112,16 +138,22 @@ const Nav = () => {
 			</AnimatePresence>
 
 			{drawer && (
-				<motion.div className='visible bottom-[730px]' initial={{ y: '0', opacity: 0, scale: 0.5 }} animate={{ y: '0', opacity: 1, scale: 1 }} transition={{ duration: 1.5, ease: 'easeOut' }} exit={{ y: '0', opacity: 0, scale: 0.5 }}>
+				<motion.div
+					className="visible bottom-[730px]"
+					initial={{ y: "0", opacity: 0, scale: 0.5 }}
+					animate={{ y: "0", opacity: 1, scale: 1 }}
+					transition={{ duration: 1.5, ease: "easeOut" }}
+					exit={{ y: "0", opacity: 0, scale: 0.5 }}
+				>
 					<div>
-						<div onClick={() => setDrawer(false)} className='w-[50px] h-[50px] bg-white rounded-full p-4 opacity-80 hover:opacity-100 transition-all duration-300 cursor-pointer'>
-							<RxPinRight className='text-gray-500' />
+						<div onClick={() => setDrawer(false)} className="w-[50px] h-[50px] bg-white rounded-full p-4 opacity-80 hover:opacity-100 transition-all duration-300 cursor-pointer">
+							<RxPinRight className="text-gray-500" />
 						</div>
 					</div>
 				</motion.div>
 			)}
 		</>
-	);
-};
+	)
+}
 
-export default Nav;
+export default Nav

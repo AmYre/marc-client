@@ -82,7 +82,7 @@ const MobNav = () => {
 							width="20"
 							height="20"
 						/>
-						<Image
+						{/* 						<Image
 							onClick={() => {
 								setLang("ru")
 							}}
@@ -101,7 +101,7 @@ const MobNav = () => {
 							alt="Chinese"
 							width="20"
 							height="20"
-						/>
+						/> */}
 					</div>
 					<p className=" text-md p-6 font-nunito tracking-widest font-medium">PARIS</p>
 					<div className="flex justify-center items-center gap-6">
