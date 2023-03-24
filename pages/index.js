@@ -1,6 +1,10 @@
 import { useState, useRef, useEffect } from "react"
 import { useGlobalContext } from "../components/GlobalContext"
 import { Video, CloudinaryContext } from "cloudinary-react"
+import useSound from "use-sound"
+import { motion } from "framer-motion"
+
+import { Md3DRotation } from "react-icons/md"
 
 import Head from "next/head"
 import Image from "next/image"
@@ -17,6 +21,9 @@ import poster from "../public/poster-home.png"
 
 export default function Home({ walls }) {
 	const { lang, setLang } = useGlobalContext()
+	const [playing, setPlaying] = useState(false)
+
+	const [play, { stop, isPlaying }] = useSound("/quiet.mp3")
 
 	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })
 	const urlFor = (source) => {
@@ -38,7 +45,6 @@ export default function Home({ walls }) {
 			clearInterval(sliderInterval);
 		};
 	}); */
-
 	return (
 		<div>
 			<Head>
@@ -60,6 +66,21 @@ export default function Home({ walls }) {
 				<nav className="hidden md:block absolute text-white z-10 top-12 left-12">
 					<Nav />
 				</nav>
+				<div className="bg-black">
+					<motion.button
+						onClick={() => setPlaying((prev) => !prev)}
+						whileHover={{ scale: 1.1 }}
+						whileTap={{ scale: 0.9 }}
+						animate={{ rotate: playing ? 90 : 0 }}
+						transition={{ duration: 0.3 }}>
+						<svg width="24" height="24" viewBox="0 0 24 24">
+							<motion.path fill="#FFFFFF" d={playing ? "M4 4h8v16H4zM12 4h8v16h-8z" : "M8 5.14v13.72l11-6.86L8 5.14z"} />
+						</svg>
+					</motion.button>
+				</div>
+				<Md3DRotation />
+				{playing ? play() : stop()}
+				{playing ? play() : stop()}
 			</main>
 		</div>
 	)
