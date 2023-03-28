@@ -4,7 +4,6 @@ import { useGlobalContext } from "../../components/GlobalContext"
 
 import Link from "next/link"
 import Image from "next/image"
-import { Video, CloudinaryContext } from "cloudinary-react"
 import { motion } from "framer-motion"
 
 import { PortableText } from "@portabletext/react"
@@ -13,8 +12,6 @@ import Nav from "../../components/Nav"
 import NavBar from "../../components/NavBar"
 import imageUrlBuilder from "@sanity/image-url"
 import { sanityClient } from "../../lib/sanityClient"
-
-import poster from "../../public/poster-home.png"
 
 const Creation = () => {
 	const { nav, setNav, lang, setLang, isOpen, setIsOpen } = useGlobalContext()

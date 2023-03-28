@@ -9,7 +9,6 @@ import Head from "next/head"
 import locales from "../lang/locales.js"
 import Nav from "../components/Nav"
 import NavBar from "../components/NavBar"
-import poster from "../public/poster-home.png"
 
 export default function Home() {
 	const { lang, setLang, play, stop, playing, setPlaying } = useGlobalContext()
@@ -22,7 +21,7 @@ export default function Home() {
 			</Head>
 			<main className="">
 				<CloudinaryContext cloud_name="amircloud" secure={true}>
-					<Video className="h-screen w-full object-cover" publicId="marc/home" autoPlay playsInline muted loop poster={poster} />
+					<Video className="h-screen w-full object-cover" publicId="marc/home" autoPlay playsInline muted loop poster={{ startOffset: "0" }} />
 				</CloudinaryContext>
 
 				<div className="md:hidden">

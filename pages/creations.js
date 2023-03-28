@@ -36,7 +36,7 @@ const Creations = ({ products }) => {
 }
 
 export const getServerSideProps = async () => {
-	const products = await sanityClient.fetch(`*[_type == "products"]{ ..., category-> }`)
+	const products = await sanityClient.fetch(`*[_type=="products" && references(*[_type=="category" && slug.current != 'museum-sold']._id)]{..., category->}`)
 
 	return {
 		props: {

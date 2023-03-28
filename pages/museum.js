@@ -1,6 +1,5 @@
 import React from "react"
 import Image from "next/image"
-import { sanityClient } from "../lib/sanityClient"
 
 import logo from "../public/logo.png"
 import { useGlobalContext } from "../components/GlobalContext"
@@ -9,8 +8,8 @@ import Nav from "../components/Nav"
 import NavBar from "../components/NavBar"
 import Museum from "../components/Museum"
 
-const MuseumPage = ({ products }) => {
-	const { nav, setNav, lang, setLang, isOpen, setIsOpen } = useGlobalContext()
+const MuseumPage = () => {
+	const { isOpen, setIsOpen } = useGlobalContext()
 
 	return (
 		<div className={`flex ${isOpen ? "h-screen overflow-hidden" : "min-h-screen"} md:gap-8 bg-bg md:p-12`}>
@@ -21,7 +20,7 @@ const MuseumPage = ({ products }) => {
 				<Nav />
 			</nav>
 			<main className="w-full bg-layout bg-opacity-90 text-white font-nunito text-center">
-				<Museum products={products} />
+				<Museum />
 				<div className="flex flex-row items-center justify-end">
 					<Image src={logo} className="w-20" alt="logo Marc Maison XIX" />
 					<div className="flex flex-col">
@@ -32,16 +31,6 @@ const MuseumPage = ({ products }) => {
 			</main>
 		</div>
 	)
-}
-
-export const getServerSideProps = async () => {
-	const products = await sanityClient.fetch(`*[_type == "products"]{ ..., category-> }`)
-
-	return {
-		props: {
-			products,
-		},
-	}
 }
 
 export default MuseumPage

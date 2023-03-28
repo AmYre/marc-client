@@ -3,35 +3,12 @@ import { useGlobalContext } from "./GlobalContext"
 
 import Link from "next/link"
 import Image from "next/image"
-import Masonry from "react-masonry-css"
 import locales from "../lang/locales.js"
 
 import { motion } from "framer-motion"
-import { sanityClient } from "../lib/sanityClient"
-import imageUrlBuilder from "@sanity/image-url"
 
-const Museum = ({ products }) => {
-	const { nav, setNav, lang, setLang } = useGlobalContext()
-	const [filter, setFilter] = useState()
-	const [museumNav, setMuseumNav] = useState()
-
-	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })
-
-	const urlFor = (source) => {
-		return imageBuilder.image(source)
-	}
-
-	const filterByCat = (cat) => {
-		if (cat == "all") {
-			setFilter("")
-		}
-		if (cat == "nouveau") {
-			setFilter("nouveau")
-		}
-		if (cat == "artisanats") {
-			setFilter("artisanats")
-		}
-	}
+const Museum = () => {
+	const { lang, setLang } = useGlobalContext()
 
 	return (
 		<div className="p-12 pt-28 md:pt-12">
@@ -43,8 +20,7 @@ const Museum = ({ products }) => {
 					initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
 					animate={{ y: 0, opacity: 1, scale: 1, borderRadius: "50%" }}
 					transition={{ duration: 0.5, ease: "easeOut" }}
-					exit={{ opacity: 0, scale: 0.1 }}
-				>
+					exit={{ opacity: 0, scale: 0.1 }}>
 					<Link href="/museum/showcased" className="relative w-full cursor-pointer">
 						<div className="product-frame relative w-full overflow-hidden">
 							<div className="overlay relative">
@@ -67,8 +43,7 @@ const Museum = ({ products }) => {
 					initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
 					animate={{ y: 0, opacity: 1, scale: 1, borderRadius: "50%" }}
 					transition={{ duration: 0.5, ease: "easeOut" }}
-					exit={{ opacity: 0, scale: 0.1 }}
-				>
+					exit={{ opacity: 0, scale: 0.1 }}>
 					<Link href="/museum/sold" className="relative w-full cursor-pointer">
 						<div className="product-frame relative w-full overflow-hidden">
 							<div className="overlay relative">
