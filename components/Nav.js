@@ -14,8 +14,7 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 const Nav = () => {
-	const { nav, setNav, lang, setLang } = useGlobalContext()
-	const [drawer, setDrawer] = useState(false)
+	const { nav, setNav, lang, setLang, drawer, setDrawer, play, stop } = useGlobalContext()
 
 	return (
 		<>
@@ -27,43 +26,42 @@ const Nav = () => {
 						initial={{ x: "-50%", opacity: 0 }}
 						animate={{ x: 0, opacity: 1 }}
 						transition={{ duration: 0.5, ease: "easeOut" }}
-						exit={{ x: "-50%", opacity: 0 }}
-					>
+						exit={{ x: "-50%", opacity: 0 }}>
 						<div className="w-[320px] text-center">
-							<Link href="/">
+							<Link href="/" onClick={() => stop()}>
 								<h1 className="mb-0 pb-0 text-[2rem] text-gray-200 pt-6 px-6 font-bodoni tracking-wide">Marc Maison</h1>
 								<h2 className="font-splash text-[#c49d50] text-[1.3rem] tracking-wide pb-4 text-gold">- 19ème - </h2>
 							</Link>
 						</div>
 						<div className="z-10 w-full bg-layout bg-opacity-80 flex flex-col">
 							<Link
+								onClick={() => stop()}
 								href="/creations"
-								className="p-6 font-nunito text-sm  hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg" /*onClick={() => setNav('creations')}*/
-							>
+								className="p-6 font-nunito text-sm  hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg">
 								{locales.menu1[lang]}
 							</Link>
 							<Link
+								onClick={() => stop()}
 								href="/artists"
-								className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg" /*onClick={() => setNav('artists')}*/
-							>
+								className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg">
 								{locales.menu2[lang]}
 							</Link>
 							<Link
+								onClick={() => stop()}
 								href="/museum"
-								className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg" /*onClick={() => setNav('museum')}*/
-							>
+								className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg">
 								{locales.menu3[lang]}
 							</Link>
 							<Link
+								onClick={() => stop()}
 								href="/gallery"
-								className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-bg" /*onClick={() => setNav('gallery')}*/
-							>
+								className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-bg">
 								{locales.menu5[lang]}
 							</Link>
 							<Link
+								onClick={() => stop()}
 								href="/contact"
-								className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-bg" /*onClick={() => setNav('contact')}*/
-							>
+								className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-bg">
 								{locales.menu6[lang]}
 							</Link>
 						</div>
@@ -128,8 +126,7 @@ const Nav = () => {
 						<div>
 							<div
 								onClick={() => setDrawer(true)}
-								className="relative bottom-[-50px] w-[50px] h-[50px] m-auto bg-white rounded-full p-4 opacity-80 hover:opacity-100 transition-all duration-300 cursor-pointer"
-							>
+								className="relative bottom-[-50px] w-[50px] h-[50px] m-auto bg-white rounded-full p-4 opacity-80 hover:opacity-100 transition-all duration-300 cursor-pointer">
 								<RxPinLeft className="text-gray-500" />
 							</div>
 						</div>
@@ -143,8 +140,7 @@ const Nav = () => {
 					initial={{ y: "0", opacity: 0, scale: 0.5 }}
 					animate={{ y: "0", opacity: 1, scale: 1 }}
 					transition={{ duration: 1.5, ease: "easeOut" }}
-					exit={{ y: "0", opacity: 0, scale: 0.5 }}
-				>
+					exit={{ y: "0", opacity: 0, scale: 0.5 }}>
 					<div>
 						<div onClick={() => setDrawer(false)} className="w-[50px] h-[50px] bg-white rounded-full p-4 opacity-80 hover:opacity-100 transition-all duration-300 cursor-pointer">
 							<RxPinRight className="text-gray-500" />
