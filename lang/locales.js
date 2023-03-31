@@ -17,6 +17,13 @@ const locales = {
 	showcased: { fr: "ExpoU / Musée", en: "ExpoU / Museum", ru: "Showcased", cn: "Showcased" },
 	expo: { fr: "Exposition Universelle", en: "World Fair", ru: "World Exhibition", cn: "World Exhibition" },
 	all: { fr: "Tout", en: "All", ru: "All", cn: "All" },
+	confirm: { fr: "Votre message à bien été envoyé", en: "Your message has been sent", ru: "Your message has been sent", cn: "Your message has been sent" },
+	formName: { fr: "Prénom", en: "Name", ru: "Your message has been sent", cn: "Your message has been sent" },
+	formLastname: { fr: "Nom", en: "Lastname", ru: "Lastname", cn: "Lastname" },
+	formMail: { fr: "Email", en: "Email", ru: "Email", cn: "Email" },
+	formPhone: { fr: "Téléphone", en: "Phone", ru: "Phone", cn: "Phone" },
+	formMessage: { fr: "Message", en: "Message", ru: "Message", cn: "Message" },
+	formSent: { fr: "Envoyer", en: "Send", ru: "Send", cn: "Send" },
 }
 
 export default locales

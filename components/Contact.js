@@ -1,11 +1,15 @@
 import React, { useState, useRef } from "react"
-import emailjs from "@emailjs/browser"
+import { useGlobalContext } from "../components/GlobalContext"
+import locales from "../lang/locales.js"
 
 import { MutatingDots } from "react-loader-spinner"
 import TextField from "@mui/material/TextField"
 import { motion } from "framer-motion"
+import emailjs from "@emailjs/browser"
 
 const Contact = () => {
+	const { nav, setNav, lang, setLang } = useGlobalContext()
+
 	const [sent, setSent] = useState(false)
 	const [delay, setDelay] = useState(false)
 	const form = useRef()
@@ -37,15 +41,15 @@ const Contact = () => {
 			{!sent ? (
 				<form ref={form} onSubmit={sendEmail} className="flex flex-col mt-12 mb-12 md:px-16 gap-12">
 					<div className="flex gap-12">
-						<TextField className="w-full max-w-[400px]" name="user" id="standard-basic" label="Nom" variant="standard" required />
-						<TextField className="w-full max-w-[400px]" name="lastname" id="standard-basic" label="Prénom" variant="standard" required />
+						<TextField className="w-full max-w-[400px]" name="user" id="standard-basic" label={locales.formLastname[lang]} variant="standard" required />
+						<TextField className="w-full max-w-[400px]" name="lastname" id="standard-basic" label={locales.formName[lang]} variant="standard" required />
 					</div>
 					<div className="flex gap-12">
-						<TextField className="w-full max-w-[400px]" name="mail" id="standard-basic" label="Email" variant="standard" required />
-						<TextField className="w-full max-w-[400px]" name="phone" id="standard-basic" label="Téléphone" variant="standard" />
+						<TextField className="w-full max-w-[400px]" name="mail" id="standard-basic" label={locales.formMail[lang]} variant="standard" required />
+						<TextField className="w-full max-w-[400px]" name="phone" id="standard-basic" label={locales.formPhone[lang]} variant="standard" />
 					</div>
-					<TextField className="w-full max-w-[800px]" name="message" id="standard-textarea" label="Message" multiline variant="standard" />
-					<input className="bg-[#a87e2d] w-[200px] text-white px-8 py-4 rounded shadow hover:shadow-none transition-all duration-300" type="submit" value="Envoyer" />
+					<TextField className="w-full max-w-[800px]" name="message" id="standard-textarea" label={locales.formMessage[lang]} multiline variant="standard" />
+					<input className="bg-[#a87e2d] w-[200px] text-white px-8 py-4 rounded shadow hover:shadow-none transition-all duration-300" type="submit" value={locales.formSent[lang]} />
 				</form>
 			) : delay ? (
 				<div className="flex justify-center items-center">
@@ -58,7 +62,7 @@ const Contact = () => {
 					animate={{ y: 0, opacity: 1, scale: 1 }}
 					transition={{ duration: 0.5, ease: "easeOut" }}
 					exit={{ opacity: 0, scale: 0.1 }}>
-					Votre message à bien été envoyé
+					{locales.confirm[lang]}
 				</motion.div>
 			)}
 		</div>
