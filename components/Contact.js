@@ -1,19 +1,29 @@
-import React, { useRef } from "react"
+import React, { useState, useRef } from "react"
 import emailjs from "@emailjs/browser"
+
+import { MutatingDots } from "react-loader-spinner"
 import TextField from "@mui/material/TextField"
+import { motion } from "framer-motion"
 
 const Contact = () => {
+	const [sent, setSent] = useState(false)
+	const [delay, setDelay] = useState(false)
 	const form = useRef()
 
 	const sendEmail = (e) => {
+		setSent(true)
+		setDelay(true)
+		setTimeout(() => {
+			setDelay(false)
+		}, 2000)
 		e.preventDefault()
 
 		emailjs.sendForm("service_kk36che", "template_6ni5c8k", form.current, "1GPC0RyVbDqEHASyZ").then(
 			(result) => {
-				console.log(result.text)
+				console.log("Mail sent : ", result.text)
 			},
 			(error) => {
-				console.log(error.text)
+				console.log("MAil error : ", error.text)
 			}
 		)
 	}
@@ -24,18 +34,33 @@ const Contact = () => {
 			<div className="overflow-hidden w-full h-[400px]">
 				<img src="https://res.cloudinary.com/amircloud/image/upload/v1679314588/marc/contact.jpg" className="anim -z-10 object-cover h-screen w-screen" alt="bg" width="2500" height="2500" />
 			</div>
-			<form ref={form} onSubmit={sendEmail} className="flex flex-col mt-12 mb-12 md:px-16 gap-12">
-				<div className="flex gap-12">
-					<TextField className="w-full max-w-[400px]" name="user" id="standard-basic" label="Nom" variant="standard" required />
-					<TextField className="w-full max-w-[400px]" name="lastname" id="standard-basic" label="Prénom" variant="standard" required />
+			{!sent ? (
+				<form ref={form} onSubmit={sendEmail} className="flex flex-col mt-12 mb-12 md:px-16 gap-12">
+					<div className="flex gap-12">
+						<TextField className="w-full max-w-[400px]" name="user" id="standard-basic" label="Nom" variant="standard" required />
+						<TextField className="w-full max-w-[400px]" name="lastname" id="standard-basic" label="Prénom" variant="standard" required />
+					</div>
+					<div className="flex gap-12">
+						<TextField className="w-full max-w-[400px]" name="mail" id="standard-basic" label="Email" variant="standard" required />
+						<TextField className="w-full max-w-[400px]" name="phone" id="standard-basic" label="Téléphone" variant="standard" />
+					</div>
+					<TextField className="w-full max-w-[800px]" name="message" id="standard-textarea" label="Message" multiline variant="standard" />
+					<input className="bg-[#a87e2d] w-[200px] text-white px-8 py-4 rounded shadow hover:shadow-none transition-all duration-300" type="submit" value="Envoyer" />
+				</form>
+			) : delay ? (
+				<div className="flex justify-center items-center">
+					<MutatingDots height="100" width="100" color="white" secondaryColor="#a87e2d" radius="12.5" ariaLabel="mutating-dots-loading" wrapperStyle={{}} wrapperClass="" visible={true} />
 				</div>
-				<div className="flex gap-12">
-					<TextField className="w-full max-w-[400px]" name="mail" id="standard-basic" label="Email" variant="standard" required />
-					<TextField className="w-full max-w-[400px]" name="phone" id="standard-basic" label="Téléphone" variant="standard" />
-				</div>
-				<TextField className="w-full max-w-[800px]" name="message" id="standard-textarea" label="Message" multiline variant="standard" />
-				<input className="bg-[#a87e2d] w-[200px] text-white px-8 py-4 rounded shadow hover:shadow-none transition-all duration-300" type="submit" value="Envoyer" />
-			</form>
+			) : (
+				<motion.div
+					className="mt-8"
+					initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+					animate={{ y: 0, opacity: 1, scale: 1 }}
+					transition={{ duration: 0.5, ease: "easeOut" }}
+					exit={{ opacity: 0, scale: 0.1 }}>
+					Votre message à bien été envoyé
+				</motion.div>
+			)}
 		</div>
 	)
 }
