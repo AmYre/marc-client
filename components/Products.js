@@ -25,12 +25,6 @@ const Products = ({ products }) => {
 				<button onClick={() => setFilter("")} className="cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300">
 					{locales.all[lang]}
 				</button>
-				<button onClick={() => setFilter("nouveau")} className="cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300">
-					Art-Nouveau
-				</button>
-				<button onClick={() => setFilter("artisanats")} className="cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300">
-					Art & Artisanats
-				</button>
 				<button
 					onClick={() => setFilter("showed-museum")}
 					className="cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300">
