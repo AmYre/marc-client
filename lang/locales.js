@@ -14,7 +14,7 @@ const locales = {
 	filter4: { fr: "Art & Artisanats", en: "Arts & Crafts", ru: "Art & Artisanats", cn: "Art & Artisanats" },
 	filter5: { fr: "Autre", en: "Other", ru: "Autre", cn: "Autre" },
 	sold: { fr: "Acquises", en: "Acquired", ru: "Acquired", cn: "Acquired" },
-	showcased: { fr: "ExpoU / Musée", en: "ExpoU / Museum", ru: "Showcased", cn: "Showcased" },
+	showcased: { fr: "Exposition Universelle / Musée", en: "Exposition Universelle / Museum", ru: "Showcased", cn: "Showcased" },
 	expo: { fr: "Exposition Universelle", en: "World Fair", ru: "World Exhibition", cn: "World Exhibition" },
 	all: { fr: "Tout", en: "All", ru: "All", cn: "All" },
 	confirm: { fr: "Votre message à bien été envoyé", en: "Your message has been sent", ru: "Your message has been sent", cn: "Your message has been sent" },

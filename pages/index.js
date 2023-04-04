@@ -4,6 +4,7 @@ import { useGlobalContext } from "../components/GlobalContext"
 import { Video, CloudinaryContext } from "cloudinary-react"
 import { motion } from "framer-motion"
 import { Md3DRotation } from "react-icons/md"
+import { FaVolumeUp, FaVolumeDown } from "react-icons/fa"
 
 import Head from "next/head"
 import locales from "../lang/locales.js"
@@ -35,13 +36,15 @@ export default function Home() {
 						onClick={() => setPlaying((prev) => !prev)}
 						whileHover={{ scale: 1.1 }}
 						whileTap={{ scale: 0.9 }}
-						animate={{ rotate: playing ? 90 : 0 }}
+						animate={{ scale: playing ? 1.2 : 1 }}
 						transition={{ duration: 0.3 }}>
-						<svg width="24" height="24" viewBox="0 0 24 24">
-							<motion.path fill="#FFFFFF" d={playing ? "M4 4h8v16H4zM12 4h8v16h-8z" : "M8 5.14v13.72l11-6.86L8 5.14z"} />
-						</svg>
+						{playing ? (
+							<FaVolumeUp className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
+						) : (
+							<FaVolumeDown className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
+						)}
 					</motion.button>
-					<Md3DRotation className="text-xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
+					<Md3DRotation className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 				</div>
 				{playing ? play() : stop()}
 			</main>

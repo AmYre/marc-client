@@ -53,8 +53,8 @@ const Products = ({ products }) => {
 											product.category?.slug.current == filter && (
 												<motion.div
 													key={index}
-													initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
-													animate={{ y: 0, opacity: 1, scale: 1, borderRadius: "50%" }}
+													initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+													animate={{ y: 0, opacity: 1, scale: 1 }}
 													transition={{ duration: 0.5, ease: "easeOut" }}
 													exit={{ opacity: 0, scale: 0.1 }}>
 													{product?.slugen && (
@@ -82,8 +82,8 @@ const Products = ({ products }) => {
 										) : (
 											<motion.div
 												key={index}
-												initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
-												animate={{ y: 0, opacity: 1, scale: 1, borderRadius: "50%" }}
+												initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+												animate={{ y: 0, opacity: 1, scale: 1 }}
 												transition={{ duration: 0.5, ease: "easeOut" }}
 												exit={{ opacity: 0, scale: 0.1 }}>
 												{product?.slugen && (
@@ -118,8 +118,8 @@ const Products = ({ products }) => {
 											product.category?.slug.current == filter && (
 												<motion.div
 													key={index}
-													initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
-													animate={{ y: 0, opacity: 1, scale: 1, borderRadius: "50%" }}
+													initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+													animate={{ y: 0, opacity: 1, scale: 1 }}
 													transition={{ duration: 0.5, ease: "easeOut" }}
 													exit={{ opacity: 0, scale: 0.1 }}>
 													{product?.slugen && (
@@ -147,8 +147,8 @@ const Products = ({ products }) => {
 										) : (
 											<motion.div
 												key={index}
-												initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
-												animate={{ y: 0, opacity: 1, scale: 1, borderRadius: "50%" }}
+												initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+												animate={{ y: 0, opacity: 1, scale: 1 }}
 												transition={{ duration: 0.5, ease: "easeOut" }}
 												exit={{ opacity: 0, scale: 0.1 }}>
 												{product?.slugen && (
@@ -188,8 +188,8 @@ const Products = ({ products }) => {
 											product.category?.slug.current == filter && (
 												<motion.div
 													key={index}
-													initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
-													animate={{ y: 0, opacity: 1, scale: 1, borderRadius: "50%" }}
+													initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+													animate={{ y: 0, opacity: 1, scale: 1 }}
 													transition={{ duration: 0.5, ease: "easeOut" }}
 													exit={{ opacity: 0, scale: 0.1 }}>
 													{product?.slugen && (
@@ -217,8 +217,8 @@ const Products = ({ products }) => {
 										) : (
 											<motion.div
 												key={index}
-												initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
-												animate={{ y: 0, opacity: 1, scale: 1, borderRadius: "50%" }}
+												initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+												animate={{ y: 0, opacity: 1, scale: 1 }}
 												transition={{ duration: 0.5, ease: "easeOut" }}
 												exit={{ opacity: 0, scale: 0.1 }}>
 												{product?.slugen && (
@@ -253,8 +253,8 @@ const Products = ({ products }) => {
 											product.category?.slug.current == filter && (
 												<motion.div
 													key={index}
-													initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
-													animate={{ y: 0, opacity: 1, scale: 1, borderRadius: "50%" }}
+													initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+													animate={{ y: 0, opacity: 1, scale: 1 }}
 													transition={{ duration: 0.5, ease: "easeOut" }}
 													exit={{ opacity: 0, scale: 0.1 }}>
 													{product?.slugen && (
@@ -281,8 +281,8 @@ const Products = ({ products }) => {
 										) : (
 											<motion.div
 												key={index}
-												initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
-												animate={{ y: 0, opacity: 1, scale: 1, borderRadius: "50%" }}
+												initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+												animate={{ y: 0, opacity: 1, scale: 1 }}
 												transition={{ duration: 0.5, ease: "easeOut" }}
 												exit={{ opacity: 0, scale: 0.1 }}>
 												{product?.slugen && (
@@ -320,8 +320,8 @@ const Products = ({ products }) => {
 											product.category?.slug.current == filter && (
 												<motion.div
 													key={index}
-													initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
-													animate={{ y: 0, opacity: 1, scale: 1, borderRadius: "50%" }}
+													initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+													animate={{ y: 0, opacity: 1, scale: 1 }}
 													transition={{ duration: 0.5, ease: "easeOut" }}
 													exit={{ opacity: 0, scale: 0.1 }}>
 													{product?.slugru && (
@@ -348,8 +348,8 @@ const Products = ({ products }) => {
 										) : (
 											<motion.div
 												key={index}
-												initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
-												animate={{ y: 0, opacity: 1, scale: 1, borderRadius: "50%" }}
+												initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+												animate={{ y: 0, opacity: 1, scale: 1 }}
 												transition={{ duration: 0.5, ease: "easeOut" }}
 												exit={{ opacity: 0, scale: 0.1 }}>
 												{product?.slugru && (
@@ -383,8 +383,8 @@ const Products = ({ products }) => {
 											product.category?.slug.current == filter && (
 												<motion.div
 													key={index}
-													initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
-													animate={{ y: 0, opacity: 1, scale: 1, borderRadius: "50%" }}
+													initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+													animate={{ y: 0, opacity: 1, scale: 1 }}
 													transition={{ duration: 0.5, ease: "easeOut" }}
 													exit={{ opacity: 0, scale: 0.1 }}>
 													{product?.slugru && (
@@ -411,8 +411,8 @@ const Products = ({ products }) => {
 										) : (
 											<motion.div
 												key={index}
-												initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
-												animate={{ y: 0, opacity: 1, scale: 1, borderRadius: "50%" }}
+												initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+												animate={{ y: 0, opacity: 1, scale: 1 }}
 												transition={{ duration: 0.5, ease: "easeOut" }}
 												exit={{ opacity: 0, scale: 0.1 }}>
 												{product?.slugru && (
@@ -450,8 +450,8 @@ const Products = ({ products }) => {
 											product.category?.slug.current == filter && (
 												<motion.div
 													key={index}
-													initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
-													animate={{ y: 0, opacity: 1, scale: 1, borderRadius: "50%" }}
+													initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+													animate={{ y: 0, opacity: 1, scale: 1 }}
 													transition={{ duration: 0.5, ease: "easeOut" }}
 													exit={{ opacity: 0, scale: 0.1 }}>
 													{product?.slugcn && (
@@ -478,8 +478,8 @@ const Products = ({ products }) => {
 										) : (
 											<motion.div
 												key={index}
-												initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
-												animate={{ y: 0, opacity: 1, scale: 1, borderRadius: "50%" }}
+												initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+												animate={{ y: 0, opacity: 1, scale: 1 }}
 												transition={{ duration: 0.5, ease: "easeOut" }}
 												exit={{ opacity: 0, scale: 0.1 }}>
 												{product?.slugcn && (
@@ -513,8 +513,8 @@ const Products = ({ products }) => {
 											product.category?.slug.current == filter && (
 												<motion.div
 													key={index}
-													initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
-													animate={{ y: 0, opacity: 1, scale: 1, borderRadius: "50%" }}
+													initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+													animate={{ y: 0, opacity: 1, scale: 1 }}
 													transition={{ duration: 0.5, ease: "easeOut" }}
 													exit={{ opacity: 0, scale: 0.1 }}>
 													{product?.slugcn && (
@@ -541,8 +541,8 @@ const Products = ({ products }) => {
 										) : (
 											<motion.div
 												key={index}
-												initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
-												animate={{ y: 0, opacity: 1, scale: 1, borderRadius: "50%" }}
+												initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+												animate={{ y: 0, opacity: 1, scale: 1 }}
 												transition={{ duration: 0.5, ease: "easeOut" }}
 												exit={{ opacity: 0, scale: 0.1 }}>
 												{product?.slugcn && (

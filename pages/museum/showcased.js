@@ -66,21 +66,22 @@ const Showcased = ({ products }) => {
 																transition={{ duration: 0.5, ease: "easeOut" }}
 																exit={{ opacity: 0, scale: 0.1 }}>
 																{product?.slugfr && (
-																	<Link key={index} href={`/${product.slugfr.current}`} className="relative w-full">
-																		<div className="product-frame relative w-full overflow-hidden">
-																			<div className="overlay relative">
+																	<Link key={index} href={`/${product.slugfr.current}`}>
+																		<div className="w-full overflow-hidden">
+																			<figure className="mb-8">
 																				<Image
-																					className="hover:scale-105 transition-all duration-1000 overflow-hidden"
+																					className="hover:scale-105 transition-all duration-1000"
 																					src={urlFor(product.image).url()}
 																					alt="Image produit"
 																					width="300"
-																					height="300"></Image>
-																			</div>
-																			<h2
-																				className="absolute ellipse2 px-4 w-full bottom-0 translate-y-40 transition-all duration-1000 ease-in-out"
-																				key={product.title.fr}>
-																				{product.title.fr}
-																			</h2>
+																					height="300"
+																				/>
+																				<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 ">
+																					<h2 className="ellipse2 px-4 font-thin" key={product.title.fr}>
+																						{product.title.fr}
+																					</h2>
+																				</figcaption>
+																			</figure>
 																		</div>
 																	</Link>
 																)}
@@ -94,21 +95,22 @@ const Showcased = ({ products }) => {
 																transition={{ duration: 0.5, ease: "easeOut" }}
 																exit={{ opacity: 0, scale: 0.1 }}>
 																{product?.slugfr && (
-																	<Link key={index} href={`/${product.slugfr.current}`} className="relative w-full">
-																		<div className="product-frame relative w-full overflow-hidden">
-																			<div className="overlay relative">
+																	<Link key={index} href={`/${product.slugfr.current}`}>
+																		<div className="w-full overflow-hidden">
+																			<figure className="mb-8">
 																				<Image
-																					className="hover:scale-105 transition-all duration-1000 overflow-hidden"
+																					className="hover:scale-105 transition-all duration-1000"
 																					src={urlFor(product.image).url()}
 																					alt="Image produit"
 																					width="300"
-																					height="300"></Image>
-																			</div>
-																			<h2
-																				className="absolute ellipse2 px-4 w-full bottom-0 translate-y-40 transition-all duration-1000 ease-in-out"
-																				key={product.title.fr}>
-																				{product.title.fr}
-																			</h2>
+																					height="300"
+																				/>
+																				<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 ">
+																					<h2 className="ellipse2 px-4 font-thin" key={product.title.fr}>
+																						{product.title.fr}
+																					</h2>
+																				</figcaption>
+																			</figure>
 																		</div>
 																	</Link>
 																)}
@@ -129,21 +131,22 @@ const Showcased = ({ products }) => {
 																transition={{ duration: 0.5, ease: "easeOut" }}
 																exit={{ opacity: 0, scale: 0.1 }}>
 																{product?.slugfr && (
-																	<Link key={index} href={`/${product.slugfr.current}`} className="relative w-full">
-																		<div className="product-frame relative w-full overflow-hidden">
-																			<div className="overlay relative">
+																	<Link key={index} href={`/${product.slugfr.current}`}>
+																		<div className="w-full overflow-hidden">
+																			<figure className="mb-8">
 																				<Image
-																					className="hover:scale-105 transition-all duration-1000 overflow-hidden"
+																					className="hover:scale-105 transition-all duration-1000"
 																					src={urlFor(product.image).url()}
 																					alt="Image produit"
 																					width="300"
-																					height="300"></Image>
-																			</div>
-																			<h2
-																				className="absolute ellipse2 px-4 w-full bottom-0 translate-y-40 transition-all duration-1000 ease-in-out"
-																				key={product.title.fr}>
-																				{product.title.fr}
-																			</h2>
+																					height="300"
+																				/>
+																				<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 ">
+																					<h2 className="ellipse2 px-4 font-thin" key={product.title.fr}>
+																						{product.title.fr}
+																					</h2>
+																				</figcaption>
+																			</figure>
 																		</div>
 																	</Link>
 																)}
@@ -157,21 +160,22 @@ const Showcased = ({ products }) => {
 																transition={{ duration: 0.5, ease: "easeOut" }}
 																exit={{ opacity: 0, scale: 0.1 }}>
 																{product?.slugfr && (
-																	<Link key={index} href={`/${product.slugfr.current}`} className="relative w-full">
-																		<div className="product-frame relative w-full overflow-hidden">
-																			<div className="overlay relative">
+																	<Link key={index} href={`/${product.slugfr.current}`}>
+																		<div className="w-full overflow-hidden">
+																			<figure className="mb-8">
 																				<Image
-																					className="hover:scale-105 transition-all duration-1000 overflow-hidden"
+																					className="hover:scale-105 transition-all duration-1000"
 																					src={urlFor(product.image).url()}
 																					alt="Image produit"
 																					width="300"
-																					height="300"></Image>
-																			</div>
-																			<h2
-																				className="absolute ellipse2 px-4 w-full bottom-0 translate-y-40 transition-all duration-1000 ease-in-out"
-																				key={product.title.fr}>
-																				{product.title.fr}
-																			</h2>
+																					height="300"
+																				/>
+																				<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 ">
+																					<h2 className="ellipse2 px-4 font-thin" key={product.title.fr}>
+																						{product.title.fr}
+																					</h2>
+																				</figcaption>
+																			</figure>
 																		</div>
 																	</Link>
 																)}
@@ -197,21 +201,22 @@ const Showcased = ({ products }) => {
 																transition={{ duration: 0.5, ease: "easeOut" }}
 																exit={{ opacity: 0, scale: 0.1 }}>
 																{product?.slugen && (
-																	<Link key={index} href={`/${product.slugen.current}`} className="relative w-full">
-																		<div className="product-frame relative w-full overflow-hidden">
-																			<div className="overlay relative">
+																	<Link key={index} href={`/${product.slugen.current}`}>
+																		<div className="w-full overflow-hidden">
+																			<figure className="mb-8">
 																				<Image
-																					className="hover:scale-105 transition-all duration-1000 overflow-hidden"
+																					className="hover:scale-105 transition-all duration-1000"
 																					src={urlFor(product.image).url()}
 																					alt="Image produit"
 																					width="300"
-																					height="300"></Image>
-																			</div>
-																			<h2
-																				className="absolute ellipse2 px-4 w-full bottom-0 translate-y-40 transition-all duration-1000 ease-in-out"
-																				key={product.title.en}>
-																				{product.title.en}
-																			</h2>
+																					height="300"
+																				/>
+																				<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 ">
+																					<h2 className="ellipse2 px-4 font-thin" key={product.title.en}>
+																						{product.title.en}
+																					</h2>
+																				</figcaption>
+																			</figure>
 																		</div>
 																	</Link>
 																)}
@@ -225,21 +230,22 @@ const Showcased = ({ products }) => {
 																transition={{ duration: 0.5, ease: "easeOut" }}
 																exit={{ opacity: 0, scale: 0.1 }}>
 																{product?.slugen && (
-																	<Link key={index} href={`/${product.slugen.current}`} className="relative w-full">
-																		<div className="product-frame relative w-full overflow-hidden">
-																			<div className="overlay relative">
+																	<Link key={index} href={`/${product.slugen.current}`}>
+																		<div className="w-full overflow-hidden">
+																			<figure className="mb-8">
 																				<Image
-																					className="hover:scale-105 transition-all duration-1000 overflow-hidden"
+																					className="hover:scale-105 transition-all duration-1000"
 																					src={urlFor(product.image).url()}
 																					alt="Image produit"
 																					width="300"
-																					height="300"></Image>
-																			</div>
-																			<h2
-																				className="absolute ellipse2 px-4 w-full bottom-0 translate-y-40 transition-all duration-1000 ease-in-out"
-																				key={product.title.en}>
-																				{product.title.en}
-																			</h2>
+																					height="300"
+																				/>
+																				<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 ">
+																					<h2 className="ellipse2 px-4 font-thin" key={product.title.en}>
+																						{product.title.en}
+																					</h2>
+																				</figcaption>
+																			</figure>
 																		</div>
 																	</Link>
 																)}
@@ -260,21 +266,22 @@ const Showcased = ({ products }) => {
 																transition={{ duration: 0.5, ease: "easeOut" }}
 																exit={{ opacity: 0, scale: 0.1 }}>
 																{product?.slugen && (
-																	<Link key={index} href={`/${product.slugen.current}`} className="relative w-full">
-																		<div className="product-frame relative w-full overflow-hidden">
-																			<div className="overlay relative">
+																	<Link key={index} href={`/${product.slugen.current}`}>
+																		<div className="w-full overflow-hidden">
+																			<figure className="mb-8">
 																				<Image
-																					className="hover:scale-105 transition-all duration-1000 overflow-hidden"
+																					className="hover:scale-105 transition-all duration-1000"
 																					src={urlFor(product.image).url()}
 																					alt="Image produit"
 																					width="300"
-																					height="300"></Image>
-																			</div>
-																			<h2
-																				className="absolute ellipse2 px-4 w-full bottom-0 translate-y-40 transition-all duration-1000 ease-in-out"
-																				key={product.title.en}>
-																				{product.title.en}
-																			</h2>
+																					height="300"
+																				/>
+																				<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 ">
+																					<h2 className="ellipse2 px-4 font-thin" key={product.title.en}>
+																						{product.title.en}
+																					</h2>
+																				</figcaption>
+																			</figure>
 																		</div>
 																	</Link>
 																)}
@@ -288,21 +295,22 @@ const Showcased = ({ products }) => {
 																transition={{ duration: 0.5, ease: "easeOut" }}
 																exit={{ opacity: 0, scale: 0.1 }}>
 																{product?.slugen && (
-																	<Link key={index} href={`/${product.slugen.current}`} className="relative w-full">
-																		<div className="product-frame relative w-full overflow-hidden">
-																			<div className="overlay relative">
+																	<Link key={index} href={`/${product.slugen.current}`}>
+																		<div className="w-full overflow-hidden">
+																			<figure className="mb-8">
 																				<Image
-																					className="hover:scale-105 transition-all duration-1000 overflow-hidden"
+																					className="hover:scale-105 transition-all duration-1000"
 																					src={urlFor(product.image).url()}
 																					alt="Image produit"
 																					width="300"
-																					height="300"></Image>
-																			</div>
-																			<h2
-																				className="absolute ellipse2 px-4 w-full bottom-0 translate-y-40 transition-all duration-1000 ease-in-out"
-																				key={product.title.en}>
-																				{product.title.en}
-																			</h2>
+																					height="300"
+																				/>
+																				<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 ">
+																					<h2 className="ellipse2 px-4 font-thin" key={product.title.en}>
+																						{product.title.en}
+																					</h2>
+																				</figcaption>
+																			</figure>
 																		</div>
 																	</Link>
 																)}

@@ -5,7 +5,7 @@ import { useGlobalContext } from "../../components/GlobalContext"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
-
+import Masonry from "react-masonry-css"
 import { PortableText } from "@portabletext/react"
 
 import Nav from "../../components/Nav"
@@ -55,23 +55,46 @@ const Creation = () => {
 					<h2 className="text-3xl tracking-widest font-thin font-bodoni mb-12">{artist?.title}</h2>
 					{artist?.image && (
 						<motion.div className="mb-12" initial={{ y: "50%", opacity: 0, scale: 0.5 }} animate={{ y: 0, opacity: 1, scale: 1 }} transition={{ duration: 0.5, ease: "easeOut" }}>
-							<Image className="rounded-full w-48 shadow shadow-white" src={urlFor(artist?.image)?.url()} alt="Image produit" width="300" height="300" />
+							<Image className="rounded-xs w-48 shadow shadow-white" src={urlFor(artist?.image)?.url()} alt="Image produit" width="300" height="300" />
 						</motion.div>
 					)}
 
-					<div className="text-justify flex flex-col gap-4 border-b-2 border-b-white pb-12 mb-12">
+					<div className="text-justify flex flex-col gap-4 border-b border-b-white pb-12 mb-12">
 						<PortableText value={artist?.description[lang]} />
 					</div>
 					<div className="flex justify-center items-center">
-						{creation &&
-							creation?.map((creation, index) => (
-								<Link className="flex flex-col justify-center items-center" key={index} href={`/${creation.slugfr.current}`}>
-									<img className="max-h-[100px]" src={urlFor(creation.image).width(400).url()} alt="Image produit" />
-									<h2 className="ellipse2 px-4 w-full text-center" key={creation.title[lang]}>
-										{creation.title[lang]}
-									</h2>
-								</Link>
-							))}
+						<Masonry breakpointCols={3} className="my-masonry-grid justify-center" columnClassName="my-masonry-grid_column">
+							{creation &&
+								creation?.map((creation, index) => (
+									<motion.div
+										key={index}
+										initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+										animate={{ y: 0, opacity: 1, scale: 1 }}
+										transition={{ duration: 0.5, ease: "easeOut" }}
+										exit={{ opacity: 0, scale: 0.1 }}>
+										{creation?.slugen && (
+											<Link key={index} href={`/${creation.slugfr.current}`}>
+												<div className="w-full overflow-hidden">
+													<figure className="mb-8">
+														<Image
+															className="hover:scale-105 transition-all duration-1000"
+															src={urlFor(creation.image).url()}
+															alt="Image produit"
+															width="600"
+															height="600"
+														/>
+														<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 font-thin ">
+															<h2 className="ellipse2 px-4 font-thin " key={creation.title[lang]}>
+																{creation.title[lang]}
+															</h2>
+														</figcaption>
+													</figure>
+												</div>
+											</Link>
+										)}
+									</motion.div>
+								))}
+						</Masonry>
 					</div>
 				</main>
 			</div>

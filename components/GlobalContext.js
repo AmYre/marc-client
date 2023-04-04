@@ -8,7 +8,7 @@ const ContextProvider = ({ children }) => {
 	const [lang, setLang] = useState("fr")
 	const [isOpen, setIsOpen] = useState(false)
 	const [drawer, setDrawer] = useState(false)
-	const [play, { stop }] = useSound("/quiet.mp3", { interrupt: true })
+	const [play, { stop }] = useSound("/quiet.mp3", { interrupt: true, loop: true })
 	const [playing, setPlaying] = useState(false)
 
 	return (
