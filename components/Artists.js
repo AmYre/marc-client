@@ -65,21 +65,16 @@ const Artists = ({ artists }) => {
 									transition={{ duration: 0.5, ease: "easeOut" }}
 									exit={{ opacity: 0, scale: 0.1 }}>
 									{artist?.slug && (
-										<Link key={index} href={`artists/${artist.slug.current}`} className="relative w-full">
-											<div className="product-frame relative w-full overflow-hidden">
-												<div className="overlay relative">
-													<Image
-														className="hover:scale-105 transition-all duration-1000 overflow-hidden"
-														src={urlFor(artist.image).url()}
-														alt="Image produit"
-														width="300"
-														height="300"></Image>
-												</div>
-												<div className="absolute bottom-[30px] w-full bg-black bg-opacity-50 py-[10px] shadow">
-													<h2 className="ellipse2 px-4 " key={artist.title}>
-														{artist.title}
-													</h2>
-												</div>
+										<Link key={index} href={`artists/${artist.slug.current}`}>
+											<div className="w-full overflow-hidden">
+												<figure className="mb-8">
+													<Image className="hover:scale-105 transition-all duration-1000" src={urlFor(artist.image).url()} alt="Image produit" width="300" height="300" />
+													<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 ">
+														<h2 className="ellipse2 px-4 font-thin" key={artist.title}>
+															{artist.title}
+														</h2>
+													</figcaption>
+												</figure>
 											</div>
 										</Link>
 									)}
