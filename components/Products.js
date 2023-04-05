@@ -8,6 +8,9 @@ import locales from "../lang/locales.js"
 import { motion } from "framer-motion"
 import imageUrlBuilder from "@sanity/image-url"
 import test from "../public/test.png"
+import test2 from "../public/test2.png"
+import test3 from "../public/test3.png"
+import test4 from "../public/test4.png"
 
 const Products = ({ products }) => {
 	const { nav, setNav, lang, setLang } = useGlobalContext()
@@ -37,21 +40,33 @@ const Products = ({ products }) => {
 					{locales.expo[lang]}
 				</button>
 			</div>
-			<div className="flex gap-10 mb-8">
-				<div className="overflow-hidden fond1">
-					<figure className="mb-8">
-						<Image className="hover:scale-105 transition-all duration-1000 drop1" src={test} alt="Image produit" width="300" height="300" />
-					</figure>
+			<div className="flex flex-wrap gap-10 mb-8 w-full">
+				<div className="overflow-hidden fond1 flex justify-center items-center">
+					<Image className="hover:scale-105 transition-all duration-1000 drop1" src={test} alt="Image produit" width="300" height="300" />
 				</div>
-				<div className="overflow-hidden fond2">
-					<figure className="mb-8">
-						<Image className="hover:scale-105 transition-all duration-1000 drop1" src={test} alt="Image produit" width="300" height="300" />
-					</figure>
+				<div className="fond2 flex justify-center items-center">
+					<Image className="hover:scale-105 transition-all duration-1000 drop1" src={test} alt="Image produit" width="300" height="300" />
 				</div>
-				<div className="overflow-hidden bg-black">
-					<figure className="mb-8">
-						<Image className="hover:scale-105 transition-all duration-1000 " src={test} alt="Image produit" width="300" height="300" />
-					</figure>
+				<div className="fond2 flex justify-center items-center">
+					<Image className="hover:scale-105 transition-all duration-1000 " src={test} alt="Image produit" width="300" height="300" />
+				</div>
+				<div className="fond2 flex justify-center items-center">
+					<Image className="hover:scale-105 transition-all duration-1000 " src={test2} alt="Image produit" width="300" height="300" />
+				</div>
+				<div className="fond2 flex justify-center items-center">
+					<Image className="hover:scale-105 transition-all duration-1000 " src={test3} alt="Image produit" width="300" height="300" />
+				</div>
+				<div className="fond2 flex justify-center items-center">
+					<Image className="hover:scale-105 transition-all duration-1000 " src={test4} alt="Image produit" width="300" height="300" />
+				</div>
+				<div className="fond2 flex justify-center items-center">
+					<Image className="hover:scale-105 transition-all duration-1000 drop1" src={test2} alt="Image produit" width="300" height="300" />
+				</div>
+				<div className="fond2 flex justify-center items-center">
+					<Image className="hover:scale-105 transition-all duration-1000 drop1" src={test3} alt="Image produit" width="300" height="300" />
+				</div>
+				<div className="fond2 flex justify-center items-center">
+					<Image className="hover:scale-105 transition-all duration-1000 drop1" src={test4} alt="Image produit" width="300" height="300" />
 				</div>
 			</div>
 			{products && (
