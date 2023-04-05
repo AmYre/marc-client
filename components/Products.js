@@ -7,6 +7,7 @@ import Masonry from "react-masonry-css"
 import locales from "../lang/locales.js"
 import { motion } from "framer-motion"
 import imageUrlBuilder from "@sanity/image-url"
+import test from "../public/test.png"
 
 const Products = ({ products }) => {
 	const { nav, setNav, lang, setLang } = useGlobalContext()
@@ -35,6 +36,23 @@ const Products = ({ products }) => {
 					className="cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300">
 					{locales.expo[lang]}
 				</button>
+			</div>
+			<div className="flex gap-10 mb-8">
+				<div className="overflow-hidden fond1">
+					<figure className="mb-8">
+						<Image className="hover:scale-105 transition-all duration-1000 drop1" src={test} alt="Image produit" width="300" height="300" />
+					</figure>
+				</div>
+				<div className="overflow-hidden fond2">
+					<figure className="mb-8">
+						<Image className="hover:scale-105 transition-all duration-1000 drop1" src={test} alt="Image produit" width="300" height="300" />
+					</figure>
+				</div>
+				<div className="overflow-hidden bg-black">
+					<figure className="mb-8">
+						<Image className="hover:scale-105 transition-all duration-1000 " src={test} alt="Image produit" width="300" height="300" />
+					</figure>
+				</div>
 			</div>
 			{products && (
 				<div className="">

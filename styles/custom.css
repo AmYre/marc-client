@@ -27,6 +27,18 @@
 	background-clip: padding-box;
 }
 
+.fond1{
+	background: linear-gradient(to top, #595d7e, #081c34);
+}
+
+.drop1{
+	filter: drop-shadow(20px 20px 5px #3131316b);
+
+}
+
+.fond2{
+	background :radial-gradient(#537895, #09203f);
+}
 
 /* Style your items */
 .my-masonry-grid_column img {
