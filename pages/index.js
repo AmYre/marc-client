@@ -1,7 +1,7 @@
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef, useCallback } from "react"
 import { useGlobalContext } from "../components/GlobalContext"
 
-import { Video, CloudinaryContext } from "cloudinary-react"
+import HomeVideo from "../components/HomeVideo"
 import { motion } from "framer-motion"
 import { Md3DRotation } from "react-icons/md"
 import { FaVolumeUp, FaVolumeDown } from "react-icons/fa"
@@ -21,9 +21,7 @@ export default function Home() {
 				<meta name="description" content={locales.desc[lang]} />
 			</Head>
 			<main className="">
-				<CloudinaryContext cloud_name="amircloud" secure={true}>
-					<Video className="h-screen w-full object-cover" publicId="marc/home" autoPlay playsInline muted loop poster={{ startOffset: "0" }} />
-				</CloudinaryContext>
+				<HomeVideo />
 
 				<div className="md:hidden">
 					<NavBar sound={stop} />

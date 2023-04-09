@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { useRouter } from "next/router"
 import { useGlobalContext } from "../components/GlobalContext"
-
+import useSound from "use-sound"
+import ProductVideo from "../components/ProductVideo"
 import { Video, CloudinaryContext } from "cloudinary-react"
 import { motion } from "framer-motion"
 import { Md3DRotation } from "react-icons/md"
@@ -15,31 +16,19 @@ const Creation = () => {
 	const router = useRouter()
 	const slug = router.query.slug
 
-	useEffect(() => {
-		play()
-	}, [])
-
 	return (
 		<main>
 			<div className="md:hidden">
 				<NavBar />
 			</div>
 			<div className="md:hidden">
-				<CloudinaryContext cloud_name="amircloud" secure={true}>
-					<Video className="h-screen w-full object-cover" publicId={`marc/${slug}-mob`} autoPlay playsInline muted loop poster={{ startOffset: "0" }}>
-						<source src="https://res.cloudinary.com/amircloud/video/upload/v1673634198/marc/home.mp4" type="video/mp4" />
-					</Video>
-				</CloudinaryContext>
+				<ProductVideo publicId={`marc/${slug}-mob`} />
 			</div>
 			<nav className="hidden md:block absolute text-white z-10 top-12 left-12 ">
 				<Nav />
 			</nav>
 			<div className="hidden md:block">
-				<CloudinaryContext cloud_name="amircloud" secure={true}>
-					<Video className="h-screen w-full object-cover" publicId={`marc/${slug}`} autoPlay playsInline muted loop poster={{ startOffset: "0" }}>
-						<source src="https://res.cloudinary.com/amircloud/video/upload/v1673634198/marc/home.mp4" type="video/mp4" />
-					</Video>
-				</CloudinaryContext>
+				<ProductVideo publicId={`marc/${slug}`} />
 			</div>
 			<div className="flex gap-3 absolute bottom-10 right-10 items-center">
 				<motion.button onClick={() => setPlaying((prev) => !prev)} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} animate={{ scale: playing ? 1.2 : 1 }} transition={{ duration: 0.3 }}>
