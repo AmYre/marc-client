@@ -9,7 +9,7 @@ module.exports = {
 				nunito: ["Nunito", "sans-serif"],
 			},
 			backgroundColor: {
-				layout: "#6a465b",
+				layout: "#6A2147",
 				bg: "#dfdee9",
 			},
 		},

@@ -10,13 +10,12 @@ import Nav from "../components/Nav"
 import NavBar from "../components/NavBar"
 
 const Creation = () => {
-	const { drawer, setDrawer, play, stop, playing, setPlaying } = useGlobalContext()
+	const { play, stop, playing, setPlaying } = useGlobalContext()
 
 	const router = useRouter()
 	const slug = router.query.slug
 
 	useEffect(() => {
-		setDrawer(true)
 		play()
 	}, [])
 

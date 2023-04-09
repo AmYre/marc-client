@@ -10,6 +10,7 @@ const ContextProvider = ({ children }) => {
 	const [drawer, setDrawer] = useState(false)
 	const [play, { stop }] = useSound("/quiet.mp3", { interrupt: true, loop: true })
 	const [playing, setPlaying] = useState(false)
+	const [isStreaming, setIsStreaming] = useState(false)
 
 	return (
 		<GlobalContext.Provider
@@ -26,6 +27,8 @@ const ContextProvider = ({ children }) => {
 				stop,
 				playing,
 				setPlaying,
+				isStreaming,
+				setIsStreaming,
 			}}>
 			{children}
 		</GlobalContext.Provider>

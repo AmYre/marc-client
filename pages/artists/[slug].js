@@ -14,7 +14,7 @@ import imageUrlBuilder from "@sanity/image-url"
 import { sanityClient } from "../../lib/sanityClient"
 
 const Creation = () => {
-	const { nav, setNav, lang, setLang, isOpen, setIsOpen } = useGlobalContext()
+	const { lang, setLang, isOpen, setIsOpen } = useGlobalContext()
 	const [slugLang, setSlugLang] = useState()
 	const [creation, setCreation] = useState()
 	const [artist, setArtist] = useState()

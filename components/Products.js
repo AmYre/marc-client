@@ -13,7 +13,7 @@ import test3 from "../public/test3.png"
 import test4 from "../public/test4.png"
 
 const Products = ({ products }) => {
-	const { nav, setNav, lang, setLang } = useGlobalContext()
+	const { lang, setLang } = useGlobalContext()
 	const [filter, setFilter] = useState()
 
 	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })
@@ -71,42 +71,12 @@ const Products = ({ products }) => {
 			</div>
 			{products && (
 				<div className="">
-					{lang == "fr" && (
-						<>
-							<div className="hidden md:block">
-								<Masonry breakpointCols={3} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
-									{products.map((product, index) =>
-										filter ? (
-											product.category?.slug.current == filter && (
-												<motion.div
-													key={index}
-													initial={{ y: "50%", opacity: 0, scale: 0.5 }}
-													animate={{ y: 0, opacity: 1, scale: 1 }}
-													transition={{ duration: 0.5, ease: "easeOut" }}
-													exit={{ opacity: 0, scale: 0.1 }}>
-													{product?.slugen && (
-														<Link key={index} href={product.slugfr.current}>
-															<div className="w-full overflow-hidden">
-																<figure className="mb-8">
-																	<Image
-																		className="hover:scale-105 transition-all duration-1000"
-																		src={urlFor(product.image).url()}
-																		alt="Image produit"
-																		width="300"
-																		height="300"
-																	/>
-																	<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 font-thin ">
-																		<h2 className="ellipse2 px-4 font-thin " key={product.title.fr}>
-																			{product.title.fr}
-																		</h2>
-																	</figcaption>
-																</figure>
-															</div>
-														</Link>
-													)}
-												</motion.div>
-											)
-										) : (
+					<>
+						<div className="hidden md:block">
+							<Masonry breakpointCols={3} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
+								{products.map((product, index) =>
+									filter ? (
+										product.category?.slug.current == filter && (
 											<motion.div
 												key={index}
 												initial={{ y: "50%", opacity: 0, scale: 0.5 }}
@@ -125,8 +95,8 @@ const Products = ({ products }) => {
 																	height="300"
 																/>
 																<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 font-thin ">
-																	<h2 className="ellipse2 px-4 font-thin " key={product.title.fr}>
-																		{product.title.fr}
+																	<h2 className="ellipse2 px-4 font-thin " key={product.title[lang]}>
+																		{product.title[lang]}
 																	</h2>
 																</figcaption>
 															</figure>
@@ -135,43 +105,43 @@ const Products = ({ products }) => {
 												)}
 											</motion.div>
 										)
-									)}
-								</Masonry>
-							</div>
-							<div className="md:hidden">
-								<Masonry breakpointCols={1} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
-									{products.map((product, index) =>
-										filter ? (
-											product.category?.slug.current == filter && (
-												<motion.div
-													key={index}
-													initial={{ y: "50%", opacity: 0, scale: 0.5 }}
-													animate={{ y: 0, opacity: 1, scale: 1 }}
-													transition={{ duration: 0.5, ease: "easeOut" }}
-													exit={{ opacity: 0, scale: 0.1 }}>
-													{product?.slugen && (
-														<Link key={index} href={product.slugfr.current}>
-															<div className="w-full overflow-hidden">
-																<figure className="mb-8">
-																	<Image
-																		className="hover:scale-105 transition-all duration-1000"
-																		src={urlFor(product.image).url()}
-																		alt="Image produit"
-																		width="300"
-																		height="300"
-																	/>
-																	<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 font-thin ">
-																		<h2 className="ellipse2 px-4 font-thin " key={product.title.fr}>
-																			{product.title.fr}
-																		</h2>
-																	</figcaption>
-																</figure>
-															</div>
-														</Link>
-													)}
-												</motion.div>
-											)
-										) : (
+									) : (
+										<motion.div
+											key={index}
+											initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+											animate={{ y: 0, opacity: 1, scale: 1 }}
+											transition={{ duration: 0.5, ease: "easeOut" }}
+											exit={{ opacity: 0, scale: 0.1 }}>
+											{product?.slugen && (
+												<Link key={index} href={product.slugfr.current}>
+													<div className="w-full overflow-hidden">
+														<figure className="mb-8">
+															<Image
+																className="hover:scale-105 transition-all duration-1000"
+																src={urlFor(product.image).url()}
+																alt="Image produit"
+																width="300"
+																height="300"
+															/>
+															<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 font-thin ">
+																<h2 className="ellipse2 px-4 font-thin " key={product.title[lang]}>
+																	{product.title[lang]}
+																</h2>
+															</figcaption>
+														</figure>
+													</div>
+												</Link>
+											)}
+										</motion.div>
+									)
+								)}
+							</Masonry>
+						</div>
+						<div className="md:hidden">
+							<Masonry breakpointCols={1} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
+								{products.map((product, index) =>
+									filter ? (
+										product.category?.slug.current == filter && (
 											<motion.div
 												key={index}
 												initial={{ y: "50%", opacity: 0, scale: 0.5 }}
@@ -190,8 +160,8 @@ const Products = ({ products }) => {
 																	height="300"
 																/>
 																<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 font-thin ">
-																	<h2 className="ellipse2 px-4 font-thin " key={product.title.fr}>
-																		{product.title.fr}
+																	<h2 className="ellipse2 px-4 font-thin " key={product.title[lang]}>
+																		{product.title[lang]}
 																	</h2>
 																</figcaption>
 															</figure>
@@ -200,13 +170,41 @@ const Products = ({ products }) => {
 												)}
 											</motion.div>
 										)
-									)}
-								</Masonry>
-							</div>
-						</>
-					)}
+									) : (
+										<motion.div
+											key={index}
+											initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+											animate={{ y: 0, opacity: 1, scale: 1 }}
+											transition={{ duration: 0.5, ease: "easeOut" }}
+											exit={{ opacity: 0, scale: 0.1 }}>
+											{product?.slugen && (
+												<Link key={index} href={product.slugfr.current}>
+													<div className="w-full overflow-hidden">
+														<figure className="mb-8">
+															<Image
+																className="hover:scale-105 transition-all duration-1000"
+																src={urlFor(product.image).url()}
+																alt="Image produit"
+																width="300"
+																height="300"
+															/>
+															<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 font-thin ">
+																<h2 className="ellipse2 px-4 font-thin " key={product.title[lang]}>
+																	{product.title[lang]}
+																</h2>
+															</figcaption>
+														</figure>
+													</div>
+												</Link>
+											)}
+										</motion.div>
+									)
+								)}
+							</Masonry>
+						</div>
+					</>
 
-					{lang == "en" && (
+					{/* 					{lang == "en" && (
 						<>
 							<div className="hidden md:block">
 								<Masonry breakpointCols={3} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
@@ -220,7 +218,7 @@ const Products = ({ products }) => {
 													transition={{ duration: 0.5, ease: "easeOut" }}
 													exit={{ opacity: 0, scale: 0.1 }}>
 													{product?.slugen && (
-														<Link key={index} href={product.slugen.current}>
+														<Link key={index} href={product.slugfr.current}>
 															<div className="w-full overflow-hidden">
 																<figure className="mb-8">
 																	<Image
@@ -249,7 +247,7 @@ const Products = ({ products }) => {
 												transition={{ duration: 0.5, ease: "easeOut" }}
 												exit={{ opacity: 0, scale: 0.1 }}>
 												{product?.slugen && (
-													<Link key={index} href={product.slugen.current}>
+													<Link key={index} href={product.slugfr.current}>
 														<div className="w-full overflow-hidden">
 															<figure className="mb-8">
 																<Image
@@ -285,7 +283,7 @@ const Products = ({ products }) => {
 													transition={{ duration: 0.5, ease: "easeOut" }}
 													exit={{ opacity: 0, scale: 0.1 }}>
 													{product?.slugen && (
-														<Link key={index} href={product.slugen.current} className="relative w-full">
+														<Link key={index} href={product.slugfr.current} className="relative w-full">
 															<div className="product-frame relative w-full overflow-hidden">
 																<div className="overlay relative">
 																	<Image
@@ -313,7 +311,7 @@ const Products = ({ products }) => {
 												transition={{ duration: 0.5, ease: "easeOut" }}
 												exit={{ opacity: 0, scale: 0.1 }}>
 												{product?.slugen && (
-													<Link key={index} href={product.slugen.current} className="relative w-full">
+													<Link key={index} href={product.slugfr.current} className="relative w-full">
 														<div className="product-frame relative w-full overflow-hidden">
 															<div className="overlay relative">
 																<Image
@@ -352,7 +350,7 @@ const Products = ({ products }) => {
 													transition={{ duration: 0.5, ease: "easeOut" }}
 													exit={{ opacity: 0, scale: 0.1 }}>
 													{product?.slugru && (
-														<Link key={index} href={product.slugru.current} className="relative w-full">
+														<Link key={index} href={product.slugfr.current} className="relative w-full">
 															<div className="product-frame relative w-full overflow-hidden">
 																<div className="overlay relative">
 																	<Image
@@ -380,7 +378,7 @@ const Products = ({ products }) => {
 												transition={{ duration: 0.5, ease: "easeOut" }}
 												exit={{ opacity: 0, scale: 0.1 }}>
 												{product?.slugru && (
-													<Link key={index} href={product.slugru.current} className="relative w-full">
+													<Link key={index} href={product.slugfr.current} className="relative w-full">
 														<div className="product-frame relative w-full overflow-hidden">
 															<div className="overlay relative">
 																<Image
@@ -415,7 +413,7 @@ const Products = ({ products }) => {
 													transition={{ duration: 0.5, ease: "easeOut" }}
 													exit={{ opacity: 0, scale: 0.1 }}>
 													{product?.slugru && (
-														<Link key={index} href={product.slugru.current} className="relative w-full">
+														<Link key={index} href={product.slugfr.current} className="relative w-full">
 															<div className="product-frame relative w-full overflow-hidden">
 																<div className="overlay relative">
 																	<Image
@@ -443,7 +441,7 @@ const Products = ({ products }) => {
 												transition={{ duration: 0.5, ease: "easeOut" }}
 												exit={{ opacity: 0, scale: 0.1 }}>
 												{product?.slugru && (
-													<Link key={index} href={product.slugru.current} className="relative w-full">
+													<Link key={index} href={product.slugfr.current} className="relative w-full">
 														<div className="product-frame relative w-full overflow-hidden">
 															<div className="overlay relative">
 																<Image
@@ -482,7 +480,7 @@ const Products = ({ products }) => {
 													transition={{ duration: 0.5, ease: "easeOut" }}
 													exit={{ opacity: 0, scale: 0.1 }}>
 													{product?.slugcn && (
-														<Link key={index} href={product.slugcn.current} className="relative w-full">
+														<Link key={index} href={product.slugfr.current} className="relative w-full">
 															<div className="product-frame relative w-full overflow-hidden">
 																<div className="overlay relative">
 																	<Image
@@ -510,7 +508,7 @@ const Products = ({ products }) => {
 												transition={{ duration: 0.5, ease: "easeOut" }}
 												exit={{ opacity: 0, scale: 0.1 }}>
 												{product?.slugcn && (
-													<Link key={index} href={product.slugcn.current} className="relative w-full">
+													<Link key={index} href={product.slugfr.current} className="relative w-full">
 														<div className="product-frame relative w-full overflow-hidden">
 															<div className="overlay relative">
 																<Image
@@ -545,7 +543,7 @@ const Products = ({ products }) => {
 													transition={{ duration: 0.5, ease: "easeOut" }}
 													exit={{ opacity: 0, scale: 0.1 }}>
 													{product?.slugcn && (
-														<Link key={index} href={product.slugcn.current} className="relative w-full">
+														<Link key={index} href={product.slugfr.current} className="relative w-full">
 															<div className="product-frame relative w-full overflow-hidden">
 																<div className="overlay relative">
 																	<Image
@@ -573,7 +571,7 @@ const Products = ({ products }) => {
 												transition={{ duration: 0.5, ease: "easeOut" }}
 												exit={{ opacity: 0, scale: 0.1 }}>
 												{product?.slugcn && (
-													<Link key={index} href={product.slugcn.current} className="relative w-full">
+													<Link key={index} href={product.slugfr.current} className="relative w-full">
 														<div className="product-frame relative w-full overflow-hidden">
 															<div className="overlay relative">
 																<Image
@@ -597,7 +595,7 @@ const Products = ({ products }) => {
 								</Masonry>
 							</div>
 						</>
-					)}
+					)} */}
 				</div>
 			)}
 		</div>

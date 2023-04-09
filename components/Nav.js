@@ -1,4 +1,7 @@
+import { useContext, useState, useEffect } from "react"
 import { useGlobalContext } from "./GlobalContext"
+
+import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { BsYoutube } from "react-icons/bs"
@@ -10,16 +13,15 @@ import flagFR from "../public/fr.png"
 import flagEN from "../public/en.png"
 import flagRU from "../public/ru.png"
 import flagCN from "../public/cn.png"
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
 
 const Nav = () => {
-	const { nav, setNav, lang, setLang, drawer, setDrawer, play, stop } = useGlobalContext()
+	const { drawer, setDrawer, lang, setLang, play, stop } = useGlobalContext()
+	const [localDrawer, setLocalDrawer] = useState(drawer)
 
 	return (
 		<>
 			<AnimatePresence>
-				{!drawer && (
+				{localDrawer && (
 					<motion.div
 						className="bg-layout bg-opacity-70"
 						key="1"
@@ -125,7 +127,7 @@ const Nav = () => {
 						</div>
 						<div>
 							<div
-								onClick={() => setDrawer(true)}
+								onClick={() => setLocalDrawer(false)}
 								className="relative bottom-[-50px] w-[50px] h-[50px] m-auto bg-white rounded-full p-4 opacity-80 hover:opacity-100 transition-all duration-300 cursor-pointer">
 								<RxPinLeft className="text-gray-500" />
 							</div>
@@ -134,17 +136,19 @@ const Nav = () => {
 				)}
 			</AnimatePresence>
 
-			{drawer && (
+			{!localDrawer && (
 				<motion.div
 					className="visible bottom-[730px]"
 					initial={{ y: "0", opacity: 0, scale: 0.5 }}
 					animate={{ y: "0", opacity: 1, scale: 1 }}
 					transition={{ duration: 1.5, ease: "easeOut" }}
 					exit={{ y: "0", opacity: 0, scale: 0.5 }}>
-					<div>
-						<div onClick={() => setDrawer(false)} className="w-[50px] h-[50px] bg-white rounded-full p-4 opacity-80 hover:opacity-100 transition-all duration-300 cursor-pointer">
-							<RxPinRight className="text-gray-500" />
-						</div>
+					<div
+						onClick={() => {
+							setLocalDrawer(true)
+						}}
+						className="w-[50px] h-[50px] bg-white rounded-full p-4 opacity-80 hover:opacity-100 transition-all duration-300 cursor-pointer">
+						<RxPinRight className="text-gray-500" />
 					</div>
 				</motion.div>
 			)}
