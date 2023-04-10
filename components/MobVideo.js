@@ -22,4 +22,6 @@ const MobVideo = memo(({ publicId }) => {
 	)
 })
 
+MobVideo.displayName = "MobVideo"
+
 export default MobVideo

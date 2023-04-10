@@ -22,4 +22,6 @@ const ProductVideo = memo(({ publicId }) => {
 	)
 })
 
+ProductVideo.displayName = "ProductVideo"
+
 export default ProductVideo

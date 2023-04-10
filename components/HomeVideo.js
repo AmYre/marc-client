@@ -10,4 +10,6 @@ const HomeVideo = memo(() => {
 	)
 })
 
+HomeVideo.displayName = "HomeVideo"
+
 export default HomeVideo
