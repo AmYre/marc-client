@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import { useGlobalContext } from "../components/GlobalContext"
 import useSound from "use-sound"
 import ProductVideo from "../components/ProductVideo"
+import MobVideo from "../components/MobVideo"
 import { Video, CloudinaryContext } from "cloudinary-react"
 import { motion } from "framer-motion"
 import { Md3DRotation } from "react-icons/md"
@@ -22,7 +23,7 @@ const Creation = () => {
 				<NavBar />
 			</div>
 			<div className="md:hidden">
-				<ProductVideo publicId={`marc/${slug}-mob`} />
+				<MobVideo publicId={`marc/${slug}-mob`} />
 			</div>
 			<nav className="hidden md:block absolute text-white z-10 top-12 left-12 ">
 				<Nav />

@@ -99,17 +99,17 @@ const Nav = () => {
 									alt='Russian'
 									width='20'
 									height='20'
-								/>
+								/>*/}
 								<Image
 									onClick={() => {
-										setLang('cn');
+										setLang("cn")
 									}}
-									className='hover:cursor-pointer'
+									className="hover:cursor-pointer"
 									src={flagCN}
-									alt='Chinese'
-									width='20'
-									height='20'
-								/> */}
+									alt="Chinese"
+									width="20"
+									height="20"
+								/>
 							</div>
 							<p className=" text-md p-6 font-nunito tracking-widest font-medium">PARIS</p>
 							<div className="flex justify-center items-center gap-6">

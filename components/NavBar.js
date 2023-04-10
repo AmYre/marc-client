@@ -27,7 +27,7 @@ const NavBar = () => {
 						</div>
 					</>
 				)}
-				<Hamburger toggled={isOpen} toggle={setIsOpen} />
+				<Hamburger toggled={isOpen} toggle={setIsOpen} onClick={() => stop()} />
 			</div>
 			<AnimatePresence>{isOpen && <MobNav />}</AnimatePresence>
 		</>

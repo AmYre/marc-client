@@ -2,14 +2,14 @@ import React, { memo } from "react"
 import { Video, CloudinaryContext } from "cloudinary-react"
 import { useGlobalContext } from "../components/GlobalContext"
 
-const ProductVideo = memo(({ publicId }) => {
+const MobVideo = memo(({ publicId }) => {
 	const { lang, setLang, play, stop, playing, setPlaying } = useGlobalContext()
 
 	return (
 		<CloudinaryContext cloud_name="amircloud" secure={true}>
 			<Video
 				className="h-screen w-full object-cover"
-				publicId={lang == "fr" ? publicId : lang == "en" ? publicId : lang == "cn" && `${publicId}-cn`}
+				publicId={lang == "fr" ? publicId : lang == "en" ? `${publicId}-en` : lang == "cn" && `${publicId}-cn`}
 				autoPlay
 				playsInline
 				muted
@@ -22,4 +22,4 @@ const ProductVideo = memo(({ publicId }) => {
 	)
 })
 
-export default ProductVideo
+export default MobVideo
