@@ -58,13 +58,13 @@ const Nav = () => {
 								onClick={() => stop()}
 								href="/gallery"
 								className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-bg">
-								{locales.menu5[lang]}
+								{locales.menu4[lang]}
 							</Link>
 							<Link
 								onClick={() => stop()}
 								href="/contact"
 								className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-bg">
-								{locales.menu6[lang]}
+								{locales.menu5[lang]}
 							</Link>
 						</div>
 						<div className="text-center pt-6">

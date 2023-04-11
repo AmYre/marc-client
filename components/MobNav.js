@@ -58,7 +58,7 @@ const MobNav = () => {
 							setIsOpen(false)
 							stop()
 						}}>
-						{locales.menu5[lang]}
+						{locales.menu4[lang]}
 					</Link>
 					<Link
 						href="/contact"
@@ -67,7 +67,7 @@ const MobNav = () => {
 							setIsOpen(false)
 							stop()
 						}}>
-						{locales.menu6[lang]}
+						{locales.menu5[lang]}
 					</Link>
 				</div>
 				<div className="text-center pt-6">

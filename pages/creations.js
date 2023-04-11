@@ -9,7 +9,7 @@ import Nav from "../components/Nav"
 import NavBar from "../components/NavBar"
 import Products from "../components/Products"
 
-const Creations = ({ products }) => {
+const Creations = ({ products, vignette }) => {
 	const { nav, setNav, lang, setLang, isOpen, setIsOpen } = useGlobalContext()
 
 	return (
@@ -21,7 +21,7 @@ const Creations = ({ products }) => {
 				<Nav />
 			</nav>
 			<main className="w-full bg-layout bg-opacity-90 text-white font-nunito text-center">
-				<Products products={products} />
+				<Products products={products} vignette={vignette} />
 
 				<div className="flex flex-row items-center justify-end">
 					<Image src={logo} className="w-20" alt="logo Marc Maison XIX" />
@@ -37,10 +37,14 @@ const Creations = ({ products }) => {
 
 export const getServerSideProps = async () => {
 	const products = await sanityClient.fetch(`*[_type=="products" && references(*[_type=="category" && slug.current != 'museum-sold']._id)]{..., category->}`)
+	const vignette = await sanityClient.fetch(`*[_type=="walls" && title == 'vignette']{...}`)
+
+	console.log(vignette)
 
 	return {
 		props: {
 			products,
+			vignette,
 		},
 	}
 }

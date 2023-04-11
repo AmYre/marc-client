@@ -12,7 +12,7 @@ import test2 from "../public/test2.png"
 import test3 from "../public/test3.png"
 import test4 from "../public/test4.png"
 
-const Products = ({ products }) => {
+const Products = ({ products, vignette }) => {
 	const { lang, setLang } = useGlobalContext()
 	const [filter, setFilter] = useState()
 
@@ -22,9 +22,12 @@ const Products = ({ products }) => {
 		return imageBuilder.image(source)
 	}
 
+	console.log(urlFor(vignette[0].image).url())
+	const vig = urlFor(vignette[0].image).url()
+
 	return (
 		<div className="p-12 pt-28 md:pt-12">
-			<h2 className="text-3xl tracking-widest font-thin mb-12 font-bodoni">Collection</h2>
+			<h2 className="text-3xl tracking-widest font-thin mb-12 font-bodoni">{locales.menu1[lang]}</h2>
 			<div className="text-sm p-4 mb-12 font-thin border-t-[1px] border-b-[1px] border-gray-100 flex flex-wrap justify-center gap-8">
 				<button onClick={() => setFilter("")} className="cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300">
 					{locales.all[lang]}
@@ -47,11 +50,8 @@ const Products = ({ products }) => {
 				<div className="fond2 flex justify-center items-center">
 					<Image className="hover:scale-105 transition-all duration-1000 drop1" src={test} alt="Image produit" width="300" height="300" />
 				</div>
-				<div className="fond2 flex justify-center items-center">
+				<div className="flex justify-center items-center" style={{ backgroundImage: `url(${vig})` }}>
 					<Image className="hover:scale-105 transition-all duration-1000 " src={test} alt="Image produit" width="300" height="300" />
-				</div>
-				<div className="fond2 flex justify-center items-center">
-					<Image className="hover:scale-105 transition-all duration-1000 " src={test2} alt="Image produit" width="300" height="300" />
 				</div>
 				<div className="fond2 flex justify-center items-center">
 					<Image className="hover:scale-105 transition-all duration-1000 " src={test3} alt="Image produit" width="300" height="300" />
