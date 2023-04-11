@@ -33,25 +33,6 @@ const Artists = ({ artists }) => {
 	return (
 		<div className="p-12 pt-28 md:pt-12">
 			<h2 className="text-3xl tracking-widest font-thin font-bodoni mb-12">{locales.menu2[lang]}</h2>
-			<div className="text-sm p-4 mb-12 font-thin border-t-[1px] border-b-[1px] border-gray-100 flex flex-wrap justify-center gap-8">
-				<button onClick={() => filterByCat("all")} className="cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300">
-					Tout
-				</button>
-				<button onClick={() => filterByCat("artists")} className="cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300">
-					Céramistes
-				</button>
-				<button onClick={() => filterByCat("nouveau")} className="cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300">
-					Verriers
-				</button>
-				<button
-					onClick={() => filterByCat("artisanats")}
-					className="cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300">
-					Fondeurs
-				</button>
-				<button onClick={() => filterByCat("autre")} className="cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300">
-					Autre
-				</button>
-			</div>
 
 			{artists && (
 				<div className="">
