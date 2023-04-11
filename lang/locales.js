@@ -11,13 +11,13 @@ const locales = {
 	showcased: { fr: "Exposition Universelle / Musée", en: "Exposition Universelle / Museum", ru: "Showcased", cn: "世界博览会 / 博物馆" },
 	expo: { fr: "Exposition Universelle", en: "World Fair", ru: "World Exhibition", cn: "巴黎世界博览会" },
 	all: { fr: "Tout", en: "All", ru: "All", cn: "一切" },
-	confirm: { fr: "Votre message à bien été envoyé", en: "Your message has been sent", ru: "Your message has been sent", cn: "Your message has been sent" },
-	formName: { fr: "Prénom", en: "Name", ru: "Name", cn: "Name" },
-	formLastname: { fr: "Nom", en: "Lastname", ru: "Lastname", cn: "Lastname" },
-	formMail: { fr: "Email", en: "Email", ru: "Email", cn: "Email" },
-	formPhone: { fr: "Téléphone", en: "Phone", ru: "Phone", cn: "Phone" },
-	formMessage: { fr: "Message", en: "Message", ru: "Message", cn: "Message" },
-	formSent: { fr: "Envoyer", en: "Send", ru: "Send", cn: "Send" },
+	confirm: { fr: "Votre message à bien été envoyé", en: "Your message has been sent", ru: "Your message has been sent", cn: "您的信息已被发送" },
+	formName: { fr: "Prénom", en: "Name", ru: "Name", cn: "名字" },
+	formLastname: { fr: "Nom", en: "Lastname", ru: "Lastname", cn: "命名" },
+	formMail: { fr: "Email", en: "Email", ru: "Email", cn: "电子邮件" },
+	formPhone: { fr: "Téléphone", en: "Phone", ru: "Phone", cn: "电话" },
+	formMessage: { fr: "Message", en: "Message", ru: "Message", cn: "留言" },
+	formSent: { fr: "Envoyer", en: "Send", ru: "Send", cn: "发送" },
 }
 
 export default locales

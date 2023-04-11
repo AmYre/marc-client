@@ -37,84 +37,80 @@ const Sold = ({ products }) => {
 
 					{products && (
 						<div className="">
-							{lang == "fr" && (
-								<>
-									<div className="hidden md:block">
-										<Masonry breakpointCols={3} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
-											{products.map(
-												(product, index) =>
-													product.category?.slug.current == "museum-sold" && (
-														<motion.div
-															key={index}
-															initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
-															animate={{ y: 0, opacity: 1, scale: 1, borderRadius: "50%" }}
-															transition={{ duration: 0.5, ease: "easeOut" }}
-															exit={{ opacity: 0, scale: 0.1 }}>
-															{product?.slugfr && (
-																<Link key={index} href={`/${product.slugfr.current}`}>
-																	<div className="w-full overflow-hidden">
-																		<figure className="mb-8">
-																			<Image
-																				className="hover:scale-105 transition-all duration-1000"
-																				src={urlFor(product.image).url()}
-																				alt="Image produit"
-																				width="300"
-																				height="300"
-																			/>
-																			<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 ">
-																				<h2 className="ellipse2 px-4 font-thin" key={product.title.fr}>
-																					{product.title.fr}
-																				</h2>
-																			</figcaption>
-																		</figure>
-																	</div>
-																</Link>
-															)}
-														</motion.div>
-													)
-											)}
-										</Masonry>
-									</div>
-									<div className="md:hidden">
-										<Masonry breakpointCols={1} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
-											{products.map(
-												(product, index) =>
-													product.category?.slug.current == "museum-sold" && (
-														<motion.div
-															key={index}
-															initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
-															animate={{ y: 0, opacity: 1, scale: 1, borderRadius: "50%" }}
-															transition={{ duration: 0.5, ease: "easeOut" }}
-															exit={{ opacity: 0, scale: 0.1 }}>
-															{product?.slugfr && (
-																<Link key={index} href={`/${product.slugfr.current}`}>
-																	<div className="w-full overflow-hidden">
-																		<figure className="mb-8">
-																			<Image
-																				className="hover:scale-105 transition-all duration-1000"
-																				src={urlFor(product.image).url()}
-																				alt="Image produit"
-																				width="300"
-																				height="300"
-																			/>
-																			<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 ">
-																				<h2 className="ellipse2 px-4 font-thin" key={product.title.fr}>
-																					{product.title.fr}
-																				</h2>
-																			</figcaption>
-																		</figure>
-																	</div>
-																</Link>
-															)}
-														</motion.div>
-													)
-											)}
-										</Masonry>
-									</div>
-								</>
-							)}
+							<div className="hidden md:block">
+								<Masonry breakpointCols={3} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
+									{products.map(
+										(product, index) =>
+											product.category?.slug.current == "museum-sold" && (
+												<motion.div
+													key={index}
+													initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
+													animate={{ y: 0, opacity: 1, scale: 1, borderRadius: "50%" }}
+													transition={{ duration: 0.5, ease: "easeOut" }}
+													exit={{ opacity: 0, scale: 0.1 }}>
+													{product?.slugfr && (
+														<Link key={index} href={`/${product.slugfr.current}`}>
+															<div className="w-full overflow-hidden">
+																<figure className="mb-8">
+																	<Image
+																		className="hover:scale-105 transition-all duration-1000"
+																		src={urlFor(product.image).url()}
+																		alt="Image produit"
+																		width="300"
+																		height="300"
+																	/>
+																	<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 ">
+																		<h2 className="ellipse2 px-4 font-thin" key={product.title[lang]}>
+																			{product.title[lang]}
+																		</h2>
+																	</figcaption>
+																</figure>
+															</div>
+														</Link>
+													)}
+												</motion.div>
+											)
+									)}
+								</Masonry>
+							</div>
+							<div className="md:hidden">
+								<Masonry breakpointCols={1} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
+									{products.map(
+										(product, index) =>
+											product.category?.slug.current == "museum-sold" && (
+												<motion.div
+													key={index}
+													initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
+													animate={{ y: 0, opacity: 1, scale: 1, borderRadius: "50%" }}
+													transition={{ duration: 0.5, ease: "easeOut" }}
+													exit={{ opacity: 0, scale: 0.1 }}>
+													{product?.slugfr && (
+														<Link key={index} href={`/${product.slugfr.current}`}>
+															<div className="w-full overflow-hidden">
+																<figure className="mb-8">
+																	<Image
+																		className="hover:scale-105 transition-all duration-1000"
+																		src={urlFor(product.image).url()}
+																		alt="Image produit"
+																		width="300"
+																		height="300"
+																	/>
+																	<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 ">
+																		<h2 className="ellipse2 px-4 font-thin" key={product.title[lang]}>
+																			{product.title[lang]}
+																		</h2>
+																	</figcaption>
+																</figure>
+															</div>
+														</Link>
+													)}
+												</motion.div>
+											)
+									)}
+								</Masonry>
+							</div>
 
-							{lang == "en" && (
+							{/* 							{lang == "en" && (
 								<>
 									<div className="md:hidden">
 										<Masonry breakpointCols={1} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
@@ -209,7 +205,7 @@ const Sold = ({ products }) => {
 												<h2 key={product.title.cn}>{product.title.cn}</h2>
 											</Link>
 										)
-								)}
+								)} */}
 						</div>
 					)}
 				</div>

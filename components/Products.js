@@ -21,8 +21,6 @@ const Products = ({ products, vignette }) => {
 	const urlFor = (source) => {
 		return imageBuilder.image(source)
 	}
-
-	console.log(urlFor(vignette[0].image).url())
 	const vig = urlFor(vignette[0].image).url()
 
 	return (
