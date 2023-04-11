@@ -1,14 +1,22 @@
 import React, { useState, useRef } from "react"
 import { useGlobalContext } from "../components/GlobalContext"
 import locales from "../lang/locales.js"
+import imageUrlBuilder from "@sanity/image-url"
 
 import { MutatingDots } from "react-loader-spinner"
 import TextField from "@mui/material/TextField"
 import { motion } from "framer-motion"
 import emailjs from "@emailjs/browser"
 
-const Contact = () => {
+const Contact = ({ contactPic }) => {
 	const { nav, setNav, lang, setLang } = useGlobalContext()
+
+	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })
+
+	const urlFor = (source) => {
+		return imageBuilder.image(source)
+	}
+	const header = urlFor(contactPic[0].image).url()
 
 	const [sent, setSent] = useState(false)
 	const [delay, setDelay] = useState(false)
@@ -36,7 +44,7 @@ const Contact = () => {
 		<div className="p-12 pt-28 md:pt-12">
 			<h2 className="text-3xl tracking-widest font-thin font-bodoni mb-12">{locales.menu5[lang]}</h2>
 			<div className="overflow-hidden w-full h-[400px]">
-				<img src="https://res.cloudinary.com/amircloud/image/upload/v1679314588/marc/contact.jpg" className="anim -z-10 object-cover h-screen w-screen" alt="bg" width="2500" height="2500" />
+				<img src={header} className="anim -z-10 object-cover h-screen w-screen" alt="bg" width="2500" height="2500" />
 			</div>
 			{!sent ? (
 				<form ref={form} onSubmit={sendEmail} className="flex flex-col mt-12 mb-12 md:px-16 gap-12">
