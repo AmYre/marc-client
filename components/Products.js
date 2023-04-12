@@ -84,7 +84,7 @@ const Products = ({ products, vignette }) => {
 												{product?.slugen && (
 													<Link key={index} href={product.slugfr.current}>
 														<div className="w-full overflow-hidden">
-															<figure className="mb-8">
+															<figure className="mb-8" style={{ backgroundImage: `url(${vig})` }}>
 																<Image
 																	className="hover:scale-105 transition-all duration-1000"
 																	src={urlFor(product.image).url()}
@@ -113,7 +113,7 @@ const Products = ({ products, vignette }) => {
 											{product?.slugen && (
 												<Link key={index} href={product.slugfr.current}>
 													<div className="w-full overflow-hidden">
-														<figure className="mb-8">
+														<figure className="mb-8" style={{ backgroundImage: `url(${vig})` }}>
 															<Image
 																className="hover:scale-105 transition-all duration-1000"
 																src={urlFor(product.image).url()}
@@ -149,7 +149,7 @@ const Products = ({ products, vignette }) => {
 												{product?.slugen && (
 													<Link key={index} href={product.slugfr.current}>
 														<div className="w-full overflow-hidden">
-															<figure className="mb-8">
+															<figure className="mb-8" style={{ backgroundImage: `url(${vig})` }}>
 																<Image
 																	className="hover:scale-105 transition-all duration-1000"
 																	src={urlFor(product.image).url()}
@@ -178,7 +178,7 @@ const Products = ({ products, vignette }) => {
 											{product?.slugen && (
 												<Link key={index} href={product.slugfr.current}>
 													<div className="w-full overflow-hidden">
-														<figure className="mb-8">
+														<figure className="mb-8" style={{ backgroundImage: `url(${vig})` }}>
 															<Image
 																className="hover:scale-105 transition-all duration-1000"
 																src={urlFor(product.image).url()}
