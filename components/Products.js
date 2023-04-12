@@ -84,13 +84,14 @@ const Products = ({ products, vignette }) => {
 												{product?.slugen && (
 													<Link key={index} href={product.slugfr.current}>
 														<div className="w-full overflow-hidden">
-															<figure className="mb-8" style={{ backgroundImage: `url(${vig})` }}>
+															<figure className="mb-8">
 																<Image
 																	className="hover:scale-105 transition-all duration-1000"
 																	src={urlFor(product.image).url()}
 																	alt="Image produit"
 																	width="300"
 																	height="300"
+																	style={{ backgroundImage: `url(${vig})` }}
 																/>
 																<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 font-thin ">
 																	<h2 className="ellipse2 px-4 font-thin " key={product.title[lang]}>
@@ -113,13 +114,14 @@ const Products = ({ products, vignette }) => {
 											{product?.slugen && (
 												<Link key={index} href={product.slugfr.current}>
 													<div className="w-full overflow-hidden">
-														<figure className="mb-8" style={{ backgroundImage: `url(${vig})` }}>
+														<figure className="mb-8">
 															<Image
 																className="hover:scale-105 transition-all duration-1000"
 																src={urlFor(product.image).url()}
 																alt="Image produit"
 																width="300"
 																height="300"
+																style={{ backgroundImage: `url(${vig})` }}
 															/>
 															<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 font-thin ">
 																<h2 className="ellipse2 px-4 font-thin " key={product.title[lang]}>
@@ -149,13 +151,14 @@ const Products = ({ products, vignette }) => {
 												{product?.slugen && (
 													<Link key={index} href={product.slugfr.current}>
 														<div className="w-full overflow-hidden">
-															<figure className="mb-8" style={{ backgroundImage: `url(${vig})` }}>
+															<figure className="mb-8">
 																<Image
 																	className="hover:scale-105 transition-all duration-1000"
 																	src={urlFor(product.image).url()}
 																	alt="Image produit"
 																	width="300"
 																	height="300"
+																	style={{ backgroundImage: `url(${vig})` }}
 																/>
 																<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 font-thin ">
 																	<h2 className="ellipse2 px-4 font-thin " key={product.title[lang]}>
@@ -178,13 +181,14 @@ const Products = ({ products, vignette }) => {
 											{product?.slugen && (
 												<Link key={index} href={product.slugfr.current}>
 													<div className="w-full overflow-hidden">
-														<figure className="mb-8" style={{ backgroundImage: `url(${vig})` }}>
+														<figure className="mb-8">
 															<Image
 																className="hover:scale-105 transition-all duration-1000"
 																src={urlFor(product.image).url()}
 																alt="Image produit"
 																width="300"
 																height="300"
+																style={{ backgroundImage: `url(${vig})` }}
 															/>
 															<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 font-thin ">
 																<h2 className="ellipse2 px-4 font-thin " key={product.title[lang]}>
