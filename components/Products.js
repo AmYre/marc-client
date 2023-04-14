@@ -7,10 +7,6 @@ import Masonry from "react-masonry-css"
 import locales from "../lang/locales.js"
 import { motion } from "framer-motion"
 import imageUrlBuilder from "@sanity/image-url"
-import test from "../public/test.png"
-import test2 from "../public/test2.png"
-import test3 from "../public/test3.png"
-import test4 from "../public/test4.png"
 
 const Products = ({ products, vignette }) => {
 	const { lang, setLang } = useGlobalContext()

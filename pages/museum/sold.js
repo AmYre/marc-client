@@ -14,7 +14,7 @@ import locales from "../../lang/locales.js"
 import Nav from "../../components/Nav"
 import NavBar from "../../components/NavBar"
 
-const Sold = ({ products }) => {
+const Sold = ({ products, vignette }) => {
 	const { nav, setNav, lang, setLang, isOpen, setIsOpen } = useGlobalContext()
 
 	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })
@@ -22,6 +22,8 @@ const Sold = ({ products }) => {
 	const urlFor = (source) => {
 		return imageBuilder.image(source)
 	}
+
+	const vig = urlFor(vignette[0].image).url()
 
 	return (
 		<div className={`flex ${isOpen ? "h-screen overflow-hidden" : "min-h-screen"} md:gap-8 bg-bg md:p-12`}>
@@ -50,21 +52,20 @@ const Sold = ({ products }) => {
 													exit={{ opacity: 0, scale: 0.1 }}>
 													{product?.slugfr && (
 														<Link key={index} href={`/${product.slugfr.current}`}>
-															<div className="w-full overflow-hidden">
-																<figure className="mb-8">
-																	<Image
-																		className="hover:scale-105 transition-all duration-1000"
-																		src={urlFor(product.image).url()}
-																		alt="Image produit"
-																		width="300"
-																		height="300"
-																	/>
-																	<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 ">
-																		<h2 className="ellipse2 px-4 font-thin" key={product.title[lang]}>
-																			{product.title[lang]}
-																		</h2>
-																	</figcaption>
-																</figure>
+															<div className="vig-wrapper relative w-full overflow-hidden mb-8">
+																<Image
+																	className="hover:scale-105 transition-all duration-1000"
+																	src={urlFor(product.image).url()}
+																	alt="Image produit"
+																	width="300"
+																	height="300"
+																	style={{ backgroundImage: `url(${vig})`, backgroundSize: "cover" }}
+																/>
+																<div className="vig-txt w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 font-thin absolute">
+																	<h2 className="ellipse2 px-4 font-thin " key={product.title.en}>
+																		{product.title[lang] ? product.title[lang] : product.title.en}
+																	</h2>
+																</div>
 															</div>
 														</Link>
 													)}
@@ -94,10 +95,11 @@ const Sold = ({ products }) => {
 																		alt="Image produit"
 																		width="300"
 																		height="300"
+																		style={{ backgroundImage: `url(${vig})`, backgroundSize: "cover" }}
 																	/>
 																	<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 ">
-																		<h2 className="ellipse2 px-4 font-thin" key={product.title[lang]}>
-																			{product.title[lang]}
+																		<h2 className="ellipse2 px-4 font-thin" key={product.title.en}>
+																			{product.title[lang] ? product.title[lang] : product.title.en}
 																		</h2>
 																	</figcaption>
 																</figure>
@@ -216,10 +218,12 @@ const Sold = ({ products }) => {
 
 export const getServerSideProps = async () => {
 	const products = await sanityClient.fetch(`*[_type == "products"]{ ..., category-> }`)
+	const vignette = await sanityClient.fetch(`*[_type=="walls" && title == 'vignette']{...}`)
 
 	return {
 		props: {
 			products,
+			vignette,
 		},
 	}
 }
