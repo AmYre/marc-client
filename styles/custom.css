@@ -27,24 +27,21 @@
 	background-clip: padding-box;
 }
 
-.fond1{
-	background: linear-gradient(to top, #595d7e, #081c34);
+.vig-wrapper:hover .vig-txt{
+	opacity: 1!important;
+	bottom : 0px;
 }
 
-.drop1{
-	filter: drop-shadow(20px 20px 5px #191d3f6b);
-
-}
-
-.fond2{
-	background :radial-gradient(#537895, #09203f);
-}
+.vig-txt{
+	position: absolute;
+	opacity: 0!important;
+	transition: all 1.5s ease!important;
+} 
 
 /* Style your items */
 .my-masonry-grid_column img {
 	width: 100%;
 }
-
 
 @keyframes fadout {
 	0% {
