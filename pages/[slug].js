@@ -41,7 +41,7 @@ const Creation = () => {
 				</motion.button>
 				<Md3DRotation className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 			</div>
-			{playing ? play() : stop()}
+			{/* {playing ? play() : stop()} */}
 		</main>
 	)
 }

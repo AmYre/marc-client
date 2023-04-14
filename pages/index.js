@@ -12,7 +12,7 @@ import Nav from "../components/Nav"
 import NavBar from "../components/NavBar"
 
 export default function Home() {
-	const { lang, setLang, play, stop, playing, setPlaying } = useGlobalContext()
+	const { lang, setLang, play, stop, homePlaying, setHomePlaying } = useGlobalContext()
 
 	return (
 		<div>
@@ -31,12 +31,12 @@ export default function Home() {
 				</nav>
 				<div className="flex gap-3 absolute bottom-10 right-10 items-center">
 					<motion.button
-						onClick={() => setPlaying((prev) => !prev)}
+						onClick={() => setHomePlaying((prev) => !prev)}
 						whileHover={{ scale: 1.1 }}
 						whileTap={{ scale: 0.9 }}
-						animate={{ scale: playing ? 1.2 : 1 }}
+						animate={{ scale: homePlaying ? 1.2 : 1 }}
 						transition={{ duration: 0.3 }}>
-						{playing ? (
+						{homePlaying ? (
 							<FaVolumeUp className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 						) : (
 							<FaVolumeDown className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
@@ -44,7 +44,7 @@ export default function Home() {
 					</motion.button>
 					<Md3DRotation className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 				</div>
-				{playing ? play() : stop()}
+				{homePlaying ? play() : stop()}
 			</main>
 		</div>
 	)

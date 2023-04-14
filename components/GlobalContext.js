@@ -9,6 +9,7 @@ const ContextProvider = ({ children }) => {
 	const [isOpen, setIsOpen] = useState(false)
 	const [drawer, setDrawer] = useState(false)
 	const [play, { stop }] = useSound("/quiet.mp3", { interrupt: true, loop: true })
+	const [homePlaying, setHomePlaying] = useState(false)
 	const [playing, setPlaying] = useState(false)
 	const [isStreaming, setIsStreaming] = useState(false)
 
@@ -25,6 +26,8 @@ const ContextProvider = ({ children }) => {
 				setDrawer,
 				play,
 				stop,
+				homePlaying,
+				setHomePlaying,
 				playing,
 				setPlaying,
 				isStreaming,

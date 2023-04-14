@@ -12,7 +12,7 @@ const ProductVideo = memo(({ publicId }) => {
 				publicId={lang == "fr" ? publicId : lang == "en" ? publicId : lang == "cn" && `${publicId}-cn`}
 				autoPlay
 				playsInline
-				muted
+				muted={playing}
 				loop
 				poster={{ startOffset: "0" }}>
 				<source src={`https://res.cloudinary.com/amircloud/video/upload/${publicId}.mp4`} type="video/mp4" />
