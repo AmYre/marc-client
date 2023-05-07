@@ -72,10 +72,10 @@ const DetailArtist = ({ vignette }) => {
 					<div className="flex flex-wrap justify-center items-center gap-10 ">
 						{creation &&
 							creation?.map((creation, index) => (
-								<div className="mb-8">
+								<div className="mb-8" key={index}>
 									{creation?.slugen && (
 										<Link key={index} href={`/${creation.slugfr.current}`}>
-											<div className="h-[200px] w-[200px] overflow-hidden">
+											<div key={index} className="h-[200px] w-[200px] overflow-hidden">
 												<img
 													className="h-full w-full object-contain hover:scale-105 transition-all duration-1000"
 													src={urlFor(creation.image).url()}
