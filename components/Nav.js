@@ -14,7 +14,7 @@ import flagRU from "../public/ru.png"
 import flagCN from "../public/cn.png"
 
 const Nav = () => {
-	const { drawer, setDrawer, lang, setLang, play, stop, texts, setTexts } = useGlobalContext()
+	const { drawer, setDrawer, lang, setLang, texts, setTexts } = useGlobalContext()
 	const [localDrawer, setLocalDrawer] = useState(drawer)
 
 	return (
@@ -29,38 +29,33 @@ const Nav = () => {
 						transition={{ duration: 0.5, ease: "easeOut" }}
 						exit={{ x: "-50%", opacity: 0 }}>
 						<div className="w-[320px] text-center">
-							<Link href="/" onClick={() => stop()}>
+							<Link href="/">
 								<h1 className="mb-0 pb-0 text-[2rem] text-gray-200 pt-6 px-6 font-bodoni tracking-wide">Marc Maison</h1>
 								<h2 className="font-splash text-[#c49d50] text-[1.3rem] tracking-wide pb-4 text-gold">- 19ème - </h2>
 							</Link>
 						</div>
 						<div className="z-10 w-full bg-layout bg-opacity-80 flex flex-col">
 							<Link
-								onClick={() => stop()}
 								href="/creations"
 								className="p-6 font-nunito text-sm  hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg">
 								{texts.menu1[lang]}
 							</Link>
 							<Link
-								onClick={() => stop()}
 								href="/artists"
 								className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg">
 								{texts.menu2[lang]}
 							</Link>
 							<Link
-								onClick={() => stop()}
 								href="/museum"
 								className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg">
 								{texts.menu3[lang]}
 							</Link>
 							<Link
-								onClick={() => stop()}
 								href="/gallery"
 								className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-bg">
 								{texts.menu4[lang]}
 							</Link>
 							<Link
-								onClick={() => stop()}
 								href="/contact"
 								className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-bg">
 								{texts.menu5[lang]}

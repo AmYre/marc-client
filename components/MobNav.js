@@ -11,13 +11,13 @@ import flagCN from "../public/cn.png"
 import { motion } from "framer-motion"
 
 const MobNav = () => {
-	const { lang, setLang, isOpen, setIsOpen, play, stop, texts, setTexts } = useGlobalContext()
+	const { lang, setLang, isOpen, setIsOpen, texts, setTexts } = useGlobalContext()
 
 	return (
 		<div className="absolute z-10 h-screen w-screen inset-0 flex flex-col justify-around bg-black bg-opacity-90 text-white">
 			<motion.div initial={{ y: "50%", opacity: 0, scale: 0.5 }} animate={{ y: 0, opacity: 1, scale: 1 }} transition={{ duration: 0.5, ease: "easeOut" }} exit={{ opacity: 0, scale: 0.1 }}>
 				<div className="text-center">
-					<Link href="/" onClick={() => stop()}>
+					<Link href="/">
 						<h1 className="mb-0 pb-0 text-[2rem] text-gray-200 pt-6 px-6 font-bodoni tracking-wide text-center">Marc Maison</h1>
 						<h2 className="font-splash text-[#c49d50] text-[1.3rem] tracking-wide pb-4 text-gold">- 19ème - </h2>
 					</Link>
@@ -26,46 +26,31 @@ const MobNav = () => {
 					<Link
 						href="/creations"
 						className="p-6 font-nunito text-sm  hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-gray-900"
-						onClick={() => {
-							setIsOpen(false)
-							stop()
-						}}>
+						onClick={() => setIsOpen(false)}>
 						{texts.menu1[lang]}
 					</Link>
 					<Link
 						href="/artists"
 						className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-gray-900"
-						onClick={() => {
-							setIsOpen(false)
-							stop()
-						}}>
+						onClick={() => setIsOpen(false)}>
 						{texts.menu2[lang]}
 					</Link>
 					<Link
 						href="/museum"
 						className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-gray-900"
-						onClick={() => {
-							setIsOpen(false)
-							stop()
-						}}>
+						onClick={() => setIsOpen(false)}>
 						{texts.menu3[lang]}
 					</Link>
 					<Link
 						href="/gallery"
 						className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-gray-900"
-						onClick={() => {
-							setIsOpen(false)
-							stop()
-						}}>
+						onClick={() => setIsOpen(false)}>
 						{texts.menu4[lang]}
 					</Link>
 					<Link
 						href="/contact"
 						className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-gray-900"
-						onClick={() => {
-							setIsOpen(false)
-							stop()
-						}}>
+						onClick={() => setIsOpen(false)}>
 						{texts.menu5[lang]}
 					</Link>
 				</div>

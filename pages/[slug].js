@@ -12,7 +12,7 @@ import Nav from "../components/Nav"
 import NavBar from "../components/NavBar"
 
 const Creation = () => {
-	const { play, stop, playing, setPlaying } = useGlobalContext()
+	const { playing, setPlaying } = useGlobalContext()
 
 	const router = useRouter()
 	const slug = router.query.slug
@@ -41,7 +41,6 @@ const Creation = () => {
 				</motion.button>
 				<Md3DRotation className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 			</div>
-			{/* {playing ? play() : stop()} */}
 		</main>
 	)
 }

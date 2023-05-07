@@ -3,7 +3,7 @@ import { Video, CloudinaryContext } from "cloudinary-react"
 import { useGlobalContext } from "../components/GlobalContext"
 
 const MobVideo = memo(({ publicId }) => {
-	const { lang, setLang, play, stop, playing, setPlaying } = useGlobalContext()
+	const { lang, setLang } = useGlobalContext()
 
 	return (
 		<CloudinaryContext cloud_name="amircloud" secure={true}>
