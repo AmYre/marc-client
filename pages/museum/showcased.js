@@ -4,7 +4,6 @@ import { useGlobalContext } from "../../components/GlobalContext"
 import Link from "next/link"
 import Image from "next/image"
 import Masonry from "react-masonry-css"
-import locales from "../../lang/locales.js"
 
 import { motion } from "framer-motion"
 import { sanityClient } from "../../lib/sanityClient"
@@ -14,7 +13,7 @@ import Nav from "../../components/Nav"
 import NavBar from "../../components/NavBar"
 
 const Showcased = ({ products, vignette }) => {
-	const { lang, setLang, isOpen, setIsOpen } = useGlobalContext()
+	const { lang, setLang, isOpen, setIsOpen, texts, setTexts } = useGlobalContext()
 	const [filter, setFilter] = useState("showed")
 
 	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })
@@ -34,22 +33,22 @@ const Showcased = ({ products, vignette }) => {
 			</nav>
 			<main className="w-full bg-layout bg-opacity-90 text-white font-nunito text-center">
 				<div className="p-12 pt-28 md:pt-12">
-					<h2 className="text-3xl tracking-widest font-thin font-bodoni mb-12">{locales.showcased[lang]}</h2>
+					<h2 className="text-3xl tracking-widest font-thin font-bodoni mb-12">{texts.showcased[lang]}</h2>
 					<div className="text-sm p-4 mb-12 font-thin border-t-[1px] border-b-[1px] border-gray-100 flex flex-wrap justify-center gap-8">
 						<button
 							onClick={() => setFilter("showed")}
 							className="cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300">
-							{locales.all[lang]}
+							{texts.all[lang]}
 						</button>
 						<button
 							onClick={() => setFilter("showed-museum")}
 							className="cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300">
-							{locales.expo[lang]}
+							{texts.menu3[lang]}
 						</button>
 						<button
 							onClick={() => setFilter("showed-expo")}
 							className="cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300">
-							{locales.menu3[lang]}
+							{texts.expo[lang]}
 						</button>
 					</div>
 					{products && (
@@ -346,7 +345,7 @@ const Showcased = ({ products, vignette }) => {
 }
 
 export const getServerSideProps = async () => {
-	const products = await sanityClient.fetch(`*[_type == "products"]{ ..., _id, category->{..., parent->}}`)
+	const products = await sanityClient.fetch(`*[_type == "products"]| order(_updatedAt desc){ ..., _id, category->{..., parent->}}`)
 	const vignette = await sanityClient.fetch(`*[_type=="walls" && title == 'vignette']{...}`)
 
 	return {

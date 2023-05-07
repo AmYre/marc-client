@@ -4,12 +4,11 @@ import { useGlobalContext } from "./GlobalContext"
 import Link from "next/link"
 import Image from "next/image"
 import Masonry from "react-masonry-css"
-import locales from "../lang/locales.js"
 import { motion } from "framer-motion"
 import imageUrlBuilder from "@sanity/image-url"
 
 const Products = ({ products, vignette }) => {
-	const { lang, setLang } = useGlobalContext()
+	const { lang, setLang, texts, setTexts } = useGlobalContext()
 	const [filter, setFilter] = useState()
 
 	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })
@@ -21,20 +20,20 @@ const Products = ({ products, vignette }) => {
 
 	return (
 		<div className="p-12 pt-28 md:pt-12">
-			<h2 className="text-3xl tracking-widest font-thin mb-12 font-bodoni">{locales.menu1[lang]}</h2>
+			<h2 className="text-3xl tracking-widest font-thin mb-12 font-bodoni">{texts.menu1[lang]}</h2>
 			<div className="text-sm p-4 mb-12 font-thin border-t-[1px] border-b-[1px] border-gray-100 flex flex-wrap justify-center gap-8">
 				<button onClick={() => setFilter("")} className="cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300">
-					{locales.all[lang]}
+					{texts.all[lang]}
 				</button>
 				<button
 					onClick={() => setFilter("showed-museum")}
 					className="cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300">
-					{locales.menu3[lang]}
+					{texts.menu3[lang]}
 				</button>
 				<button
 					onClick={() => setFilter("showed-expo")}
 					className="cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300">
-					{locales.expo[lang]}
+					{texts.expo[lang]}
 				</button>
 			</div>
 			{products && (
@@ -158,7 +157,7 @@ const Products = ({ products, vignette }) => {
 															/>
 															<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 font-thin ">
 																<h2 className="ellipse2 px-4 font-thin " key={product.title[lang]}>
-																	{product.title[lang] ? product.title[lang] : product.title.en}
+																	{product.title[lang] || product.title.en}
 																</h2>
 															</figcaption>
 														</figure>

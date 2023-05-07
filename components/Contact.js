@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react"
 import { useGlobalContext } from "../components/GlobalContext"
-import locales from "../lang/locales.js"
 import imageUrlBuilder from "@sanity/image-url"
 
 import { MutatingDots } from "react-loader-spinner"
@@ -9,7 +8,7 @@ import { motion } from "framer-motion"
 import emailjs from "@emailjs/browser"
 
 const Contact = ({ contactPic }) => {
-	const { nav, setNav, lang, setLang } = useGlobalContext()
+	const { lang, setLang, texts, setTexts } = useGlobalContext()
 
 	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })
 
@@ -42,22 +41,22 @@ const Contact = ({ contactPic }) => {
 
 	return (
 		<div className="p-12 pt-28 md:pt-12">
-			<h2 className="text-3xl tracking-widest font-thin font-bodoni mb-12">{locales.menu5[lang]}</h2>
+			<h2 className="text-3xl tracking-widest font-thin font-bodoni mb-12">{texts.menu5[lang]}</h2>
 			<div className="overflow-hidden w-full h-[400px]">
 				<img src={header} className="anim -z-10 object-cover h-screen w-screen" alt="bg" width="2500" height="2500" />
 			</div>
 			{!sent ? (
 				<form ref={form} onSubmit={sendEmail} className="flex flex-col mt-12 mb-12 md:px-16 gap-12">
 					<div className="flex gap-12">
-						<TextField className="w-full max-w-[400px]" name="user" id="standard-basic" label={locales.formLastname[lang]} variant="standard" required />
-						<TextField className="w-full max-w-[400px]" name="lastname" id="standard-basic" label={locales.formName[lang]} variant="standard" required />
+						<TextField className="w-full max-w-[400px]" name="user" id="standard-basic" label={texts.formLastname[lang]} variant="standard" required />
+						<TextField className="w-full max-w-[400px]" name="lastname" id="standard-basic" label={texts.formName[lang]} variant="standard" required />
 					</div>
 					<div className="flex gap-12">
-						<TextField className="w-full max-w-[400px]" name="mail" id="standard-basic" label={locales.formMail[lang]} variant="standard" required />
-						<TextField className="w-full max-w-[400px]" name="phone" id="standard-basic" label={locales.formPhone[lang]} variant="standard" />
+						<TextField className="w-full max-w-[400px]" name="mail" id="standard-basic" label={texts.formMail[lang]} variant="standard" required />
+						<TextField className="w-full max-w-[400px]" name="phone" id="standard-basic" label={texts.formPhone[lang]} variant="standard" />
 					</div>
-					<TextField className="w-full max-w-[800px]" name="message" id="standard-textarea" label={locales.formMessage[lang]} multiline variant="standard" />
-					<input className="bg-[#a87e2d] w-[200px] text-white px-8 py-4 rounded shadow hover:shadow-none transition-all duration-300" type="submit" value={locales.formSent[lang]} />
+					<TextField className="w-full max-w-[800px]" name="message" id="standard-textarea" label={texts.formMessage[lang]} multiline variant="standard" />
+					<input className="bg-[#a87e2d] w-[200px] text-white px-8 py-4 rounded shadow hover:shadow-none transition-all duration-300" type="submit" value={texts.formSent[lang]} />
 				</form>
 			) : delay ? (
 				<div className="flex justify-center items-center">
@@ -70,7 +69,7 @@ const Contact = ({ contactPic }) => {
 					animate={{ y: 0, opacity: 1, scale: 1 }}
 					transition={{ duration: 0.5, ease: "easeOut" }}
 					exit={{ opacity: 0, scale: 0.1 }}>
-					{locales.confirm[lang]}
+					{texts.confirm[lang]}
 				</motion.div>
 			)}
 		</div>

@@ -4,7 +4,6 @@ import Link from "next/link"
 import { BsYoutube } from "react-icons/bs"
 import { AiFillInstagram } from "react-icons/ai"
 import { ImFacebook2 } from "react-icons/im"
-import locales from "../lang/locales.js"
 import flagFR from "../public/fr.png"
 import flagEN from "../public/en.png"
 import flagRU from "../public/ru.png"
@@ -12,7 +11,7 @@ import flagCN from "../public/cn.png"
 import { motion } from "framer-motion"
 
 const MobNav = () => {
-	const { lang, setLang, isOpen, setIsOpen, play, stop } = useGlobalContext()
+	const { lang, setLang, isOpen, setIsOpen, play, stop, texts, setTexts } = useGlobalContext()
 
 	return (
 		<div className="absolute z-10 h-screen w-screen inset-0 flex flex-col justify-around bg-black bg-opacity-90 text-white">
@@ -31,7 +30,7 @@ const MobNav = () => {
 							setIsOpen(false)
 							stop()
 						}}>
-						{locales.menu1[lang]}
+						{texts.menu1[lang]}
 					</Link>
 					<Link
 						href="/artists"
@@ -40,7 +39,7 @@ const MobNav = () => {
 							setIsOpen(false)
 							stop()
 						}}>
-						{locales.menu2[lang]}
+						{texts.menu2[lang]}
 					</Link>
 					<Link
 						href="/museum"
@@ -49,7 +48,7 @@ const MobNav = () => {
 							setIsOpen(false)
 							stop()
 						}}>
-						{locales.menu3[lang]}
+						{texts.menu3[lang]}
 					</Link>
 					<Link
 						href="/gallery"
@@ -58,7 +57,7 @@ const MobNav = () => {
 							setIsOpen(false)
 							stop()
 						}}>
-						{locales.menu4[lang]}
+						{texts.menu4[lang]}
 					</Link>
 					<Link
 						href="/contact"
@@ -67,7 +66,7 @@ const MobNav = () => {
 							setIsOpen(false)
 							stop()
 						}}>
-						{locales.menu5[lang]}
+						{texts.menu5[lang]}
 					</Link>
 				</div>
 				<div className="text-center pt-6">

@@ -9,13 +9,12 @@ import Masonry from "react-masonry-css"
 
 import { motion } from "framer-motion"
 import imageUrlBuilder from "@sanity/image-url"
-import locales from "../../lang/locales.js"
 
 import Nav from "../../components/Nav"
 import NavBar from "../../components/NavBar"
 
 const Sold = ({ products, vignette }) => {
-	const { nav, setNav, lang, setLang, isOpen, setIsOpen } = useGlobalContext()
+	const { lang, setLang, isOpen, setIsOpen, texts, setTexts } = useGlobalContext()
 
 	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })
 
@@ -35,7 +34,7 @@ const Sold = ({ products, vignette }) => {
 			</nav>
 			<main className="w-full bg-layout bg-opacity-90 text-white font-nunito text-center">
 				<div className="p-12 pt-28 md:pt-12">
-					<h2 className="text-3xl tracking-widest font-thin font-bodoni mb-12">{locales.sold[lang]}</h2>
+					<h2 className="text-3xl tracking-widest font-thin font-bodoni mb-12">{texts.sold[lang]}</h2>
 
 					{products && (
 						<div className="">
@@ -51,7 +50,7 @@ const Sold = ({ products, vignette }) => {
 													transition={{ duration: 0.5, ease: "easeOut" }}
 													exit={{ opacity: 0, scale: 0.1 }}>
 													{product?.slugfr && (
-														<Link key={index} href={`/${product.slugfr.current}`}>
+														<Link key={index} href={`/museum/${product.slugfr.current}`}>
 															<div className="vig-wrapper relative w-full overflow-hidden mb-8">
 																<Image
 																	className="hover:scale-105 transition-all duration-1000"
@@ -86,7 +85,7 @@ const Sold = ({ products, vignette }) => {
 													transition={{ duration: 0.5, ease: "easeOut" }}
 													exit={{ opacity: 0, scale: 0.1 }}>
 													{product?.slugfr && (
-														<Link key={index} href={`/${product.slugfr.current}`}>
+														<Link key={index} href={`/museum/${product.slugfr.current}`}>
 															<div className="w-full overflow-hidden">
 																<figure className="mb-8">
 																	<Image
@@ -217,7 +216,7 @@ const Sold = ({ products, vignette }) => {
 }
 
 export const getServerSideProps = async () => {
-	const products = await sanityClient.fetch(`*[_type == "products"]{ ..., category-> }`)
+	const products = await sanityClient.fetch(`*[_type == "products"]| order(_updatedAt desc){ ..., category-> }`)
 	const vignette = await sanityClient.fetch(`*[_type=="walls" && title == 'vignette']{...}`)
 
 	return {

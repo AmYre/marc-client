@@ -1,16 +1,14 @@
-import React, { useState } from "react"
+import React from "react"
 import { useGlobalContext } from "./GlobalContext"
 
 import Link from "next/link"
 import Image from "next/image"
 import Masonry from "react-masonry-css"
-import locales from "../lang/locales.js"
 import { motion } from "framer-motion"
 import imageUrlBuilder from "@sanity/image-url"
 
-const Artists = ({ artists }) => {
-	const { nav, setNav, lang, setLang } = useGlobalContext()
-	const [filter, setFilter] = useState()
+const Artists = ({ artists, vignette }) => {
+	const { lang, setLang, texts, setTexts } = useGlobalContext()
 
 	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })
 
@@ -18,21 +16,11 @@ const Artists = ({ artists }) => {
 		return imageBuilder.image(source)
 	}
 
-	const filterByCat = (cat) => {
-		if (cat == "all") {
-			setFilter("")
-		}
-		if (cat == "nouveau") {
-			setFilter("nouveau")
-		}
-		if (cat == "artisanats") {
-			setFilter("artisanats")
-		}
-	}
+	const vig = urlFor(vignette[0].image).url()
 
 	return (
 		<div className="p-12 pt-28 md:pt-12">
-			<h2 className="text-3xl tracking-widest font-thin font-bodoni mb-12">{locales.menu2[lang]}</h2>
+			<h2 className="text-3xl tracking-widest font-thin font-bodoni mb-12">{texts.menu2[lang]}</h2>
 
 			{artists && (
 				<div className="">
@@ -49,9 +37,16 @@ const Artists = ({ artists }) => {
 										<Link key={index} href={`artists/${artist.slug.current}`}>
 											<div className="w-full overflow-hidden">
 												<figure className="mb-8">
-													<Image className="hover:scale-105 transition-all duration-1000" src={urlFor(artist.image).url()} alt="Image produit" width="300" height="300" />
-													<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 ">
-														<h2 className="ellipse2 px-4 font-thin" key={artist.title}>
+													<Image
+														className="filter hover:brightness-125 transition-all duration-1000"
+														src={urlFor(artist.image).url()}
+														alt="Image produit"
+														width="300"
+														height="300"
+														style={{ backgroundImage: `url(${vig})`, backgroundSize: "cover" }}
+													/>
+													<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 font-thin ">
+														<h2 className="ellipse2 px-4 font-thin " key={artist.title}>
 															{artist.title}
 														</h2>
 													</figcaption>
@@ -74,20 +69,22 @@ const Artists = ({ artists }) => {
 									exit={{ opacity: 0, scale: 0.1 }}>
 									{artist?.slug && (
 										<Link key={index} href={`artists/${artist.slug.current}`} className="relative w-full">
-											<div className="product-frame relative w-full overflow-hidden">
-												<div className="overlay relative">
+											<div className="w-full overflow-hidden">
+												<figure className="mb-8">
 													<Image
-														className="hover:scale-105 transition-all duration-1000 overflow-hidden"
+														className="filter hover:brightness-110 transition-all duration-1000"
 														src={urlFor(artist.image).url()}
 														alt="Image produit"
 														width="300"
-														height="300"></Image>
-												</div>
-												<div className="absolute bottom-[30px] w-full bg-black bg-opacity-50 py-[10px] shadow">
-													<h2 className="ellipse2 px-4 " key={artist.title}>
-														{artist.title}
-													</h2>
-												</div>
+														height="300"
+														style={{ backgroundImage: `url(${vig})`, backgroundSize: "cover" }}
+													/>
+													<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 font-thin ">
+														<h2 className="ellipse2 px-4 font-thin " key={artist.title}>
+															{artist.title}
+														</h2>
+													</figcaption>
+												</figure>
 											</div>
 										</Link>
 									)}

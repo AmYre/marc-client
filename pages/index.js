@@ -1,24 +1,22 @@
-import { useState, useRef, useCallback } from "react"
 import { useGlobalContext } from "../components/GlobalContext"
 
 import HomeVideo from "../components/HomeVideo"
 import { motion } from "framer-motion"
 import { Md3DRotation } from "react-icons/md"
-import { FaVolumeUp, FaVolumeDown } from "react-icons/fa"
+import { GiSpeaker, GiSpeakerOff } from "react-icons/gi"
 
 import Head from "next/head"
-import locales from "../lang/locales.js"
 import Nav from "../components/Nav"
 import NavBar from "../components/NavBar"
 
 export default function Home() {
-	const { lang, setLang, play, stop, homePlaying, setHomePlaying } = useGlobalContext()
+	const { lang, setLang, play, stop, homePlaying, setHomePlaying, texts } = useGlobalContext()
 
 	return (
 		<div>
 			<Head>
-				<title>{locales.title[lang]}</title>
-				<meta name="description" content={locales.desc[lang]} />
+				<title>{texts.title[lang]}</title>
+				<meta name="description" content={texts.desc[lang]} />
 			</Head>
 			<main className="">
 				<HomeVideo />
@@ -37,9 +35,9 @@ export default function Home() {
 						animate={{ scale: homePlaying ? 1.2 : 1 }}
 						transition={{ duration: 0.3 }}>
 						{homePlaying ? (
-							<FaVolumeUp className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
+							<GiSpeaker className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 						) : (
-							<FaVolumeDown className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
+							<GiSpeakerOff className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 						)}
 					</motion.button>
 					<Md3DRotation className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />

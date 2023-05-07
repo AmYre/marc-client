@@ -8,14 +8,13 @@ import { BsYoutube } from "react-icons/bs"
 import { AiFillInstagram } from "react-icons/ai"
 import { ImFacebook2 } from "react-icons/im"
 import { RxPinLeft, RxPinRight } from "react-icons/rx"
-import locales from "../lang/locales.js"
 import flagFR from "../public/fr.png"
 import flagEN from "../public/en.png"
 import flagRU from "../public/ru.png"
 import flagCN from "../public/cn.png"
 
 const Nav = () => {
-	const { drawer, setDrawer, lang, setLang, play, stop } = useGlobalContext()
+	const { drawer, setDrawer, lang, setLang, play, stop, texts, setTexts } = useGlobalContext()
 	const [localDrawer, setLocalDrawer] = useState(drawer)
 
 	return (
@@ -40,31 +39,31 @@ const Nav = () => {
 								onClick={() => stop()}
 								href="/creations"
 								className="p-6 font-nunito text-sm  hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg">
-								{locales.menu1[lang]}
+								{texts.menu1[lang]}
 							</Link>
 							<Link
 								onClick={() => stop()}
 								href="/artists"
 								className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg">
-								{locales.menu2[lang]}
+								{texts.menu2[lang]}
 							</Link>
 							<Link
 								onClick={() => stop()}
 								href="/museum"
 								className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-bg">
-								{locales.menu3[lang]}
+								{texts.menu3[lang]}
 							</Link>
 							<Link
 								onClick={() => stop()}
 								href="/gallery"
 								className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-bg">
-								{locales.menu4[lang]}
+								{texts.menu4[lang]}
 							</Link>
 							<Link
 								onClick={() => stop()}
 								href="/contact"
 								className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-bg">
-								{locales.menu5[lang]}
+								{texts.menu5[lang]}
 							</Link>
 						</div>
 						<div className="text-center pt-6">

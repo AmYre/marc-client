@@ -7,6 +7,7 @@ module.exports = {
 				splash: ["Splash"],
 				bodoni: ["Libre Bodoni"],
 				nunito: ["Nunito", "sans-serif"],
+				roboto: ["Roboto", "sans-serif"],
 			},
 			backgroundColor: {
 				layout: "#6A2147",

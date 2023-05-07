@@ -3,16 +3,15 @@ import { useGlobalContext } from "./GlobalContext"
 
 import Link from "next/link"
 import Image from "next/image"
-import locales from "../lang/locales.js"
 
 import { motion } from "framer-motion"
 
 const Museum = () => {
-	const { lang, setLang } = useGlobalContext()
+	const { lang, setLang, texts, setTexts } = useGlobalContext()
 
 	return (
 		<div className="p-12 pt-28 md:pt-12">
-			<h2 className="text-3xl tracking-widest font-thin font-bodoni mb-12">{locales.menu3[lang]}</h2>
+			<h2 className="text-3xl tracking-widest font-thin font-bodoni mb-12">{texts.menu3[lang]}</h2>
 
 			<div className="flex flex-col md:flex-row gap-12">
 				<motion.div
@@ -33,7 +32,7 @@ const Museum = () => {
 								/>
 							</div>
 							<div className="absolute bottom-0 w-full bg-black bg-opacity-50 py-[10px] shadow">
-								<h2 className="ellipse2 px-4">{locales.showcased[lang]}</h2>
+								<h2 className="ellipse2 px-4">{texts.showcased[lang]}</h2>
 							</div>
 						</div>
 					</Link>
@@ -56,7 +55,7 @@ const Museum = () => {
 								/>
 							</div>
 							<div className="absolute bottom-0 w-full bg-black bg-opacity-50 py-[10px] shadow">
-								<h2 className="ellipse2 px-4 ">{locales.sold[lang]}</h2>
+								<h2 className="ellipse2 px-4 ">{texts.sold[lang]}</h2>
 							</div>
 						</div>
 					</Link>
