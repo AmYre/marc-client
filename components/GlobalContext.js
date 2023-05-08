@@ -8,8 +8,6 @@ import { useEffect } from "react"
 const GlobalContext = createContext()
 
 const ContextProvider = ({ children }) => {
-	const [texts, setTexts] = useState(locales)
-
 	useEffect(() => {
 		sanityClient.fetch(`*[_type=="texts"]{...}`).then((texts) =>
 			setTexts(
@@ -27,6 +25,8 @@ const ContextProvider = ({ children }) => {
 	const [drawer, setDrawer] = useState(false)
 	const [playing, setPlaying] = useState(false)
 	const [isStreaming, setIsStreaming] = useState(false)
+	const [texts, setTexts] = useState(locales)
+	const [ended, setEnded] = useState(false)
 
 	return (
 		<GlobalContext.Provider
@@ -45,6 +45,8 @@ const ContextProvider = ({ children }) => {
 				setIsStreaming,
 				texts,
 				setTexts,
+				ended,
+				setEnded,
 			}}>
 			{children}
 		</GlobalContext.Provider>
