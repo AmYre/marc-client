@@ -56,9 +56,7 @@ const DetailProduct = () => {
 						<source src="https://res.cloudinary.com/amircloud/video/upload/v1673634198/marc/home.mp4" type="video/mp4" />
 					</Video>
 				</CloudinaryContext>
-				<AnimatePresence>
-					<Contact />
-				</AnimatePresence>
+				<AnimatePresence>{ended && <Contact />}</AnimatePresence>
 			</div>
 			<div className="flex gap-3 absolute bottom-10 right-10 items-center">
 				<motion.button onClick={() => setPlaying((prev) => !prev)} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} animate={{ scale: playing ? 1.2 : 1 }} transition={{ duration: 0.3 }}>
