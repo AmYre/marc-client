@@ -18,6 +18,24 @@ const locales = {
 	formPhone: { fr: "Téléphone", en: "Phone", ru: "Phone", cn: "电话" },
 	formMessage: { fr: "Message", en: "Message", ru: "Message", cn: "留言" },
 	formSent: { fr: "Envoyer", en: "Send", ru: "Send", cn: "发送" },
+	formLang: {
+		fr: "Toutes les vidéos sont aussi disponibles dans ces langues",
+		en: "All videos are also available in these languages",
+		ru: "All videos are also available in these languages",
+		cn: "All videos are also available in these languages",
+	},
+	infos: {
+		fr: "Plus d'informations",
+		en: "More informations",
+		ru: "More informations",
+		cn: "More informations",
+	},
+	report: {
+		fr: "Signalement",
+		en: "Report Condition",
+		ru: "Report Condition",
+		cn: "Report Condition",
+	},
 }
 
 export default locales

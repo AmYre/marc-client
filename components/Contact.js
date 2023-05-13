@@ -10,6 +10,16 @@ import { motion } from "framer-motion"
 import emailjs from "@emailjs/browser"
 
 import contactPic from "../public/contact.jpg"
+import cnes from "../public/cnes.png"
+import cefa from "../public/cefa.png"
+import flagPB from "../public/pb.png"
+import flagPO from "../public/po.png"
+import flagKR from "../public/kr.png"
+import flagAR from "../public/ar.png"
+import flagJP from "../public/jp.png"
+import flagIT from "../public/it.png"
+import flagTU from "../public/tu.png"
+import flagRU from "../public/ru.png"
 
 const Contact = ({ contact }) => {
 	const { lang, setLang, texts, setTexts, ended, setEnded } = useGlobalContext()
@@ -92,28 +102,138 @@ const Contact = ({ contact }) => {
 					transition={{ duration: 0.25 }}
 					className="absolute top-0 w-full h-full z-20 flex justify-center items-center bg-bg">
 					<div className="w-fit h-fit p-12 bg-layout">
-						<div className="flex justify-between">
-							<h2 className="text-3xl tracking-widest text-white font-thin font-bodoni mb-12">{texts.menu5[lang]}</h2>
-							<AiOutlineCloseCircle className="text-white text-3xl cursor-pointer" onClick={() => setEnded(false)} />
+						<div className="flex justify-end">
+							<AiOutlineCloseCircle className="text-white text-3xl cursor-pointer mb-4" onClick={() => setEnded(false)} />
+						</div>
+						<p className="text-white font-thin mb-4 text-center">{texts.formLang[lang]}</p>
+						<div className="flex flex-wrap justify-center items-center gap-4 mb-4">
+							<Image
+								onClick={() => {
+									setLang("fr")
+								}}
+								className="hover:cursor-pointer"
+								src={flagPB}
+								alt="lang netherland"
+								width="60"
+								height="60"
+							/>
+							<Image
+								onClick={() => {
+									setLang("fr")
+								}}
+								className="hover:cursor-pointer"
+								src={flagPO}
+								alt="lang polish"
+								width="60"
+								height="60"
+							/>
+							<Image
+								onClick={() => {
+									setLang("fr")
+								}}
+								className="hover:cursor-pointer"
+								src={flagKR}
+								alt="lang korean"
+								width="60"
+								height="60"
+							/>
+							<Image
+								onClick={() => {
+									setLang("fr")
+								}}
+								className="hover:cursor-pointer"
+								src={flagAR}
+								alt="lang arabic"
+								width="60"
+								height="60"
+							/>
+							<Image
+								onClick={() => {
+									setLang("fr")
+								}}
+								className="hover:cursor-pointer"
+								src={flagJP}
+								alt="lang japanese"
+								width="60"
+								height="60"
+							/>
+							<Image
+								onClick={() => {
+									setLang("fr")
+								}}
+								className="hover:cursor-pointer"
+								src={flagIT}
+								alt="lang italian"
+								width="60"
+								height="60"
+							/>
+							<Image
+								onClick={() => {
+									setLang("fr")
+								}}
+								className="hover:cursor-pointer"
+								src={flagTU}
+								alt="lang turkish"
+								width="60"
+								height="60"
+							/>
+							<Image
+								onClick={() => {
+									setLang("fr")
+								}}
+								className="hover:cursor-pointer"
+								src={flagRU}
+								alt="langue russe"
+								width="60"
+								height="60"
+							/>
+						</div>
+
+						<div className="flex justify-center items-center gap-4">
+							<input
+								className="bg-white hover:bg-[#d6d6d6] text-[#6d6d6d] text-sm px-4 cursor-pointer py-2 rounded shadow hover:shadow-none transition-all duration-300"
+								type="button"
+								value={texts.infos[lang]}
+							/>
+							<input
+								className="bg-white hover:bg-[#d6d6d6] text-[#6d6d6d] text-sm px-4 cursor-pointer py-2 rounded shadow hover:shadow-none transition-all duration-300"
+								type="button"
+								value={texts.report[lang]}
+							/>
 						</div>
 
 						{!sent ? (
-							<form ref={form} onSubmit={sendEmail} className="flex flex-col mt-12 mb-12 md:px-16 gap-12">
-								<div className="flex gap-12">
-									<TextField className="w-full max-w-[400px]" name="user" id="standard-basic" label={texts.formLastname[lang]} variant="standard" required />
-									<TextField className="w-full max-w-[400px]" name="lastname" id="standard-basic" label={texts.formName[lang]} variant="standard" required />
+							<>
+								<form ref={form} onSubmit={sendEmail} className="flex flex-col mt-12 mb-12 md:px-16 gap-12">
+									<div className="flex gap-12">
+										<TextField className="w-full max-w-[400px]" name="user" id="standard-basic" label={texts.formLastname[lang]} variant="standard" required />
+										<TextField className="w-full max-w-[400px]" name="lastname" id="standard-basic" label={texts.formName[lang]} variant="standard" required />
+									</div>
+									<div className="flex gap-12">
+										<TextField className="w-full max-w-[400px]" name="mail" id="standard-basic" label={texts.formMail[lang]} variant="standard" required />
+										<TextField className="w-full max-w-[400px]" name="phone" id="standard-basic" label={texts.formPhone[lang]} variant="standard" />
+									</div>
+									<TextField className="w-full max-w-[800px]" name="message" id="standard-textarea" label={texts.formMessage[lang]} multiline variant="standard" />
+									<div className="flex justify-center items-center">
+										<input
+											className="bg-[#a87e2d] hover:bg-[#ac8539] w-[200px] text-white px-8 cursor-pointer py-4 rounded shadow hover:shadow-none transition-all duration-300"
+											type="submit"
+											value={texts.formSent[lang]}
+										/>
+									</div>
+								</form>
+
+								<div className="flex justify-center items-center mt-12 gap-12">
+									<div className="flex flex-col items-center">
+										<Image src={cnes} alt="expert CNES" width="80" height="80" />
+										<p className="text-white">Expert auprès du CNES</p>
+									</div>
+									<div className="flex flex-col items-center">
+										<Image src={cefa} alt="expert CEFA" width="60" height="60" />
+										<p className="text-white">Expert auprès du CNES</p>
+									</div>
 								</div>
-								<div className="flex gap-12">
-									<TextField className="w-full max-w-[400px]" name="mail" id="standard-basic" label={texts.formMail[lang]} variant="standard" required />
-									<TextField className="w-full max-w-[400px]" name="phone" id="standard-basic" label={texts.formPhone[lang]} variant="standard" />
-								</div>
-								<TextField className="w-full max-w-[800px]" name="message" id="standard-textarea" label={texts.formMessage[lang]} multiline variant="standard" />
-								<input
-									className="bg-[#a87e2d] hover:bg-[#ac8539] w-[200px] text-white px-8 cursor-pointer py-4 rounded shadow hover:shadow-none transition-all duration-300"
-									type="submit"
-									value={texts.formSent[lang]}
-								/>
-							</form>
+							</>
 						) : delay ? (
 							<div className="flex justify-center items-center">
 								<MutatingDots

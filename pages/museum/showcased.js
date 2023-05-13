@@ -47,7 +47,7 @@ const Showcased = ({ products, vignette }) => {
 						</button>
 						<button
 							onClick={() => setFilter("showed-expo")}
-							className="cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300">
+							className="cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300 border-l-4 border-[#A87E2D] ">
 							{texts.expo[lang]}
 						</button>
 					</div>
@@ -94,7 +94,10 @@ const Showcased = ({ products, vignette }) => {
 														exit={{ opacity: 0, scale: 0.1 }}>
 														{product?.slugfr && (
 															<Link key={index} href={`/${product.slugfr.current}`}>
-																<div className="vig-wrapper relative w-full overflow-hidden mb-8">
+																<div
+																	className={`vig-wrapper relative w-full overflow-hidden mb-8 ${
+																		product.category.slug.current == "showed-expo" && "bl-2 border-[#A87E2D] border-l-4"
+																	}`}>
 																	<Image
 																		className="hover:scale-105 transition-all duration-1000"
 																		src={urlFor(product.image).url()}
@@ -137,6 +140,7 @@ const Showcased = ({ products, vignette }) => {
 																			alt="Image produit"
 																			width="300"
 																			height="300"
+																			style={{ backgroundImage: `url(${vig})`, backgroundSize: "cover" }}
 																		/>
 																		<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 ">
 																			<h2 className="ellipse2 px-4 font-thin" key={product.title.en}>
@@ -161,11 +165,14 @@ const Showcased = ({ products, vignette }) => {
 																<div className="w-full overflow-hidden">
 																	<figure className="mb-8">
 																		<Image
-																			className="hover:scale-105 transition-all duration-1000"
+																			className={`hover:scale-105 transition-all duration-1000  ${
+																				product.category.slug.current == "showed-expo" && "bl-2 border-[#A87E2D] border-l-4"
+																			}`}
 																			src={urlFor(product.image).url()}
 																			alt="Image produit"
 																			width="300"
 																			height="300"
+																			style={{ backgroundImage: `url(${vig})`, backgroundSize: "cover" }}
 																		/>
 																		<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 ">
 																			<h2 className="ellipse2 px-4 font-thin" key={product.title.en}>
