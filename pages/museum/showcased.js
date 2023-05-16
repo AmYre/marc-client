@@ -42,7 +42,7 @@ const Showcased = ({ products, vignette }) => {
 						</button>
 						<button
 							onClick={() => setFilter("showed-museum")}
-							className="cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300">
+							className="cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300 border-l-4 border-[#2da848]">
 							{texts.menu3[lang]}
 						</button>
 						<button
@@ -96,7 +96,7 @@ const Showcased = ({ products, vignette }) => {
 															<Link key={index} href={`/${product.slugfr.current}`}>
 																<div
 																	className={`vig-wrapper relative w-full overflow-hidden mb-8 ${
-																		product.category.slug.current == "showed-expo" && "bl-2 border-[#A87E2D] border-l-4"
+																		product.category.slug.current == "showed-expo" ? "bl-2 border-[#A87E2D] border-l-4" : "bl-2 border-[#2da848] border-l-4"
 																	}`}>
 																	<Image
 																		className="hover:scale-105 transition-all duration-1000"
@@ -166,7 +166,7 @@ const Showcased = ({ products, vignette }) => {
 																	<figure className="mb-8">
 																		<Image
 																			className={`hover:scale-105 transition-all duration-1000  ${
-																				product.category.slug.current == "showed-expo" && "bl-2 border-[#A87E2D] border-l-4"
+																				product.category.slug.current == "showed-expo" ? "bl-2 border-[#A87E2D] border-l-4" : "bl-2 border-[#2da848] border-l-4"
 																			}`}
 																			src={urlFor(product.image).url()}
 																			alt="Image produit"
