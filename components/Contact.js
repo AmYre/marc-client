@@ -1,8 +1,10 @@
 import React, { useState, useRef } from "react"
 import Image from "next/image"
 import { useGlobalContext } from "../components/GlobalContext"
+import Link from "next/link"
 
 import { AiOutlineCloseCircle } from "react-icons/ai"
+import { IoMdRefreshCircle } from "react-icons/io"
 
 import { MutatingDots } from "react-loader-spinner"
 import TextField from "@mui/material/TextField"
@@ -20,6 +22,7 @@ import flagJP from "../public/jp.png"
 import flagIT from "../public/it.png"
 import flagTU from "../public/tu.png"
 import flagRU from "../public/ru.png"
+import logo from "../public/logo.png"
 
 const Contact = ({ contact }) => {
 	const { lang, setLang, texts, setTexts, ended, setEnded } = useGlobalContext()
@@ -100,7 +103,7 @@ const Contact = ({ contact }) => {
 					initial={{ opacity: 0, scale: 0.5 }}
 					animate={{ opacity: 1, scale: 1 }}
 					transition={{ duration: 0.25 }}
-					className="absolute top-0 w-full h-full z-20 flex justify-center items-center bg-bg">
+					className="absolute top-0 w-full h-full z-20 flex justify-center items-center bg-layout">
 					<div className="w-fit h-fit p-12 bg-layout">
 						<div className="flex justify-end">
 							<AiOutlineCloseCircle className="text-white text-3xl cursor-pointer mb-4" onClick={() => setEnded(false)} />
@@ -189,75 +192,38 @@ const Contact = ({ contact }) => {
 							/>
 						</div>
 
-						<div className="flex justify-center items-center gap-4">
-							<input
-								className="bg-white hover:bg-[#d6d6d6] text-[#6d6d6d] text-sm px-4 cursor-pointer py-2 rounded shadow hover:shadow-none transition-all duration-300"
-								type="button"
-								value={texts.infos[lang]}
-							/>
-							<input
-								className="bg-white hover:bg-[#d6d6d6] text-[#6d6d6d] text-sm px-4 cursor-pointer py-2 rounded shadow hover:shadow-none transition-all duration-300"
-								type="button"
-								value={texts.report[lang]}
-							/>
-						</div>
-
-						{!sent ? (
-							<>
-								<form ref={form} onSubmit={sendEmail} className="flex flex-col mt-12 mb-12 md:px-16 gap-12">
-									<div className="flex gap-12">
-										<TextField className="w-full max-w-[400px]" name="user" id="standard-basic" label={texts.formLastname[lang]} variant="standard" required />
-										<TextField className="w-full max-w-[400px]" name="lastname" id="standard-basic" label={texts.formName[lang]} variant="standard" required />
-									</div>
-									<div className="flex gap-12">
-										<TextField className="w-full max-w-[400px]" name="mail" id="standard-basic" label={texts.formMail[lang]} variant="standard" required />
-										<TextField className="w-full max-w-[400px]" name="phone" id="standard-basic" label={texts.formPhone[lang]} variant="standard" />
-									</div>
-									<TextField className="w-full max-w-[800px]" name="message" id="standard-textarea" label={texts.formMessage[lang]} multiline variant="standard" />
-									<div className="flex justify-center items-center">
-										<input
-											className="bg-[#a87e2d] hover:bg-[#ac8539] w-[200px] text-white px-8 cursor-pointer py-4 rounded shadow hover:shadow-none transition-all duration-300"
-											type="submit"
-											value={texts.formSent[lang]}
-										/>
-									</div>
-								</form>
-
-								<div className="flex justify-center items-center mt-12 gap-12">
-									<div className="flex flex-col items-center">
-										<Image src={cnes} alt="expert CNES" width="80" height="80" />
-										<p className="text-white">Expert auprès du CNES</p>
-									</div>
-									<div className="flex flex-col items-center">
-										<Image src={cefa} alt="expert CEFA" width="60" height="60" />
-										<p className="text-white">Expert auprès du CNES</p>
-									</div>
-								</div>
-							</>
-						) : delay ? (
-							<div className="flex justify-center items-center">
-								<MutatingDots
-									height="100"
-									width="100"
-									color="white"
-									secondaryColor="#a87e2d"
-									radius="12.5"
-									ariaLabel="mutating-dots-loading"
-									wrapperStyle={{}}
-									wrapperClass=""
-									visible={true}
+						<div className="flex flex-col justify-center items-center gap-4">
+							<Link href="/contact">
+								<input
+									className="hover:bg-[#111111] text-white text-sm px-8 py-4 cursor-pointer shadow hover:shadow-none transition-all duration-300 border-black border-2"
+									type="button"
+									value={texts.infos[lang]}
 								/>
+							</Link>
+							<div className="relative flex justify-center items-center">
+								<Image src={logo} alt="Logo Marc Maison" />
+								<IoMdRefreshCircle className="bg-white rounded-full text-[#a87e2d] absolute text-gold text-8xl cursor-pointer opacity-90" onClick={() => setEnded(false)} />
 							</div>
-						) : (
-							<motion.div
-								className="mt-8 text-white"
-								initial={{ y: "50%", opacity: 0, scale: 0.5 }}
-								animate={{ y: 0, opacity: 1, scale: 1 }}
-								transition={{ duration: 0.5, ease: "easeOut" }}
-								exit={{ opacity: 0, scale: 0.1 }}>
-								{texts.confirm[lang]}
-							</motion.div>
-						)}
+							<Link href="mailto:marcmaison@gmail.com?subject=Report condition">
+								<input
+									className="hover:bg-[#111111] text-white text-sm px-8 py-4 cursor-pointer shadow hover:shadow-none transition-all duration-300 border-black border-2"
+									type="button"
+									value={texts.report[lang]}
+								/>
+							</Link>
+						</div>
+						<>
+							<div className="flex justify-center items-center mt-12 gap-12">
+								<div className="flex flex-col items-center">
+									<Image src={cnes} alt="expert CNES" width="80" height="80" />
+									<p className="text-white">Expert auprès du CNES</p>
+								</div>
+								<div className="flex flex-col items-center">
+									<Image src={cefa} alt="expert CEFA" width="60" height="60" />
+									<p className="text-white">Expert auprès du CNES</p>
+								</div>
+							</div>
+						</>
 					</div>
 				</motion.div>
 			)}
