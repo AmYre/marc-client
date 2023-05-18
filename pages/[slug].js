@@ -9,7 +9,7 @@ import { AnimatePresence } from "framer-motion"
 
 import Nav from "../components/Nav"
 import NavBar from "../components/NavBar"
-import Contact from "../components/Contact"
+import EndCard from "../components/EndCard"
 
 const DetailProduct = () => {
 	const { lang, setLang, playing, setPlaying, ended, setEnded } = useGlobalContext()
@@ -35,7 +35,7 @@ const DetailProduct = () => {
 						<source src="https://res.cloudinary.com/amircloud/video/upload/v1673634198/marc/home.mp4" type="video/mp4" />
 					</Video>
 				</CloudinaryContext>
-				<AnimatePresence>{ended && <Contact />}</AnimatePresence>
+				<AnimatePresence>{ended && <EndCard />}</AnimatePresence>
 			</div>
 			<nav className="hidden md:block absolute text-white z-10 top-12 left-12 ">
 				<Nav />
@@ -44,7 +44,29 @@ const DetailProduct = () => {
 				<CloudinaryContext cloud_name="amircloud" secure={true}>
 					<Video
 						className="h-screen w-full object-cover"
-						publicId={lang == "fr" ? `marc/${slug}` : lang == "en" ? `marc/${slug}` : lang == "cn" && `marc/${slug}-cn`}
+						publicId={
+							lang == "fr"
+								? `marc/${slug}`
+								: lang == "en"
+								? `marc/${slug}`
+								: lang == "cn"
+								? `marc/${slug}-cn`
+								: lang == "po"
+								? `marc/${slug}-po`
+								: lang == "pb"
+								? `marc/${slug}-pb`
+								: lang == "ar"
+								? `marc/${slug}-ar`
+								: lang == "it"
+								? `marc/${slug}-it`
+								: lang == "kr"
+								? `marc/${slug}-kr`
+								: lang == "tu"
+								? `marc/${slug}-tu`
+								: lang == "ru"
+								? `marc/${slug}-ru`
+								: lang == "jp" && `marc/${slug}-jp`
+						}
 						autoPlay
 						playsInline
 						muted={playing}
@@ -56,7 +78,7 @@ const DetailProduct = () => {
 						<source src="https://res.cloudinary.com/amircloud/video/upload/v1673634198/marc/home.mp4" type="video/mp4" />
 					</Video>
 				</CloudinaryContext>
-				<AnimatePresence>{ended && <Contact />}</AnimatePresence>
+				<AnimatePresence>{ended && <EndCard />}</AnimatePresence>
 			</div>
 			<div className="flex gap-3 absolute bottom-10 right-10 items-center">
 				<motion.button onClick={() => setPlaying((prev) => !prev)} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} animate={{ scale: playing ? 1.2 : 1 }} transition={{ duration: 0.3 }}>

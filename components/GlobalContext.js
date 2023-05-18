@@ -1,8 +1,9 @@
 import React, { createContext, useContext, useState } from "react"
 import { sanityClient } from "../lib/sanityClient"
+import axios from "axios"
+
 import locales from "../lang/locales"
 
-import useSound from "use-sound"
 import { useEffect } from "react"
 
 const GlobalContext = createContext()
