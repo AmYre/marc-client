@@ -75,8 +75,9 @@ const EndCard = () => {
 					<p className="text-white font-thin mb-4 text-center">{texts.formLang[lang]}</p>
 					<div className="md:hidden">
 						<div className="flex flex-wrap justify-center items-center gap-4 mb-4">
-							{relatedLangs.map((lang) => (
+							{relatedLangs.map((lang, index) => (
 								<Image
+									key={index}
 									onClick={() => {
 										setIsOpen((prev) => !prev)
 										getVidLang(lang.mobtag)
@@ -92,8 +93,9 @@ const EndCard = () => {
 					</div>
 					<div className="hidden md:block">
 						<div className="flex flex-wrap justify-center items-center gap-4 mb-4">
-							{relatedLangs.map((lang) => (
+							{relatedLangs.map((lang, index) => (
 								<Image
+									key={index}
 									onClick={() => {
 										setIsOpen((prev) => !prev)
 										getVidLang(lang.tag)
