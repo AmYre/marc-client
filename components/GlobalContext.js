@@ -24,10 +24,10 @@ const ContextProvider = ({ children }) => {
 	const [lang, setLang] = useState("fr")
 	const [isOpen, setIsOpen] = useState(false)
 	const [drawer, setDrawer] = useState(false)
-	const [playing, setPlaying] = useState(false)
 	const [isStreaming, setIsStreaming] = useState(false)
 	const [texts, setTexts] = useState(locales)
 	const [ended, setEnded] = useState(false)
+	const [replay, setReplay] = useState(false)
 
 	return (
 		<GlobalContext.Provider
@@ -40,14 +40,14 @@ const ContextProvider = ({ children }) => {
 				setIsOpen,
 				drawer,
 				setDrawer,
-				playing,
-				setPlaying,
 				isStreaming,
 				setIsStreaming,
 				texts,
 				setTexts,
 				ended,
 				setEnded,
+				replay,
+				setReplay,
 			}}>
 			{children}
 		</GlobalContext.Provider>

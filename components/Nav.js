@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react"
+import { useState } from "react"
 import { useGlobalContext } from "./GlobalContext"
 
 import { motion, AnimatePresence } from "framer-motion"
@@ -83,17 +83,6 @@ const Nav = () => {
 									width="20"
 									height="20"
 								/>
-
-								{/* 				<Image
-									onClick={() => {
-										setLang('ru');
-									}}
-									className='hover:cursor-pointer'
-									src={flagRU}
-									alt='Russian'
-									width='20'
-									height='20'
-								/>*/}
 								<Image
 									onClick={() => {
 										setLang("cn")

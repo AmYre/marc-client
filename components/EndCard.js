@@ -23,7 +23,7 @@ import flagru from "../public/ru.png"
 import logo from "../public/logo.png"
 
 const EndCard = () => {
-	const { lang, setLang, texts, setTexts, ended, setEnded } = useGlobalContext()
+	const { lang, setLang, texts, setTexts, ended, setEnded, replay, setReplay } = useGlobalContext()
 
 	const [isOpen, setIsOpen] = useState(false)
 	const [products, setProducts] = useState()
@@ -55,6 +55,8 @@ const EndCard = () => {
 		getVids()
 	}, [])
 
+	products && console.log(products)
+
 	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })
 
 	const urlFor = (source) => {
@@ -70,7 +72,9 @@ const EndCard = () => {
 				className="absolute top-0 w-full h-full z-20 flex justify-center items-center bg-layout">
 				<div className="w-fit h-fit p-12 bg-layout">
 					<div className="flex justify-end">
-						<AiOutlineCloseCircle className="text-white text-3xl cursor-pointer mb-4" onClick={() => setEnded(false)} />
+						<Link href="/creations" onClick={() => setEnded(false)}>
+							<AiOutlineCloseCircle className="text-white text-3xl cursor-pointer mt-12 mb-4" />
+						</Link>
 					</div>
 					<p className="text-white font-thin mb-4 text-center">{texts.formLang[lang]}</p>
 					<div className="md:hidden">
@@ -119,7 +123,13 @@ const EndCard = () => {
 						</Link>
 						<div className="relative flex justify-center items-center">
 							<Image src={logo} alt="Logo Marc Maison" />
-							<IoMdRefreshCircle className="bg-white rounded-full text-[#a87e2d] absolute text-gold text-8xl cursor-pointer opacity-90" onClick={() => setEnded(false)} />
+							<IoMdRefreshCircle
+								className="bg-white rounded-full text-[#a87e2d] absolute text-gold text-8xl cursor-pointer opacity-90"
+								onClick={() => {
+									setEnded(false)
+									setReplay(Math.random() * (10 - 1) + 1)
+								}}
+							/>
 						</div>
 						<Link href="mailto:marcmaison@gmail.com?subject=Report condition">
 							<input
@@ -133,11 +143,11 @@ const EndCard = () => {
 						<div className="flex justify-center items-center mt-12 gap-12">
 							<div className="flex flex-col items-center">
 								<Image src={cnes} alt="expert CNES" width="80" height="80" />
-								<p className="text-white">Expert auprès du CNES</p>
+								<p className="text-white text-center">Expert auprès du CNES</p>
 							</div>
 							<div className="flex flex-col items-center">
 								<Image src={cefa} alt="expert CEFA" width="60" height="60" />
-								<p className="text-white">Expert auprès du CNES</p>
+								<p className="text-white text-center">Expert auprès du CNES</p>
 							</div>
 						</div>
 					</>
@@ -158,17 +168,20 @@ const EndCard = () => {
 							initial={{ y: "50%", opacity: 0, scale: 0.5 }}
 							animate={{ y: 0, opacity: 1, scale: 1 }}
 							transition={{ duration: 0.5, ease: "easeOut" }}
-							exit={{ opacity: 0, scale: 0.1 }}>
+							exit={{ opacity: 0, scale: 0.1 }}
+							className="flex gap-10">
 							<Link key={index} href={`https://res.cloudinary.com/amircloud/video/upload/marc/${product.slugfr.current}-${current}.mp4`}>
-								<div className="w-full overflow-hidden ">
-									<figure className="mb-8 bg-gradient-to-r from-gray-200 to-gray-500">
-										<Image className="hover:scale-105 transition-all duration-1000" src={urlFor(product.image).url()} alt="Image produit" width="300" height="300" />
-										<figcaption className="w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 font-thin ">
-											<h2 className="ellipse2 px-4 font-thin text-white" key={product.title.en}>
-												{product.title[lang] ? product.title[lang] : product.title.en}
-											</h2>
-										</figcaption>
-									</figure>
+								<div key={index} className="h-[200px] w-[200px] overflow-hidden">
+									<img
+										className="h-full w-full  bg-gradient-to-r from-gray-200 to-gray-500 object-fill hover:scale-105 transition-all duration-1000"
+										src={urlFor(product.image).url()}
+										alt="Image produit"
+									/>
+									<div className="absolute w-[200px] bg-black bg-opacity-50 p-[10px] shadow ellipse2 px-4 font-thin">
+										<h2 className="ellipse2 text-center text-white px-4 font-thin " key={product.title.en}>
+											{product.title[lang] || product.title.en}
+										</h2>
+									</div>
 								</div>
 							</Link>
 						</motion.div>
