@@ -34,17 +34,6 @@ const DetailProduct = () => {
 		window?.matchMedia("(max-width: 800px)") ? setScreen("mob") : setScreen("desk")
 	}, [])
 
-	useEffect(() => {
-		if (vRefDesk.current && screen == "desk") {
-			vRefDesk.current.currentTime = 0
-			vRefDesk.current.play()
-		}
-		if (vRefMob.current && screen == "mob") {
-			vRefMob.current.currentTime = 0
-			vRefMob.current.play()
-		}
-	}, [replay])
-
 	const videoDesktop = useMemo(
 		() =>
 			slug && (
@@ -80,6 +69,7 @@ const DetailProduct = () => {
 					muted
 					onEnded={() => {
 						setEnded(true)
+						setPlaying(false)
 					}}
 					poster={{ startOffset: "0" }}>
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/marc/${slug}.mp4`} type="video/mp4" />
@@ -124,6 +114,7 @@ const DetailProduct = () => {
 					muted
 					onEnded={() => {
 						setEnded(true)
+						setPlaying(false)
 					}}
 					poster={{ startOffset: "0" }}>
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/marc/${slug}-mob.mp4`} type="video/mp4" />
