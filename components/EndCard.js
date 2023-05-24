@@ -23,7 +23,7 @@ import flagru from "../public/ru.png"
 import logo from "../public/logo.png"
 
 const EndCard = () => {
-	const { lang, setLang, texts, setTexts, ended, setEnded, replay, setReplay } = useGlobalContext()
+	const { lang, setLang, texts, setTexts, ended, setEnded, replay, setReplay, currentProduct, setCurrentProduct } = useGlobalContext()
 
 	const [isOpen, setIsOpen] = useState(false)
 	const [products, setProducts] = useState()
@@ -54,8 +54,6 @@ const EndCard = () => {
 	useEffect(() => {
 		getVids()
 	}, [])
-
-	products && console.log(products)
 
 	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })
 
@@ -139,30 +137,56 @@ const EndCard = () => {
 						transition={{ duration: 0.25 }}
 						className="absolute top-0 w-full h-full z-30 flex flex-col gap-10 justify-center items-center bg-black bg-opacity-80">
 						<AiOutlineCloseCircle className="text-white text-3xl cursor-pointer mb-4" onClick={() => setIsOpen(false)} />
-						<div className="flex flex-row flew-wrap gap-4">
-							{related.map((product, index) => (
+						<div className="flex flex-wrap justify-center items-center gap-4">
+							{currentProduct && (
 								<motion.div
 									key={index}
 									initial={{ y: "50%", opacity: 0, scale: 0.5 }}
 									animate={{ y: 0, opacity: 1, scale: 1 }}
 									transition={{ duration: 0.5, ease: "easeOut" }}
 									exit={{ opacity: 0, scale: 0.1 }}>
-									<Link key={index} href={`https://res.cloudinary.com/amircloud/video/upload/marc/${product.slugfr.current}-${current}.mp4`}>
+									<Link key={index} href={`https://res.cloudinary.com/amircloud/video/upload/marc/${currentProduct.slug}-${current}.mp4`}>
 										<div key={index} className="h-[100px] w-[100px] overflow-hidden">
 											<img
-												className="h-full w-full bg-gradient-to-r from-gray-200 to-gray-500 object-fill hover:scale-105 transition-all duration-1000"
-												src={urlFor(product.image).url()}
+												className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
+												src={currentProduct.img}
 												alt="Image produit"
 											/>
-											<div className="absolute w-full bg-black bg-opacity-50 p-[10px] shadow ellipse2 px-4 font-thin">
-												<h2 className="ellipse2 text-center text-white px-4 font-thin " key={product.title.en}>
-													{product.title[lang] || product.title.en}
+											<div className="absolute w-[100px] bg-black bg-opacity-50 p-[10px] shadow ellipse2 px-4 font-thin">
+												<h2 className="ellipse2 text-center text-white px-4 font-thin " key={currentProduct.title}>
+													{currentProduct.title}
 												</h2>
 											</div>
 										</div>
 									</Link>
 								</motion.div>
-							))}
+							)}
+							{related.map(
+								(product, index) =>
+									product.slugfr.current !== currentProduct.slug && (
+										<motion.div
+											key={index}
+											initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+											animate={{ y: 0, opacity: 1, scale: 1 }}
+											transition={{ duration: 0.5, ease: "easeOut" }}
+											exit={{ opacity: 0, scale: 0.1 }}>
+											<Link key={index} href={`https://res.cloudinary.com/amircloud/video/upload/marc/${product.slugfr.current}-${current}.mp4`}>
+												<div key={index} className="h-[100px] w-[100px] overflow-hidden">
+													<img
+														className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
+														src={urlFor(product.image).url()}
+														alt="Image produit"
+													/>
+													<div className="absolute w-[100px] bg-black bg-opacity-50 p-[10px] shadow ellipse2 px-4 font-thin">
+														<h2 className="ellipse2 text-center text-white px-4 font-thin " key={product.title.en}>
+															{product.title[lang] || product.title.en}
+														</h2>
+													</div>
+												</div>
+											</Link>
+										</motion.div>
+									)
+							)}
 						</div>
 					</motion.div>
 				)}
@@ -245,30 +269,59 @@ const EndCard = () => {
 						className="absolute top-0 w-full h-full z-30 flex flex-col justify-center items-center bg-black bg-opacity-50">
 						<AiOutlineCloseCircle className="text-white text-3xl cursor-pointer mb-4" onClick={() => setIsOpen(false)} />
 
-						<div className="flex flex-row flex-wrap gap-4">
-							{related.map((product, index) => (
+						<div className="flex flex-wrap justify-center items-center gap-10">
+							{console.log(currentProduct)}
+							{currentProduct && (
 								<motion.div
 									key={index}
 									initial={{ y: "50%", opacity: 0, scale: 0.5 }}
 									animate={{ y: 0, opacity: 1, scale: 1 }}
 									transition={{ duration: 0.5, ease: "easeOut" }}
-									exit={{ opacity: 0, scale: 0.1 }}>
-									<Link key={index} href={`https://res.cloudinary.com/amircloud/video/upload/marc/${product.slugfr.current}-${current}.mp4`}>
+									exit={{ opacity: 0, scale: 0.1 }}
+									className="mb-8">
+									<Link key={index} href={`https://res.cloudinary.com/amircloud/video/upload/marc/${currentProduct.slug}-${current}.mp4`}>
 										<div key={index} className="h-[200px] w-[200px] overflow-hidden">
 											<img
-												className="h-full w-full  bg-gradient-to-r from-gray-200 to-gray-500 object-fill hover:scale-105 transition-all duration-1000"
-												src={urlFor(product.image).url()}
+												className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
+												src={currentProduct.img}
 												alt="Image produit"
 											/>
 											<div className="absolute w-[200px] bg-black bg-opacity-50 p-[10px] shadow ellipse2 px-4 font-thin">
-												<h2 className="ellipse2 text-center text-white px-4 font-thin " key={product.title.en}>
-													{product.title[lang] || product.title.en}
+												<h2 className="ellipse2 text-center text-white px-4 font-thin " key={currentProduct.title}>
+													{currentProduct.title}
 												</h2>
 											</div>
 										</div>
 									</Link>
 								</motion.div>
-							))}
+							)}
+							{related.map(
+								(product, index) =>
+									product.slugfr.current != currentProduct.slug && (
+										<motion.div
+											key={index}
+											initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+											animate={{ y: 0, opacity: 1, scale: 1 }}
+											transition={{ duration: 0.5, ease: "easeOut" }}
+											exit={{ opacity: 0, scale: 0.1 }}
+											className="mb-8">
+											<Link key={index} href={`https://res.cloudinary.com/amircloud/video/upload/marc/${product.slugfr.current}-${current}.mp4`}>
+												<div key={index} className="h-[200px] w-[200px] overflow-hidden">
+													<img
+														className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
+														src={urlFor(product.image).url()}
+														alt="Image produit"
+													/>
+													<div className="absolute w-[200px] bg-black bg-opacity-50 p-[10px] shadow ellipse2 px-4 font-thin">
+														<h2 className="ellipse2 text-center text-white px-4 font-thin " key={product.title.en}>
+															{product.title[lang] || product.title.en}
+														</h2>
+													</div>
+												</div>
+											</Link>
+										</motion.div>
+									)
+							)}
 						</div>
 					</motion.div>
 				)}

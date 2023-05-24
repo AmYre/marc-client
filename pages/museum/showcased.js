@@ -36,12 +36,12 @@ const Showcased = ({ products, vignette }) => {
 					<h2 className="text-3xl tracking-widest font-thin font-bodoni mb-12">{texts.showcased[lang]}</h2>
 					<div className="text-sm p-4 mb-12 font-thin border-t-[1px] border-b-[1px] border-gray-100 flex flex-wrap justify-center gap-8">
 						<button
-							onClick={() => setFilter("showed")}
+							onClick={() => setFilter("showed-museum")}
 							className="cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300 border-t-4 border-b-4 border-[#2da848]">
 							{texts.menu3[lang]}
 						</button>
 						<button
-							onClick={() => setFilter("showed-museum")}
+							onClick={() => setFilter("showed")}
 							className="cursor-pointer hover:font-bold active:font-bold focus:font-bold focus:font-bold focus:font-bold transition-all duration-300">
 							{texts.all[lang]}
 						</button>

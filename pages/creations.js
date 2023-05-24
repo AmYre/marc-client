@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Image from "next/image"
 import { sanityClient } from "../lib/sanityClient"
 
@@ -10,7 +10,12 @@ import NavBar from "../components/NavBar"
 import Products from "../components/Products"
 
 const Creations = ({ products, vignette }) => {
-	const { nav, setNav, lang, setLang, isOpen, setIsOpen } = useGlobalContext()
+	const { nav, setNav, lang, setLang, isOpen, setIsOpen, ended, setEnded, currentProduct, setCurrentProduct } = useGlobalContext()
+
+	useEffect(() => {
+		setEnded(false)
+		setCurrentProduct(false)
+	}, [])
 
 	return (
 		<div className={`flex ${isOpen ? "h-screen overflow-hidden" : "min-h-screen"} md:gap-8 bg-bg md:p-12`}>
