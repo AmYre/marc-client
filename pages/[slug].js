@@ -1,20 +1,35 @@
 import React, { useEffect, useState, useMemo, useRef } from "react"
 import { useGlobalContext } from "../components/GlobalContext"
 import { Video, CloudinaryContext } from "cloudinary-react"
+import Image from "next/image"
+import Link from "next/link"
 import { useRouter } from "next/router"
 import { motion } from "framer-motion"
 import { Md3DRotation } from "react-icons/md"
 import { GiSpeaker, GiSpeakerOff } from "react-icons/gi"
+import { BsTranslate } from "react-icons/bs"
 import { AnimatePresence } from "framer-motion"
 
 import Nav from "../components/Nav"
 import NavBar from "../components/NavBar"
 import EndCard from "../components/EndCard"
 
+import flagfr from "../public/fr.png"
+import flagen from "../public/en.png"
+import flagcn from "../public/cn.png"
+import flagpb from "../public/pb.png"
+import flagpo from "../public/po.png"
+import flagkr from "../public/kr.png"
+import flagar from "../public/ar.png"
+import flagjp from "../public/jp.png"
+import flagit from "../public/it.png"
+import flagtu from "../public/tu.png"
+import flagru from "../public/ru.png"
+
 const DetailProduct = () => {
-	const { lang, setLang, ended, setEnded, replay, setReplay } = useGlobalContext()
+	const { lang, setLang, tagLang, setTagLang, ended, setEnded, replay, setReplay, currentProduct } = useGlobalContext()
 	const [playing, setPlaying] = useState(false)
-	const [screen, setScreen] = useState(false)
+	const [translate, setTranslate] = useState(false)
 	const vRefDesk = useRef(null)
 	const vRefMob = useRef(null)
 
@@ -30,9 +45,19 @@ const DetailProduct = () => {
 		vRefMob.current.muted = !vRefMob.current.muted
 	}
 
-	useEffect(() => {
-		window?.matchMedia("(max-width: 800px)") ? setScreen("mob") : setScreen("desk")
-	}, [])
+	let flags = [
+		{ name: "français", pic: flagfr, lang: "fr", tagLang: "", mobtag: "-mob" },
+		{ name: "english", pic: flagen, lang: "en", tagLang: "-en", mobtag: "-en-mob" },
+		{ name: "chinese", pic: flagcn, lang: "cn", tagLang: "-cn", mobtag: "-cn-mob" },
+		{ name: "netherland", pic: flagpb, lang: "pb", tagLang: "-pb", mobtag: "-pb-mob" },
+		{ name: "polish", pic: flagpo, lang: "po", tagLang: "-po", mobtag: "-po-mob" },
+		{ name: "korean", pic: flagkr, lang: "kr", tagLang: "-kr", mobtag: "-kr-mob" },
+		{ name: "arabic", pic: flagar, lang: "ar", tagLang: "-ar", mobtag: "-ar-mob" },
+		{ name: "japanese", pic: flagjp, lang: "jp", tagLang: "-jp", mobtag: "-jp-mob" },
+		{ name: "italian", pic: flagit, lang: "it", tagLang: "-it", mobtag: "-it-mob" },
+		{ name: "turkish", pic: flagtu, lang: "tu", tagLang: "-tu", mobtag: "-tu-mob" },
+		{ name: "russian", pic: flagru, lang: "ru", tagLang: "-ru", mobtag: "-ru-mob" },
+	]
 
 	const videoDesktop = useMemo(
 		() =>
@@ -41,29 +66,6 @@ const DetailProduct = () => {
 					key={replay}
 					ref={vRefDesk}
 					className="h-screen w-full object-cover"
-					publicId={
-						lang == "fr"
-							? `marc/${slug}`
-							: lang == "en"
-							? `marc/${slug}`
-							: lang == "cn"
-							? `marc/${slug}-cn`
-							: lang == "po"
-							? `marc/${slug}-po`
-							: lang == "pb"
-							? `marc/${slug}-pb`
-							: lang == "ar"
-							? `marc/${slug}-ar`
-							: lang == "it"
-							? `marc/${slug}-it`
-							: lang == "kr"
-							? `marc/${slug}-kr`
-							: lang == "tu"
-							? `marc/${slug}-tu`
-							: lang == "ru"
-							? `marc/${slug}-ru`
-							: lang == "jp" && `marc/${slug}-jp`
-					}
 					autoPlay
 					playsInline
 					muted
@@ -86,29 +88,6 @@ const DetailProduct = () => {
 					key={replay}
 					ref={vRefMob}
 					className="h-screen w-full object-cover"
-					publicId={
-						lang == "fr"
-							? `marc/${slug}-mob`
-							: lang == "en"
-							? `marc/${slug}-mob-en`
-							: lang == "cn"
-							? `marc/${slug}-mob-cn`
-							: lang == "po"
-							? `marc/${slug}-mob-po`
-							: lang == "pb"
-							? `marc/${slug}-mob-pb`
-							: lang == "ar"
-							? `marc/${slug}-mob-ar`
-							: lang == "it"
-							? `marc/${slug}-mob-it`
-							: lang == "kr"
-							? `marc/${slug}-mob-kr`
-							: lang == "tu"
-							? `marc/${slug}-mob-tu`
-							: lang == "ru"
-							? `marc/${slug}-mob-ru`
-							: lang == "jp" && `marc/${slug}-mob-jp`
-					}
 					autoPlay
 					playsInline
 					muted
@@ -129,7 +108,7 @@ const DetailProduct = () => {
 			<div className="md:hidden">
 				<NavBar />
 			</div>
-			<div className="md:hidden">
+			<div key={slug} className="md:hidden">
 				<CloudinaryContext cloud_name="amircloud" secure={true}>
 					{videoMobile}
 				</CloudinaryContext>
@@ -138,7 +117,7 @@ const DetailProduct = () => {
 			<nav className="hidden md:block absolute text-white z-10 top-12 left-12 ">
 				<Nav />
 			</nav>
-			<div className="hidden md:block">
+			<div key={slug + slug} className="hidden md:block">
 				<CloudinaryContext cloud_name="amircloud" secure={true}>
 					{videoDesktop}
 				</CloudinaryContext>
@@ -176,6 +155,49 @@ const DetailProduct = () => {
 				<div className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex items-center justify-center">
 					<Md3DRotation className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer" />
 				</div>
+				<div
+					className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex items-center justify-center"
+					onClick={() => {
+						setTranslate((prev) => !prev)
+					}}>
+					<BsTranslate className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer" />
+				</div>
+				<AnimatePresence>
+					{translate && (
+						<motion.div
+							className="absolute left-0 bottom-[80px] p-4 flex flex-wrap justify-center items-center gap-3 bg-layout bg-opacity-70"
+							initial={{ x: "10px", opacity: 0 }}
+							animate={{ x: 0, opacity: 1 }}
+							transition={{ duration: 0.5, ease: "easeOut" }}
+							exit={{ x: "10px", opacity: 0 }}>
+							{flags.map((flag, index) => (
+								<div className="relative flex flex-col justify-center items-center mb-2 mt-2" key={index}>
+									<Link href={`${currentProduct.slug}${flag.tagLang}`}>
+										<Image
+											onClick={() => {
+												setTagLang(flag.tagLang)
+												setPlaying(false)
+											}}
+											className="hover:cursor-pointer transition-all duration-300"
+											src={flag.pic}
+											alt={flag.name}
+											width="30"
+											height="30"
+										/>
+									</Link>
+									{tagLang == flag.tagLang && (
+										<motion.div
+											initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+											animate={{ y: 0, opacity: 1, scale: 1 }}
+											transition={{ duration: 0.5, ease: "easeOut" }}
+											exit={{ opacity: 0, scale: 0.1 }}
+											className="absolute top-[30px] w-[8px] h-[8px] bg-white rounded-full"></motion.div>
+									)}
+								</div>
+							))}
+						</motion.div>
+					)}
+				</AnimatePresence>
 			</div>
 		</main>
 	)

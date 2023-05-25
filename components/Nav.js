@@ -10,7 +10,6 @@ import { ImFacebook2 } from "react-icons/im"
 import { RxPinLeft, RxPinRight } from "react-icons/rx"
 import flagFR from "../public/fr.png"
 import flagEN from "../public/en.png"
-import flagRU from "../public/ru.png"
 import flagCN from "../public/cn.png"
 import flagpb from "../public/pb.png"
 import flagpo from "../public/po.png"
@@ -24,16 +23,6 @@ import flagru from "../public/ru.png"
 const Nav = () => {
 	const { drawer, setDrawer, lang, setLang, tagLang, setTagLang, texts, setTexts } = useGlobalContext()
 	const [localDrawer, setLocalDrawer] = useState(drawer)
-	let flags = [
-		{ name: "netherland", pic: flagpb, lang: "pb", tagLang: "-pb", mobtag: "-mob-pb" },
-		{ name: "polish", pic: flagpo, lang: "po", tagLang: "-po", mobtag: "-mob-po" },
-		{ name: "korean", pic: flagkr, lang: "kr", tagLang: "-kr", mobtag: "-mob-kr" },
-		{ name: "arabic", pic: flagar, lang: "ar", tagLang: "-ar", mobtag: "-mob-ar" },
-		{ name: "japanese", pic: flagjp, lang: "jp", tagLang: "-jp", mobtag: "-mob-jp" },
-		{ name: "italian", pic: flagit, lang: "it", tagLang: "-it", mobtag: "-mob-it" },
-		{ name: "turkish", pic: flagtu, lang: "tu", tagLang: "-tu", mobtag: "-mob-tu" },
-		{ name: "russian", pic: flagru, lang: "ru", tagLang: "-ru", mobtag: "-mob-ru" },
-	]
 
 	return (
 		<>
@@ -41,7 +30,6 @@ const Nav = () => {
 				{localDrawer && (
 					<motion.div
 						className="bg-layout bg-opacity-70 w-[320px]"
-						key="1"
 						initial={{ x: "-50%", opacity: 0 }}
 						animate={{ x: 0, opacity: 1 }}
 						transition={{ duration: 0.5, ease: "easeOut" }}
@@ -79,8 +67,7 @@ const Nav = () => {
 								{texts.menu5[lang]}
 							</Link>
 						</div>
-						<div className="text-center">
-							<p className=" text-md mt-3 mb-3 font-nunito tracking-widest font-thin">Website Language</p>
+						<div className="text-center mt-6">
 							<div className="flex justify-center items-center gap-6">
 								<Image
 									onClick={() => {
@@ -89,47 +76,59 @@ const Nav = () => {
 									className="hover:cursor-pointer"
 									src={flagFR}
 									alt="langue française"
-									width="20"
-									height="20"
+									width="30"
+									height="30"
 								/>
 								<Image
 									onClick={() => {
 										setLang("en")
+										setTagLang("-en")
 									}}
 									className="hover:cursor-pointer"
 									src={flagEN}
 									alt="English"
-									width="20"
-									height="20"
+									width="30"
+									height="30"
 								/>
 								<Image
 									onClick={() => {
 										setLang("cn")
+										setTagLang("-cn")
 									}}
 									className="hover:cursor-pointer"
 									src={flagCN}
 									alt="Chinese"
-									width="20"
-									height="20"
+									width="30"
+									height="30"
 								/>
 							</div>
-							<p className=" text-md mt-6 font-nunito tracking-widest font-thin">Vidéos Language</p>
-							<div className="flex flex-wrap justify-center items-center gap-2 mb-8">
+							<p className="text-md mt-6 mb-6 font-nunito tracking-widest ">PARIS</p>
+							{/* 							<div className="flex flex-wrap justify-center items-center gap-2 ">
 								{flags.map((flag, index) => (
-									<Image
-										key={index}
-										onClick={() => {
-											setTagLang(flag.tagLang)
-											console.log("first", flag.tagLang)
-										}}
-										className="hover:cursor-pointer "
-										src={flag.pic}
-										alt={flag.name}
-										width="30"
-										height="30"
-									/>
+									<div key={index} className="relative flex flex-col justify-center items-center  mb-8">
+										<Image
+											onClick={() => {
+												setTagLang(flag.tagLang)
+												console.log("first", tagLang)
+											}}
+											className={`hover:cursor-pointer transition-all duration-300`}
+											src={flag.pic}
+											alt={flag.name}
+											width="30"
+											height="30"
+										/>
+										{tagLang == flag.tagLang && (
+											<motion.div
+												initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+												animate={{ y: 0, opacity: 1, scale: 1 }}
+												transition={{ duration: 0.5, ease: "easeOut" }}
+												exit={{ opacity: 0, scale: 0.1 }}
+												className="absolute top-[30px] w-[8px] h-[8px] bg-white rounded-full"></motion.div>
+										)}
+									</div>
 								))}
-							</div>
+							</div> */}
+
 							<div className="flex justify-center items-center gap-6">
 								<Link href="https://www.facebook.com/marcmaisongalerie/" target="_blank">
 									<ImFacebook2 />

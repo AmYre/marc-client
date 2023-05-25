@@ -5,7 +5,6 @@ import { useGlobalContext } from "../../components/GlobalContext"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import Masonry from "react-masonry-css"
 import { PortableText } from "@portabletext/react"
 
 import Nav from "../../components/Nav"
@@ -17,7 +16,6 @@ const DetailArtist = ({ vignette }) => {
 	const { lang, setLang, isOpen, setIsOpen } = useGlobalContext()
 	const [creation, setCreation] = useState()
 	const [artist, setArtist] = useState()
-	const [nbOfProducts, setNbOfProducts] = useState()
 
 	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })
 
@@ -41,12 +39,9 @@ const DetailArtist = ({ vignette }) => {
 				)
 				.then((res) => {
 					setCreation(res[0].products)
-					setNbOfProducts(res[0].products.length)
 				})
 		})
 	}, [])
-
-	console.log(nbOfProducts)
 
 	return (
 		<main>

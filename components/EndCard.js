@@ -140,13 +140,12 @@ const EndCard = () => {
 						<div className="flex flex-wrap justify-center items-center gap-4">
 							{currentProduct && (
 								<motion.div
-									key={index}
 									initial={{ y: "50%", opacity: 0, scale: 0.5 }}
 									animate={{ y: 0, opacity: 1, scale: 1 }}
 									transition={{ duration: 0.5, ease: "easeOut" }}
 									exit={{ opacity: 0, scale: 0.1 }}>
-									<Link key={index} href={`https://res.cloudinary.com/amircloud/video/upload/marc/${currentProduct.slug}-${current}.mp4`}>
-										<div key={index} className="h-[100px] w-[100px] overflow-hidden">
+									<Link href={`https://res.cloudinary.com/amircloud/video/upload/marc/${currentProduct.slug}${current}.mp4`}>
+										<div className="h-[100px] w-[100px] overflow-hidden">
 											<img
 												className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
 												src={currentProduct.img}
@@ -293,16 +292,15 @@ const EndCard = () => {
 						<AiOutlineCloseCircle className="text-white text-3xl cursor-pointer mb-4" onClick={() => setIsOpen(false)} />
 
 						<div className="flex flex-wrap justify-center items-center gap-10">
-							{console.log(currentProduct)}
+							{console.log("current product", currentProduct)}
 							{currentProduct && (
 								<motion.div
-									key={index}
 									initial={{ y: "50%", opacity: 0, scale: 0.5 }}
 									animate={{ y: 0, opacity: 1, scale: 1 }}
 									transition={{ duration: 0.5, ease: "easeOut" }}
 									exit={{ opacity: 0, scale: 0.1 }}
 									className="mb-8">
-									<Link key={index} href={`https://res.cloudinary.com/amircloud/video/upload/marc/${currentProduct.slug}-${current}.mp4`}>
+									<Link href={`https://res.cloudinary.com/amircloud/video/upload/marc/${currentProduct.slug}-${current}.mp4`}>
 										<div key={index} className="h-[200px] w-[200px] overflow-hidden">
 											<img
 												className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
