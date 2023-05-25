@@ -12,17 +12,35 @@ import flagFR from "../public/fr.png"
 import flagEN from "../public/en.png"
 import flagRU from "../public/ru.png"
 import flagCN from "../public/cn.png"
+import flagpb from "../public/pb.png"
+import flagpo from "../public/po.png"
+import flagkr from "../public/kr.png"
+import flagar from "../public/ar.png"
+import flagjp from "../public/jp.png"
+import flagit from "../public/it.png"
+import flagtu from "../public/tu.png"
+import flagru from "../public/ru.png"
 
 const Nav = () => {
-	const { drawer, setDrawer, lang, setLang, texts, setTexts } = useGlobalContext()
+	const { drawer, setDrawer, lang, setLang, tagLang, setTagLang, texts, setTexts } = useGlobalContext()
 	const [localDrawer, setLocalDrawer] = useState(drawer)
+	let flags = [
+		{ name: "netherland", pic: flagpb, lang: "pb", tagLang: "-pb", mobtag: "-mob-pb" },
+		{ name: "polish", pic: flagpo, lang: "po", tagLang: "-po", mobtag: "-mob-po" },
+		{ name: "korean", pic: flagkr, lang: "kr", tagLang: "-kr", mobtag: "-mob-kr" },
+		{ name: "arabic", pic: flagar, lang: "ar", tagLang: "-ar", mobtag: "-mob-ar" },
+		{ name: "japanese", pic: flagjp, lang: "jp", tagLang: "-jp", mobtag: "-mob-jp" },
+		{ name: "italian", pic: flagit, lang: "it", tagLang: "-it", mobtag: "-mob-it" },
+		{ name: "turkish", pic: flagtu, lang: "tu", tagLang: "-tu", mobtag: "-mob-tu" },
+		{ name: "russian", pic: flagru, lang: "ru", tagLang: "-ru", mobtag: "-mob-ru" },
+	]
 
 	return (
 		<>
 			<AnimatePresence>
 				{localDrawer && (
 					<motion.div
-						className="bg-layout bg-opacity-70"
+						className="bg-layout bg-opacity-70 w-[320px]"
 						key="1"
 						initial={{ x: "-50%", opacity: 0 }}
 						animate={{ x: 0, opacity: 1 }}
@@ -61,7 +79,8 @@ const Nav = () => {
 								{texts.menu5[lang]}
 							</Link>
 						</div>
-						<div className="text-center pt-6">
+						<div className="text-center">
+							<p className=" text-md mt-3 mb-3 font-nunito tracking-widest font-thin">Website Language</p>
 							<div className="flex justify-center items-center gap-6">
 								<Image
 									onClick={() => {
@@ -94,7 +113,23 @@ const Nav = () => {
 									height="20"
 								/>
 							</div>
-							<p className=" text-md p-6 font-nunito tracking-widest font-medium">PARIS</p>
+							<p className=" text-md mt-6 font-nunito tracking-widest font-thin">Vidéos Language</p>
+							<div className="flex flex-wrap justify-center items-center gap-2 mb-8">
+								{flags.map((flag, index) => (
+									<Image
+										key={index}
+										onClick={() => {
+											setTagLang(flag.tagLang)
+											console.log("first", flag.tagLang)
+										}}
+										className="hover:cursor-pointer "
+										src={flag.pic}
+										alt={flag.name}
+										width="30"
+										height="30"
+									/>
+								))}
+							</div>
 							<div className="flex justify-center items-center gap-6">
 								<Link href="https://www.facebook.com/marcmaisongalerie/" target="_blank">
 									<ImFacebook2 />
@@ -106,7 +141,7 @@ const Nav = () => {
 									<BsYoutube className="text-[22px]" />
 								</Link>
 							</div>
-							<p className=" text-xs p-6 text-gray-400 tracking-widest font-thin">ALL RIGHTS RESERVED © 2023</p>
+							<p className="text-xs mt-3 text-gray-400 tracking-widest font-thin">ALL RIGHTS RESERVED © 2023</p>
 						</div>
 						<div>
 							<div

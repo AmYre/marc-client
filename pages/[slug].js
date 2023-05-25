@@ -148,9 +148,13 @@ const DetailProduct = () => {
 				<div className="flex md:hidden">
 					<motion.button onClick={() => handleMobSound()} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} animate={{ scale: playing ? 1.2 : 1 }} transition={{ duration: 0.3 }}>
 						{!playing ? (
-							<GiSpeakerOff className="flex text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
+							<div className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex items-center justify-center">
+								<GiSpeakerOff className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer" />
+							</div>
 						) : (
-							<GiSpeaker className="flex text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
+							<div className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex items-center justify-center">
+								<GiSpeaker className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer" />
+							</div>
 						)}
 					</motion.button>
 				</div>
@@ -158,14 +162,20 @@ const DetailProduct = () => {
 					<div className="flex">
 						<motion.button onClick={() => handleSound()} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} animate={{ scale: playing ? 1.2 : 1 }} transition={{ duration: 0.3 }}>
 							{!playing ? (
-								<GiSpeakerOff className="flex text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
+								<div className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex items-center justify-center">
+									<GiSpeakerOff className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer" />
+								</div>
 							) : (
-								<GiSpeaker className="flex text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
+								<div className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex items-center justify-center">
+									<GiSpeaker className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer" />
+								</div>
 							)}
 						</motion.button>
 					</div>
 				</div>
-				<Md3DRotation className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
+				<div className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex items-center justify-center">
+					<Md3DRotation className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer" />
+				</div>
 			</div>
 		</main>
 	)

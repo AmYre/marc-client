@@ -22,6 +22,7 @@ const ContextProvider = ({ children }) => {
 
 	const [nav, setNav] = useState("creations")
 	const [lang, setLang] = useState("fr")
+	const [tagLang, setTagLang] = useState("")
 	const [isOpen, setIsOpen] = useState(false)
 	const [drawer, setDrawer] = useState(false)
 	const [isStreaming, setIsStreaming] = useState(false)
@@ -37,6 +38,8 @@ const ContextProvider = ({ children }) => {
 				setNav,
 				lang,
 				setLang,
+				tagLang,
+				setTagLang,
 				isOpen,
 				setIsOpen,
 				drawer,

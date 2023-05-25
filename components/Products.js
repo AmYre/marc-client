@@ -8,7 +8,7 @@ import { motion } from "framer-motion"
 import imageUrlBuilder from "@sanity/image-url"
 
 const Products = ({ products, vignette }) => {
-	const { lang, setLang, texts, setTexts, currentProduct, setCurrentProduct } = useGlobalContext()
+	const { lang, setLang, tagLang, setTagLang, texts, setTexts, currentProduct, setCurrentProduct } = useGlobalContext()
 	const [filter, setFilter] = useState()
 
 	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })
@@ -35,78 +35,6 @@ const Products = ({ products, vignette }) => {
 			{products && (
 				<div className="">
 					<>
-						<div className="hidden md:block">
-							<Masonry breakpointCols={3} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
-								{products.map((product, index) =>
-									filter ? (
-										product.category?.slug.current == filter && (
-											<motion.div
-												key={index}
-												initial={{ y: "50%", opacity: 0, scale: 0.5 }}
-												animate={{ y: 0, opacity: 1, scale: 1 }}
-												transition={{ duration: 0.5, ease: "easeOut" }}
-												exit={{ opacity: 0, scale: 0.1 }}>
-												{product?.slugen && (
-													<Link
-														key={index}
-														href={product.slugfr.current}
-														onClick={() =>
-															setCurrentProduct({
-																title: product.title[lang] ? product.title[lang] : product.title.en,
-																img: urlFor(product.image).url(),
-																slug: product.slugfr.current,
-															})
-														}>
-														<div className="vig-wrapper relative w-full overflow-hidden mb-8">
-															<Image
-																className="hover:scale-105 transition-all duration-1000"
-																src={urlFor(product.image).url()}
-																alt="Image produit"
-																width="300"
-																height="300"
-																style={{ backgroundImage: `url(${vig})`, backgroundSize: "cover" }}
-															/>
-															<div className="vig-txt w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 font-thin absolute">
-																<h2 className="ellipse2 px-4 font-thin " key={product.title.en}>
-																	{product.title[lang] ? product.title[lang] : product.title.en}
-																</h2>
-															</div>
-														</div>
-													</Link>
-												)}
-											</motion.div>
-										)
-									) : (
-										<motion.div
-											key={index}
-											initial={{ y: "50%", opacity: 0, scale: 0.5 }}
-											animate={{ y: 0, opacity: 1, scale: 1 }}
-											transition={{ duration: 0.5, ease: "easeOut" }}
-											exit={{ opacity: 0, scale: 0.1 }}>
-											{product?.slugen && (
-												<Link key={index} href={product.slugfr.current}>
-													<div className="vig-wrapper relative w-full overflow-hidden mb-8">
-														<Image
-															className="hover:scale-105 transition-all duration-1000"
-															src={urlFor(product.image).url()}
-															alt="Image produit"
-															width="300"
-															height="300"
-															style={{ backgroundImage: `url(${vig})`, backgroundSize: "cover" }}
-														/>
-														<div className="vig-txt w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 font-thin absolute">
-															<h2 className="ellipse2 px-4 font-thin " key={product.title.en}>
-																{product.title[lang] ? product.title[lang] : product.title.en}
-															</h2>
-														</div>
-													</div>
-												</Link>
-											)}
-										</motion.div>
-									)
-								)}
-							</Masonry>
-						</div>
 						<div className="md:hidden">
 							<Masonry breakpointCols={1} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
 								{products.map((product, index) =>
@@ -166,6 +94,91 @@ const Products = ({ products, vignette }) => {
 																</h2>
 															</figcaption>
 														</figure>
+													</div>
+												</Link>
+											)}
+										</motion.div>
+									)
+								)}
+							</Masonry>
+						</div>
+						<div className="hidden md:block">
+							<Masonry breakpointCols={3} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
+								{products.map((product, index) =>
+									filter ? (
+										product.category?.slug.current == filter && (
+											<motion.div
+												key={index}
+												initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+												animate={{ y: 0, opacity: 1, scale: 1 }}
+												transition={{ duration: 0.5, ease: "easeOut" }}
+												exit={{ opacity: 0, scale: 0.1 }}>
+												{product?.slugen &&
+													console.log(
+														"URLTEST",
+														product.slugfr.current[tagLang]
+													)(
+														<Link
+															key={index}
+															href={product.slugfr.current[tagLang] ? product.slugfr.current[tagLang] : product.slugfr.current}
+															onClick={() =>
+																setCurrentProduct({
+																	title: product.title[lang] ? product.title[lang] : product.title.en,
+																	img: urlFor(product.image).url(),
+																	slug: product.slugfr.current,
+																})
+															}>
+															<div className="vig-wrapper relative w-full overflow-hidden mb-8">
+																<Image
+																	className="hover:scale-105 transition-all duration-1000"
+																	src={urlFor(product.image).url()}
+																	alt="Image produit"
+																	width="300"
+																	height="300"
+																	style={{ backgroundImage: `url(${vig})`, backgroundSize: "cover" }}
+																/>
+																<div className="vig-txt w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 font-thin absolute">
+																	<h2 className="ellipse2 px-4 font-thin " key={product.title.en}>
+																		{product.title[lang] ? product.title[lang] : product.title.en}
+																	</h2>
+																</div>
+															</div>
+														</Link>
+													)}
+											</motion.div>
+										)
+									) : (
+										<motion.div
+											key={index}
+											initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+											animate={{ y: 0, opacity: 1, scale: 1 }}
+											transition={{ duration: 0.5, ease: "easeOut" }}
+											exit={{ opacity: 0, scale: 0.1 }}>
+											{product?.slugen && (
+												<Link
+													key={index}
+													href={product.slugfr.current[tagLang] ? product.slugfr.current[tagLang] : product.slugfr.current}
+													onClick={() =>
+														setCurrentProduct({
+															title: product.title[lang] ? product.title[lang] : product.title.en,
+															img: urlFor(product.image).url(),
+															slug: product.slugfr.current,
+														})
+													}>
+													<div className="vig-wrapper relative w-full overflow-hidden mb-8">
+														<Image
+															className="hover:scale-105 transition-all duration-1000"
+															src={urlFor(product.image).url()}
+															alt="Image produit"
+															width="300"
+															height="300"
+															style={{ backgroundImage: `url(${vig})`, backgroundSize: "cover" }}
+														/>
+														<div className="vig-txt w-full bg-black bg-opacity-50 py-[10px] shadow ellipse2 px-4 font-thin absolute">
+															<h2 className="ellipse2 px-4 font-thin " key={product.title.en}>
+																{product.title[lang] ? product.title[lang] : product.title.en}
+															</h2>
+														</div>
 													</div>
 												</Link>
 											)}

@@ -198,10 +198,14 @@ const EndCard = () => {
 					transition={{ duration: 0.25 }}
 					className="absolute top-0 w-full h-full z-20 flex justify-center items-center bg-layout">
 					<div className="w-fit h-fit p-12 bg-layout">
-						<div className="flex justify-end">
-							<Link href="/creations" onClick={() => setEnded(false)}>
-								<AiOutlineCloseCircle className="text-white text-3xl cursor-pointer mt-12 mb-4" />
-							</Link>
+						<div>
+							<div className="flex flex-col justify-center items-center">
+								<h1 className="mb-0 pb-0 text-[2rem] text-gray-200 pt-6 px-6 font-bodoni tracking-wide">Galerie Marc Maison</h1>
+								<h2 className="font-splash text-[#c49d50] text-[1.3rem] tracking-wide pb-4 text-gold">- 19ème -</h2>
+								<Link href="/creations" onClick={() => setEnded(false)} className="absolute right-[50px] top-0">
+									<AiOutlineCloseCircle className="text-white text-3xl cursor-pointer mt-12 mb-4" />
+								</Link>
+							</div>
 						</div>
 						<p className="text-white font-thin mb-4 text-center">{texts.formLang[lang]}</p>
 
@@ -247,18 +251,37 @@ const EndCard = () => {
 								/>
 							</Link>
 						</div>
-						<>
-							<div className="flex justify-center items-center mt-12 gap-12">
-								<div className="flex flex-col items-center">
-									<Image src={cnes} alt="expert CNES" width="80" height="80" />
-									<p className="text-white text-center">Expert auprès du CNES</p>
-								</div>
-								<div className="flex flex-col items-center">
-									<Image src={cefa} alt="expert CEFA" width="60" height="60" />
-									<p className="text-white text-center">Expert auprès du CNES</p>
-								</div>
+						<div className="flex justify-center items-center mt-12 gap-12">
+							<div className="flex flex-col items-center">
+								<Image src={cnes} alt="expert CNES" width="80" height="80" />
+								<p className="text-white text-center">Expert auprès du CNES</p>
 							</div>
-						</>
+							<div className="flex flex-col items-center">
+								<Image src={cefa} alt="expert CEFA" width="60" height="60" />
+								<p className="text-white text-center">Expert auprès du CNES</p>
+							</div>
+						</div>
+						<div className="flex justify-center">
+							<hr className="w-3/4 mt-6 mb-2" />
+						</div>
+						<div className="flex justify-between gap-4 mt-4  text-gray-300">
+							<div className="flex flex-col justify-center items-center">
+								<div className="text-xs text-center font-bold">Boutique des cheminées</div>
+								<p className="text-xs text-center">120, rue des Rosiers, 93400 Saint Ouen</p>
+							</div>
+							<div className="flex flex-col justify-center items-center">
+								<div className="text-xs text-center font-bold">Galerie Marché Cambo</div>
+								<p className="text-xs text-center">75, rue des Rosiers, 93400 Saint Ouen sur Seine</p>
+							</div>
+							<div className="flex flex-col justify-center items-center">
+								<div className="text-xs text-center font-bold">Marché Paul Bert</div>
+								<p className="text-xs text-center">Allée 6 Stand 83 / Allée 1 Stand 2, 93400 Saint Ouen sur Seine</p>
+							</div>
+							<div className="flex flex-col justify-center items-center">
+								<div className="text-xs text-center font-bold">Marché Cambo La Roseraie</div>
+								<p className="text-xs text-center">73, rue des Rosiers, 93400 Saint Ouen sur Seine</p>
+							</div>
+						</div>
 					</div>
 				</motion.div>
 				{isOpen && (
@@ -305,7 +328,7 @@ const EndCard = () => {
 											transition={{ duration: 0.5, ease: "easeOut" }}
 											exit={{ opacity: 0, scale: 0.1 }}
 											className="mb-8">
-											<Link key={index} href={`https://res.cloudinary.com/amircloud/video/upload/marc/${product.slugfr.current}-${current}.mp4`}>
+											<Link key={index} target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/marc/${product.slugfr.current}-${current}.mp4`}>
 												<div key={index} className="h-[200px] w-[200px] overflow-hidden">
 													<img
 														className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
