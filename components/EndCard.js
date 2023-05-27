@@ -274,7 +274,7 @@ const EndCard = () => {
 							</div>
 							<div className="flex flex-col justify-center items-center">
 								<div className="text-xs text-center font-bold">Marché Paul Bert</div>
-								<p className="text-xs text-center">Allée 6 Stand 83 / Allée 1 Stand 2, 93400 Saint Ouen sur Seine</p>
+								<p className="text-xs text-center">Allée 6 Stand 83, 93400 Saint Ouen sur Seine</p>
 							</div>
 							<div className="flex flex-col justify-center items-center">
 								<div className="text-xs text-center font-bold">Marché Cambo La Roseraie</div>

@@ -36,6 +36,12 @@ const locales = {
 		ru: "Report Condition",
 		cn: "Report Condition",
 	},
+	museumRelated: {
+		fr: "Les œuvres des musées en lien avec notre galerie",
+		en: "Crafts from museums related to our gallery",
+		ru: "Crafts from museums related to our gallery",
+		cn: "Crafts from museums related to our gallery",
+	},
 }
 
 export default locales
