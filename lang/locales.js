@@ -42,6 +42,18 @@ const locales = {
 		ru: "Crafts from museums related to our gallery",
 		cn: "Crafts from museums related to our gallery",
 	},
+	more: {
+		fr: "En savoir plus",
+		en: "See more",
+		ru: "See more",
+		cn: "See more",
+	},
+	ad: {
+		fr: "Consulter l'article AD",
+		en: "Read the AD article",
+		ru: "Read the AD article",
+		cn: "Read the AD article",
+	},
 }
 
 export default locales
