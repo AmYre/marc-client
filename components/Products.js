@@ -24,13 +24,13 @@ const Products = ({ products, vignette }) => {
 		<div className="p-12 pt-28 md:pt-12">
 			<h2 className="text-3xl tracking-widest font-thin mb-12 font-bodoni">{texts.menu1[lang]}</h2>
 			<div className="text-sm p-4 mb-12 font-thin border-t-[1px] border-b-[1px] border-gray-100 flex flex-wrap justify-center gap-8">
+				<button onClick={() => setFilter("museum")} className="cursor-pointer hover:font-bold active:font-bold focus:font-bold transition-all duration-300">
+					{texts.museum[lang]}
+				</button>
 				<button onClick={() => setFilter("")} className="cursor-pointer hover:font-bold active:font-bold focus:font-bold transition-all duration-300">
 					{texts.all[lang]}
 				</button>
-				<button onClick={() => setFilter("showed-museum")} className="cursor-pointer hover:font-bold active:font-bold focus:font-bold transition-all duration-300">
-					{texts.menu3[lang]}
-				</button>
-				<button onClick={() => setFilter("showed-expo")} className="cursor-pointer hover:font-bold active:font-bold focus:font-bold transition-all duration-300">
+				<button onClick={() => setFilter("expo")} className="cursor-pointer hover:font-bold active:font-bold focus:font-bold transition-all duration-300">
 					{texts.expo[lang]}
 				</button>
 			</div>

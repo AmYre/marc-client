@@ -41,7 +41,7 @@ const Creations = ({ products, vignette }) => {
 }
 
 export const getServerSideProps = async () => {
-	const products = await sanityClient.fetch(`*[_type=="products" && references(*[_type=="category" && slug.current != 'museum-sold']._id)] | order(_updatedAt desc) {..., category->}`)
+	const products = await sanityClient.fetch(`*[_type=="products" && references(*[_type=="category" && slug.current != 'sold']._id)] | order(_updatedAt desc) {..., category->}`)
 	const vignette = await sanityClient.fetch(`*[_type=="walls" && title == 'vignette']{...}`)
 
 	return {
