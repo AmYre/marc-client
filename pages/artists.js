@@ -25,7 +25,7 @@ const ArtistPage = ({ artists, vignette }) => {
 					<Image src={logo} className="w-20" alt="logo Marc Maison XIX" />
 					<div className="flex flex-col">
 						<h1 className="mb-0 pb-0 text-[1.5rem] text-gray-200 pt-6 px-6 font-bodoni">Marc Maison</h1>
-						<h2 className="font-splash text-[#c49d50] text-[0.8rem] tracking-wide pb-4 text-gold">- 19ème - </h2>
+						<h2 className="font-splash text-[#c49d50] text-[0.8rem] tracking-wide pb-4 text-gold">- 19ème -</h2>
 					</div>
 				</div>
 			</main>

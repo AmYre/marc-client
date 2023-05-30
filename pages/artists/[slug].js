@@ -53,16 +53,33 @@ const DetailArtist = ({ vignette }) => {
 					<Nav />
 				</nav>
 
-				<main className="w-full bg-layout bg-opacity-90 text-white font-roboto text-center flex flex-col items-center p-12 pt-32 md:pt-12 ">
-					<h2 className="text-3xl tracking-widest font-thin font-bodoni mb-12">{artist?.title}</h2>
-					{artist?.image && (
-						<motion.div className="mb-12" initial={{ y: "50%", opacity: 0, scale: 0.5 }} animate={{ y: 0, opacity: 1, scale: 1 }} transition={{ duration: 0.5, ease: "easeOut" }}>
-							<Image className="rounded-xs w-48 shadow shadow-white" src={urlFor(artist?.image)?.url()} alt="Image produit" width="300" height="300" />
-						</motion.div>
-					)}
-
-					<div className="text-justify flex flex-col gap-4 border-b border-b-white pb-12 mb-12">
-						{artist?.description && <PortableText className="font-roboto" value={artist?.description[lang] || artist?.description.en} />}
+				<main className="w-full bg-layout bg-opacity-90 text-white font-roboto flex flex-col p-12 pt-32 md:pt-12 ">
+					<h2 className="text-3xl tracking-widest font-thin font-bodoni mb-4">{artist?.title}</h2>
+					<hr className="mb-4" />
+					<div className="md:hidden">
+						{artist?.image && (
+							<motion.div
+								className="rounded-xs mb-4"
+								initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+								animate={{ y: 0, opacity: 1, scale: 1 }}
+								transition={{ duration: 0.5, ease: "easeOut" }}>
+								<Image src={urlFor(artist?.image)?.url()} alt="Image produit" width="500" height="500" />
+							</motion.div>
+						)}
+					</div>
+					<div className="flex gap-4 border-b border-b-white pb-4 mb-12">
+						<div className="font-roboto md:w-3/4">{artist?.description && <PortableText value={artist?.description[lang] || artist?.description.en} />}</div>
+						<div className="hidden md:block w-1/4">
+							{artist?.image && (
+								<motion.div
+									className="rounded-xs"
+									initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+									animate={{ y: 0, opacity: 1, scale: 1 }}
+									transition={{ duration: 0.5, ease: "easeOut" }}>
+									<Image src={urlFor(artist?.image)?.url()} alt="Image produit" width="500" height="500" />
+								</motion.div>
+							)}
+						</div>
 					</div>
 					<div className="flex flex-wrap justify-center items-center gap-10 ">
 						{creation &&
