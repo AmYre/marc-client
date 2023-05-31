@@ -5,6 +5,7 @@ import imageUrlBuilder from "@sanity/image-url"
 import { motion } from "framer-motion"
 
 import Image from "next/image"
+import Link from "next/link"
 
 import { useGlobalContext } from "./GlobalContext"
 
@@ -36,8 +37,20 @@ const Gallery = () => {
 				<div className="font-roboto md:w-1/2">{judic?.description && <PortableText value={judic?.description[lang] || judic?.description.en} />}</div>
 			</div>
 			<div className="flex flex-col md:flex-row justify-around items-center gap-4">
-				<button className="bg-[#a87e2d] hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300">{texts?.more[lang]}</button>
-				<button className="bg-[#a87e2d] hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300">{texts?.ad[lang]}</button>
+				<Link
+					target="_blank"
+					href={
+						lang == "fr"
+							? "https://www.calameo.com/read/0067283174fb6e58f9d0b"
+							: lang == "cn"
+							? "https://www.calameo.com/read/006728317968097a3c634"
+							: lang == "en" && "https://www.calameo.com/read/00672831786ffbd4b8f8e"
+					}>
+					<button className="bg-[#a87e2d] hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300">{texts?.more[lang]}</button>
+				</Link>
+				<Link target="_blank" href="https://www.calameo.com/read/00672831782014e6b2b41">
+					<button className="bg-[#a87e2d] hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300">{texts?.ad[lang]}</button>
+				</Link>
 			</div>
 			{/* 			{lang == "fr" && (
 				<>

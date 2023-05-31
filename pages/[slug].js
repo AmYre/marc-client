@@ -125,28 +125,38 @@ const DetailProduct = () => {
 			</div>
 			<div className="flex gap-3 absolute bottom-10 right-10 items-center">
 				<div className="flex md:hidden">
-					<motion.button onClick={() => handleMobSound()} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} animate={{ scale: playing ? 1.2 : 1 }} transition={{ duration: 0.3 }}>
+					<motion.button
+						onClick={() => handleMobSound()}
+						whileHover={{ scale: 1.1 }}
+						whileTap={{ scale: 0.9 }}
+						animate={{ scale: playing ? 1 : [1.1, 1] }}
+						transition={playing ? { duration: 0.3 } : { duration: 0.3, repeat: Infinity, repeatType: "reverse" }}>
 						{!playing ? (
-							<div className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex items-center justify-center">
-								<GiSpeakerOff className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer" />
+							<div className="w-[60px] h-[60px] m-auto bg-layout rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
+								<GiSpeakerOff className="text-3xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 							</div>
 						) : (
-							<div className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex items-center justify-center">
-								<GiSpeaker className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer" />
+							<div className="w-[60px] h-[60px] m-auto bg-layout rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
+								<GiSpeaker className="text-3xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 							</div>
 						)}
 					</motion.button>
 				</div>
 				<div className="hidden md:block">
 					<div className="flex">
-						<motion.button onClick={() => handleSound()} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} animate={{ scale: playing ? 1.2 : 1 }} transition={{ duration: 0.3 }}>
+						<motion.button
+							onClick={() => handleSound()}
+							whileHover={{ scale: 1.1 }}
+							whileTap={{ scale: 0.9 }}
+							animate={{ scale: playing ? 1 : [1.1, 1] }}
+							transition={playing ? { duration: 0.3 } : { duration: 0.3, repeat: Infinity, repeatType: "reverse" }}>
 							{!playing ? (
-								<div className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex items-center justify-center">
-									<GiSpeakerOff className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer" />
+								<div className="w-[60px] h-[60px] m-auto bg-layout rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
+									<GiSpeakerOff className="text-3xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 								</div>
 							) : (
-								<div className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex items-center justify-center">
-									<GiSpeaker className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer" />
+								<div className="w-[60px] h-[60px] m-auto bg-layout rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
+									<GiSpeaker className="text-3xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 								</div>
 							)}
 						</motion.button>
@@ -163,7 +173,7 @@ const DetailProduct = () => {
 					<BsTranslate className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer" />
 				</div>
 				<AnimatePresence>
-					{translate && (
+					{!translate && (
 						<motion.div
 							className="absolute left-0 bottom-[80px] p-4 flex flex-wrap justify-center items-center gap-3 bg-layout bg-opacity-70"
 							initial={{ x: "10px", opacity: 0 }}
