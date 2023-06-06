@@ -67,9 +67,6 @@ const EndCard = () => {
 		})
 	}, [])
 
-	console.log("cur", currentProduct)
-	console.log("rel", related)
-
 	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })
 
 	const urlFor = (source) => {
@@ -305,7 +302,6 @@ const EndCard = () => {
 						<AiOutlineCloseCircle className="text-white text-3xl cursor-pointer mb-4" onClick={() => setIsOpen(false)} />
 
 						<div className="flex flex-wrap justify-center items-center gap-10">
-							{console.log("current product", currentProduct)}
 							{currentProduct && (
 								<motion.div
 									initial={{ y: "50%", opacity: 0, scale: 0.5 }}
@@ -341,8 +337,6 @@ const EndCard = () => {
 											transition={{ duration: 0.5, ease: "easeOut" }}
 											exit={{ opacity: 0, scale: 0.1 }}
 											className="mb-8">
-											{console.log("ext product", product)}
-
 											<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/marc/${product.slugfr.current}${currentLang}.mp4`}>
 												<div className="h-[200px] w-[200px] overflow-hidden">
 													<Image

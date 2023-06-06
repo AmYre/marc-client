@@ -11,8 +11,6 @@ const Products = ({ products, vignette }) => {
 	const { lang, setLang, tagLang, setTagLang, texts, setTexts, currentProduct, setCurrentProduct } = useGlobalContext()
 	const [filter, setFilter] = useState()
 
-	console.log("second", tagLang)
-
 	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })
 
 	const urlFor = (source) => {

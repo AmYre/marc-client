@@ -103,31 +103,6 @@ const Nav = () => {
 								/>
 							</div>
 							<p className="text-md mt-6 mb-6 font-nunito tracking-widest ">PARIS</p>
-							{/* 							<div className="flex flex-wrap justify-center items-center gap-2 ">
-								{flags.map((flag, index) => (
-									<div key={index} className="relative flex flex-col justify-center items-center  mb-8">
-										<Image
-											onClick={() => {
-												setTagLang(flag.tagLang)
-												console.log("first", tagLang)
-											}}
-											className={`hover:cursor-pointer transition-all duration-300`}
-											src={flag.pic}
-											alt={flag.name}
-											width="30"
-											height="30"
-										/>
-										{tagLang == flag.tagLang && (
-											<motion.div
-												initial={{ y: "50%", opacity: 0, scale: 0.5 }}
-												animate={{ y: 0, opacity: 1, scale: 1 }}
-												transition={{ duration: 0.5, ease: "easeOut" }}
-												exit={{ opacity: 0, scale: 0.1 }}
-												className="absolute top-[30px] w-[8px] h-[8px] bg-white rounded-full"></motion.div>
-										)}
-									</div>
-								))}
-							</div> */}
 
 							<div className="flex justify-center items-center gap-6">
 								<Link href="https://www.facebook.com/marcmaisongalerie/" target="_blank">
