@@ -7,6 +7,8 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 
+import ImgLoader from "./ImgLoader"
+
 import { AiOutlineCloseCircle } from "react-icons/ai"
 import { IoMdRefreshCircle } from "react-icons/io"
 
@@ -33,15 +35,19 @@ const EndCard = () => {
 	const router = useRouter()
 	const url = router.query.slug
 
+	const imageLoader = ({ src, width, quality }) => {
+		return `${src}?w=${width}&q=${quality || 75}`
+	}
+
 	let relatedLangs = [
-		{ name: "netherland", pic: flagpb, tag: "pb", mobtag: "mob-pb" },
-		{ name: "polish", pic: flagpo, tag: "po", mobtag: "mob-po" },
-		{ name: "korean", pic: flagkr, tag: "kr", mobtag: "mob-kr" },
-		{ name: "arabic", pic: flagar, tag: "ar", mobtag: "mob-ar" },
-		{ name: "japanese", pic: flagjp, tag: "jp", mobtag: "mob-jp" },
-		{ name: "italian", pic: flagit, tag: "it", mobtag: "mob-it" },
-		{ name: "turkish", pic: flagtu, tag: "tu", mobtag: "mob-tu" },
-		{ name: "russian", pic: flagru, tag: "ru", mobtag: "mob-ru" },
+		{ name: "netherland", pic: flagpb, tag: "-pb" },
+		{ name: "polish", pic: flagpo, tag: "-po" },
+		{ name: "korean", pic: flagkr, tag: "-kr" },
+		{ name: "arabic", pic: flagar, tag: "-ar" },
+		{ name: "japanese", pic: flagjp, tag: "-jp" },
+		{ name: "italian", pic: flagit, tag: "-it" },
+		{ name: "turkish", pic: flagtu, tag: "-tu" },
+		{ name: "russian", pic: flagru, tag: "-ru" },
 	]
 
 	const getVids = async () => {
@@ -52,8 +58,6 @@ const EndCard = () => {
 
 	const getVidLang = async (lang) => {
 		setCurrentLang(lang)
-		console.log(products)
-
 		setRelated(products.filter((product) => product.variants && product.variants.includes(lang)))
 	}
 
@@ -64,6 +68,7 @@ const EndCard = () => {
 	}, [])
 
 	console.log("cur", currentProduct)
+	console.log("rel", related)
 
 	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })
 
@@ -92,7 +97,7 @@ const EndCard = () => {
 									key={index}
 									onClick={() => {
 										setIsOpen((prev) => !prev)
-										getVidLang(lang.mobtag)
+										getVidLang(lang.tag)
 									}}
 									className="hover:cursor-pointer"
 									src={lang.pic}
@@ -154,16 +159,17 @@ const EndCard = () => {
 									animate={{ y: 0, opacity: 1, scale: 1 }}
 									transition={{ duration: 0.5, ease: "easeOut" }}
 									exit={{ opacity: 0, scale: 0.1 }}>
-									<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/marc/${currentProduct?.slugfr?.current}${currentLang}.mp4`}>
+									<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/marc/${currentProduct?.slugfr?.current.replace(/-mob/g, "")}${currentLang}-mob.mp4`}>
 										<div className="h-[100px] w-[100px] overflow-hidden">
-											<img
+											<Image
 												className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
 												src={urlFor(currentProduct?.image)?.url()}
 												alt="Image produit"
+												width="100"
+												height="100"
+												loader={imageLoader}
+												placeholder={<ImgLoader />}
 											/>
-											<div className="absolute w-[100px] bg-black bg-opacity-50 p-[10px] shadow ellipse2 px-4 font-thin">
-												<h2 className="ellipse2 text-center text-white px-4 font-thin ">{currentProduct?.title[lang] || currentProduct?.title?.en}</h2>
-											</div>
 										</div>
 									</Link>
 								</motion.div>
@@ -177,16 +183,17 @@ const EndCard = () => {
 											animate={{ y: 0, opacity: 1, scale: 1 }}
 											transition={{ duration: 0.5, ease: "easeOut" }}
 											exit={{ opacity: 0, scale: 0.1 }}>
-											<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/marc/${product.slugfr.current}-${currentLang}.mp4`}>
+											<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/marc/${product.slugfr.current.replace(/-mob/g, "")}${currentLang}-mob.mp4`}>
 												<div className="h-[100px] w-[100px] overflow-hidden">
-													<img
+													<Image
 														className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
 														src={urlFor(product.image).url()}
 														alt="Image produit"
+														width="100"
+														height="100"
+														loader={imageLoader}
+														placeholder={<ImgLoader />}
 													/>
-													<div className="absolute w-[100px] bg-black bg-opacity-50 p-[10px] shadow ellipse2 px-4 font-thin">
-														<h2 className="ellipse2 text-center text-white px-4 font-thin ">{product.title[lang] || product.title.en}</h2>
-													</div>
 												</div>
 											</Link>
 										</motion.div>
@@ -306,12 +313,16 @@ const EndCard = () => {
 									transition={{ duration: 0.5, ease: "easeOut" }}
 									exit={{ opacity: 0, scale: 0.1 }}
 									className="mb-8">
-									<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/marc/${currentProduct.slugfr.current}-${currentLang}.mp4`}>
+									<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/marc/${currentProduct.slugfr.current}${currentLang}.mp4`}>
 										<div className="h-[200px] w-[200px] overflow-hidden">
-											<img
+											<Image
 												className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
 												src={urlFor(currentProduct.image).url()}
 												alt="Image produit"
+												width="100"
+												height="100"
+												loader={imageLoader}
+												placeholder={<ImgLoader />}
 											/>
 											<div className="absolute w-[200px] bg-black bg-opacity-50 p-[10px] shadow ellipse2 px-4 font-thin">
 												<h2 className="ellipse2 text-center text-white px-4 font-thin ">{currentProduct.title[lang] || currentProduct.title.en}</h2>
@@ -332,12 +343,16 @@ const EndCard = () => {
 											className="mb-8">
 											{console.log("ext product", product)}
 
-											<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/marc/${product.slugfr.current}-${currentLang}.mp4`}>
+											<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/marc/${product.slugfr.current}${currentLang}.mp4`}>
 												<div className="h-[200px] w-[200px] overflow-hidden">
-													<img
+													<Image
 														className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
 														src={urlFor(product.image).url()}
 														alt="Image produit"
+														width="100"
+														height="100"
+														loader={imageLoader}
+														placeholder={<ImgLoader />}
 													/>
 													<div className="absolute w-[200px] bg-black bg-opacity-50 p-[10px] shadow ellipse2 px-4 font-thin">
 														<h2 className="ellipse2 text-center text-white px-4 font-thin ">{product.title[lang] || product.title.en}</h2>
