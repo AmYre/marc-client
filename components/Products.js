@@ -53,11 +53,7 @@ const Products = ({ products, vignette }) => {
 														key={index}
 														href={tagLang ? `${product.slugfr.current}${tagLang}` : product.slugfr.current}
 														onClick={() => {
-															setCurrentProduct({
-																title: product.title[lang] ? product.title[lang] : product.title.en,
-																img: urlFor(product.image).url(),
-																slug: product.slugfr.current,
-															})
+															setCurrentProduct(product)
 														}}>
 														<div className="w-full overflow-hidden">
 															<figure className="mb-8">
@@ -92,11 +88,7 @@ const Products = ({ products, vignette }) => {
 													key={index}
 													href={tagLang ? `${product.slugfr.current}${tagLang}` : product.slugfr.current}
 													onClick={() => {
-														setCurrentProduct({
-															title: product.title[lang] ? product.title[lang] : product.title.en,
-															img: urlFor(product.image).url(),
-															slug: product.slugfr.current,
-														})
+														setCurrentProduct(product)
 													}}>
 													<div className="w-full overflow-hidden">
 														<figure className="mb-8">
@@ -138,11 +130,7 @@ const Products = ({ products, vignette }) => {
 														key={index}
 														href={tagLang ? `${product.slugfr.current}${tagLang}` : product.slugfr.current}
 														onClick={() => {
-															setCurrentProduct({
-																title: product.title[lang] ? product.title[lang] : product.title.en,
-																img: urlFor(product.image).url(),
-																slug: product.slugfr.current,
-															})
+															setCurrentProduct(product)
 														}}>
 														<div className="vig-wrapper relative w-full overflow-hidden mb-8">
 															<Image
@@ -175,11 +163,7 @@ const Products = ({ products, vignette }) => {
 													key={index}
 													href={tagLang ? `${product.slugfr.current}${tagLang}` : product.slugfr.current}
 													onClick={() => {
-														setCurrentProduct({
-															title: product.title[lang] ? product.title[lang] : product.title.en,
-															img: urlFor(product.image).url(),
-															slug: product.slugfr.current,
-														})
+														setCurrentProduct(product)
 													}}>
 													<div className="vig-wrapper relative w-full overflow-hidden mb-8">
 														<Image

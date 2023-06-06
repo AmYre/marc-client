@@ -121,7 +121,9 @@ const DetailProduct = () => {
 				<CloudinaryContext cloud_name="amircloud" secure={true}>
 					{videoDesktop}
 				</CloudinaryContext>
-				<AnimatePresence>{ended && <EndCard />}</AnimatePresence>
+				<AnimatePresence>
+					<EndCard />
+				</AnimatePresence>
 			</div>
 			<div className="flex gap-3 absolute bottom-10 right-10 items-center">
 				<div className="flex md:hidden">
@@ -182,7 +184,7 @@ const DetailProduct = () => {
 							exit={{ x: "10px", opacity: 0 }}>
 							{flags.map((flag, index) => (
 								<div className="relative flex flex-col justify-center items-center mb-2 mt-2" key={index}>
-									<Link href={`${currentProduct.slug}${flag.tagLang}`}>
+									<Link href={`${currentProduct?.slugfr?.current}${flag.tagLang}`}>
 										<Image
 											onClick={() => {
 												setTagLang(flag.tagLang)

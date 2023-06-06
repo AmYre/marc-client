@@ -42,7 +42,7 @@ const Sold = ({ products, vignette }) => {
 								<Masonry breakpointCols={3} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
 									{products.map(
 										(product, index) =>
-											product.category?.slug.current == "sold" && (
+											product.category?.slug?.current == "sold" && (
 												<motion.div
 													key={index}
 													initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
@@ -77,7 +77,7 @@ const Sold = ({ products, vignette }) => {
 								<Masonry breakpointCols={1} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
 									{products.map(
 										(product, index) =>
-											product.category?.slug.current == "sold" && (
+											product.category?.slug?.current == "sold" && (
 												<motion.div
 													key={index}
 													initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}

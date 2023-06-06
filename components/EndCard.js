@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useGlobalContext } from "../components/GlobalContext"
 import { sanityClient } from "../lib/sanityClient"
-
+import { useRouter } from "next/router"
 import imageUrlBuilder from "@sanity/image-url"
 import { motion } from "framer-motion"
 import Image from "next/image"
@@ -28,7 +28,10 @@ const EndCard = () => {
 	const [isOpen, setIsOpen] = useState(false)
 	const [products, setProducts] = useState()
 	const [related, setRelated] = useState()
-	const [current, setCurrent] = useState()
+	const [currentLang, setCurrentLang] = useState()
+
+	const router = useRouter()
+	const url = router.query.slug
 
 	let relatedLangs = [
 		{ name: "netherland", pic: flagpb, tag: "pb", mobtag: "mob-pb" },
@@ -42,18 +45,25 @@ const EndCard = () => {
 	]
 
 	const getVids = async () => {
-		setProducts(await sanityClient.fetch(`*[_type == "products"]`))
+		const products = await sanityClient.fetch(`*[_type == "products"]`)
+		setProducts(products)
+		return products
 	}
 
 	const getVidLang = async (lang) => {
-		setCurrent(lang)
-		console.log(products.filter((product) => product.variants && product.variants.includes(lang)))
+		setCurrentLang(lang)
+		console.log(products)
+
 		setRelated(products.filter((product) => product.variants && product.variants.includes(lang)))
 	}
 
 	useEffect(() => {
-		getVids()
+		getVids().then((products) => {
+			setCurrentProduct(products.filter((product) => product.slugfr.current == url)[0])
+		})
 	}, [])
+
+	console.log("cur", currentProduct)
 
 	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })
 
@@ -101,7 +111,7 @@ const EndCard = () => {
 								/>
 							</Link>
 							<div className="relative flex justify-center items-center">
-								<Image src={logo} alt="Logo Marc Maison" className="w-[20vh]" />
+								<Image src={logo} alt="Logo Marc Maison" className="w-[20vh]" width="50" height="50" />
 								<IoMdRefreshCircle
 									className="bg-white rounded-full text-[#a87e2d] absolute text-gold text-[5vh] cursor-pointer opacity-90"
 									onClick={() => {
@@ -144,17 +154,15 @@ const EndCard = () => {
 									animate={{ y: 0, opacity: 1, scale: 1 }}
 									transition={{ duration: 0.5, ease: "easeOut" }}
 									exit={{ opacity: 0, scale: 0.1 }}>
-									<Link href={`https://res.cloudinary.com/amircloud/video/upload/marc/${currentProduct.slug}${current}.mp4`}>
+									<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/marc/${currentProduct?.slugfr?.current}${currentLang}.mp4`}>
 										<div className="h-[100px] w-[100px] overflow-hidden">
 											<img
 												className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
-												src={currentProduct.img}
+												src={urlFor(currentProduct?.image)?.url()}
 												alt="Image produit"
 											/>
 											<div className="absolute w-[100px] bg-black bg-opacity-50 p-[10px] shadow ellipse2 px-4 font-thin">
-												<h2 className="ellipse2 text-center text-white px-4 font-thin " key={currentProduct.title}>
-													{currentProduct.title}
-												</h2>
+												<h2 className="ellipse2 text-center text-white px-4 font-thin ">{currentProduct?.title[lang] || currentProduct?.title?.en}</h2>
 											</div>
 										</div>
 									</Link>
@@ -162,24 +170,22 @@ const EndCard = () => {
 							)}
 							{related.map(
 								(product, index) =>
-									product.slugfr.current !== currentProduct.slug && (
+									product.slugfr.current !== currentProduct.slugfr.current && (
 										<motion.div
 											key={index}
 											initial={{ y: "50%", opacity: 0, scale: 0.5 }}
 											animate={{ y: 0, opacity: 1, scale: 1 }}
 											transition={{ duration: 0.5, ease: "easeOut" }}
 											exit={{ opacity: 0, scale: 0.1 }}>
-											<Link key={index} href={`https://res.cloudinary.com/amircloud/video/upload/marc/${product.slugfr.current}-${current}.mp4`}>
-												<div key={index} className="h-[100px] w-[100px] overflow-hidden">
+											<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/marc/${product.slugfr.current}-${currentLang}.mp4`}>
+												<div className="h-[100px] w-[100px] overflow-hidden">
 													<img
 														className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
 														src={urlFor(product.image).url()}
 														alt="Image produit"
 													/>
 													<div className="absolute w-[100px] bg-black bg-opacity-50 p-[10px] shadow ellipse2 px-4 font-thin">
-														<h2 className="ellipse2 text-center text-white px-4 font-thin " key={product.title.en}>
-															{product.title[lang] || product.title.en}
-														</h2>
+														<h2 className="ellipse2 text-center text-white px-4 font-thin ">{product.title[lang] || product.title.en}</h2>
 													</div>
 												</div>
 											</Link>
@@ -300,17 +306,15 @@ const EndCard = () => {
 									transition={{ duration: 0.5, ease: "easeOut" }}
 									exit={{ opacity: 0, scale: 0.1 }}
 									className="mb-8">
-									<Link href={`https://res.cloudinary.com/amircloud/video/upload/marc/${currentProduct.slug}-${current}.mp4`}>
-										<div key={index} className="h-[200px] w-[200px] overflow-hidden">
+									<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/marc/${currentProduct.slugfr.current}-${currentLang}.mp4`}>
+										<div className="h-[200px] w-[200px] overflow-hidden">
 											<img
 												className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
-												src={currentProduct.img}
+												src={urlFor(currentProduct.image).url()}
 												alt="Image produit"
 											/>
 											<div className="absolute w-[200px] bg-black bg-opacity-50 p-[10px] shadow ellipse2 px-4 font-thin">
-												<h2 className="ellipse2 text-center text-white px-4 font-thin " key={currentProduct.title}>
-													{currentProduct.title}
-												</h2>
+												<h2 className="ellipse2 text-center text-white px-4 font-thin ">{currentProduct.title[lang] || currentProduct.title.en}</h2>
 											</div>
 										</div>
 									</Link>
@@ -318,7 +322,7 @@ const EndCard = () => {
 							)}
 							{related.map(
 								(product, index) =>
-									product.slugfr.current != currentProduct.slug && (
+									product.slugfr.current != currentProduct.slugfr.current && (
 										<motion.div
 											key={index}
 											initial={{ y: "50%", opacity: 0, scale: 0.5 }}
@@ -326,17 +330,17 @@ const EndCard = () => {
 											transition={{ duration: 0.5, ease: "easeOut" }}
 											exit={{ opacity: 0, scale: 0.1 }}
 											className="mb-8">
-											<Link key={index} target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/marc/${product.slugfr.current}-${current}.mp4`}>
-												<div key={index} className="h-[200px] w-[200px] overflow-hidden">
+											{console.log("ext product", product)}
+
+											<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/marc/${product.slugfr.current}-${currentLang}.mp4`}>
+												<div className="h-[200px] w-[200px] overflow-hidden">
 													<img
 														className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
 														src={urlFor(product.image).url()}
 														alt="Image produit"
 													/>
 													<div className="absolute w-[200px] bg-black bg-opacity-50 p-[10px] shadow ellipse2 px-4 font-thin">
-														<h2 className="ellipse2 text-center text-white px-4 font-thin " key={product.title.en}>
-															{product.title[lang] || product.title.en}
-														</h2>
+														<h2 className="ellipse2 text-center text-white px-4 font-thin ">{product.title[lang] || product.title.en}</h2>
 													</div>
 												</div>
 											</Link>

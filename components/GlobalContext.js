@@ -28,7 +28,7 @@ const ContextProvider = ({ children }) => {
 	const [texts, setTexts] = useState(locales)
 	const [ended, setEnded] = useState(false)
 	const [replay, setReplay] = useState(false)
-	const [currentProduct, setCurrentProduct] = useState({})
+	const [currentProduct, setCurrentProduct] = useState()
 
 	return (
 		<GlobalContext.Provider
