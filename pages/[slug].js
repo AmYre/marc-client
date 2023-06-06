@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useMemo, useRef } from "react"
+import React, { Suspense, useState, useMemo, useRef } from "react"
 import { useGlobalContext } from "../components/GlobalContext"
-import { Video, CloudinaryContext } from "cloudinary-react"
+import { CloudinaryContext } from "cloudinary-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/router"
@@ -109,9 +109,11 @@ const DetailProduct = () => {
 				<NavBar />
 			</div>
 			<div key={slug} className="md:hidden">
-				<CloudinaryContext cloud_name="amircloud" secure={true}>
-					{videoMobile}
-				</CloudinaryContext>
+				<Suspense fallback={<div className="h-screen w-full bg-black">Loading....</div>}>
+					<CloudinaryContext cloud_name="amircloud" secure={true}>
+						{videoMobile}
+					</CloudinaryContext>
+				</Suspense>
 				<AnimatePresence>{ended && <EndCard />}</AnimatePresence>
 			</div>
 			<nav className="hidden md:block absolute text-white z-10 top-12 left-12 ">

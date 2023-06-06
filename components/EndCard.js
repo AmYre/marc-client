@@ -173,7 +173,7 @@ const EndCard = () => {
 							)}
 							{related.map(
 								(product, index) =>
-									product.slugfr.current !== currentProduct.slugfr.current && (
+									product.slugfr.current !== currentProduct?.slugfr?.current && (
 										<motion.div
 											key={index}
 											initial={{ y: "50%", opacity: 0, scale: 0.5 }}
@@ -329,7 +329,7 @@ const EndCard = () => {
 							)}
 							{related.map(
 								(product, index) =>
-									product.slugfr.current != currentProduct.slugfr.current && (
+									product.slugfr.current != currentProduct?.slugfr?.current && (
 										<motion.div
 											key={index}
 											initial={{ y: "50%", opacity: 0, scale: 0.5 }}
