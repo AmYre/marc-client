@@ -1,4 +1,4 @@
-import React, { Suspense, useState, useMemo, useRef } from "react"
+import React, { useEffect, useState, useMemo, useRef } from "react"
 import { useGlobalContext } from "../components/GlobalContext"
 import { CloudinaryContext } from "cloudinary-react"
 import Image from "next/image"
@@ -32,6 +32,8 @@ const DetailProduct = () => {
 	const [translate, setTranslate] = useState(false)
 	const vRefDesk = useRef(null)
 	const vRefMob = useRef(null)
+
+	const [isLoaded, setIsLoaded] = useState(false)
 
 	const router = useRouter()
 	const slug = router.query.slug
@@ -73,12 +75,13 @@ const DetailProduct = () => {
 						setEnded(true)
 						setPlaying(false)
 					}}
+					onCanPlayThrough={() => setIsLoaded(true)}
 					poster={{ startOffset: "0" }}>
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/marc/${slug}.mp4`} type="video/mp4" />
 					<source src="https://res.cloudinary.com/amircloud/video/upload/v1673634198/marc/home.mp4" type="video/mp4" />
 				</video>
 			),
-		[lang, slug, replay]
+		[lang, slug, replay, isLoaded]
 	)
 
 	const videoMobile = useMemo(
@@ -109,17 +112,16 @@ const DetailProduct = () => {
 				<NavBar />
 			</div>
 			<div key={slug} className="md:hidden">
-				<Suspense fallback={<div className="h-screen w-full bg-black">Loading....</div>}>
-					<CloudinaryContext cloud_name="amircloud" secure={true}>
-						{videoMobile}
-					</CloudinaryContext>
-				</Suspense>
+				<CloudinaryContext cloud_name="amircloud" secure={true}>
+					{videoMobile}
+				</CloudinaryContext>
 				<AnimatePresence>{ended && <EndCard />}</AnimatePresence>
 			</div>
 			<nav className="hidden md:block absolute text-white z-10 top-12 left-12 ">
 				<Nav />
 			</nav>
 			<div key={slug + slug} className="hidden md:block">
+				{!isLoaded && <div className="h-screen w-full bg-layout text-white flex justify-center items-center">loading...</div>}
 				<CloudinaryContext cloud_name="amircloud" secure={true}>
 					{videoDesktop}
 				</CloudinaryContext>
@@ -189,6 +191,7 @@ const DetailProduct = () => {
 											onClick={() => {
 												setTagLang(flag.tagLang)
 												setPlaying(false)
+												setIsLoaded(false)
 											}}
 											className="hover:cursor-pointer transition-all duration-300"
 											src={flag.pic}
