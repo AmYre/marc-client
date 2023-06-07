@@ -29,7 +29,7 @@ import flagtu from "../public/tu.png"
 import flagru from "../public/ru.png"
 
 const DetailProduct = () => {
-	const { lang, setLang, tagLang, setTagLang, ended, setEnded, replay, setReplay, currentProduct } = useGlobalContext()
+	const { lang, setLang, tagLang, setTagLang, ended, setEnded, replay, setReplay, currentProduct, setCurrentProduct } = useGlobalContext()
 	const [playing, setPlaying] = useState(false)
 	const [translate, setTranslate] = useState(false)
 	const vRefDesk = useRef(null)
@@ -203,7 +203,7 @@ const DetailProduct = () => {
 							exit={{ x: "10px", opacity: 0 }}>
 							{flags.map((flag, index) => (
 								<div className="relative flex flex-col justify-center items-center mb-1 mt-1" key={index}>
-									<Link href={`${currentProduct?.slugfr?.current}${flag.tagLang}`}>
+									<Link href={`${currentProduct ? currentProduct.slugfr.current : router?.query?.slug?.replace(/-\w{2}$/, "")}${flag.tagLang}`}>
 										<Image
 											onClick={() => {
 												setTagLang(flag.tagLang)
@@ -269,7 +269,7 @@ const DetailProduct = () => {
 								exit={{ x: "10px", opacity: 0 }}>
 								{flags.map((flag, index) => (
 									<div className="relative flex flex-col justify-center items-center mb-2 mt-2" key={index}>
-										<Link href={`${currentProduct?.slugfr?.current}${flag.tagLang}`}>
+										<Link href={`${currentProduct ? currentProduct.slugfr.current : router?.query?.slug?.replace(/-\w{2}$/, "")}${flag.tagLang}`}>
 											<Image
 												onClick={() => {
 													setTagLang(flag.tagLang)

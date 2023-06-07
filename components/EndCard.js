@@ -63,7 +63,7 @@ const EndCard = () => {
 
 	useEffect(() => {
 		getVids().then((products) => {
-			setCurrentProduct(products.filter((product) => product.slugfr.current == url)[0])
+			setCurrentProduct(products.filter((product) => product.slugfr.current == url.replace(/-\w{2}$/, ""))[0])
 		})
 	}, [])
 
