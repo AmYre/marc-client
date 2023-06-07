@@ -13,7 +13,9 @@ import { AnimatePresence } from "framer-motion"
 import Nav from "../components/Nav"
 import NavBar from "../components/NavBar"
 import EndCard from "../components/EndCard"
+import { MutatingDots } from "react-loader-spinner"
 
+import logo from "../public/logo.png"
 import flagfr from "../public/fr.png"
 import flagen from "../public/en.png"
 import flagcn from "../public/cn.png"
@@ -112,6 +114,25 @@ const DetailProduct = () => {
 				<NavBar />
 			</div>
 			<div key={slug} className="md:hidden">
+				{!isLoaded && (
+					<div className="h-screen w-full bg-layout text-white flex justify-center items-center">
+						<div className="flex flex-col justify-center items-center">
+							<Image src={logo} alt="Logo Marc Maison" className="w-[20vh]" width="150" height="150" />
+							<MutatingDots
+								height="100"
+								width="100"
+								color="white"
+								secondaryColor="#a87e2d"
+								radius="12.5"
+								ariaLabel="mutating-dots-loading"
+								wrapperStyle={{}}
+								wrapperClass=""
+								visible={true}
+							/>
+							<p>Your video is loading...</p>
+						</div>
+					</div>
+				)}
 				<CloudinaryContext cloud_name="amircloud" secure={true}>
 					{videoMobile}
 				</CloudinaryContext>
@@ -121,7 +142,25 @@ const DetailProduct = () => {
 				<Nav />
 			</nav>
 			<div key={slug + slug} className="hidden md:block">
-				{!isLoaded && <div className="h-screen w-full bg-layout text-white flex justify-center items-center">loading...</div>}
+				{!isLoaded && (
+					<div className="h-screen w-full bg-layout text-white flex justify-center items-center">
+						<div className="flex flex-col justify-center items-center">
+							<Image src={logo} alt="Logo Marc Maison" className="w-[20vh]" width="150" height="150" />
+							<MutatingDots
+								height="100"
+								width="100"
+								color="white"
+								secondaryColor="#a87e2d"
+								radius="12.5"
+								ariaLabel="mutating-dots-loading"
+								wrapperStyle={{}}
+								wrapperClass=""
+								visible={true}
+							/>
+							<p>Your video is loading...</p>
+						</div>
+					</div>
+				)}
 				<CloudinaryContext cloud_name="amircloud" secure={true}>
 					{videoDesktop}
 				</CloudinaryContext>
@@ -130,7 +169,7 @@ const DetailProduct = () => {
 			<div className="flex gap-3 absolute bottom-10 right-10 items-center">
 				<div className="flex md:hidden">
 					<motion.button
-						onClick={() => handleMobSound()}
+						onClick={() => isLoaded && handleMobSound()}
 						whileHover={{ scale: 1.1 }}
 						whileTap={{ scale: 0.9 }}
 						animate={{ scale: playing ? 1 : [1.1, 1] }}
@@ -149,7 +188,7 @@ const DetailProduct = () => {
 				<div className="hidden md:block">
 					<div className="flex">
 						<motion.button
-							onClick={() => handleSound()}
+							onClick={() => isLoaded && handleSound()}
 							whileHover={{ scale: 1.1 }}
 							whileTap={{ scale: 0.9 }}
 							animate={{ scale: playing ? 1 : [1.1, 1] }}
@@ -166,6 +205,7 @@ const DetailProduct = () => {
 						</motion.button>
 					</div>
 				</div>
+
 				<div className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex items-center justify-center">
 					<Md3DRotation className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer" />
 				</div>
