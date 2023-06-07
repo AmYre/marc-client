@@ -166,49 +166,7 @@ const DetailProduct = () => {
 				</CloudinaryContext>
 				<AnimatePresence>{ended && <EndCard />}</AnimatePresence>
 			</div>
-			<div className="flex gap-3 absolute bottom-10 right-10 items-center">
-				<div className="flex md:hidden">
-					<motion.button
-						onClick={() => isLoaded && handleMobSound()}
-						whileHover={{ scale: 1.1 }}
-						whileTap={{ scale: 0.9 }}
-						animate={{ scale: playing ? 1 : [1.1, 1] }}
-						transition={playing ? { duration: 0.3 } : { duration: 0.3, repeat: Infinity, repeatType: "reverse" }}>
-						{!playing ? (
-							<div className="w-[60px] h-[60px] m-auto bg-layout rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
-								<GiSpeakerOff className="text-3xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
-							</div>
-						) : (
-							<div className="w-[60px] h-[60px] m-auto bg-layout rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
-								<GiSpeaker className="text-3xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
-							</div>
-						)}
-					</motion.button>
-				</div>
-				<div className="hidden md:block">
-					<div className="flex">
-						<motion.button
-							onClick={() => isLoaded && handleSound()}
-							whileHover={{ scale: 1.1 }}
-							whileTap={{ scale: 0.9 }}
-							animate={{ scale: playing ? 1 : [1.1, 1] }}
-							transition={playing ? { duration: 0.3 } : { duration: 0.3, repeat: Infinity, repeatType: "reverse" }}>
-							{!playing ? (
-								<div className="w-[60px] h-[60px] m-auto bg-layout rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
-									<GiSpeakerOff className="text-3xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
-								</div>
-							) : (
-								<div className="w-[60px] h-[60px] m-auto bg-layout rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
-									<GiSpeaker className="text-3xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
-								</div>
-							)}
-						</motion.button>
-					</div>
-				</div>
-
-				<div className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex items-center justify-center">
-					<Md3DRotation className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer" />
-				</div>
+			<div className="md:hidden flex flex-col gap-3 absolute bottom-10 right-10 items-center">
 				<div
 					className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex items-center justify-center"
 					onClick={() => {
@@ -216,16 +174,35 @@ const DetailProduct = () => {
 					}}>
 					<BsTranslate className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer" />
 				</div>
+				<div className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex items-center justify-center">
+					<Md3DRotation className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer" />
+				</div>
+				<motion.button
+					onClick={() => isLoaded && handleMobSound()}
+					whileHover={{ scale: 1.1 }}
+					whileTap={{ scale: 0.9 }}
+					animate={{ scale: playing ? 1 : [1.1, 1] }}
+					transition={playing ? { duration: 0.3 } : { duration: 0.3, repeat: Infinity, repeatType: "reverse" }}>
+					{!playing ? (
+						<div className="w-[60px] h-[60px] m-auto bg-layout rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
+							<GiSpeakerOff className="text-3xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
+						</div>
+					) : (
+						<div className="w-[60px] h-[60px] m-auto bg-layout rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
+							<GiSpeaker className="text-3xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
+						</div>
+					)}
+				</motion.button>
 				<AnimatePresence>
 					{!translate && (
 						<motion.div
-							className="absolute left-0 bottom-[80px] p-4 flex flex-wrap justify-center items-center gap-3 bg-layout bg-opacity-70"
+							className="absolute w-[60vw] right-[80px] bottom-0 p-3 flex flex-wrap justify-center items-center gap-3 bg-layout bg-opacity-70"
 							initial={{ x: "10px", opacity: 0 }}
 							animate={{ x: 0, opacity: 1 }}
 							transition={{ duration: 0.5, ease: "easeOut" }}
 							exit={{ x: "10px", opacity: 0 }}>
 							{flags.map((flag, index) => (
-								<div className="relative flex flex-col justify-center items-center mb-2 mt-2" key={index}>
+								<div className="relative flex flex-col justify-center items-center mb-1 mt-1" key={index}>
 									<Link href={`${currentProduct?.slugfr?.current}${flag.tagLang}`}>
 										<Image
 											onClick={() => {
@@ -236,8 +213,8 @@ const DetailProduct = () => {
 											className="hover:cursor-pointer transition-all duration-300"
 											src={flag.pic}
 											alt={flag.name}
-											width="30"
-											height="30"
+											width="35"
+											height="35"
 										/>
 									</Link>
 									{tagLang == flag.tagLang && (
@@ -253,6 +230,73 @@ const DetailProduct = () => {
 						</motion.div>
 					)}
 				</AnimatePresence>
+			</div>
+			<div className="hidden md:block">
+				<div className="flex gap-3 absolute bottom-10 right-10 items-center">
+					<motion.button
+						onClick={() => isLoaded && handleSound()}
+						whileHover={{ scale: 1.1 }}
+						whileTap={{ scale: 0.9 }}
+						animate={{ scale: playing ? 1 : [1.1, 1] }}
+						transition={playing ? { duration: 0.3 } : { duration: 0.3, repeat: Infinity, repeatType: "reverse" }}>
+						{!playing ? (
+							<div className="w-[60px] h-[60px] m-auto bg-layout rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
+								<GiSpeakerOff className="text-3xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
+							</div>
+						) : (
+							<div className="w-[60px] h-[60px] m-auto bg-layout rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
+								<GiSpeaker className="text-3xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
+							</div>
+						)}
+					</motion.button>
+					<div className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex items-center justify-center">
+						<Md3DRotation className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer" />
+					</div>
+					<div
+						className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex items-center justify-center"
+						onClick={() => {
+							setTranslate((prev) => !prev)
+						}}>
+						<BsTranslate className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer" />
+					</div>
+					<AnimatePresence>
+						{!translate && (
+							<motion.div
+								className="absolute left-0 bottom-[80px] p-4 flex flex-wrap justify-center items-center gap-3 bg-layout bg-opacity-70"
+								initial={{ x: "10px", opacity: 0 }}
+								animate={{ x: 0, opacity: 1 }}
+								transition={{ duration: 0.5, ease: "easeOut" }}
+								exit={{ x: "10px", opacity: 0 }}>
+								{flags.map((flag, index) => (
+									<div className="relative flex flex-col justify-center items-center mb-2 mt-2" key={index}>
+										<Link href={`${currentProduct?.slugfr?.current}${flag.tagLang}`}>
+											<Image
+												onClick={() => {
+													setTagLang(flag.tagLang)
+													setPlaying(false)
+													setIsLoaded(false)
+												}}
+												className="hover:cursor-pointer transition-all duration-300"
+												src={flag.pic}
+												alt={flag.name}
+												width="30"
+												height="30"
+											/>
+										</Link>
+										{tagLang == flag.tagLang && (
+											<motion.div
+												initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+												animate={{ y: 0, opacity: 1, scale: 1 }}
+												transition={{ duration: 0.5, ease: "easeOut" }}
+												exit={{ opacity: 0, scale: 0.1 }}
+												className="absolute top-[30px] w-[8px] h-[8px] bg-white rounded-full"></motion.div>
+										)}
+									</div>
+								))}
+							</motion.div>
+						)}
+					</AnimatePresence>
+				</div>
 			</div>
 		</main>
 	)
