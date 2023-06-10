@@ -11,14 +11,6 @@ import { RxPinLeft, RxPinRight } from "react-icons/rx"
 import flagFR from "../public/fr.png"
 import flagEN from "../public/en.png"
 import flagCN from "../public/cn.png"
-import flagpb from "../public/pb.png"
-import flagpo from "../public/po.png"
-import flagkr from "../public/kr.png"
-import flagar from "../public/ar.png"
-import flagjp from "../public/jp.png"
-import flagit from "../public/it.png"
-import flagtu from "../public/tu.png"
-import flagru from "../public/ru.png"
 
 const Nav = () => {
 	const { drawer, setDrawer, lang, setLang, tagLang, setTagLang, texts, setTexts } = useGlobalContext()
@@ -120,8 +112,8 @@ const Nav = () => {
 						<div>
 							<div
 								onClick={() => setLocalDrawer(false)}
-								className="relative bottom-[-50px] w-[50px] h-[50px] m-auto bg-white rounded-full p-4 opacity-80 hover:opacity-100 transition-all duration-300 cursor-pointer">
-								<RxPinLeft className="text-gray-500" />
+								className="relative bottom-[-50px] w-[50px] h-[50px] m-auto bg-[#a87e2d] rounded-full p-4 opacity-80 hover:opacity-100 transition-all duration-300 cursor-pointer">
+								<RxPinLeft className="text-white" />
 							</div>
 						</div>
 					</motion.div>
@@ -139,8 +131,8 @@ const Nav = () => {
 						onClick={() => {
 							setLocalDrawer(true)
 						}}
-						className="w-[50px] h-[50px] bg-white rounded-full p-4 opacity-80 hover:opacity-100 transition-all duration-300 cursor-pointer">
-						<RxPinRight className="text-gray-500" />
+						className="w-[50px] h-[50px] bg-[#a87e2d] rounded-full p-4 opacity-80 hover:opacity-100 transition-all duration-300 cursor-pointer">
+						<RxPinRight className="text-white" />
 					</div>
 				</motion.div>
 			)}

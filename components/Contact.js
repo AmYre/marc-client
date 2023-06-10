@@ -24,12 +24,12 @@ const Contact = () => {
 		}, 2000)
 		e.preventDefault()
 
-		emailjs.sendForm("service_kk36che", "template_6ni5c8k", form.current, "1GPC0RyVbDqEHASyZ").then(
+		emailjs.sendForm("service_kmun1ds", "template_kzoezx5", form.current, "mI6zt6KbO8qA65ye9").then(
 			(result) => {
 				console.log("Mail sent : ", result.text)
 			},
 			(error) => {
-				console.log("MAil error : ", error.text)
+				console.log("Mail error : ", error.text)
 			}
 		)
 	}

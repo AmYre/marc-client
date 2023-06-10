@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useRef, useState, useEffect } from "react"
 import { useGlobalContext } from "../components/GlobalContext"
 import { sanityClient } from "../lib/sanityClient"
 import { useRouter } from "next/router"
@@ -6,6 +6,10 @@ import imageUrlBuilder from "@sanity/image-url"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
+
+import { MutatingDots } from "react-loader-spinner"
+import TextField from "@mui/material/TextField"
+import emailjs from "@emailjs/browser"
 
 import ImgLoader from "./ImgLoader"
 
@@ -31,6 +35,10 @@ const EndCard = () => {
 	const [products, setProducts] = useState()
 	const [related, setRelated] = useState()
 	const [currentLang, setCurrentLang] = useState()
+	const [sent, setSent] = useState()
+	const [dialog, setDialog] = useState(true)
+	const [delay, setDelay] = useState(false)
+	const form = useRef()
 
 	const router = useRouter()
 	const url = router.query.slug
@@ -63,7 +71,7 @@ const EndCard = () => {
 
 	useEffect(() => {
 		getVids().then((products) => {
-			setCurrentProduct(products.filter((product) => product.slugfr.current == url.replace(/-\w{2}$/, ""))[0])
+			setCurrentProduct(products.filter((product) => product.slugfr.current == url?.replace(/-\w{2}$/, ""))[0])
 		})
 	}, [])
 
@@ -71,6 +79,24 @@ const EndCard = () => {
 
 	const urlFor = (source) => {
 		return imageBuilder.image(source)
+	}
+
+	const sendEmail = (e) => {
+		setSent(true)
+		setDelay(true)
+		setTimeout(() => {
+			setDelay(false)
+		}, 2000)
+		e.preventDefault()
+
+		emailjs.sendForm("service_kmun1ds", "template_kzoezx5", form.current, "mI6zt6KbO8qA65ye9").then(
+			(result) => {
+				console.log("Mail sent : ", result.text)
+			},
+			(error) => {
+				console.log("Mail error : ", error.text)
+			}
+		)
 	}
 
 	return (
@@ -107,7 +133,7 @@ const EndCard = () => {
 						<div className="flex flex-col justify-center items-center gap-4">
 							<Link href="/contact">
 								<input
-									className="hover:bg-[#111111] text-white text-sm px-8 py-3 cursor-pointer shadow hover:shadow-none transition-all duration-300 border-black border-2"
+									className="hover:bg-[#e2b250] bg-[#a87e2d] text-white px-8 py-3 cursor-pointer shadow hover:shadow-none transition-all duration-300 border-white border-2"
 									type="button"
 									value={texts.infos[lang]}
 								/>
@@ -115,20 +141,18 @@ const EndCard = () => {
 							<div className="relative flex justify-center items-center">
 								<Image src={logo} alt="Logo Marc Maison" className="w-[20vh]" width="50" height="50" />
 								<IoMdRefreshCircle
-									className="bg-white rounded-full text-[#a87e2d] absolute text-gold text-[5vh] cursor-pointer opacity-90"
+									className="bg-white rounded-full text-[#a87e2d] hover:text-[#e2b250] transition-all duration-300 absolute text-gold text-[5vh] cursor-pointer opacity-90"
 									onClick={() => {
 										setEnded(false)
 										setReplay(Math.random() * (10 - 1) + 1)
 									}}
 								/>
 							</div>
-							<Link href="mailto:marcmaison@gmail.com?subject=Report condition">
-								<input
-									className="hover:bg-[#111111] text-white text-sm px-8 py-3 cursor-pointer shadow hover:shadow-none transition-all duration-300 border-black border-2"
-									type="button"
-									value={texts.report[lang]}
-								/>
-							</Link>
+							<div
+								onClick={() => setDialog(true)}
+								className="hover:bg-[#e2b250] bg-[#a87e2d] text-white px-8 py-3 cursor-pointer shadow hover:shadow-none transition-all duration-300 border-white border-2">
+								{texts.report[lang]}
+							</div>
 						</div>
 						<div className="flex justify-center items-center mt-4 gap-12">
 							<div className="flex flex-col items-center">
@@ -199,6 +223,62 @@ const EndCard = () => {
 						</div>
 					</motion.div>
 				)}
+				{dialog && (
+					<motion.dialog
+						initial={{ opacity: 0, scale: 0.5 }}
+						animate={{ opacity: 1, scale: 1 }}
+						transition={{ duration: 0.25 }}
+						className="absolute top-0 w-full h-full z-30 flex justify-center items-center bg-layout">
+						<div onClick={() => setDialog(false)} className="absolute right-[50px] top-0">
+							<AiOutlineCloseCircle className="text-white text-3xl cursor-pointer mt-12 mb-4" />
+						</div>
+						{!sent ? (
+							<form ref={form} onSubmit={sendEmail} className="flex flex-col mt-12 mb-12 md:px-16 gap-12">
+								<div className="flex gap-12">
+									<TextField className="w-full max-w-[400px]" name="user" id="standard-basic" label={texts.formLastname[lang]} variant="standard" required />
+								</div>
+								<div className="flex gap-12">
+									<TextField className="w-full max-w-[400px]" name="mail" id="standard-basic" label={texts.formMail[lang]} variant="standard" required />
+								</div>
+								<input
+									className="bg-[#a87e2d] w-[200px] hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300"
+									type="hidden"
+									name="ref"
+									value={currentProduct?.title[lang] || currentProduct?.title.en}
+								/>
+								<TextField className="w-full max-w-[800px]" name="message" id="standard-textarea" label={texts.formMessage[lang]} multiline variant="standard" />
+								<input
+									className="bg-[#a87e2d] w-[200px] hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300"
+									type="submit"
+									value={texts.formSent[lang]}
+								/>
+							</form>
+						) : delay ? (
+							<div className="flex justify-center items-center">
+								<MutatingDots
+									height="100"
+									width="100"
+									color="white"
+									secondaryColor="#a87e2d"
+									radius="12.5"
+									ariaLabel="mutating-dots-loading"
+									wrapperStyle={{}}
+									wrapperClass=""
+									visible={true}
+								/>
+							</div>
+						) : (
+							<motion.div
+								className="mt-8 text-white"
+								initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+								animate={{ y: 0, opacity: 1, scale: 1 }}
+								transition={{ duration: 0.5, ease: "easeOut" }}
+								exit={{ opacity: 0, scale: 0.1 }}>
+								{texts.confirm[lang]}
+							</motion.div>
+						)}
+					</motion.dialog>
+				)}
 			</div>
 			<div className="hidden md:block">
 				<motion.div
@@ -216,7 +296,7 @@ const EndCard = () => {
 								</Link>
 							</div>
 						</div>
-						<p className="text-white font-thin mb-4 text-center">{texts.formLang[lang]}</p>
+						<p className="text-white text-xl font-thin mb-4 text-center">{texts.formLang[lang]}</p>
 
 						<div className="flex flex-wrap justify-center items-center gap-4 mb-4">
 							{relatedLangs.map((lang, index) => (
@@ -237,7 +317,7 @@ const EndCard = () => {
 						<div className="flex flex-col justify-center items-center gap-4">
 							<Link href="/contact">
 								<input
-									className="hover:bg-[#111111] text-white text-sm px-8 py-4 cursor-pointer shadow hover:shadow-none transition-all duration-300 border-black border-2"
+									className="hover:bg-[#e2b250] bg-[#a87e2d] text-white px-8 py-4 cursor-pointer shadow hover:shadow-none transition-all duration-300 border-white border-2"
 									type="button"
 									value={texts.infos[lang]}
 								/>
@@ -245,20 +325,18 @@ const EndCard = () => {
 							<div className="relative flex justify-center items-center">
 								<Image src={logo} alt="Logo Marc Maison" />
 								<IoMdRefreshCircle
-									className="bg-white rounded-full text-[#a87e2d] absolute text-gold text-8xl cursor-pointer opacity-90"
+									className="bg-white rounded-full text-[#a87e2d] hover:text-[#e2b250] transition-all duration-300 absolute text-gold text-8xl cursor-pointer opacity-90"
 									onClick={() => {
 										setEnded(false)
 										setReplay(Math.random() * (10 - 1) + 1)
 									}}
 								/>
 							</div>
-							<Link href="mailto:marcmaison@gmail.com?subject=Report condition">
-								<input
-									className="hover:bg-[#111111] text-white text-sm px-8 py-4 cursor-pointer shadow hover:shadow-none transition-all duration-300 border-black border-2"
-									type="button"
-									value={texts.report[lang]}
-								/>
-							</Link>
+							<div
+								onClick={() => setDialog(true)}
+								className="hover:bg-[#e2b250] bg-[#a87e2d] text-white px-8 py-4 cursor-pointer shadow hover:shadow-none transition-all duration-300 border-white border-2">
+								{texts.report[lang]}
+							</div>
 						</div>
 						<div className="flex justify-center items-center mt-12 gap-12">
 							<div className="flex flex-col items-center">
@@ -358,6 +436,62 @@ const EndCard = () => {
 							)}
 						</div>
 					</motion.div>
+				)}
+				{dialog && (
+					<motion.dialog
+						initial={{ opacity: 0, scale: 0.5 }}
+						animate={{ opacity: 1, scale: 1 }}
+						transition={{ duration: 0.25 }}
+						className="absolute top-0 w-full h-full z-30 flex justify-center items-center bg-layout">
+						<div onClick={() => setDialog(false)} className="absolute right-[50px] top-0">
+							<AiOutlineCloseCircle className="text-white text-3xl cursor-pointer mt-12 mb-4" />
+						</div>
+						{!sent ? (
+							<form ref={form} onSubmit={sendEmail} className="flex flex-col mt-12 mb-12 md:px-16 gap-12">
+								<div className="flex gap-12">
+									<TextField className="w-full max-w-[400px]" name="user" id="standard-basic" label={texts.formLastname[lang]} variant="standard" required />
+								</div>
+								<div className="flex gap-12">
+									<TextField className="w-full max-w-[400px]" name="mail" id="standard-basic" label={texts.formMail[lang]} variant="standard" required />
+								</div>
+								<input
+									className="bg-[#a87e2d] w-[200px] hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300"
+									type="hidden"
+									name="ref"
+									value={currentProduct?.title[lang] || currentProduct?.title.en}
+								/>
+								<TextField className="w-full max-w-[800px]" name="message" id="standard-textarea" label={texts.formMessage[lang]} multiline variant="standard" />
+								<input
+									className="bg-[#a87e2d] w-[200px] hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300"
+									type="submit"
+									value={texts.formSent[lang]}
+								/>
+							</form>
+						) : delay ? (
+							<div className="flex justify-center items-center">
+								<MutatingDots
+									height="100"
+									width="100"
+									color="white"
+									secondaryColor="#a87e2d"
+									radius="12.5"
+									ariaLabel="mutating-dots-loading"
+									wrapperStyle={{}}
+									wrapperClass=""
+									visible={true}
+								/>
+							</div>
+						) : (
+							<motion.div
+								className="mt-8 text-white"
+								initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+								animate={{ y: 0, opacity: 1, scale: 1 }}
+								transition={{ duration: 0.5, ease: "easeOut" }}
+								exit={{ opacity: 0, scale: 0.1 }}>
+								{texts.confirm[lang]}
+							</motion.div>
+						)}
+					</motion.dialog>
 				)}
 			</div>
 		</>
