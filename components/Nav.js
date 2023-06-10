@@ -112,8 +112,8 @@ const Nav = () => {
 						<div>
 							<div
 								onClick={() => setLocalDrawer(false)}
-								className="relative bottom-[-50px] w-[50px] h-[50px] m-auto bg-[#a87e2d] rounded-full p-4 opacity-80 hover:opacity-100 transition-all duration-300 cursor-pointer">
-								<RxPinLeft className="text-white" />
+								className="relative bottom-[-50px] w-[50px] h-[50px] flex justify-center items-center m-auto bg-[#a87e2d] rounded-full p-4 opacity-80 hover:opacity-100 transition-all duration-300 cursor-pointer border-white border-2">
+								<RxPinLeft className="text-white " />
 							</div>
 						</div>
 					</motion.div>
@@ -131,8 +131,8 @@ const Nav = () => {
 						onClick={() => {
 							setLocalDrawer(true)
 						}}
-						className="w-[50px] h-[50px] bg-[#a87e2d] rounded-full p-4 opacity-80 hover:opacity-100 transition-all duration-300 cursor-pointer">
-						<RxPinRight className="text-white" />
+						className="w-[50px] h-[50px] bg-[#a87e2d] rounded-full flex justify-center items-center opacity-80 hover:opacity-100 transition-all duration-300 cursor-pointer border-white border-2">
+						<RxPinRight className="text-white " />
 					</div>
 				</motion.div>
 			)}

@@ -45,11 +45,11 @@ export default function Home() {
 				<div className="flex gap-3 absolute bottom-10 right-10 items-center">
 					<motion.button onClick={() => setMuted((prev) => !prev)} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} transition={{ duration: 0.3 }}>
 						{muted ? (
-							<div className="w-[50px] h-[50px] m-auto bg-layout rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
+							<div className="w-[50px] h-[50px] m-auto bg-[#a87e2d] rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
 								<GiSpeakerOff className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 							</div>
 						) : (
-							<div className="w-[50px] h-[50px] m-auto bg-layout rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
+							<div className="w-[50px] h-[50px] m-auto bg-[#a87e2d] rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
 								<GiSpeaker className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 							</div>
 						)}
