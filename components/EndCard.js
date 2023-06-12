@@ -36,7 +36,7 @@ const EndCard = () => {
 	const [related, setRelated] = useState()
 	const [currentLang, setCurrentLang] = useState()
 	const [sent, setSent] = useState()
-	const [dialog, setDialog] = useState(true)
+	const [dialog, setDialog] = useState(false)
 	const [delay, setDelay] = useState(false)
 	const form = useRef()
 
