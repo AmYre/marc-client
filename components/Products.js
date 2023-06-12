@@ -39,7 +39,7 @@ const Products = ({ products, vignette }) => {
 							<Masonry breakpointCols={1} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
 								{products.map((product, index) =>
 									filter ? (
-										product.category?.slug.current == filter && (
+										product.category?.slug?.current == filter && (
 											<motion.div
 												key={index}
 												initial={{ y: "50%", opacity: 0, scale: 0.5 }}
@@ -49,7 +49,7 @@ const Products = ({ products, vignette }) => {
 												{product?.slugen && (
 													<Link
 														key={index}
-														href={tagLang ? `${product.slugfr.current}${tagLang}` : product.slugfr.current}
+														href={tagLang ? `${product.slugfr?.current}${tagLang}` : product.slugfr?.current}
 														onClick={() => {
 															setCurrentProduct(product)
 														}}>
@@ -84,7 +84,7 @@ const Products = ({ products, vignette }) => {
 											{product?.slugen && (
 												<Link
 													key={index}
-													href={tagLang ? `${product.slugfr.current}${tagLang}` : product.slugfr.current}
+													href={tagLang ? `${product.slugfr?.current}${tagLang}` : product.slugfr?.current}
 													onClick={() => {
 														setCurrentProduct(product)
 													}}>
@@ -116,7 +116,7 @@ const Products = ({ products, vignette }) => {
 							<Masonry breakpointCols={3} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
 								{products.map((product, index) =>
 									filter ? (
-										product.category?.slug.current == filter && (
+										product.category?.slug?.current == filter && (
 											<motion.div
 												key={index}
 												initial={{ y: "50%", opacity: 0, scale: 0.5 }}
@@ -126,7 +126,7 @@ const Products = ({ products, vignette }) => {
 												{product?.slugen && (
 													<Link
 														key={index}
-														href={tagLang ? `${product.slugfr.current}${tagLang}` : product.slugfr.current}
+														href={tagLang ? `${product.slugfr?.current}${tagLang}` : product.slugfr?.current}
 														onClick={() => {
 															setCurrentProduct(product)
 														}}>
@@ -159,7 +159,7 @@ const Products = ({ products, vignette }) => {
 											{product?.slugen && (
 												<Link
 													key={index}
-													href={tagLang ? `${product.slugfr.current}${tagLang}` : product.slugfr.current}
+													href={tagLang ? `${product.slugfr?.current}${tagLang}` : product.slugfr?.current}
 													onClick={() => {
 														setCurrentProduct(product)
 													}}>
