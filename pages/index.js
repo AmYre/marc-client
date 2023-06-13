@@ -34,8 +34,8 @@ export default function Home() {
 				autoPlay
 				playsInline
 				muted
+				loop
 				onEnded={() => {
-					setEnded(true)
 					setPlaying(false)
 				}}
 				onCanPlayThrough={() => setIsLoaded(true)}
