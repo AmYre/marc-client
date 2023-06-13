@@ -1,8 +1,8 @@
-import React, { useState } from "react"
+import React, { useRef, useMemo, useState } from "react"
 import { useGlobalContext } from "../components/GlobalContext"
 
 import { motion } from "framer-motion"
-import { Md3DRotation } from "react-icons/md"
+import { MutatingDots } from "react-loader-spinner"
 import { GiSpeaker, GiSpeakerOff } from "react-icons/gi"
 import logo from "../public/logo.png"
 
@@ -16,6 +16,36 @@ export default function Home() {
 	const { lang, texts } = useGlobalContext()
 	const [muted, setMuted] = useState(true)
 	const [wall, setWall] = useState(true)
+	const [playing, setPlaying] = useState(false)
+	const [isLoaded, setIsLoaded] = useState(false)
+
+	const vRefHome = useRef(null)
+
+	const handleSound = () => {
+		setPlaying((prev) => !prev)
+		vRefHome.current.muted = !vRefHome.current.muted
+	}
+
+	const videoHome = useMemo(
+		() => (
+			<video
+				ref={vRefHome}
+				className="h-screen w-full object-cover"
+				autoPlay
+				playsInline
+				muted
+				onEnded={() => {
+					setEnded(true)
+					setPlaying(false)
+				}}
+				onCanPlayThrough={() => setIsLoaded(true)}
+				poster={{ startOffset: "0" }}>
+				<source src={`https://res.cloudinary.com/amircloud/video/upload/marc/home.mp4`} type="video/mp4" />
+				<source src="https://res.cloudinary.com/amircloud/video/upload/v1673634198/marc/home.mp4" type="video/mp4" />
+			</video>
+		),
+		[isLoaded]
+	)
 
 	return (
 		<div>
@@ -33,7 +63,7 @@ export default function Home() {
 			</Head>
 			<main className="">
 				<CloudinaryContext cloud_name="amircloud" secure={true}>
-					<Video className="h-screen w-full object-cover" publicId="marc/home" autoPlay playsInline muted={muted} loop poster={{ startOffset: "0" }} />
+					{videoHome}
 				</CloudinaryContext>
 
 				<div className="md:hidden">
@@ -43,14 +73,19 @@ export default function Home() {
 					<Nav />
 				</nav>
 				<div className="flex gap-3 absolute bottom-10 right-10 items-center">
-					<motion.button onClick={() => setMuted((prev) => !prev)} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} transition={{ duration: 0.3 }}>
-						{muted ? (
+					<motion.button
+						onClick={() => setMuted((prev) => !prev)}
+						whileHover={{ scale: 1.1 }}
+						whileTap={{ scale: 0.9 }}
+						animate={{ scale: playing ? 1 : [1.1, 1] }}
+						transition={playing ? { duration: 0.3 } : { duration: 0.3, repeat: Infinity, repeatType: "reverse" }}>
+						{!playing ? (
 							<div className="w-[50px] h-[50px] m-auto bg-[#a87e2d] rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
-								<GiSpeakerOff className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
+								<GiSpeakerOff onClick={() => handleSound()} className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 							</div>
 						) : (
 							<div className="w-[50px] h-[50px] m-auto bg-[#a87e2d] rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
-								<GiSpeaker className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
+								<GiSpeaker onClick={() => handleSound()} className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 							</div>
 						)}
 					</motion.button>

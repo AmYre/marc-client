@@ -1,13 +1,36 @@
 import React, { useState } from "react"
 import { useGlobalContext } from "./GlobalContext"
+import { sanityClient } from "../lib/sanityClient"
 
 import Link from "next/link"
 import Image from "next/image"
-
 import { motion } from "framer-motion"
+import imageUrlBuilder from "@sanity/image-url"
+import { useEffect } from "react"
 
 const Museum = () => {
-	const { lang, setLang, texts, setTexts } = useGlobalContext()
+	const { lang, setLang, texts, setTexts, walls } = useGlobalContext()
+	const [picMuseum, setPicMuseum] = useState("/bg2.jpg")
+	const [picRelated, setPicRelated] = useState("/bg3.jpg")
+	const [picExpo, setPicExpo] = useState("/bg1.jpg")
+
+	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })
+
+	const urlFor = (source) => {
+		return imageBuilder.image(source)
+	}
+
+	useEffect(() => {
+		sanityClient.fetch(`*[_type=="walls"]{...}`).then((walls) => {
+			walls.map((wall) => {
+				wall.title == "museum"
+					? setPicMuseum(urlFor(wall.image).url())
+					: wall.title == "related"
+					? setPicRelated(urlFor(wall.image).url())
+					: wall.title == "expo" && setPicExpo(urlFor(wall.image).url())
+			})
+		})
+	}, [])
 
 	return (
 		<div className="p-12 pt-28 md:pt-12">
@@ -26,7 +49,7 @@ const Museum = () => {
 								<div className="overlay relative">
 									<Image
 										className="w-full h-60 hover:scale-105 object-cover transition-all duration-1000 overflow-hidden"
-										src="/bg1.jpg"
+										src={picExpo}
 										alt="Image produit"
 										width="200"
 										height="200"
@@ -49,7 +72,7 @@ const Museum = () => {
 								<div className="overlay relative">
 									<Image
 										className="w-full h-60 hover:scale-105 object-cover transition-all duration-1000 overflow-hidden"
-										src="/bg2.jpg"
+										src={picMuseum}
 										alt="Image produit"
 										width="200"
 										height="200"
@@ -72,7 +95,7 @@ const Museum = () => {
 								<div className="overlay relative">
 									<Image
 										className="w-full h-60 hover:scale-105 object-cover transition-all duration-1000 overflow-hidden"
-										src="/bg3.jpg"
+										src={picRelated}
 										alt="Image produit"
 										width="200"
 										height="200"

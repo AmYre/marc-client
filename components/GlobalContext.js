@@ -8,6 +8,17 @@ import { useEffect } from "react"
 const GlobalContext = createContext()
 
 const ContextProvider = ({ children }) => {
+	const [nav, setNav] = useState("creations")
+	const [lang, setLang] = useState("fr")
+	const [tagLang, setTagLang] = useState("")
+	const [isOpen, setIsOpen] = useState(false)
+	const [drawer, setDrawer] = useState(true)
+	const [isStreaming, setIsStreaming] = useState(false)
+	const [texts, setTexts] = useState(locales)
+	const [ended, setEnded] = useState(false)
+	const [replay, setReplay] = useState(false)
+	const [currentProduct, setCurrentProduct] = useState()
+
 	useEffect(() => {
 		sanityClient.fetch(`*[_type=="texts"]{...}`).then((texts) =>
 			setTexts(
@@ -18,17 +29,6 @@ const ContextProvider = ({ children }) => {
 			)
 		)
 	}, [])
-
-	const [nav, setNav] = useState("creations")
-	const [lang, setLang] = useState("fr")
-	const [tagLang, setTagLang] = useState("")
-	const [isOpen, setIsOpen] = useState(false)
-	const [drawer, setDrawer] = useState(false)
-	const [isStreaming, setIsStreaming] = useState(false)
-	const [texts, setTexts] = useState(locales)
-	const [ended, setEnded] = useState(false)
-	const [replay, setReplay] = useState(false)
-	const [currentProduct, setCurrentProduct] = useState()
 
 	return (
 		<GlobalContext.Provider

@@ -139,7 +139,7 @@ const DetailProduct = () => {
 				<AnimatePresence>{ended && <EndCard />}</AnimatePresence>
 			</div>
 			<nav className="hidden md:block absolute text-white z-10 top-12 left-12 ">
-				<Nav />
+				<Nav isProduct />
 			</nav>
 			<div key={slug + slug} className="hidden md:block">
 				{!isLoaded && (

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useGlobalContext } from "./GlobalContext"
 
 import { motion, AnimatePresence } from "framer-motion"
@@ -12,9 +12,13 @@ import flagFR from "../public/fr.png"
 import flagEN from "../public/en.png"
 import flagCN from "../public/cn.png"
 
-const Nav = () => {
+const Nav = ({ isProduct }) => {
 	const { drawer, setDrawer, lang, setLang, tagLang, setTagLang, texts, setTexts } = useGlobalContext()
-	const [localDrawer, setLocalDrawer] = useState(!drawer)
+	const [localDrawer, setLocalDrawer] = useState(drawer)
+
+	useEffect(() => {
+		isProduct && setLocalDrawer(false)
+	}, [])
 
 	return (
 		<>
