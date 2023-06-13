@@ -14,7 +14,7 @@ import flagCN from "../public/cn.png"
 
 const Nav = () => {
 	const { drawer, setDrawer, lang, setLang, tagLang, setTagLang, texts, setTexts } = useGlobalContext()
-	const [localDrawer, setLocalDrawer] = useState(drawer)
+	const [localDrawer, setLocalDrawer] = useState(!drawer)
 
 	return (
 		<>
