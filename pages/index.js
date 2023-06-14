@@ -3,17 +3,14 @@ import { useGlobalContext } from "../components/GlobalContext"
 
 import { motion } from "framer-motion"
 import { GiSpeaker, GiSpeakerOff } from "react-icons/gi"
-import logo from "../public/logo.png"
 
 import Head from "next/head"
 import Nav from "../components/Nav"
 import NavBar from "../components/NavBar"
-import Image from "next/image"
-import { Video, CloudinaryContext } from "cloudinary-react"
+import { CloudinaryContext } from "cloudinary-react"
 
 export default function Home() {
 	const { lang, texts } = useGlobalContext()
-	const [wall, setWall] = useState(true)
 	const [playing, setPlaying] = useState(false)
 	const [isLoaded, setIsLoaded] = useState(false)
 
@@ -74,14 +71,6 @@ export default function Home() {
 
 	return (
 		<div>
-			{wall && (
-				<div className="absolute bg-layout h-screen w-screen z-50 flex flex-col justify-center items-center">
-					<h2 className="text-xl text-white uppercase font-thin font-bodoni mb-12">Under construction website</h2>
-					<h2 className=" text-white  mb-12">- Available 16 of June 2023 -</h2>
-					<Image src={logo} className="" alt="logo Marc Maison XIX" />
-					<div className="absolute bottom-0 left-0 hover:cursor-pointer h-5 w-5" onClick={() => setWall(false)}></div>
-				</div>
-			)}
 			<Head>
 				<title>{texts.title[lang]}</title>
 				<meta name="description" content={texts.desc[lang]} />
