@@ -29,7 +29,7 @@ const Products = ({ products, vignette }) => {
 					{texts.all[lang]}
 				</button>
 				<button onClick={() => setFilter("expo")} className="cursor-pointer hover:font-bold active:font-bold focus:font-bold transition-all duration-300">
-					{texts.expo[lang]}
+					{texts.expotitle[lang]}
 				</button>
 			</div>
 			{products && (

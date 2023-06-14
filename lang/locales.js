@@ -9,6 +9,7 @@ const locales = {
 	menu5: { fr: "Contact", en: "Contact us", ru: "Contact", cn: "联系我们" },
 	sold: { fr: "Acquises", en: "Acquired", ru: "Acquired", cn: "景点" },
 	expo: { fr: "Exposition Universelle", en: "World Fair", ru: "World Exhibition", cn: "巴黎世界博览会" },
+	expotitle: { fr: "Exposition Universelle", en: "World Fair", ru: "World Exhibition", cn: "巴黎世界博览会" },
 	museum: { fr: "Musée", en: "Museum", ru: "Museum", cn: "博物馆" },
 	all: { fr: "Tout", en: "All", ru: "All", cn: "一切" },
 	confirm: { fr: "Votre message à bien été envoyé", en: "Your message has been sent", ru: "Your message has been sent", cn: "您的信息已被发送" },
