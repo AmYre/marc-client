@@ -7,7 +7,7 @@ import TextField from "@mui/material/TextField"
 import { motion } from "framer-motion"
 import emailjs from "@emailjs/browser"
 
-import contactPic from "../public/contact.jpg"
+import contactPic from "../public/poster-home.png"
 
 const Contact = () => {
 	const { lang, setLang, texts, setTexts, ended, setEnded } = useGlobalContext()
@@ -38,7 +38,7 @@ const Contact = () => {
 		<div className="p-12 pt-28 md:pt-12">
 			<h2 className="text-3xl tracking-widest font-thin font-bodoni mb-12">{texts.menu5[lang]}</h2>
 			<div className="overflow-hidden w-full h-[400px]">
-				<Image src={contactPic} className="-z-10 object-cover h-screen w-screen" alt="bg" width="2500" height="2500" />
+				<Image src={contactPic} className="anim -z-10 object-cover h-screen w-screen" alt="bg" width="2500" height="2500" />
 			</div>
 			<div className="flex flex-col items-center justify-center mb-12">
 				<p className="text-xl tracking-widest font-thin font-bodoni mt-4">Chef Manageur Commercial</p>
