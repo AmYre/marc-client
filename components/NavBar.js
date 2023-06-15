@@ -5,6 +5,8 @@ import { Sling as Hamburger } from "hamburger-react"
 import { useGlobalContext } from "./GlobalContext"
 import { AnimatePresence } from "framer-motion"
 
+import { motion } from "framer-motion"
+
 import logo from "../public/logo.png"
 import MobNav from "../components/MobNav"
 
@@ -27,7 +29,15 @@ const NavBar = () => {
 						</div>
 					</>
 				)}
-				<Hamburger toggled={isOpen} toggle={setIsOpen} />
+				<motion.button
+					whileHover={{ scale: 1.1 }}
+					whileTap={{ scale: 0.9 }}
+					animate={{ scale: isOpen ? 1 : [1.1, 1] }}
+					transition={isOpen ? { duration: 0.3 } : { duration: 0.3, repeat: Infinity, repeatType: "reverse" }}>
+					<div className="border-2 border-white rounded-full bg-secondary">
+						<Hamburger size={24} toggled={isOpen} toggle={setIsOpen} />
+					</div>
+				</motion.button>
 			</div>
 			<AnimatePresence>{isOpen && <MobNav />}</AnimatePresence>
 		</>

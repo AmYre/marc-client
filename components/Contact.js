@@ -57,7 +57,7 @@ const Contact = () => {
 					</div>
 					<TextField className="w-full max-w-[800px]" name="message" id="standard-textarea" label={texts.formMessage[lang]} multiline variant="standard" />
 					<input
-						className="bg-[#a87e2d] w-[200px] hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300"
+						className="bg-secondary w-[200px] hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300"
 						type="submit"
 						value={texts.formSent[lang]}
 					/>

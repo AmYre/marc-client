@@ -133,7 +133,7 @@ const EndCard = () => {
 						<div className="flex flex-col justify-center items-center gap-4">
 							<Link href="/contact">
 								<input
-									className="hover:bg-[#e2b250] bg-[#a87e2d] text-white px-8 py-3 cursor-pointer shadow hover:shadow-none transition-all duration-300 border-white border-2"
+									className="hover:bg-[#e2b250] bg-secondary text-white px-8 py-3 cursor-pointer shadow hover:shadow-none transition-all duration-300 border-white border-2"
 									type="button"
 									value={texts.infos[lang]}
 								/>
@@ -141,7 +141,7 @@ const EndCard = () => {
 							<div className="relative flex justify-center items-center">
 								<Image src={logo} alt="Logo Marc Maison" className="w-[20vh]" width="50" height="50" />
 								<IoMdRefreshCircle
-									className="bg-white rounded-full text-[#a87e2d] hover:text-[#e2b250] transition-all duration-300 absolute text-gold text-[5vh] cursor-pointer opacity-90"
+									className="bg-white rounded-full text-secondary hover:text-[#e2b250] transition-all duration-300 absolute text-gold text-[5vh] cursor-pointer opacity-90"
 									onClick={() => {
 										setEnded(false)
 										setReplay(Math.random() * (10 - 1) + 1)
@@ -150,7 +150,7 @@ const EndCard = () => {
 							</div>
 							<div
 								onClick={() => setDialog(true)}
-								className="hover:bg-[#e2b250] bg-[#a87e2d] text-white px-8 py-3 cursor-pointer shadow hover:shadow-none transition-all duration-300 border-white border-2">
+								className="hover:bg-[#e2b250] bg-secondary text-white px-8 py-3 cursor-pointer shadow hover:shadow-none transition-all duration-300 border-white border-2">
 								{texts.report[lang]}
 							</div>
 						</div>
@@ -241,14 +241,14 @@ const EndCard = () => {
 									<TextField className="w-full max-w-[400px]" name="mail" id="standard-basic" label={texts.formMail[lang]} variant="standard" required />
 								</div>
 								<input
-									className="bg-[#a87e2d] w-[200px] hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300"
+									className="bg-secondary w-[200px] hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300"
 									type="hidden"
 									name="ref"
 									value={currentProduct?.title[lang] || currentProduct?.title.en}
 								/>
 								<TextField className="w-full max-w-[800px]" name="message" id="standard-textarea" label={texts.formMessage[lang]} multiline variant="standard" />
 								<input
-									className="bg-[#a87e2d] w-[200px] hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300"
+									className="bg-secondary w-[200px] hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300"
 									type="submit"
 									value={texts.formSent[lang]}
 								/>
@@ -317,7 +317,7 @@ const EndCard = () => {
 						<div className="flex flex-col justify-center items-center gap-4">
 							<Link href="/contact">
 								<input
-									className="hover:bg-[#e2b250] bg-[#a87e2d] text-white px-8 py-4 cursor-pointer shadow hover:shadow-none transition-all duration-300 border-white border-2"
+									className="hover:bg-[#e2b250] bg-secondary text-white px-8 py-4 cursor-pointer shadow hover:shadow-none transition-all duration-300 border-white border-2"
 									type="button"
 									value={texts.infos[lang]}
 								/>
@@ -325,7 +325,7 @@ const EndCard = () => {
 							<div className="relative flex justify-center items-center">
 								<Image src={logo} alt="Logo Marc Maison" />
 								<IoMdRefreshCircle
-									className="bg-white rounded-full text-[#a87e2d] hover:text-[#e2b250] transition-all duration-300 absolute text-gold text-8xl cursor-pointer opacity-90"
+									className="bg-white rounded-full text-secondary hover:text-[#e2b250] transition-all duration-300 absolute text-gold text-8xl cursor-pointer opacity-90"
 									onClick={() => {
 										setEnded(false)
 										setReplay(Math.random() * (10 - 1) + 1)
@@ -334,7 +334,7 @@ const EndCard = () => {
 							</div>
 							<div
 								onClick={() => setDialog(true)}
-								className="hover:bg-[#e2b250] bg-[#a87e2d] text-white px-8 py-4 cursor-pointer shadow hover:shadow-none transition-all duration-300 border-white border-2">
+								className="hover:bg-[#e2b250] bg-secondary text-white px-8 py-4 cursor-pointer shadow hover:shadow-none transition-all duration-300 border-white border-2">
 								{texts.report[lang]}
 							</div>
 						</div>
@@ -455,14 +455,14 @@ const EndCard = () => {
 									<TextField className="w-full max-w-[400px]" name="mail" id="standard-basic" label={texts.formMail[lang]} variant="standard" required />
 								</div>
 								<input
-									className="bg-[#a87e2d] w-[200px] hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300"
+									className="bg-secondary w-[200px] hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300"
 									type="hidden"
 									name="ref"
 									value={currentProduct?.title[lang] || currentProduct?.title.en}
 								/>
 								<TextField className="w-full max-w-[800px]" name="message" id="standard-textarea" label={texts.formMessage[lang]} multiline variant="standard" />
 								<input
-									className="bg-[#a87e2d] w-[200px] hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300"
+									className="bg-secondary w-[200px] hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300"
 									type="submit"
 									value={texts.formSent[lang]}
 								/>

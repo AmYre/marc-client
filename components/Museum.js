@@ -128,7 +128,7 @@ const Museum = () => {
 										height="500"
 									/>
 								</div>
-								<div className="absolute bottom-[40%] w-full bg-[#a87e2d] bg-opacity-70 py-[10px] shadow">
+								<div className="absolute bottom-[40%] w-full bg-secondary bg-opacity-70 py-[10px] shadow">
 									<h2 className="text-xl font-bold ellipse2 px-4">{texts.expo[lang]}</h2>
 								</div>
 							</div>
@@ -174,7 +174,7 @@ const Museum = () => {
 										height="500"
 									/>
 								</div>
-								<div className="absolute bottom-[40%] w-full bg-[#a87e2d] bg-opacity-70 py-[10px] shadow">
+								<div className="absolute bottom-[40%] w-full bg-secondary bg-opacity-70 py-[10px] shadow">
 									<h2 className="font-bold text-xl ellipse2 px-4 ">{texts.museumRelated[lang]}</h2>
 								</div>
 							</div>

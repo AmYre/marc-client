@@ -46,10 +46,10 @@ const Gallery = () => {
 							? "https://www.calameo.com/read/006728317968097a3c634"
 							: lang == "en" && "https://www.calameo.com/read/00672831786ffbd4b8f8e"
 					}>
-					<button className="bg-[#a87e2d] hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300">{texts?.more[lang]}</button>
+					<button className="bg-[#a87e2d] hover:cursor-poinster hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300">{texts?.more[lang]}</button>
 				</Link> */}
 				<Link target="_blank" href="https://www.calameo.com/read/00672831782014e6b2b41">
-					<button className="bg-[#a87e2d] hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300">{texts?.ad[lang]}</button>
+					<button className="bg-secondary hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300">{texts?.ad[lang]}</button>
 				</Link>
 			</div>
 		</main>
