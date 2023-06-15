@@ -34,7 +34,7 @@ const ArtistPage = ({ artists, vignette }) => {
 }
 
 export const getServerSideProps = async () => {
-	const artists = await sanityClient.fetch(`*[_type == "artists" && slug.current != 'anna-judic'] | order(title asc)`)
+	const artists = await sanityClient.fetch(`*[_type == "artists" && slug.current != 'hotel-particulier'] | order(title asc)`)
 	const vignette = await sanityClient.fetch(`*[_type=="walls" && title == 'vignette']{...}`)
 
 	return {

@@ -20,7 +20,7 @@ const Gallery = () => {
 	}
 
 	useEffect(() => {
-		sanityClient.fetch(`*[_type=="artists" && slug.current == 'anna-judic']{...}`).then((res) => {
+		sanityClient.fetch(`*[_type=="artists" && slug.current == 'hotel-particulier']{...}`).then((res) => {
 			setJudic(res[0])
 		})
 	}, [])
