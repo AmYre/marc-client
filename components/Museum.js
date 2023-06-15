@@ -55,8 +55,8 @@ const Museum = () => {
 										height="200"
 									/>
 								</div>
-								<div className="absolute bottom-0 w-full bg-black bg-opacity-50 py-[10px] shadow">
-									<h2 className="ellipse2 px-4">{texts.expo[lang]}</h2>
+								<div className="absolute bottom-[33%] w-full bg-secondary bg-opacity-50 py-[10px] shadow">
+									<h2 className="font-bold ellipse2 px-4">{texts.expo[lang]}</h2>
 								</div>
 							</div>
 						</Link>
@@ -78,8 +78,8 @@ const Museum = () => {
 										height="200"
 									/>
 								</div>
-								<div className="absolute bottom-0 w-full bg-black bg-opacity-50 py-[10px] shadow">
-									<h2 className="ellipse2 px-4 ">{texts.sold[lang]}</h2>
+								<div className="absolute bottom-[33%] w-full bg-layout bg-opacity-50 py-[10px] shadow">
+									<h2 className="font-bold ellipse2 px-4 ">{texts.sold[lang]}</h2>
 								</div>
 							</div>
 						</Link>
@@ -101,8 +101,8 @@ const Museum = () => {
 										height="200"
 									/>
 								</div>
-								<div className="absolute bottom-0 w-full bg-black bg-opacity-50 py-[10px] shadow">
-									<h2 className="ellipse2 px-4 ">{texts.museumRelated[lang]}</h2>
+								<div className="absolute bottom-[33%] w-full bg-secondary bg-opacity-50 py-[10px] shadow">
+									<h2 className="font-bold ellipse2 px-4 ">{texts.museumRelated[lang]}</h2>
 								</div>
 							</div>
 						</Link>

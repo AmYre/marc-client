@@ -8,7 +8,7 @@ import { useEffect } from "react"
 const GlobalContext = createContext()
 
 const ContextProvider = ({ children }) => {
-	const [nav, setNav] = useState("creations")
+	const [nav, setNav] = useState(false)
 	const [lang, setLang] = useState("fr")
 	const [tagLang, setTagLang] = useState("")
 	const [isOpen, setIsOpen] = useState(false)

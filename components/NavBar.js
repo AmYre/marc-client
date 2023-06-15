@@ -11,11 +11,11 @@ import logo from "../public/logo.png"
 import MobNav from "../components/MobNav"
 
 const NavBar = () => {
-	const { isOpen, setIsOpen } = useGlobalContext()
+	const { nav, setNav, isOpen, setIsOpen } = useGlobalContext()
 
 	return (
 		<>
-			<div className={`absolute z-30 h-20 top-0 left-0 right-0 ${!isOpen && "bg-layout bg-opacity-95"} text-white flex ${!isOpen ? "justify-between" : "justify-end"} items-center px-9 py-2`}>
+			<div className={`absolute z-50 h-20 top-0 left-0 right-0 ${!isOpen && "bg-layout bg-opacity-95"} text-white flex ${!isOpen ? "justify-between" : "justify-end"} items-center px-9 py-2`}>
 				{!isOpen && (
 					<>
 						<Link href="/">
@@ -30,10 +30,11 @@ const NavBar = () => {
 					</>
 				)}
 				<motion.button
+					onClick={() => setNav(true)}
 					whileHover={{ scale: 1.1 }}
 					whileTap={{ scale: 0.9 }}
 					animate={{ scale: isOpen ? 1 : [1.1, 1] }}
-					transition={isOpen ? { duration: 0.3 } : { duration: 0.3, repeat: Infinity, repeatType: "reverse" }}>
+					transition={isOpen || nav ? { duration: 0.3 } : { duration: 0.3, repeat: Infinity, repeatType: "reverse" }}>
 					<div className="border-2 border-white rounded-full bg-secondary">
 						<Hamburger size={24} toggled={isOpen} toggle={setIsOpen} />
 					</div>

@@ -164,7 +164,10 @@ const DetailProduct = () => {
 				<CloudinaryContext cloud_name="amircloud" secure={true}>
 					{videoDesktop}
 				</CloudinaryContext>
-				<AnimatePresence>{ended && <EndCard />}</AnimatePresence>
+				<AnimatePresence>
+					{" "}
+					<EndCard />
+				</AnimatePresence>
 			</div>
 			<div className="md:hidden flex flex-col gap-3 absolute bottom-10 right-10 items-center">
 				<div

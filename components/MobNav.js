@@ -14,7 +14,7 @@ const MobNav = () => {
 	const { lang, setLang, isOpen, setIsOpen, texts, setTexts } = useGlobalContext()
 
 	return (
-		<div className="absolute z-10 h-screen w-screen inset-0 flex flex-col justify-around bg-black bg-opacity-90 text-white">
+		<div className="absolute z-40 h-screen w-screen inset-0 flex flex-col justify-around bg-black bg-opacity-90 text-white">
 			<motion.div initial={{ y: "50%", opacity: 0, scale: 0.5 }} animate={{ y: 0, opacity: 1, scale: 1 }} transition={{ duration: 0.5, ease: "easeOut" }} exit={{ opacity: 0, scale: 0.1 }}>
 				<div className="text-center">
 					<Link href="/">
