@@ -41,7 +41,7 @@ const Contact = () => {
 				<Image src={contactPic} className="anim -z-10 object-cover h-screen w-screen" alt="bg" width="2500" height="2500" />
 			</div>
 			<div className="flex flex-col items-center justify-center mb-12">
-				<p className="text-xl tracking-widest font-thin font-bodoni mt-4">Chef Manageur Commercial</p>
+				<p className="text-xl tracking-widest font-thin font-bodoni mt-4">Contact</p>
 				<p className="text-sm font-thin mb-3">- Daisy Delloue Maison -</p>
 				<hr className="w-[200px]" />
 			</div>
