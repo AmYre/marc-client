@@ -29,16 +29,19 @@ const NavBar = () => {
 						</div>
 					</>
 				)}
-				<motion.button
-					onClick={() => setNav(true)}
-					whileHover={{ scale: 1.1 }}
-					whileTap={{ scale: 0.9 }}
-					animate={{ scale: isOpen ? 1 : [1.1, 1] }}
-					transition={isOpen || nav ? { duration: 0.3 } : { duration: 0.3, repeat: Infinity, repeatType: "reverse" }}>
-					<div className="border-2 border-white rounded-full bg-secondary">
-						<Hamburger size={24} toggled={isOpen} toggle={setIsOpen} />
-					</div>
-				</motion.button>
+				<div className="flex justify-center items-center ">
+					<motion.button
+						onClick={() => setNav(true)}
+						whileHover={{ scale: 1.1 }}
+						whileTap={{ scale: 0.9 }}
+						animate={{ scale: isOpen ? 1 : [1.1, 1] }}
+						transition={isOpen || nav ? { duration: 0.3 } : { duration: 0.3, repeat: Infinity, repeatType: "reverse" }}>
+						<div className="border-2 border-white rounded-full bg-secondary">
+							<Hamburger size={24} toggled={isOpen} toggle={setIsOpen} />
+						</div>
+					</motion.button>
+					<p className="absolute bottom-0 text-center font-bold text-xs">Menu</p>
+				</div>
 			</div>
 			<AnimatePresence>{isOpen && <MobNav />}</AnimatePresence>
 		</>
