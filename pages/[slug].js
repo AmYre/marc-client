@@ -184,11 +184,11 @@ const DetailProduct = () => {
 					animate={{ scale: playing ? 1 : [1.1, 1] }}
 					transition={playing ? { duration: 0.3 } : { duration: 0.3, repeat: Infinity, repeatType: "reverse" }}>
 					{!playing ? (
-						<div className="w-[60px] h-[60px] m-auto bg-secondary rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
+						<div className="w-[60px] h-[60px] m-auto gradient rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
 							<GiSpeakerOff className="text-3xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 						</div>
 					) : (
-						<div className="w-[60px] h-[60px] m-auto bg-secondary rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
+						<div className="w-[60px] h-[60px] m-auto gradient rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
 							<GiSpeaker className="text-3xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 						</div>
 					)}
@@ -240,11 +240,11 @@ const DetailProduct = () => {
 						animate={{ scale: playing ? 1 : [1.1, 1] }}
 						transition={playing ? { duration: 0.3 } : { duration: 0.3, repeat: Infinity, repeatType: "reverse" }}>
 						{!playing ? (
-							<div className="w-[60px] h-[60px] m-auto bg-secondary rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
+							<div className="w-[60px] h-[60px] m-auto gradient rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
 								<GiSpeakerOff className="text-3xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 							</div>
 						) : (
-							<div className="w-[60px] h-[60px] m-auto bg-secondary rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
+							<div className="w-[60px] h-[60px] m-auto gradient rounded-full border-2 border-white p-2 opacity-80 flex items-center justify-center">
 								<GiSpeaker className="text-3xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 							</div>
 						)}
