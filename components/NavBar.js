@@ -36,7 +36,7 @@ const NavBar = () => {
 						whileTap={{ scale: 0.9 }}
 						animate={{ scale: isOpen ? 1 : [1.1, 1] }}
 						transition={isOpen || nav ? { duration: 0.3 } : { duration: 0.3, repeat: Infinity, repeatType: "reverse" }}>
-						<div className="border-2 border-white rounded-full bg-secondary">
+						<div className="border-2 border-white rounded-full gradient">
 							<Hamburger size={24} toggled={isOpen} toggle={setIsOpen} />
 						</div>
 					</motion.button>

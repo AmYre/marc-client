@@ -101,3 +101,24 @@
 		object-position: 100% 100%;
 	}
 }
+
+.gradient{
+	animation: flow 10s ease-in-out infinite;
+	background: linear-gradient(to left, #c9a60a, #8d2bbe, #0be8f0);
+	background-size: 300%;
+  }
+  
+  @keyframes flow {
+	0%{
+	  background-position: 0 50%;
+	}
+  
+	50%{
+	  background-position: 100% 50%;
+	}
+  
+	100%{
+	  background-position: 0 50%;
+	}
+  
+  }
