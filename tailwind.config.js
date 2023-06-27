@@ -13,6 +13,7 @@ module.exports = {
 				layout: "#6A2147",
 				bg: "#dfdee9",
 				secondary: "#a87e2d",
+				yellow: "yellow",
 			},
 		},
 	},
