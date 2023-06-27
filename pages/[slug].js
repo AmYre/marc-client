@@ -5,7 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { motion } from "framer-motion"
-import { Md3DRotation } from "react-icons/md"
+import { MdMail } from "react-icons/md"
 import { GiSpeaker, GiSpeakerOff } from "react-icons/gi"
 import { BsTranslate } from "react-icons/bs"
 import { AnimatePresence } from "framer-motion"
@@ -19,7 +19,7 @@ import logo from "../public/logo.png"
 import flagfr from "../public/fr.png"
 import flagen from "../public/en.png"
 import flagcn from "../public/cn.png"
-import flagpb from "../public/pb.png"
+import flages from "../public/es.png"
 import flagpo from "../public/po.png"
 import flagkr from "../public/kr.png"
 import flagar from "../public/ar.png"
@@ -53,7 +53,7 @@ const DetailProduct = () => {
 		{ name: "français", pic: flagfr, lang: "fr", tagLang: "", mobtag: "-mob" },
 		{ name: "english", pic: flagen, lang: "en", tagLang: "-en", mobtag: "-en-mob" },
 		{ name: "chinese", pic: flagcn, lang: "cn", tagLang: "-cn", mobtag: "-cn-mob" },
-		{ name: "netherland", pic: flagpb, lang: "pb", tagLang: "-pb", mobtag: "-pb-mob" },
+		{ name: "spanish", pic: flages, lang: "es", tagLang: "-es", mobtag: "-es-mob" },
 		{ name: "polish", pic: flagpo, lang: "po", tagLang: "-po", mobtag: "-po-mob" },
 		{ name: "korean", pic: flagkr, lang: "kr", tagLang: "-kr", mobtag: "-kr-mob" },
 		{ name: "arabic", pic: flagar, lang: "ar", tagLang: "-ar", mobtag: "-ar-mob" },
@@ -175,7 +175,15 @@ const DetailProduct = () => {
 					<BsTranslate className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer" />
 				</div>
 				<div className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex items-center justify-center">
-					<Md3DRotation className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer" />
+					<MdMail
+						onClick={() => {
+							setEnded(true)
+							setPlaying(false)
+							vRefDesk.current.muted = true
+							vRefMob.current.muted = true
+						}}
+						className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer"
+					/>
 				</div>
 				<motion.button
 					onClick={() => isLoaded && handleMobSound()}
@@ -250,7 +258,15 @@ const DetailProduct = () => {
 						)}
 					</motion.button>
 					<div className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex items-center justify-center">
-						<Md3DRotation className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer" />
+						<MdMail
+							onClick={() => {
+								setEnded(true)
+								setPlaying(false)
+								vRefDesk.current.muted = true
+								vRefMob.current.muted = true
+							}}
+							className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer"
+						/>
 					</div>
 					<div
 						className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex items-center justify-center"

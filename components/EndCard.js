@@ -18,7 +18,7 @@ import { IoMdRefreshCircle } from "react-icons/io"
 
 import cnes from "../public/cnes.png"
 import cefa from "../public/cefa.png"
-import flagpb from "../public/pb.png"
+import flages from "../public/es.png"
 import flagpo from "../public/po.png"
 import flagkr from "../public/kr.png"
 import flagar from "../public/ar.png"
@@ -48,7 +48,7 @@ const EndCard = () => {
 	}
 
 	let relatedLangs = [
-		{ name: "netherland", pic: flagpb, tag: "-pb" },
+		{ name: "spanish", pic: flages, tag: "-es" },
 		{ name: "polish", pic: flagpo, tag: "-po" },
 		{ name: "korean", pic: flagkr, tag: "-kr" },
 		{ name: "arabic", pic: flagar, tag: "-ar" },
