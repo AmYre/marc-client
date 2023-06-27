@@ -1,7 +1,3 @@
-.wrapanim {
-	animation: fadout 10s linear infinite;
-}
-
 .anim {
 	animation: moving-image 10s ease-in-out infinite alternate;
 }
@@ -27,7 +23,12 @@
 	background-clip: padding-box;
 }
 
-.vig-wrapper:hover .vig-txt{
+.vig-txt{
+	position: absolute;
+	bottom: 0px;
+} 
+
+/* .vig-wrapper:hover .vig-txt{
 	opacity: 1!important;
 	bottom : 0px;
 }
@@ -36,68 +37,9 @@
 	position: absolute;
 	opacity: 0!important;
 	transition: all 1.5s ease!important;
-} 
+}  */
 
 /* Style your items */
 .my-masonry-grid_column img {
 	width: 100%;
-}
-
-@keyframes fadout {
-	0% {
-		opacity: 0.4;
-	}
-	2% {
-		opacity: 0.5;
-	}
-	4% {
-		opacity: 0.6;
-	}
-	6% {
-		opacity: 0.7;
-	}
-	8% {
-		opacity: 0.8;
-	}
-	10% {
-		opacity: 1;
-	}
-
-	50% {
-		opacity: 1;
-	}
-
-	80% {
-		opacity: 1;
-	}
-
-	85% {
-		opacity: 0.95;
-	}
-
-	90% {
-		opacity: 0.9;
-	}
-	95% {
-		opacity: 0.7;
-	}
-	97% {
-		opacity: 0.6;
-	}
-	98% {
-		opacity: 0.5;
-	}
-	100% {
-		opacity: 0.4;
-	}
-}
-
-@keyframes moving-image {
-	from {
-		object-position: 5% 5%;
-	}
-
-	to {
-		object-position: 100% 100%;
-	}
 }
