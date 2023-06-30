@@ -43,3 +43,36 @@
 .my-masonry-grid_column img {
 	width: 100%;
 }
+
+.drarrow {
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+}
+
+.drarrow .draw-arrow {
+	stroke-width: 4;
+	stroke: white;
+	fill: none;
+	stroke-dasharray: 400;
+	stroke-dashoffset: 400;
+	animation-duration: 4s;
+	animation-fill-mode: forwards;
+	animation-name: draw;
+}
+
+.drarrow .draw-arrow.tail-1 {
+	animation-delay: 0.5s;
+}
+
+.drarrow .draw-arrow.tail-2 {
+	animation-delay: 0.7s;
+}
+
+@keyframes draw {
+	to {
+	  stroke-dashoffset: 0;
+	}
+  }
+
+  
