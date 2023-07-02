@@ -7,7 +7,7 @@ import { AnimatePresence } from "framer-motion"
 
 import { motion } from "framer-motion"
 
-import logo from "../public/logo.png"
+import logo from "../public/logo-mob.png"
 import MobNav from "../components/MobNav"
 
 const NavBar = () => {
@@ -19,7 +19,7 @@ const NavBar = () => {
 				{!isOpen && (
 					<>
 						<Link href="/">
-							<Image src={logo} className="w-14" alt="logo Marc Maison XIX" />
+							<Image src={logo} alt="logo Marc Maison XIX" />
 						</Link>
 						<div className="text-center">
 							<Link href="/">
@@ -29,7 +29,7 @@ const NavBar = () => {
 						</div>
 					</>
 				)}
-				<div className="flex justify-center items-center ">
+				<div role="button" aria-label="Menu" className="flex justify-center items-center ">
 					<motion.button
 						onClick={() => setNav(true)}
 						whileHover={{ scale: 1.1 }}
