@@ -101,13 +101,13 @@ const Nav = ({ isProduct }) => {
 							<p className="text-md mt-6 mb-6 font-nunito tracking-widest ">PARIS</p>
 
 							<div className="flex justify-center items-center gap-6">
-								<Link href="https://www.facebook.com/marcmaisongalerie/" target="_blank">
+								<Link href="https://www.facebook.com/marcmaisongalerie/" aria-label="Facebook button link" target="_blank">
 									<ImFacebook2 />
 								</Link>
-								<Link href="https://www.instagram.com/marcmaison_antiques/" target="_blank">
+								<Link href="https://www.instagram.com/marcmaison_antiques/" aria-label="Instagram button link" target="_blank">
 									<AiFillInstagram className="text-[22px]" />
 								</Link>
-								<Link href="https://www.youtube.com/@GalerieMarcMaison/featured" target="_blank">
+								<Link href="https://www.youtube.com/@GalerieMarcMaison/featured" aria-label="Youtube button link" target="_blank">
 									<BsYoutube className="text-[22px]" />
 								</Link>
 							</div>
