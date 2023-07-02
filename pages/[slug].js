@@ -110,10 +110,10 @@ const DetailProduct = () => {
 
 	return (
 		<main>
-			<div className="md:hidden">
+			<div className="lg:hidden">
 				<NavBar />
 			</div>
-			<div key={slug} className="md:hidden">
+			<div key={slug} className="lg:hidden">
 				{!isLoaded && (
 					<div className="h-screen w-full bg-layout text-white flex justify-center items-center">
 						<div className="flex flex-col justify-center items-center">
@@ -138,10 +138,10 @@ const DetailProduct = () => {
 				</CloudinaryContext>
 				<AnimatePresence>{ended && <EndCard />}</AnimatePresence>
 			</div>
-			<nav className="hidden md:block absolute text-white z-10 top-12 left-12 ">
+			<nav className="hidden lg:block absolute text-white z-10 top-12 left-12 ">
 				<Nav isProduct />
 			</nav>
-			<div key={slug + slug} className="hidden md:block">
+			<div key={slug + slug} className="hidden lg:block">
 				{!isLoaded && (
 					<div className="h-screen w-full bg-layout text-white flex justify-center items-center">
 						<div className="flex flex-col justify-center items-center">
@@ -166,7 +166,7 @@ const DetailProduct = () => {
 				</CloudinaryContext>
 				<AnimatePresence>{ended && <EndCard />}</AnimatePresence>
 			</div>
-			<div className="md:hidden flex flex-col gap-3 absolute bottom-10 right-10 items-center">
+			<div className="lg:hidden flex flex-col gap-3 absolute bottom-10 right-10 items-center">
 				<div
 					className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex items-center justify-center"
 					onClick={() => {
@@ -204,7 +204,7 @@ const DetailProduct = () => {
 				<AnimatePresence>
 					{!translate && (
 						<motion.div
-							className="absolute w-[60vw] right-[80px] bottom-0 p-3 flex flex-wrap justify-center items-center gap-3 bg-layout bg-opacity-70"
+							className="absolute w-[60vw] right-[80px] bottom-0 top-0 p-3 flex flex-wrap justify-center items-center gap-3 bg-layout bg-opacity-70"
 							initial={{ x: "10px", opacity: 0 }}
 							animate={{ x: 0, opacity: 1 }}
 							transition={{ duration: 0.5, ease: "easeOut" }}
@@ -239,7 +239,7 @@ const DetailProduct = () => {
 					)}
 				</AnimatePresence>
 			</div>
-			<div className="hidden md:block">
+			<div className="hidden lg:block">
 				<div className="flex gap-3 absolute bottom-10 right-10 items-center">
 					{!playing && (
 						<svg className="drarrow absolute bottom-0 right-32 scale-[.6]" version="1.1" x="0px" y="0px" viewBox="0 0 43.1 85.9">
