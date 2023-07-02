@@ -1,0 +1,9 @@
+User-agent: Googlebot
+Disallow: /undefined
+Disallow: /undefined/*
+Disallow: /undefined*
+
+User-agent: *
+Allow: /
+
+Sitemap: https://marcmaison.art//sitemap.xml
