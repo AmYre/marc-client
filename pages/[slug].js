@@ -69,7 +69,7 @@ const DetailProduct = () => {
 				<video
 					key={replay}
 					ref={vRefDesk}
-					className="h-screen w-full object-cover"
+					className="h-screen w-full"
 					autoPlay
 					playsInline
 					muted
@@ -92,7 +92,7 @@ const DetailProduct = () => {
 				<video
 					key={replay}
 					ref={vRefMob}
-					className="h-screen w-full object-cover"
+					className="h-screen w-full"
 					autoPlay
 					playsInline
 					muted
