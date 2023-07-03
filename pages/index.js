@@ -127,6 +127,13 @@ export default function Home() {
 				</div>
 				<div className="hidden md:block">
 					<div className="flex gap-3 absolute bottom-10 right-10 items-center">
+						{!playing && (
+							<svg className="drarrow absolute bottom-0 right-0 scale-[.6]" version="1.1" x="0px" y="0px" viewBox="0 0 43.1 85.9">
+								<path strokeLinecap="round" strokeLinejoin="round" className="st0 draw-arrow" d="M11.3,2.5c-5.8,5-8.7,12.7-9,20.3s2,15.1,5.3,22c6.7,14,18,25.8,31.7,33.1" />
+								<path strokeLinecap="round" strokeLinejoin="round" className="draw-arrow tail-1" d="M40.6,78.1C39,71.3,37.2,64.6,35.2,58" />
+								<path strokeLinecap="round" strokeLinejoin="round" className="draw-arrow tail-2" d="M39.8,78.5c-7.2,1.7-14.3,3.3-21.5,4.9" />
+							</svg>
+						)}
 						<motion.button
 							onClick={() => handleSound()}
 							whileHover={{ scale: 1.1 }}

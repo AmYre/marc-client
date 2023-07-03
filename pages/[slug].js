@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useMemo, useRef } from "react"
+import React, { useState, useMemo, useRef } from "react"
 import { useGlobalContext } from "../components/GlobalContext"
 import { CloudinaryContext } from "cloudinary-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { motion } from "framer-motion"
-import { MdMail } from "react-icons/md"
+import { MdEuro } from "react-icons/md"
 import { GiSpeaker, GiSpeakerOff } from "react-icons/gi"
 import { BsTranslate } from "react-icons/bs"
 import { AnimatePresence } from "framer-motion"
@@ -168,14 +168,14 @@ const DetailProduct = () => {
 			</div>
 			<div className="lg:hidden flex flex-col gap-3 absolute bottom-10 right-10 items-center">
 				<div
-					className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex items-center justify-center"
+					className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-95 flex items-center justify-center"
 					onClick={() => {
 						setTranslate((prev) => !prev)
 					}}>
 					<BsTranslate className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer" />
 				</div>
-				<div className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex items-center justify-center">
-					<MdMail
+				<div className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-95 flex items-center justify-center">
+					<MdEuro
 						onClick={() => {
 							setEnded(true)
 							setPlaying(false)
@@ -265,30 +265,30 @@ const DetailProduct = () => {
 								</div>
 							)}
 						</motion.button>
-						<p className="absolute bottom-[-30px] left-2 text-white text-center text-xl font-splash">Son</p>
+						<p className="absolute bottom-[-30px] left-2 text-white text-center text-xl font-bodoni">Son</p>
 					</div>
 					<div className="flex flex-col">
-						<div className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex flex-col items-center justify-center">
-							<MdMail
+						<div className="w-[50px] h-[50px] m-auto bg-yellow rounded-full border-2 border-white p-2 opacity-95 flex flex-col items-center justify-center">
+							<MdEuro
 								onClick={() => {
 									setEnded(true)
 									setPlaying(false)
 									vRefDesk.current.muted = true
 									vRefMob.current.muted = true
 								}}
-								className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer"
+								className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer"
 							/>
 						</div>
 					</div>
 					<div className="flex flex-col">
 						<div
-							className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-80 flex items-center justify-center"
+							className="w-[50px] h-[50px] m-auto bg-yellow rounded-full border-2 p-2 opacity-95 flex items-center justify-center"
 							onClick={() => {
 								setTranslate((prev) => !prev)
 							}}>
-							<BsTranslate className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer" />
+							<BsTranslate className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 						</div>
-						<div className="absolute bottom-[-30px] right-[-7px] text-white text-center text-xl font-splash">Langues</div>
+						<div className="absolute bottom-[-30px] right-[-7px] text-white text-center text-xl font-bodoni">Langues</div>
 					</div>
 					<AnimatePresence>
 						{!translate && (
