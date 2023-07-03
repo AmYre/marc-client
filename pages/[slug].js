@@ -243,7 +243,7 @@ const DetailProduct = () => {
 				<div className="flex gap-3 absolute bottom-10 right-10 items-center">
 					{!playing && (
 						<div className="absolute bottom-0 right-0">
-							<p className="absolute right-[200px] bottom-[160px] text-white text-center text-xl font-bodoni">Son</p>
+							<p className="absolute right-[220px] bottom-[160px] text-white text-center text-xl font-bodoni">Son</p>
 
 							<svg className="drarrow drastroke absolute bottom-0 right-32 scale-[.6]" version="1.1" x="0px" y="0px" viewBox="0 0 43.1 85.9">
 								<path strokeLinecap="round" strokeLinejoin="round" className="st0 draw-arrow" d="M11.3,2.5c-5.8,5-8.7,12.7-9,20.3s2,15.1,5.3,22c6.7,14,18,25.8,31.7,33.1" />
