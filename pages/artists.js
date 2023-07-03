@@ -2,7 +2,7 @@ import React from "react"
 import { useGlobalContext } from "../components/GlobalContext"
 import Image from "next/image"
 import { sanityClient } from "../lib/sanityClient"
-import { Head } from "next/head"
+import Head from "next/head"
 
 import logo from "../public/logo.png"
 import Nav from "../components/Nav"
