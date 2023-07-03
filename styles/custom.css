@@ -51,14 +51,20 @@
 }
 
 .drarrow .draw-arrow {
-	stroke-width: 4;
-	stroke: white;
+	stroke-width: 3;
+	stroke: #D39E25;
 	fill: none;
 	stroke-dasharray: 400;
 	stroke-dashoffset: 400;
 	animation-duration: 4s;
 	animation-fill-mode: forwards;
 	animation-name: draw;
+}
+
+.drastroke .draw-arrow {
+	stroke-width: 6;
+	stroke: white;
+	animation-duration: 3s;
 }
 
 .drarrow .draw-arrow.tail-1 {
@@ -68,6 +74,7 @@
 .drarrow .draw-arrow.tail-2 {
 	animation-delay: 0.7s;
 }
+
 
 @keyframes draw {
 	to {
