@@ -109,7 +109,7 @@ const DetailProduct = () => {
 	)
 
 	return (
-		<main>
+		<main className="bg-black">
 			<div className="lg:hidden">
 				<NavBar />
 			</div>
