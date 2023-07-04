@@ -224,7 +224,7 @@ const EndCard = () => {
 						animate={{ opacity: 1, scale: 1 }}
 						transition={{ duration: 0.25 }}
 						className="absolute top-0 w-full h-full z-30 flex justify-center items-center bg-layout">
-						<div onClick={() => setDialog(false)} className="absolute right-[50px] top-0">
+						<div onClick={() => setDialog(false)} className="absolute top-[10vh]">
 							<AiOutlineCloseCircle className="text-white text-3xl cursor-pointer mt-12 mb-4" />
 						</div>
 						{!sent ? (

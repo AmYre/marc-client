@@ -55,6 +55,18 @@ const locales = {
 		ru: "Read the AD article",
 		cn: "Read the AD article",
 	},
+	btnSound: {
+		fr: "Son",
+		en: "Sound",
+		ru: "Sound",
+		cn: "Sound",
+	},
+	btnLang: {
+		fr: "Langues",
+		en: "Languages",
+		ru: "Languages",
+		cn: "Languages",
+	},
 }
 
 export default locales

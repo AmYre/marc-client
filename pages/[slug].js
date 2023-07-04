@@ -29,7 +29,7 @@ import flagtu from "../public/tu.png"
 import flagru from "../public/ru.png"
 
 const DetailProduct = () => {
-	const { lang, setLang, tagLang, setTagLang, ended, setEnded, replay, setReplay, currentProduct, setCurrentProduct } = useGlobalContext()
+	const { lang, setLang, tagLang, setTagLang, ended, setEnded, replay, setReplay, currentProduct, setCurrentProduct, texts, setTexts } = useGlobalContext()
 	const [playing, setPlaying] = useState(false)
 	const [translate, setTranslate] = useState(false)
 	const vRefDesk = useRef(null)
@@ -167,14 +167,15 @@ const DetailProduct = () => {
 				<AnimatePresence>{ended && <EndCard />}</AnimatePresence>
 			</div>
 			<div className="lg:hidden flex flex-col gap-3 absolute bottom-10 right-10 items-center">
+				{!translate && <p className="absolute top-[-25px] text-white text-center text-xl font-bodoni">{texts.btnLang[lang]}</p>}
 				<div
-					className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-95 flex items-center justify-center"
+					className="w-[50px] h-[50px] m-auto bg-yellow rounded-full border-2 p-2 opacity-95 flex items-center justify-center"
 					onClick={() => {
 						setTranslate((prev) => !prev)
 					}}>
-					<BsTranslate className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer" />
+					<BsTranslate className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 				</div>
-				<div className="w-[50px] h-[50px] m-auto bg-white rounded-full p-2 opacity-95 flex items-center justify-center">
+				<div className="w-[50px] h-[50px] m-auto bg-yellow rounded-full border-2 p-2 opacity-95 flex items-center justify-center">
 					<MdEuro
 						onClick={() => {
 							setEnded(true)
@@ -182,7 +183,7 @@ const DetailProduct = () => {
 							vRefDesk.current.muted = true
 							vRefMob.current.muted = true
 						}}
-						className="text-2xl text-black hover:scale-110 transition-all duration-300 cursor-pointer"
+						className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer"
 					/>
 				</div>
 				<motion.button
@@ -201,8 +202,9 @@ const DetailProduct = () => {
 						</div>
 					)}
 				</motion.button>
+				{!playing && <p className="absolute bottom-[-20px] text-white text-center text-xl font-bodoni">{texts.btnSound[lang]}</p>}
 				<AnimatePresence>
-					{!translate && (
+					{translate && (
 						<motion.div
 							className="absolute w-[60vw] right-[80px] bottom-0 top-0 p-3 flex flex-wrap justify-center items-center gap-3 bg-layout bg-opacity-70"
 							initial={{ x: "10px", opacity: 0 }}
@@ -243,7 +245,7 @@ const DetailProduct = () => {
 				<div className="flex gap-3 absolute bottom-10 right-10 items-center">
 					{!playing && (
 						<div className="absolute bottom-0 right-0">
-							<p className="absolute right-[220px] bottom-[160px] text-white text-center text-xl font-bodoni">Son</p>
+							<p className="absolute right-[220px] bottom-[160px] text-white text-center text-xl font-bodoni">{texts.btnSound[lang]}</p>
 
 							<svg className="drarrow drastroke absolute bottom-0 right-32 scale-[.6]" version="1.1" x="0px" y="0px" viewBox="0 0 43.1 85.9">
 								<path strokeLinecap="round" strokeLinejoin="round" className="st0 draw-arrow" d="M11.3,2.5c-5.8,5-8.7,12.7-9,20.3s2,15.1,5.3,22c6.7,14,18,25.8,31.7,33.1" />
@@ -291,7 +293,7 @@ const DetailProduct = () => {
 					<div className="flex flex-col">
 						{!translate && (
 							<div>
-								<div className="absolute bottom-[145px] right-[30px] text-white text-center text-xl font-bodoni">Langues</div>
+								<div className="absolute bottom-[145px] right-[30px] text-white text-center text-xl font-bodoni">{texts.btnLang[lang]}</div>
 
 								<svg className="drarrow drastroke absolute bottom-0 right-[-40px] scale-[.4]" version="1.1" x="0px" y="0px" viewBox="0 0 43.1 85.9">
 									<path strokeLinecap="round" strokeLinejoin="round" className="st0 draw-arrow" d="M11.3,2.5c-5.8,5-8.7,12.7-9,20.3s2,15.1,5.3,22c6.7,14,18,25.8,31.7,33.1" />
