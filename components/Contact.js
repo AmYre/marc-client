@@ -36,7 +36,7 @@ const Contact = () => {
 
 	return (
 		<div className="p-12 pt-28 md:pt-12">
-			<h2 className="text-3xl tracking-widest font-thin font-bodoni mb-12">{texts.menu5[lang]}</h2>
+			<h2 className="text-3xl tracking-widest font-thin font-bodoni mb-12">{texts.contactTitle[lang]}</h2>
 			<div className="overflow-hidden w-full">
 				<Image src={contactPic} className="object-cover" alt="bg" width="2500" height="2500" />
 			</div>

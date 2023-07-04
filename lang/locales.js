@@ -67,6 +67,12 @@ const locales = {
 		ru: "Languages",
 		cn: "Languages",
 	},
+	contactTitle: {
+		fr: "Prix sur demande",
+		en: "Price upon request",
+		ru: "Price upon request",
+		cn: "Price upon request",
+	},
 }
 
 export default locales

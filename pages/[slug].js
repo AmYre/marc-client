@@ -244,7 +244,7 @@ const DetailProduct = () => {
 			<div className="hidden lg:block">
 				<div className="flex gap-3 absolute bottom-10 right-10 items-center">
 					{!playing && (
-						<div className="absolute bottom-0 right-0">
+						<motion.button animate={{ scale: [1, 1.01, 1] }} transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse" }} className="absolute bottom-0 right-0">
 							<p className="absolute right-[220px] bottom-[160px] text-white text-center text-xl font-bodoni">{texts.btnSound[lang]}</p>
 
 							<svg className="drarrow drastroke absolute bottom-0 right-32 scale-[.6]" version="1.1" x="0px" y="0px" viewBox="0 0 43.1 85.9">
@@ -257,7 +257,7 @@ const DetailProduct = () => {
 								<path strokeLinecap="round" strokeLinejoin="round" className="draw-arrow tail-1" d="M40.6,78.1C39,71.3,37.2,64.6,35.2,58" />
 								<path strokeLinecap="round" strokeLinejoin="round" className="draw-arrow tail-2" d="M39.8,78.5c-7.2,1.7-14.3,3.3-21.5,4.9" />
 							</svg>
-						</div>
+						</motion.button>
 					)}
 					<div className="flex flex-col">
 						<motion.button
@@ -292,7 +292,7 @@ const DetailProduct = () => {
 					</div>
 					<div className="flex flex-col">
 						{!translate && (
-							<div>
+							<motion.div animate={{ scale: [1, 1.01, 1] }} transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse" }} className="absolute bottom-0 right-0">
 								<div className="absolute bottom-[145px] right-[30px] text-white text-center text-xl font-bodoni">{texts.btnLang[lang]}</div>
 
 								<svg className="drarrow drastroke absolute bottom-0 right-[-40px] scale-[.4]" version="1.1" x="0px" y="0px" viewBox="0 0 43.1 85.9">
@@ -305,7 +305,7 @@ const DetailProduct = () => {
 									<path strokeLinecap="round" strokeLinejoin="round" className="draw-arrow tail-1" d="M40.6,78.1C39,71.3,37.2,64.6,35.2,58" />
 									<path strokeLinecap="round" strokeLinejoin="round" className="draw-arrow tail-2" d="M39.8,78.5c-7.2,1.7-14.3,3.3-21.5,4.9" />
 								</svg>
-							</div>
+							</motion.div>
 						)}
 						<div
 							className="w-[50px] h-[50px] m-auto bg-yellow rounded-full border-2 p-2 opacity-95 flex items-center justify-center"
