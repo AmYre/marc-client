@@ -126,7 +126,7 @@ const EndCard = () => {
 							))}
 						</div>
 						<div className="flex flex-col justify-center items-center gap-4">
-							<Link href="/contact">
+							<Link href="/contact?ask=1">
 								<input
 									className="hover:bg-[#e2b250] bg-secondary text-white px-8 py-3 cursor-pointer shadow hover:shadow-none transition-all duration-300 border-white border-2"
 									type="button"
@@ -175,7 +175,9 @@ const EndCard = () => {
 									animate={{ y: 0, opacity: 1, scale: 1 }}
 									transition={{ duration: 0.5, ease: "easeOut" }}
 									exit={{ opacity: 0, scale: 0.1 }}>
-									<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/marc/${currentProduct?.slugfr?.current.replace(/-mob/g, "")}${currentLang}-mob.mp4`}>
+									<Link
+										target="_blank"
+										href={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${currentProduct?.slugfr?.current.replace(/-mob/g, "")}${currentLang}-mob.mp4`}>
 										<div className="h-[80px] w-[80px] overflow-hidden">
 											<Image
 												className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
@@ -199,7 +201,9 @@ const EndCard = () => {
 											animate={{ y: 0, opacity: 1, scale: 1 }}
 											transition={{ duration: 0.5, ease: "easeOut" }}
 											exit={{ opacity: 0, scale: 0.1 }}>
-											<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/marc/${product.slugfr.current.replace(/-mob/g, "")}${currentLang}-mob.mp4`}>
+											<Link
+												target="_blank"
+												href={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${product.slugfr.current.replace(/-mob/g, "")}${currentLang}-mob.mp4`}>
 												<div className="h-[80px] w-[80px] overflow-hidden">
 													<Image
 														className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
@@ -310,7 +314,7 @@ const EndCard = () => {
 							))}
 						</div>
 						<div className="flex flex-col justify-center items-center gap-4">
-							<Link href="/contact">
+							<Link href="/contact?ask=1">
 								<input
 									className="hover:bg-[#e2b250] bg-secondary text-white px-8 py-4 cursor-pointer shadow hover:shadow-none transition-all duration-300 border-white border-2"
 									type="button"
@@ -382,7 +386,7 @@ const EndCard = () => {
 									transition={{ duration: 0.5, ease: "easeOut" }}
 									exit={{ opacity: 0, scale: 0.1 }}
 									className="mb-8">
-									<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/marc/${currentProduct.slugfr.current}${currentLang}.mp4`}>
+									<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${currentProduct.slugfr.current}${currentLang}.mp4`}>
 										<div className="h-[100px] w-[100px] overflow-hidden">
 											<Image
 												className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
@@ -410,7 +414,7 @@ const EndCard = () => {
 											transition={{ duration: 0.5, ease: "easeOut" }}
 											exit={{ opacity: 0, scale: 0.1 }}
 											className="mb-8">
-											<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/marc/${product.slugfr.current}${currentLang}.mp4`}>
+											<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${product.slugfr.current}${currentLang}.mp4`}>
 												<div className="h-[100px] w-[100px] overflow-hidden">
 													<Image
 														className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"

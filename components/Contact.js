@@ -1,7 +1,9 @@
 import React, { useState, useRef } from "react"
+import { useSearchParams } from "next/navigation"
+
 import Image from "next/image"
 import { useGlobalContext } from "../components/GlobalContext"
-
+import imageUrlBuilder from "@sanity/image-url"
 import { MutatingDots } from "react-loader-spinner"
 import TextField from "@mui/material/TextField"
 import { motion } from "framer-motion"
@@ -10,11 +12,14 @@ import emailjs from "@emailjs/browser"
 import contactPic from "../public/contact.png"
 
 const Contact = () => {
-	const { lang, setLang, texts, setTexts, ended, setEnded } = useGlobalContext()
+	const { lang, setLang, texts, setTexts, currentProduct, setCurrentProduct } = useGlobalContext()
 
 	const [sent, setSent] = useState(false)
 	const [delay, setDelay] = useState(false)
 	const form = useRef()
+
+	const params = useSearchParams()
+	const onDemand = params.get("ask")
 
 	const sendEmail = (e) => {
 		setSent(true)
@@ -34,11 +39,24 @@ const Contact = () => {
 		)
 	}
 
+	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })
+
+	const urlFor = (source) => {
+		return imageBuilder.image(source)
+	}
+
 	return (
 		<div className="p-12 pt-28 md:pt-12">
-			<h2 className="text-3xl tracking-widest font-thin font-bodoni mb-12">{texts.contactTitle[lang]}</h2>
-			<div className="overflow-hidden w-full">
-				<Image src={contactPic} className="object-cover" alt="bg" width="2500" height="2500" />
+			<h2 className="text-3xl tracking-widest font-thin font-bodoni mb-2">{onDemand ? texts.contactTitle[lang] : texts.menu5[lang]}</h2>
+			{onDemand && <h3 className="text-xl tracking-widest font-thin font-bodoni mb-12">{currentProduct?.title[lang]}</h3>}
+			<div className={`overflow-hidden w-full flex justify-center items-center ${onDemand && "h-52"}`}>
+				<Image
+					src={onDemand ? urlFor(currentProduct?.image)?.url() : contactPic}
+					className={`${onDemand ? "object-contain h-52" : "object-cover"}`}
+					alt="bg"
+					width={`${onDemand ? "500" : "2500"}`}
+					height={`${onDemand ? "200" : "2500"}`}
+				/>
 			</div>
 			<div className="flex flex-col items-center justify-center mb-12">
 				<p className="text-xl tracking-widest font-thin font-bodoni mt-4">Contact</p>
@@ -56,6 +74,7 @@ const Contact = () => {
 						<TextField className="w-full max-w-[400px]" name="phone" id="standard-basic" label={texts.formPhone[lang]} variant="standard" />
 					</div>
 					<TextField className="w-full max-w-[800px]" name="message" id="standard-textarea" label={texts.formMessage[lang]} multiline variant="standard" />
+					<input className="hidden" type="hidden" name="ref" value={currentProduct?.title[lang] || currentProduct?.title.en} />
 					<input
 						className="bg-secondary w-[200px] hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300"
 						type="submit"

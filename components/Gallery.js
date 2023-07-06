@@ -10,7 +10,7 @@ import Link from "next/link"
 import { useGlobalContext } from "./GlobalContext"
 
 const Gallery = () => {
-	const { nav, setNav, lang, setLang, texts, setTexts } = useGlobalContext()
+	const { lang, setLang, texts } = useGlobalContext()
 	const [judic, setJudic] = useState()
 
 	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })

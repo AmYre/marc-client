@@ -32,6 +32,7 @@ const DetailProduct = () => {
 	const { lang, setLang, tagLang, setTagLang, ended, setEnded, replay, setReplay, currentProduct, setCurrentProduct, texts, setTexts } = useGlobalContext()
 	const [playing, setPlaying] = useState(false)
 	const [translate, setTranslate] = useState(false)
+	const [isOnce, setIsOnce] = useState(false)
 	const vRefDesk = useRef(null)
 	const vRefMob = useRef(null)
 
@@ -79,8 +80,8 @@ const DetailProduct = () => {
 					}}
 					onCanPlayThrough={() => setIsLoaded(true)}
 					poster={{ startOffset: "0" }}>
-					<source src={`https://res.cloudinary.com/amircloud/video/upload/marc/${slug}.mp4`} type="video/mp4" />
-					<source src="https://res.cloudinary.com/amircloud/video/upload/v1673634198/marc/home.mp4" type="video/mp4" />
+					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${slug}.mp4`} type="video/mp4" />
+					<source src="https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home.mp4" type="video/mp4" />
 				</video>
 			),
 		[lang, slug, replay, isLoaded]
@@ -101,8 +102,8 @@ const DetailProduct = () => {
 						setPlaying(false)
 					}}
 					poster={{ startOffset: "0" }}>
-					<source src={`https://res.cloudinary.com/amircloud/video/upload/marc/${slug}-mob.mp4`} type="video/mp4" />
-					<source src="https://res.cloudinary.com/amircloud/video/upload/v1673634198/marc/home.mp4" type="video/mp4" />
+					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${slug}-mob.mp4`} type="video/mp4" />
+					<source src="https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home.mp4" type="video/mp4" />
 				</video>
 			),
 		[lang, slug, replay]
@@ -167,11 +168,12 @@ const DetailProduct = () => {
 				<AnimatePresence>{ended && <EndCard />}</AnimatePresence>
 			</div>
 			<div className="lg:hidden flex flex-col gap-3 absolute bottom-10 right-10 items-center">
-				{!translate && <p className="absolute top-[-25px] text-white text-center text-xl font-bodoni">{texts.btnLang[lang]}</p>}
+				{!translate && !isOnce && <p className="absolute top-[-25px] text-white text-center text-xl font-bodoni">{texts.btnLang[lang]}</p>}
 				<div
 					className="w-[50px] h-[50px] m-auto bg-yellow rounded-full border-2 p-2 opacity-95 flex items-center justify-center"
 					onClick={() => {
 						setTranslate((prev) => !prev)
+						setIsOnce(true)
 					}}>
 					<BsTranslate className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 				</div>
@@ -291,7 +293,7 @@ const DetailProduct = () => {
 						</div>
 					</div>
 					<div className="flex flex-col">
-						{!translate && (
+						{!translate && !isOnce && (
 							<motion.div animate={{ scale: [1, 1.01, 1] }} transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse" }} className="absolute bottom-0 right-0">
 								<div className="absolute bottom-[145px] right-[30px] text-white text-center text-xl font-bodoni">{texts.btnLang[lang]}</div>
 
@@ -311,6 +313,7 @@ const DetailProduct = () => {
 							className="w-[50px] h-[50px] m-auto bg-yellow rounded-full border-2 p-2 opacity-95 flex items-center justify-center"
 							onClick={() => {
 								setTranslate((prev) => !prev)
+								setIsOnce(true)
 							}}>
 							<BsTranslate className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 						</div>

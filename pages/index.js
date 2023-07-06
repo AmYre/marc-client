@@ -41,8 +41,8 @@ export default function Home() {
 				}}
 				onCanPlayThrough={() => setIsLoaded(true)}
 				poster={{ startOffset: "0" }}>
-				<source src={`https://res.cloudinary.com/amircloud/video/upload/marc/home.mp4`} type="video/mp4" />
-				<source src="https://res.cloudinary.com/amircloud/video/upload/v1673634198/marc/home.mp4" type="video/mp4" />
+				<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home.mp4`} type="video/mp4" />
+				<source src="https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home.mp4" type="video/mp4" />
 			</video>
 		),
 		[isLoaded]
@@ -62,8 +62,8 @@ export default function Home() {
 				}}
 				onCanPlayThrough={() => setIsLoaded(true)}
 				poster={{ startOffset: "0" }}>
-				<source src={`https://res.cloudinary.com/amircloud/video/upload/marc/home-mob.mp4`} type="video/mp4" />
-				<source src="https://res.cloudinary.com/amircloud/video/upload/v1673634198/marc/home-mob.mp4" type="video/mp4" />
+				<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home-mob.mp4`} type="video/mp4" />
+				<source src="https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home-mob.mp4" type="video/mp4" />
 			</video>
 		),
 		[isLoaded]
