@@ -68,7 +68,7 @@ const DetailArtist = ({ vignette }) => {
 						)}
 					</div>
 					<div className="flex gap-4 border-b border-b-white pb-4 mb-12">
-						<div className="font-roboto md:w-3/4">{artist?.description && <PortableText value={artist?.description[lang] || artist?.description.en} />}</div>
+						<div className="font-roboto md:w-3/4 porText">{artist?.description && <PortableText value={artist?.description[lang] || artist?.description.en} />}</div>
 						<div className="hidden md:block w-1/4">
 							{artist?.image && (
 								<motion.div
