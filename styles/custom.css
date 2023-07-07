@@ -82,6 +82,11 @@
   }
 
 .porText a{
-	
+	transition: all .5s ease-in-out!important;
 	color: #D39E25!important;
+}
+
+.porText a:hover{
+	color: #be8c18!important;
+
 }
