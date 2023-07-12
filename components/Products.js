@@ -58,7 +58,7 @@ const Products = ({ products, vignette }) => {
 																<Image
 																	className="hover:scale-105 transition-all duration-1000"
 																	src={urlFor(product.image).url()}
-																	alt="Image produit"
+																	alt={product.alt ? product.alt[lang] : product.title?.en}
 																	width="300"
 																	height="300"
 																	style={{ backgroundImage: `url(${vig})`, backgroundSize: "cover" }}
@@ -93,7 +93,7 @@ const Products = ({ products, vignette }) => {
 															<Image
 																className="hover:scale-105 transition-all duration-1000"
 																src={urlFor(product.image).url()}
-																alt="Image produit"
+																alt={product.alt ? product.alt[lang] : product.title?.en}
 																width="300"
 																height="300"
 																style={{ backgroundImage: `url(${vig})`, backgroundSize: "cover" }}
@@ -134,7 +134,7 @@ const Products = ({ products, vignette }) => {
 															<Image
 																className="hover:scale-105 transition-all duration-1000"
 																src={urlFor(product.image).url()}
-																alt="Image produit"
+																alt={product.alt ? product.alt[lang] : product.title?.en}
 																width="300"
 																height="300"
 																style={{ backgroundImage: `url(${vig})`, backgroundSize: "cover" }}
@@ -167,7 +167,7 @@ const Products = ({ products, vignette }) => {
 														<Image
 															className="hover:scale-105 transition-all duration-1000"
 															src={urlFor(product.image).url()}
-															alt="Image produit"
+															alt={product.alt ? product.alt[lang] : product.title?.en}
 															width="300"
 															height="300"
 															style={{ backgroundImage: `url(${vig})`, backgroundSize: "cover" }}
