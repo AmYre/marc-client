@@ -47,7 +47,7 @@ const Contact = () => {
 
 	return (
 		<div className="p-12 pt-28 md:pt-12">
-			<h2 className="text-3xl tracking-widest font-thin font-bodoni mb-2">{onDemand ? texts.contactTitle[lang] : texts.menu5[lang]}</h2>
+			<h2 className="text-3xl tracking-widest font-thin font-bodoni mb-2">{onDemand ? texts?.contactTitle[lang] : texts?.menu5[lang]}</h2>
 			{onDemand && <h3 className="text-xl tracking-widest font-thin font-bodoni mb-12">{currentProduct?.title[lang]}</h3>}
 			<div className={`overflow-hidden w-full flex justify-center items-center ${onDemand && "h-52"}`}>
 				<Image
