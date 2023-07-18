@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef } from "react"
+import React, { useState, useEffect, useMemo, useRef } from "react"
 import { useGlobalContext } from "../components/GlobalContext"
 import { CloudinaryContext } from "cloudinary-react"
 import Image from "next/image"
@@ -37,6 +37,9 @@ const DetailProduct = () => {
 	const vRefMob = useRef(null)
 
 	const [isLoaded, setIsLoaded] = useState(false)
+	const [mobLoaded, setMobLoaded] = useState(false)
+	const [isDesktop, setIsDesktop] = useState(false);
+	const [isMobile, setIsMobile] = useState(false);
 
 	const router = useRouter()
 	const slug = router.query.slug
@@ -49,6 +52,37 @@ const DetailProduct = () => {
 		setPlaying((prev) => !prev)
 		vRefMob.current.muted = !vRefMob.current.muted
 	}
+
+	const pausePrevVideo = () => {
+		if (vRefDesk.current) {
+		  vRefDesk.current.load()
+		}
+
+		if (vRefMob.current) {
+		  vRefMob.current.load()
+		}
+	}
+
+	useEffect(() => {
+		const handleResize = () => {
+		  setIsDesktop(window.innerWidth >= 1024);
+		  setIsMobile(window.innerWidth < 1024);
+		};
+
+		handleResize();
+
+		window.addEventListener('resize', handleResize);
+		return () => {
+			window.removeEventListener('resize', handleResize);
+			if (vRefDesk.current) {
+				vRefDesk.current.load();
+			  }
+
+			  if (vRefMob.current) {
+				vRefMob.current.load();
+			  }
+		}
+	  }, []);
 
 	let flags = [
 		{ name: "français", pic: flagfr, lang: "fr", tagLang: "", mobtag: "-mob" },
@@ -66,7 +100,7 @@ const DetailProduct = () => {
 
 	const videoDesktop = useMemo(
 		() =>
-			slug && (
+			slug && isDesktop && (
 				<video
 					key={replay}
 					ref={vRefDesk}
@@ -84,12 +118,12 @@ const DetailProduct = () => {
 					<source src="https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home.mp4" type="video/mp4" />
 				</video>
 			),
-		[lang, slug, replay, isLoaded]
+		[lang, slug, replay, isDesktop]
 	)
 
 	const videoMobile = useMemo(
 		() =>
-			slug && (
+			slug && isMobile && (
 				<video
 					key={replay}
 					ref={vRefMob}
@@ -101,21 +135,24 @@ const DetailProduct = () => {
 						setEnded(true)
 						setPlaying(false)
 					}}
+					onCanPlay={() => setMobLoaded(true)}
 					poster={{ startOffset: "0" }}>
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${slug}-mob.mp4`} type="video/mp4" />
 					<source src="https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home.mp4" type="video/mp4" />
 				</video>
 			),
-		[lang, slug, replay]
+		[lang, slug, replay, isMobile]
 	)
 
 	return (
 		<main className="bg-black">
+
 			<div className="lg:hidden">
 				<NavBar />
 			</div>
+
 			<div key={slug} className="lg:hidden">
-				{!isLoaded && (
+				{!mobLoaded && (
 					<div className="h-screen w-full bg-layout text-white flex justify-center items-center">
 						<div className="flex flex-col justify-center items-center">
 							<Image src={logo} alt="Logo Marc Maison" className="w-[20vh]" width="150" height="150" />
@@ -134,14 +171,17 @@ const DetailProduct = () => {
 						</div>
 					</div>
 				)}
+
 				<CloudinaryContext cloud_name="amircloud" secure={true}>
 					{videoMobile}
 				</CloudinaryContext>
+
 				<AnimatePresence>{ended && <EndCard />}</AnimatePresence>
 			</div>
 			<nav className="hidden lg:block absolute text-white z-10 top-12 left-12 ">
 				<Nav isProduct />
 			</nav>
+
 			<div key={slug + slug} className="hidden lg:block">
 				{!isLoaded && (
 					<div className="h-screen w-full bg-layout text-white flex justify-center items-center">
@@ -162,6 +202,8 @@ const DetailProduct = () => {
 						</div>
 					</div>
 				)}
+
+
 				<CloudinaryContext cloud_name="amircloud" secure={true}>
 					{videoDesktop}
 				</CloudinaryContext>
@@ -189,7 +231,7 @@ const DetailProduct = () => {
 					/>
 				</div>
 				<motion.button
-					onClick={() => isLoaded && handleMobSound()}
+					onClick={() => mobLoaded && handleMobSound()}
 					whileHover={{ scale: 1.1 }}
 					whileTap={{ scale: 0.9 }}
 					animate={{ scale: playing ? 1 : [1.1, 1] }}
@@ -220,7 +262,8 @@ const DetailProduct = () => {
 											onClick={() => {
 												setTagLang(flag.tagLang)
 												setPlaying(false)
-												setIsLoaded(false)
+												setMobLoaded(false)
+												pausePrevVideo()
 											}}
 											className="hover:cursor-pointer transition-all duration-300"
 											src={flag.pic}
@@ -243,6 +286,7 @@ const DetailProduct = () => {
 					)}
 				</AnimatePresence>
 			</div>
+
 			<div className="hidden lg:block">
 				<div className="flex gap-3 absolute bottom-10 right-10 items-center">
 					{!playing && (
@@ -334,6 +378,7 @@ const DetailProduct = () => {
 													setTagLang(flag.tagLang)
 													setPlaying(false)
 													setIsLoaded(false)
+													pausePrevVideo()
 												}}
 												className="hover:cursor-pointer transition-all duration-300"
 												src={flag.pic}
@@ -357,6 +402,7 @@ const DetailProduct = () => {
 					</AnimatePresence>
 				</div>
 			</div>
+
 		</main>
 	)
 }
