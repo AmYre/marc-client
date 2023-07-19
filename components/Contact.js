@@ -70,8 +70,8 @@ const Contact = () => {
 						<TextField className="w-full max-w-[400px]" name="lastname" id="standard-basic" label={texts.formName[lang]} variant="standard" required />
 					</div>
 					<div className="flex gap-12">
-						<TextField className="w-full max-w-[400px]" name="mail" id="standard-basic" label={texts.formMail[lang]} variant="standard" required />
-						<TextField className="w-full max-w-[400px]" name="phone" id="standard-basic" label={texts.formPhone[lang]} variant="standard" />
+						<TextField className="w-full max-w-[400px]" name="mail" type="email" id="standard-basic" label={texts.formMail[lang]} variant="standard" required />
+						<TextField className="w-full max-w-[400px]" name="phone" type="tel" id="standard-basic" label={texts.formPhone[lang]} variant="standard" />
 					</div>
 					<TextField className="w-full max-w-[800px]" name="message" id="standard-textarea" label={texts.formMessage[lang]} multiline variant="standard" />
 					<input className="hidden" type="hidden" name="ref" value={currentProduct?.title[lang] || currentProduct?.title.en} />

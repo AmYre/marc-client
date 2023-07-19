@@ -163,7 +163,7 @@ const Products = ({ products, vignette }) => {
 													onClick={() => {
 														setCurrentProduct(product)
 													}}>
-													<div className="vig-wrapper relative w-full overflow-hidden mb-8">
+													<div className="corner vig-wrapper relative w-full overflow-hidden mb-8">
 														<Image
 															className="hover:scale-105 transition-all duration-1000"
 															src={urlFor(product.image).url()}

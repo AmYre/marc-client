@@ -26,7 +26,7 @@
 .vig-txt{
 	position: absolute;
 	bottom: 0px;
-} 
+}
 
 /* .vig-wrapper:hover .vig-txt{
 	opacity: 1!important;
@@ -89,4 +89,13 @@
 .porText a:hover{
 	color: #be8c18!important;
 
+}
+
+.corner:after{
+	top: -20px;
+	right: 100px;
+	background-color: #D39E25;
+	height: 50px;
+	width: 50px;
+	z-index: 9999999999999999999999999999999999999999;
 }
