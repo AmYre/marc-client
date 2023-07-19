@@ -73,6 +73,12 @@ const locales = {
 		ru: "Price upon request",
 		cn: "Price upon request",
 	},
-}
+	vendu: {
+		fr: "Vendu",
+		en: "Sold",
+		ru: "Sold",
+		cn: "Sold",
+	},
+};
 
-export default locales
+export default locales;
