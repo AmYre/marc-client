@@ -1,47 +1,47 @@
-import React, { useEffect, useState } from "react"
-import { useRouter } from "next/router"
-import { useGlobalContext } from "../../components/GlobalContext"
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { useGlobalContext } from "../../components/GlobalContext";
 
-import Link from "next/link"
-import Image from "next/image"
-import { motion } from "framer-motion"
-import { PortableText } from "@portabletext/react"
+import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { PortableText } from "@portabletext/react";
 
-import Nav from "../../components/Nav"
-import NavBar from "../../components/NavBar"
-import imageUrlBuilder from "@sanity/image-url"
-import { sanityClient } from "../../lib/sanityClient"
+import Nav from "../../components/Nav";
+import NavBar from "../../components/NavBar";
+import imageUrlBuilder from "@sanity/image-url";
+import { sanityClient } from "../../lib/sanityClient";
 
 const DetailArtist = ({ vignette }) => {
-	const { lang, setLang, isOpen, setIsOpen } = useGlobalContext()
-	const [creation, setCreation] = useState()
-	const [artist, setArtist] = useState()
+	const { lang, setLang, isOpen, setIsOpen, texts, setTexts } = useGlobalContext();
+	const [creation, setCreation] = useState();
+	const [artist, setArtist] = useState();
 
-	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })
+	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" });
 
 	const urlFor = (source) => {
-		return imageBuilder.image(source)
-	}
+		return imageBuilder.image(source);
+	};
 
-	const vig = urlFor(vignette[0].image).url()
+	const vig = urlFor(vignette[0].image).url();
 
-	const router = useRouter()
-	const slug = router.query.slug
+	const router = useRouter();
+	const slug = router.query.slug;
 
 	useEffect(() => {
 		sanityClient.fetch(`*[ _type == "artists" && slug.current == "${slug}" ]`).then((res) => {
-			setArtist(res[0])
+			setArtist(res[0]);
 			sanityClient
 				.fetch(
 					`*[_type == "artists" && slug.current == "${res[0].slug.current}"]{
-				"products": *[_type == "products" && references(^._id)]| order(_updatedAt desc){title,slugfr,slugen,slugcn,slugru,image}
+				"products": *[_type == "products" && references(^._id)]| order(_updatedAt desc){title,slugfr,slugen,slugcn,slugru,image,sold}
 				}`
 				)
 				.then((res) => {
-					setCreation(res[0].products)
-				})
-		})
-	}, [])
+					setCreation(res[0].products);
+				});
+		});
+	}, []);
 
 	return (
 		<main>
@@ -62,7 +62,8 @@ const DetailArtist = ({ vignette }) => {
 								className="rounded-xs mb-4"
 								initial={{ y: "50%", opacity: 0, scale: 0.5 }}
 								animate={{ y: 0, opacity: 1, scale: 1 }}
-								transition={{ duration: 0.5, ease: "easeOut" }}>
+								transition={{ duration: 0.5, ease: "easeOut" }}
+							>
 								<Image src={urlFor(artist?.image)?.url()} alt="Image produit" width="500" height="500" />
 							</motion.div>
 						)}
@@ -75,19 +76,26 @@ const DetailArtist = ({ vignette }) => {
 									className="rounded-xs"
 									initial={{ y: "50%", opacity: 0, scale: 0.5 }}
 									animate={{ y: 0, opacity: 1, scale: 1 }}
-									transition={{ duration: 0.5, ease: "easeOut" }}>
+									transition={{ duration: 0.5, ease: "easeOut" }}
+								>
 									<Image src={urlFor(artist?.image)?.url()} alt="Image produit" width="500" height="500" />
 								</motion.div>
 							)}
 						</div>
 					</div>
+					{creation && console.log(creation.sold)}
 					<div className="flex flex-wrap justify-center items-center gap-10 ">
 						{creation &&
 							creation?.map((creation, index) => (
 								<div className="mb-8" key={index}>
 									{creation?.slugen && (
 										<Link key={index} href={`/${creation.slugfr.current}`}>
-											<div key={index} className="h-[200px] w-[200px] overflow-hidden">
+											<div key={index} className="h-[200px] w-[200px] overflow-hidden relative">
+												{creation.sold && (
+													<div className="ribbon ribbon-top-right">
+														<span>{texts.vendu[lang]}</span>
+													</div>
+												)}
 												<img
 													className="h-full w-full object-contain hover:scale-105 transition-all duration-1000"
 													src={urlFor(creation.image).url()}
@@ -108,17 +116,17 @@ const DetailArtist = ({ vignette }) => {
 				</main>
 			</div>
 		</main>
-	)
-}
+	);
+};
 
 export const getServerSideProps = async () => {
-	const vignette = await sanityClient.fetch(`*[_type=="walls" && title == 'vignette']{...}`)
+	const vignette = await sanityClient.fetch(`*[_type=="walls" && title == 'vignette']{...}`);
 
 	return {
 		props: {
 			vignette,
 		},
-	}
-}
+	};
+};
 
-export default DetailArtist
+export default DetailArtist;

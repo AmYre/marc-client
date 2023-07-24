@@ -1,88 +1,88 @@
-import React, { useState, useEffect, useMemo, useRef } from "react"
-import { useGlobalContext } from "../components/GlobalContext"
-import { CloudinaryContext } from "cloudinary-react"
-import Image from "next/image"
-import Link from "next/link"
-import { useRouter } from "next/router"
-import { motion } from "framer-motion"
-import { MdEuro } from "react-icons/md"
-import { GiSpeaker, GiSpeakerOff } from "react-icons/gi"
-import { BsTranslate } from "react-icons/bs"
-import { AnimatePresence } from "framer-motion"
+import React, { useState, useEffect, useMemo, useRef } from "react";
+import { useGlobalContext } from "../components/GlobalContext";
+import { CloudinaryContext } from "cloudinary-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { motion } from "framer-motion";
+import { MdEuro } from "react-icons/md";
+import { GiSpeaker, GiSpeakerOff } from "react-icons/gi";
+import { BsTranslate } from "react-icons/bs";
+import { AnimatePresence } from "framer-motion";
 
-import Nav from "../components/Nav"
-import NavBar from "../components/NavBar"
-import EndCard from "../components/EndCard"
-import { MutatingDots } from "react-loader-spinner"
+import Nav from "../components/Nav";
+import NavBar from "../components/NavBar";
+import EndCard from "../components/EndCard";
+import { MutatingDots } from "react-loader-spinner";
 
-import logo from "../public/logo.png"
-import flagfr from "../public/fr.png"
-import flagen from "../public/en.png"
-import flagcn from "../public/cn.png"
-import flages from "../public/es.png"
-import flagpo from "../public/po.png"
-import flagkr from "../public/kr.png"
-import flagar from "../public/ar.png"
-import flagjp from "../public/jp.png"
-import flagit from "../public/it.png"
-import flagtu from "../public/tu.png"
-import flagru from "../public/ru.png"
+import logo from "../public/logo.png";
+import flagfr from "../public/fr.png";
+import flagen from "../public/en.png";
+import flagcn from "../public/cn.png";
+import flages from "../public/es.png";
+import flagpo from "../public/po.png";
+import flagkr from "../public/kr.png";
+import flagar from "../public/ar.png";
+import flagjp from "../public/jp.png";
+import flagit from "../public/it.png";
+import flagtu from "../public/tu.png";
+import flagru from "../public/ru.png";
 
 const DetailProduct = () => {
-	const { lang, setLang, tagLang, setTagLang, ended, setEnded, replay, setReplay, currentProduct, setCurrentProduct, texts, setTexts } = useGlobalContext()
-	const [playing, setPlaying] = useState(false)
-	const [translate, setTranslate] = useState(false)
-	const [isOnce, setIsOnce] = useState(false)
-	const vRefDesk = useRef(null)
-	const vRefMob = useRef(null)
+	const { lang, setLang, tagLang, setTagLang, ended, setEnded, replay, setReplay, currentProduct, setCurrentProduct, texts, setTexts } = useGlobalContext();
+	const [playing, setPlaying] = useState(false);
+	const [translate, setTranslate] = useState(false);
+	const [isOnce, setIsOnce] = useState(false);
+	const vRefDesk = useRef(null);
+	const vRefMob = useRef(null);
 
-	const [isLoaded, setIsLoaded] = useState(false)
-	const [mobLoaded, setMobLoaded] = useState(false)
+	const [isLoaded, setIsLoaded] = useState(false);
+	const [mobLoaded, setMobLoaded] = useState(false);
 	const [isDesktop, setIsDesktop] = useState(false);
 	const [isMobile, setIsMobile] = useState(false);
 
-	const router = useRouter()
-	const slug = router.query.slug
+	const router = useRouter();
+	const slug = router.query.slug;
 
 	const handleSound = () => {
-		setPlaying((prev) => !prev)
-		vRefDesk.current.muted = !vRefDesk.current.muted
-	}
+		setPlaying((prev) => !prev);
+		vRefDesk.current.muted = !vRefDesk.current.muted;
+	};
 	const handleMobSound = () => {
-		setPlaying((prev) => !prev)
-		vRefMob.current.muted = !vRefMob.current.muted
-	}
+		setPlaying((prev) => !prev);
+		vRefMob.current.muted = !vRefMob.current.muted;
+	};
 
 	const pausePrevVideo = () => {
 		if (vRefDesk.current) {
-		  vRefDesk.current.load()
+			vRefDesk.current.load();
 		}
 
 		if (vRefMob.current) {
-		  vRefMob.current.load()
+			vRefMob.current.load();
 		}
-	}
+	};
 
 	useEffect(() => {
 		const handleResize = () => {
-		  setIsDesktop(window.innerWidth >= 1024);
-		  setIsMobile(window.innerWidth < 1024);
+			setIsDesktop(window.innerWidth >= 1024);
+			setIsMobile(window.innerWidth < 1024);
 		};
 
 		handleResize();
 
-		window.addEventListener('resize', handleResize);
+		window.addEventListener("resize", handleResize);
 		return () => {
-			window.removeEventListener('resize', handleResize);
+			window.removeEventListener("resize", handleResize);
 			if (vRefDesk.current) {
 				vRefDesk.current.load();
-			  }
+			}
 
-			  if (vRefMob.current) {
+			if (vRefMob.current) {
 				vRefMob.current.load();
-			  }
-		}
-	  }, []);
+			}
+		};
+	}, []);
 
 	let flags = [
 		{ name: "français", pic: flagfr, lang: "fr", tagLang: "", mobtag: "-mob" },
@@ -96,11 +96,12 @@ const DetailProduct = () => {
 		{ name: "italian", pic: flagit, lang: "it", tagLang: "-it", mobtag: "-it-mob" },
 		{ name: "turkish", pic: flagtu, lang: "tu", tagLang: "-tu", mobtag: "-tu-mob" },
 		{ name: "russian", pic: flagru, lang: "ru", tagLang: "-ru", mobtag: "-ru-mob" },
-	]
+	];
 
 	const videoDesktop = useMemo(
 		() =>
-			slug && isDesktop && (
+			slug &&
+			isDesktop && (
 				<video
 					key={replay}
 					ref={vRefDesk}
@@ -109,21 +110,23 @@ const DetailProduct = () => {
 					playsInline
 					muted
 					onEnded={() => {
-						setEnded(true)
-						setPlaying(false)
+						setEnded(true);
+						setPlaying(false);
 					}}
 					onCanPlay={() => setIsLoaded(true)}
-					poster={{ startOffset: "0" }}>
+					poster={{ startOffset: "0" }}
+				>
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${slug}.mp4`} type="video/mp4" />
 					<source src="https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home.mp4" type="video/mp4" />
 				</video>
 			),
 		[lang, slug, replay, isDesktop]
-	)
+	);
 
 	const videoMobile = useMemo(
 		() =>
-			slug && isMobile && (
+			slug &&
+			isMobile && (
 				<video
 					key={replay}
 					ref={vRefMob}
@@ -132,21 +135,21 @@ const DetailProduct = () => {
 					playsInline
 					muted
 					onEnded={() => {
-						setEnded(true)
-						setPlaying(false)
+						setEnded(true);
+						setPlaying(false);
 					}}
 					onCanPlay={() => setMobLoaded(true)}
-					poster={{ startOffset: "0" }}>
+					poster={{ startOffset: "0" }}
+				>
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${slug}-mob.mp4`} type="video/mp4" />
 					<source src="https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home.mp4" type="video/mp4" />
 				</video>
 			),
 		[lang, slug, replay, isMobile]
-	)
+	);
 
 	return (
 		<main className="bg-black">
-
 			<div className="lg:hidden">
 				<NavBar />
 			</div>
@@ -203,7 +206,6 @@ const DetailProduct = () => {
 					</div>
 				)}
 
-
 				<CloudinaryContext cloud_name="amircloud" secure={true}>
 					{videoDesktop}
 				</CloudinaryContext>
@@ -214,20 +216,20 @@ const DetailProduct = () => {
 				<div
 					className="w-[50px] h-[50px] m-auto bg-yellow rounded-full border-2 p-2 opacity-95 flex items-center justify-center"
 					onClick={() => {
-						setTranslate((prev) => !prev)
-						setIsOnce(true)
-					}}>
+						setTranslate((prev) => !prev);
+						setIsOnce(true);
+					}}
+				>
 					<BsTranslate className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 				</div>
-				<div className="w-[50px] h-[50px] m-auto bg-yellow rounded-full border-2 p-2 opacity-95 flex items-center justify-center">
+				<div className="w-[50px] h-[50px] m-auto bg-white rounded-full border-2 border-amber-500 p-2 opacity-95 flex items-center justify-center">
 					<MdEuro
 						onClick={() => {
-							setEnded(true)
-							setPlaying(false)
-							vRefDesk.current.muted = true
-							vRefMob.current.muted = true
+							setEnded(true);
+							setPlaying(false);
+							isDesktop ? (vRefDesk.current.muted = true) : (vRefMob.current.muted = true);
 						}}
-						className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer"
+						className="text-2xl text-amber-700 hover:scale-110 transition-all duration-300 cursor-pointer"
 					/>
 				</div>
 				<motion.button
@@ -235,7 +237,8 @@ const DetailProduct = () => {
 					whileHover={{ scale: 1.1 }}
 					whileTap={{ scale: 0.9 }}
 					animate={{ scale: playing ? 1 : [1.1, 1] }}
-					transition={playing ? { duration: 0.3 } : { duration: 0.3, repeat: Infinity, repeatType: "reverse" }}>
+					transition={playing ? { duration: 0.3 } : { duration: 0.3, repeat: Infinity, repeatType: "reverse" }}
+				>
 					{!playing ? (
 						<div className="w-[60px] h-[60px] m-auto bg-yellow rounded-full border-2 border-white p-2 opacity-95 flex items-center justify-center">
 							<GiSpeakerOff role="button" aria-label="Sound" className="text-3xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
@@ -254,16 +257,17 @@ const DetailProduct = () => {
 							initial={{ x: "10px", opacity: 0 }}
 							animate={{ x: 0, opacity: 1 }}
 							transition={{ duration: 0.5, ease: "easeOut" }}
-							exit={{ x: "10px", opacity: 0 }}>
+							exit={{ x: "10px", opacity: 0 }}
+						>
 							{flags.map((flag, index) => (
 								<div className="relative flex flex-col justify-center items-center mb-1 mt-1" key={index}>
 									<Link href={`${currentProduct ? currentProduct.slugfr.current : router?.query?.slug?.replace(/-\w{2}$/, "")}${flag.tagLang}`}>
 										<Image
 											onClick={() => {
-												setTagLang(flag.tagLang)
-												setPlaying(false)
-												setMobLoaded(false)
-												pausePrevVideo()
+												setTagLang(flag.tagLang);
+												setPlaying(false);
+												setMobLoaded(false);
+												pausePrevVideo();
 											}}
 											className="hover:cursor-pointer transition-all duration-300"
 											src={flag.pic}
@@ -278,7 +282,8 @@ const DetailProduct = () => {
 											animate={{ y: 0, opacity: 1, scale: 1 }}
 											transition={{ duration: 0.5, ease: "easeOut" }}
 											exit={{ opacity: 0, scale: 0.1 }}
-											className="absolute top-[30px] w-[8px] h-[8px] bg-white rounded-full"></motion.div>
+											className="absolute top-[30px] w-[8px] h-[8px] bg-white rounded-full"
+										></motion.div>
 									)}
 								</div>
 							))}
@@ -311,7 +316,8 @@ const DetailProduct = () => {
 							whileHover={{ scale: 1.1 }}
 							whileTap={{ scale: 0.9 }}
 							animate={{ scale: playing ? 1 : [1.1, 1] }}
-							transition={playing ? { duration: 0.3 } : { duration: 0.3, repeat: Infinity, repeatType: "reverse" }}>
+							transition={playing ? { duration: 0.3 } : { duration: 0.3, repeat: Infinity, repeatType: "reverse" }}
+						>
 							{!playing ? (
 								<div className="w-[60px] h-[60px] m-auto bg-yellow rounded-full border-2 border-white p-2 opacity-95 flex items-center justify-center">
 									<GiSpeakerOff role="button" aria-label="Sound" className="text-3xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
@@ -324,15 +330,14 @@ const DetailProduct = () => {
 						</motion.button>
 					</div>
 					<div className="flex flex-col">
-						<div className="w-[50px] h-[50px] m-auto bg-yellow rounded-full border-2 border-white p-2 opacity-95 flex flex-col items-center justify-center">
+						<div className="w-[50px] h-[50px] m-auto bg-white rounded-full border-2 border-amber-500 p-2 opacity-95 flex flex-col items-center justify-center">
 							<MdEuro
 								onClick={() => {
-									setEnded(true)
-									setPlaying(false)
-									vRefDesk.current.muted = true
-									vRefMob.current.muted = true
+									setEnded(true);
+									setPlaying(false);
+									isDesktop ? (vRefDesk.current.muted = true) : (vRefMob.current.muted = true);
 								}}
-								className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer"
+								className="text-2xl text-amber-600 hover:scale-110 transition-all duration-300 cursor-pointer"
 							/>
 						</div>
 					</div>
@@ -356,9 +361,10 @@ const DetailProduct = () => {
 						<div
 							className="w-[50px] h-[50px] m-auto bg-yellow rounded-full border-2 p-2 opacity-95 flex items-center justify-center"
 							onClick={() => {
-								setTranslate((prev) => !prev)
-								setIsOnce(true)
-							}}>
+								setTranslate((prev) => !prev);
+								setIsOnce(true);
+							}}
+						>
 							<BsTranslate className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
 						</div>
 					</div>
@@ -369,16 +375,17 @@ const DetailProduct = () => {
 								initial={{ x: "10px", opacity: 0 }}
 								animate={{ x: 0, opacity: 1 }}
 								transition={{ duration: 0.5, ease: "easeOut" }}
-								exit={{ x: "10px", opacity: 0 }}>
+								exit={{ x: "10px", opacity: 0 }}
+							>
 								{flags.map((flag, index) => (
 									<div className="relative flex flex-col justify-center items-center mb-2 mt-2" key={index}>
 										<Link href={`${currentProduct ? currentProduct.slugfr.current : router?.query?.slug?.replace(/-\w{2}$/, "")}${flag.tagLang}`}>
 											<Image
 												onClick={() => {
-													setTagLang(flag.tagLang)
-													setPlaying(false)
-													setIsLoaded(false)
-													pausePrevVideo()
+													setTagLang(flag.tagLang);
+													setPlaying(false);
+													setIsLoaded(false);
+													pausePrevVideo();
 												}}
 												className="hover:cursor-pointer transition-all duration-300"
 												src={flag.pic}
@@ -393,7 +400,8 @@ const DetailProduct = () => {
 												animate={{ y: 0, opacity: 1, scale: 1 }}
 												transition={{ duration: 0.5, ease: "easeOut" }}
 												exit={{ opacity: 0, scale: 0.1 }}
-												className="absolute top-[30px] w-[8px] h-[8px] bg-white rounded-full"></motion.div>
+												className="absolute top-[30px] w-[8px] h-[8px] bg-white rounded-full"
+											></motion.div>
 										)}
 									</div>
 								))}
@@ -402,9 +410,8 @@ const DetailProduct = () => {
 					</AnimatePresence>
 				</div>
 			</div>
-
 		</main>
-	)
-}
+	);
+};
 
-export default DetailProduct
+export default DetailProduct;

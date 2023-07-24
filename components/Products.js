@@ -75,7 +75,7 @@ const Products = ({ products, vignette }) => {
 														<div className="w-full overflow-hidden">
 															<figure className="mb-8">
 																{product.sold && (
-																	<div class="ribbon ribbon-top-right">
+																	<div className="ribbon ribbon-top-right">
 																		<span>{texts.vendu[lang]}</span>
 																	</div>
 																)}
@@ -131,7 +131,7 @@ const Products = ({ products, vignette }) => {
 													<div className="w-full overflow-hidden">
 														<figure className="mb-8">
 															{product.sold && (
-																<div class="ribbon ribbon-top-right">
+																<div className="ribbon ribbon-top-right">
 																	<span>{texts.vendu[lang]}</span>
 																</div>
 															)}
@@ -196,7 +196,7 @@ const Products = ({ products, vignette }) => {
 													>
 														<div className="vig-wrapper w-full overflow-hidden mb-8">
 															{product.sold && (
-																<div class="ribbon ribbon-top-right">
+																<div className="ribbon ribbon-top-right">
 																	<span>{texts.vendu[lang]}</span>
 																</div>
 															)}
@@ -250,7 +250,7 @@ const Products = ({ products, vignette }) => {
 												>
 													<div className="vig-wrapper w-full overflow-hidden mb-8">
 														{product.sold && (
-															<div class="ribbon ribbon-top-right">
+															<div className="ribbon ribbon-top-right">
 																<span>{texts.vendu[lang]}</span>
 															</div>
 														)}
