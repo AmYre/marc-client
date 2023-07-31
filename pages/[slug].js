@@ -65,6 +65,7 @@ const DetailProduct = () => {
 
 	useEffect(() => {
 		const handleResize = () => {
+			const userAgent = window.navigator.userAgent;
 			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent)) {
 				setIsMobile(true);
 			} else {
