@@ -1,17 +1,27 @@
-import { useGlobalContext } from "./GlobalContext"
-import Image from "next/image"
-import Link from "next/link"
-import { BsYoutube } from "react-icons/bs"
-import { AiFillInstagram } from "react-icons/ai"
-import { ImFacebook2 } from "react-icons/im"
-import flagFR from "../public/fr.png"
-import flagEN from "../public/en.png"
-import flagRU from "../public/ru.png"
-import flagCN from "../public/cn.png"
-import { motion } from "framer-motion"
+import { useGlobalContext } from "./GlobalContext";
+import Image from "next/image";
+import Link from "next/link";
+import { BsYoutube } from "react-icons/bs";
+import { AiFillInstagram } from "react-icons/ai";
+import { ImFacebook2 } from "react-icons/im";
+import flagFR from "../public/fr.png";
+import flagEN from "../public/en.png";
+import flagRU from "../public/ru.png";
+import flagCN from "../public/cn.png";
+import { motion } from "framer-motion";
 
-const MobNav = () => {
-	const { lang, setLang, isOpen, setIsOpen, texts, setTexts } = useGlobalContext()
+const MobNav = ({ vRefHome, vRefHomeMob }) => {
+	const { lang, setLang, isOpen, setIsOpen, texts, setTexts } = useGlobalContext();
+
+	const pausePrevVideo = () => {
+		if (vRefHome.current) {
+			vRefHome.current.load();
+		}
+
+		if (vRefHomeMob.current) {
+			vRefHomeMob.current.load();
+		}
+	};
 
 	return (
 		<div className="absolute z-40 h-screen w-screen inset-0 flex flex-col justify-around bg-black bg-opacity-90 text-white">
@@ -26,31 +36,51 @@ const MobNav = () => {
 					<Link
 						href="/creations"
 						className="p-6 font-nunito text-sm  hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-gray-900"
-						onClick={() => setIsOpen(false)}>
+						onClick={() => {
+							setIsOpen(false);
+							pausePrevVideo();
+						}}
+					>
 						{texts.menu1[lang]}
 					</Link>
 					<Link
 						href="/artists"
 						className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-gray-900"
-						onClick={() => setIsOpen(false)}>
+						onClick={() => {
+							setIsOpen(false);
+							pausePrevVideo();
+						}}
+					>
 						{texts.menu2[lang]}
 					</Link>
 					<Link
 						href="/museum"
 						className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300 tracking-widest font-thin uppercase border-b-[1px] border-gray-900"
-						onClick={() => setIsOpen(false)}>
+						onClick={() => {
+							setIsOpen(false);
+							pausePrevVideo();
+						}}
+					>
 						{texts.menu3[lang]}
 					</Link>
 					<Link
 						href="/gallery"
 						className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-gray-900"
-						onClick={() => setIsOpen(false)}>
+						onClick={() => {
+							setIsOpen(false);
+							pausePrevVideo();
+						}}
+					>
 						{texts.menu4[lang]}
 					</Link>
 					<Link
 						href="/contact"
 						className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-gray-900"
-						onClick={() => setIsOpen(false)}>
+						onClick={() => {
+							setIsOpen(false);
+							pausePrevVideo();
+						}}
+					>
 						{texts.menu5[lang]}
 					</Link>
 				</div>
@@ -58,7 +88,7 @@ const MobNav = () => {
 					<div className="flex justify-center items-center gap-6">
 						<Image
 							onClick={() => {
-								setLang("fr")
+								setLang("fr");
 							}}
 							className="hover:cursor-pointer"
 							src={flagFR}
@@ -68,7 +98,7 @@ const MobNav = () => {
 						/>
 						<Image
 							onClick={() => {
-								setLang("en")
+								setLang("en");
 							}}
 							className="hover:cursor-pointer"
 							src={flagEN}
@@ -88,7 +118,7 @@ const MobNav = () => {
 						/>*/}
 						<Image
 							onClick={() => {
-								setLang("cn")
+								setLang("cn");
 							}}
 							className="hover:cursor-pointer"
 							src={flagCN}
@@ -113,7 +143,7 @@ const MobNav = () => {
 				</div>
 			</motion.div>
 		</div>
-	)
-}
+	);
+};
 
-export default MobNav
+export default MobNav;

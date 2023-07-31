@@ -1,73 +1,106 @@
-import React, { useRef, useMemo, useState } from "react"
-import { useGlobalContext } from "../components/GlobalContext"
+import React, { useRef, useEffect, useMemo, useState } from "react";
+import { useGlobalContext } from "../components/GlobalContext";
 
-import { motion } from "framer-motion"
-import { GiSpeaker, GiSpeakerOff } from "react-icons/gi"
+import { motion } from "framer-motion";
+import { GiSpeaker, GiSpeakerOff } from "react-icons/gi";
 
-import Head from "next/head"
-import Nav from "../components/Nav"
-import NavBar from "../components/NavBar"
-import { CloudinaryContext } from "cloudinary-react"
+import Head from "next/head";
+import Nav from "../components/Nav";
+import NavBar from "../components/NavBar";
+import { CloudinaryContext } from "cloudinary-react";
 
 export default function Home() {
-	const { lang, texts } = useGlobalContext()
-	const [playing, setPlaying] = useState(false)
-	const [isLoaded, setIsLoaded] = useState(false)
+	const { lang, texts } = useGlobalContext();
+	const [playing, setPlaying] = useState(false);
+	const [isLoaded, setIsLoaded] = useState(false);
+	const [isDesktop, setIsDesktop] = useState(false);
+	const [isMobile, setIsMobile] = useState(false);
 
-	const vRefHome = useRef(null)
-	const vRefHomeMob = useRef(null)
+	const vRefHome = useRef(null);
+	const vRefHomeMob = useRef(null);
 
 	const handleSound = () => {
-		setPlaying((prev) => !prev)
-		vRefHome.current.muted = !vRefHome.current.muted
-	}
+		setPlaying((prev) => !prev);
+		vRefHome.current.muted = !vRefHome.current.muted;
+	};
 
 	const handleSoundMob = () => {
-		setPlaying((prev) => !prev)
-		vRefHomeMob.current.muted = !vRefHomeMob.current.muted
-	}
+		setPlaying((prev) => !prev);
+		vRefHomeMob.current.muted = !vRefHomeMob.current.muted;
+	};
+
+	useEffect(() => {
+		const userAgent = window.navigator.userAgent;
+		const handleResize = () => {
+			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent)) {
+				setIsMobile(true);
+			} else {
+				setIsDesktop(true);
+			}
+		};
+
+		handleResize();
+
+		window.addEventListener("resize", handleResize);
+		return () => {
+			window.removeEventListener("resize", handleResize);
+			if (vRefHome.current) {
+				vRefHome.current.load();
+			}
+
+			if (vRefHomeMob.current) {
+				vRefHomeMob.current.load();
+			}
+		};
+	}, []);
 
 	const videoHome = useMemo(
-		() => (
-			<video
-				ref={vRefHome}
-				className="h-screen w-full object-cover"
-				autoPlay
-				playsInline
-				muted
-				loop
-				onEnded={() => {
-					setPlaying(false)
-				}}
-				onCanPlay={() => setIsLoaded(true)}
-				poster={{ startOffset: "0" }}>
-				<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home.mp4`} type="video/mp4" />
-				<source src="https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home.mp4" type="video/mp4" />
-			</video>
-		),
-		[isLoaded]
-	)
+		() =>
+			isDesktop && (
+				<video
+					ref={vRefHome}
+					className="h-screen w-full object-cover"
+					autoPlay
+					playsInline
+					muted
+					loop
+					onEnded={() => {
+						setPlaying(false);
+					}}
+					onCanPlay={() => setIsLoaded(true)}
+					poster={{ startOffset: "0" }}
+				>
+					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home.mp4`} type="video/mp4" />
+					<source src="https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home.mp4" type="video/mp4" />
+				</video>
+			),
+		[isLoaded, isDesktop]
+	);
 
 	const videoHomeMob = useMemo(
-		() => (
-			<video
-				ref={vRefHomeMob}
-				className="h-screen w-full object-cover"
-				autoPlay
-				playsInline
-				muted
-				loop
-				onEnded={() => {
-					setPlaying(false)
-				}}
-				onCanPlay={() => setIsLoaded(true)}
-				poster={{ startOffset: "0" }}>
-				<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home-mob.mp4`} type="video/mp4" />
-				<source src="https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home-mob.mp4" type="video/mp4" />
-			</video>
-		),
-		[isLoaded]
-	)
+		() =>
+			isMobile && (
+				<video
+					ref={vRefHomeMob}
+					className="h-screen w-full object-cover"
+					autoPlay
+					playsInline
+					muted
+					loop
+					onEnded={() => {
+						setPlaying(false);
+					}}
+					onCanPlay={() => setIsLoaded(true)}
+					poster={{ startOffset: "0" }}
+				>
+					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home-mob.mp4`} type="video/mp4" />
+					<source src="https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home-mob.mp4" type="video/mp4" />
+				</video>
+			),
+		[isLoaded, isMobile]
+	);
+
+	console.log(isDesktop, isMobile);
 
 	return (
 		<div>
@@ -103,7 +136,7 @@ export default function Home() {
 					</CloudinaryContext>
 				</div>
 				<nav className="hidden md:block absolute text-white z-10 top-12 left-12">
-					<Nav />
+					<Nav vRefHome={vRefHome} vRefHomeMob={vRefHomeMob} />
 				</nav>
 				<div className="md:hidden">
 					<div className="flex gap-3 absolute bottom-10 right-10 items-center">
@@ -112,7 +145,8 @@ export default function Home() {
 							whileHover={{ scale: 1.1 }}
 							whileTap={{ scale: 0.9 }}
 							animate={{ scale: playing ? 1 : [1.1, 1] }}
-							transition={playing ? { duration: 0.3 } : { duration: 0.3, repeat: Infinity, repeatType: "reverse" }}>
+							transition={playing ? { duration: 0.3 } : { duration: 0.3, repeat: Infinity, repeatType: "reverse" }}
+						>
 							{!playing ? (
 								<div className="w-[50px] h-[50px] m-auto bg-yellow rounded-full border-2 border-white p-2 opacity-95 flex items-center justify-center">
 									<GiSpeakerOff role="button" aria-label="Sound" className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
@@ -146,7 +180,8 @@ export default function Home() {
 							whileHover={{ scale: 1.1 }}
 							whileTap={{ scale: 0.9 }}
 							animate={{ scale: playing ? 1 : [1.1, 1] }}
-							transition={playing ? { duration: 0.3 } : { duration: 0.3, repeat: Infinity, repeatType: "reverse" }}>
+							transition={playing ? { duration: 0.3 } : { duration: 0.3, repeat: Infinity, repeatType: "reverse" }}
+						>
 							{!playing ? (
 								<div role="button" aria-label="Sound" className="w-[50px] h-[50px] m-auto bg-yellow rounded-full border-2 border-white p-2 opacity-95 flex items-center justify-center">
 									<GiSpeakerOff className="text-2xl text-white hover:scale-110 transition-all duration-300 cursor-pointer" />
@@ -161,5 +196,5 @@ export default function Home() {
 				</div>
 			</main>
 		</div>
-	)
+	);
 }

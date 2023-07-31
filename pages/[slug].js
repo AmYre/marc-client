@@ -65,8 +65,11 @@ const DetailProduct = () => {
 
 	useEffect(() => {
 		const handleResize = () => {
-			setIsDesktop(window.innerWidth >= 1024);
-			setIsMobile(window.innerWidth < 1024);
+			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent)) {
+				setIsMobile(true);
+			} else {
+				setIsDesktop(true);
+			}
 		};
 
 		handleResize();
