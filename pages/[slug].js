@@ -54,22 +54,23 @@ const DetailProduct = () => {
 	};
 
 	const pausePrevVideo = () => {
-		if (vRefDesk.current) {
-			vRefDesk.current.load();
+		if (isDesktop) {
+			vRefDesk.current.pause();
 		}
 
-		if (vRefMob.current) {
-			vRefMob.current.load();
+		if (isMobile) {
+			vRefMob.current.pause();
 		}
 	};
 
 	useEffect(() => {
 		const handleResize = () => {
 			const userAgent = window.navigator.userAgent;
-			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent)) {
+			if (/iPhone|iPad|iPod/i.test(userAgent)) {
 				setIsMobile(true);
 			} else {
-				setIsDesktop(true);
+				setIsDesktop(window.innerWidth >= 1024);
+				setIsMobile(window.innerWidth < 1024);
 			}
 		};
 
@@ -131,7 +132,6 @@ const DetailProduct = () => {
 			slug &&
 			isMobile && (
 				<video
-					key={replay}
 					ref={vRefMob}
 					className="h-screen w-full"
 					autoPlay
@@ -148,7 +148,7 @@ const DetailProduct = () => {
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto:low/marc/${slug}-mob.mp4`} type="video/mp4" />
 				</video>
 			),
-		[lang, slug, replay, isMobile]
+		[lang, slug, isMobile]
 	);
 
 	return (
