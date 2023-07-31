@@ -144,7 +144,7 @@ const DetailProduct = () => {
 					onCanPlay={() => setMobLoaded(true)}
 					poster={{ startOffset: "0" }}
 				>
-					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${slug}-mob.mp4`} type="video/mp4" />
+					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto/marc/${slug}-mob.mp4`} type="video/mp4" />
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto:low/marc/${slug}-mob.mp4`} type="video/mp4" />
 				</video>
 			),
