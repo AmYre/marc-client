@@ -141,7 +141,7 @@ const DetailProduct = () => {
 					setEnded(true);
 					setPlaying(false);
 				}}
-				loadedMetaData={() => setMobLoaded(true)}
+				loadedData={() => setMobLoaded(true)}
 				poster={{ startOffset: "0" }}
 			>
 				<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto/marc/${slug}-mob.mp4`} type="video/mp4" />
