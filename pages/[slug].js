@@ -67,8 +67,8 @@ const DetailProduct = () => {
 	useEffect(() => {
 		const handleResize = () => {
 			const ua = navigator.userAgent.toLowerCase();
-
-			if (ua.indexOf("safari") !== -1 && ua.indexOf("chrome") === -1) {
+			console.log(ua.indexOf("Safari") > -1);
+			if (ua.indexOf("Safari") > -1) {
 				setIsIOS(true);
 			} else {
 				setIsDesktop(window.innerWidth >= 1024);
@@ -129,27 +129,9 @@ const DetailProduct = () => {
 		[lang, slug, replay, isDesktop]
 	);
 
-	const videoMobile = useMemo(() =>
-		slug && isIOS ? (
-			<video
-				ref={vRefMob}
-				className="h-screen w-full"
-				autoPlay
-				playsInline
-				muted
-				onEnded={() => {
-					setEnded(true);
-					setPlaying(false);
-				}}
-				loadedData={() => setMobLoaded(true)}
-				poster={{ startOffset: "0" }}
-			>
-				<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto/marc/${slug}-mob.mp4`} type="video/mp4" />
-				<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto:low/marc/${slug}-mob.mp4`} type="video/mp4" />
-			</video>
-		) : (
-			isMobile &&
-			(
+	const videoMobile = useMemo(
+		() =>
+			slug && isIOS ? (
 				<video
 					ref={vRefMob}
 					className="h-screen w-full"
@@ -160,14 +142,33 @@ const DetailProduct = () => {
 						setEnded(true);
 						setPlaying(false);
 					}}
-					onCanPlay={() => setMobLoaded(true)}
+					loadedData={() => setMobLoaded(true)}
 					poster={{ startOffset: "0" }}
 				>
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto/marc/${slug}-mob.mp4`} type="video/mp4" />
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto:low/marc/${slug}-mob.mp4`} type="video/mp4" />
 				</video>
-			)[(lang, slug, isMobile, isIOS)]
-		)
+			) : (
+				isMobile && (
+					<video
+						ref={vRefMob}
+						className="h-screen w-full"
+						autoPlay
+						playsInline
+						muted
+						onEnded={() => {
+							setEnded(true);
+							setPlaying(false);
+						}}
+						onCanPlay={() => setMobLoaded(true)}
+						poster={{ startOffset: "0" }}
+					>
+						<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto/marc/${slug}-mob.mp4`} type="video/mp4" />
+						<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto:low/marc/${slug}-mob.mp4`} type="video/mp4" />
+					</video>
+				)
+			),
+		[lang, slug, isMobile, isIOS]
 	);
 
 	return (
