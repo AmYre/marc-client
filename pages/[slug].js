@@ -40,6 +40,7 @@ const DetailProduct = () => {
 	const [mobLoaded, setMobLoaded] = useState(false);
 	const [isDesktop, setIsDesktop] = useState(false);
 	const [isMobile, setIsMobile] = useState(false);
+	const [isIOS, setIsIOS] = useState(false);
 
 	const router = useRouter();
 	const slug = router.query.slug;
@@ -68,6 +69,7 @@ const DetailProduct = () => {
 			const userAgent = window.navigator.userAgent;
 			if (/iPhone|iPad|iPod/i.test(userAgent)) {
 				setIsMobile(true);
+				setIsIOS(true);
 			} else {
 				setIsDesktop(window.innerWidth >= 1024);
 				setIsMobile(window.innerWidth < 1024);
@@ -127,10 +129,26 @@ const DetailProduct = () => {
 		[lang, slug, replay, isDesktop]
 	);
 
-	const videoMobile = useMemo(
-		() =>
-			slug &&
-			isMobile && (
+	const videoMobile = useMemo(() =>
+		slug && isIOS ? (
+			<video
+				ref={vRefMob}
+				className="h-screen w-full"
+				autoPlay
+				playsInline
+				muted
+				onEnded={() => {
+					setEnded(true);
+					setPlaying(false);
+				}}
+				loadedMetaData={() => setMobLoaded(true)}
+				poster={{ startOffset: "0" }}
+			>
+				<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto/marc/${slug}-mob.mp4`} type="video/mp4" />
+				<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto:low/marc/${slug}-mob.mp4`} type="video/mp4" />
+			</video>
+		) : (
+			(
 				<video
 					ref={vRefMob}
 					className="h-screen w-full"
@@ -147,8 +165,8 @@ const DetailProduct = () => {
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto/marc/${slug}-mob.mp4`} type="video/mp4" />
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto:low/marc/${slug}-mob.mp4`} type="video/mp4" />
 				</video>
-			),
-		[lang, slug, isMobile]
+			)[(lang, slug, isMobile)]
+		)
 	);
 
 	return (

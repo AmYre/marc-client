@@ -14,11 +14,11 @@ const MobNav = ({ vRefHome, vRefHomeMob }) => {
 	const { lang, setLang, isOpen, setIsOpen, texts, setTexts } = useGlobalContext();
 
 	const pausePrevVideo = () => {
-		if (vRefHome.current) {
+		if (vRefHome?.current) {
 			vRefHome.current.load();
 		}
 
-		if (vRefHomeMob.current) {
+		if (vRefHomeMob?.current) {
 			vRefHomeMob.current.load();
 		}
 	};
