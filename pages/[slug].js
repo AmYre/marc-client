@@ -66,9 +66,9 @@ const DetailProduct = () => {
 
 	useEffect(() => {
 		const handleResize = () => {
-			const userAgent = window.navigator.userAgent;
-			if (/iPhone|iPad|iPod/i.test(userAgent)) {
-				setIsMobile(true);
+			const ua = navigator.userAgent.toLowerCase();
+
+			if (ua.indexOf("safari") !== -1 && ua.indexOf("chrome") === -1) {
 				setIsIOS(true);
 			} else {
 				setIsDesktop(window.innerWidth >= 1024);
@@ -148,6 +148,7 @@ const DetailProduct = () => {
 				<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto:low/marc/${slug}-mob.mp4`} type="video/mp4" />
 			</video>
 		) : (
+			isMobile &&
 			(
 				<video
 					ref={vRefMob}
@@ -165,7 +166,7 @@ const DetailProduct = () => {
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto/marc/${slug}-mob.mp4`} type="video/mp4" />
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto:low/marc/${slug}-mob.mp4`} type="video/mp4" />
 				</video>
-			)[(lang, slug, isMobile)]
+			)[(lang, slug, isMobile, isIOS)]
 		)
 	);
 
