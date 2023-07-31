@@ -71,7 +71,6 @@ export default function Home() {
 					poster={{ startOffset: "0" }}
 				>
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home.mp4`} type="video/mp4" />
-					<source src="https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home.mp4" type="video/mp4" />
 				</video>
 			),
 		[isLoaded, isDesktop]
