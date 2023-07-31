@@ -121,7 +121,6 @@ const DetailProduct = () => {
 					poster={{ startOffset: "0" }}
 				>
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${slug}.mp4`} type="video/mp4" />
-					<source src="https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home.mp4" type="video/mp4" />
 				</video>
 			),
 		[lang, slug, replay, isDesktop]
@@ -146,7 +145,6 @@ const DetailProduct = () => {
 					poster={{ startOffset: "0" }}
 				>
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${slug}-mob.mp4`} type="video/mp4" />
-					<source src="https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home.mp4" type="video/mp4" />
 				</video>
 			),
 		[lang, slug, replay, isMobile]
