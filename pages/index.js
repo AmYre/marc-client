@@ -58,6 +58,7 @@ export default function Home() {
 					ref={vRefHome}
 					className="h-screen w-full object-cover"
 					autoPlay
+					preload="auto"
 					playsInline
 					muted
 					loop
@@ -80,6 +81,7 @@ export default function Home() {
 					ref={vRefHomeMob}
 					className="h-screen w-full object-cover"
 					autoPlay
+					preload="auto"
 					playsInline
 					muted
 					loop

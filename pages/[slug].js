@@ -108,6 +108,7 @@ const DetailProduct = () => {
 					ref={vRefDesk}
 					className="h-screen w-full"
 					autoPlay
+					preload="auto"
 					playsInline
 					muted
 					onEnded={() => {
@@ -132,6 +133,7 @@ const DetailProduct = () => {
 					ref={vRefMob}
 					className="h-screen w-full"
 					autoPlay
+					preload="auto"
 					playsInline
 					muted
 					onEnded={() => {
