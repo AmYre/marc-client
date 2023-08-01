@@ -32,12 +32,8 @@ export default function Home() {
 	useEffect(() => {
 		const userAgent = window.navigator.userAgent;
 		const handleResize = () => {
-			if (/iPhone|iPad|iPod/i.test(userAgent)) {
-				setIsMobile(true);
-			} else {
-				setIsDesktop(window.innerWidth >= 1024);
-				setIsMobile(window.innerWidth < 1024);
-			}
+			setIsDesktop(window.innerWidth >= 1024);
+			setIsMobile(window.innerWidth < 1024);
 		};
 
 		handleResize();
@@ -99,8 +95,6 @@ export default function Home() {
 			),
 		[isLoaded, isMobile]
 	);
-
-	console.log(isDesktop, isMobile);
 
 	return (
 		<div>

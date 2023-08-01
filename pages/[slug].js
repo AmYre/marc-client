@@ -66,14 +66,8 @@ const DetailProduct = () => {
 
 	useEffect(() => {
 		const handleResize = () => {
-			const ua = navigator.userAgent.toLowerCase();
-			console.log(ua.indexOf("Safari") > -1);
-			if (ua.indexOf("Safari") > -1) {
-				setIsIOS(true);
-			} else {
-				setIsDesktop(window.innerWidth >= 1024);
-				setIsMobile(window.innerWidth < 1024);
-			}
+			setIsDesktop(window.innerWidth >= 1024);
+			setIsMobile(window.innerWidth < 1024);
 		};
 
 		handleResize();
@@ -131,8 +125,10 @@ const DetailProduct = () => {
 
 	const videoMobile = useMemo(
 		() =>
-			slug && isIOS ? (
+			slug &&
+			isMobile && (
 				<video
+					key={replay}
 					ref={vRefMob}
 					className="h-screen w-full"
 					autoPlay
@@ -142,33 +138,14 @@ const DetailProduct = () => {
 						setEnded(true);
 						setPlaying(false);
 					}}
-					loadedData={() => setMobLoaded(true)}
+					onCanPlay={() => setMobLoaded(true)}
 					poster={{ startOffset: "0" }}
 				>
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto/marc/${slug}-mob.mp4`} type="video/mp4" />
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto:low/marc/${slug}-mob.mp4`} type="video/mp4" />
 				</video>
-			) : (
-				isMobile && (
-					<video
-						ref={vRefMob}
-						className="h-screen w-full"
-						autoPlay
-						playsInline
-						muted
-						onEnded={() => {
-							setEnded(true);
-							setPlaying(false);
-						}}
-						onCanPlay={() => setMobLoaded(true)}
-						poster={{ startOffset: "0" }}
-					>
-						<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto/marc/${slug}-mob.mp4`} type="video/mp4" />
-						<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto:low/marc/${slug}-mob.mp4`} type="video/mp4" />
-					</video>
-				)
 			),
-		[lang, slug, isMobile, isIOS]
+		[lang, slug, replay, isMobile]
 	);
 
 	return (
