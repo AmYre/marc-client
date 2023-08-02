@@ -13,8 +13,8 @@ export default function Home() {
 	const { lang, texts } = useGlobalContext();
 	const [playing, setPlaying] = useState(false);
 	const [isLoaded, setIsLoaded] = useState(false);
-	const [isDesktop, setIsDesktop] = useState(false);
-	const [isMobile, setIsMobile] = useState(false);
+	const [isDesktop, setIsDesktop] = useState(true);
+	const [isMobile, setIsMobile] = useState(true);
 
 	const vRefHome = useRef(null);
 	const vRefHomeMob = useRef(null);
@@ -64,14 +64,13 @@ export default function Home() {
 					onEnded={() => {
 						setPlaying(false);
 					}}
-					onLoadStart={() => setIsLoaded(true)}
 					poster="/black.jpg"
 				>
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home.mp4`} type="video/mp4" />
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto:low/marc/home.webm`} type="video/webm" />
 				</video>
 			),
-		[isLoaded, isDesktop]
+		[isDesktop]
 	);
 
 	const videoHomeMob = useMemo(
