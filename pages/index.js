@@ -12,9 +12,8 @@ import { CloudinaryContext } from "cloudinary-react";
 export default function Home() {
 	const { lang, texts } = useGlobalContext();
 	const [playing, setPlaying] = useState(false);
-	const [isLoaded, setIsLoaded] = useState(false);
-	const [isDesktop, setIsDesktop] = useState(true);
-	const [isMobile, setIsMobile] = useState(true);
+	const [isDesktop, setIsDesktop] = useState(false);
+	const [isMobile, setIsMobile] = useState(false);
 
 	const vRefHome = useRef(null);
 	const vRefHomeMob = useRef(null);
@@ -65,10 +64,9 @@ export default function Home() {
 						setPlaying(false);
 					}}
 					poster="/black.jpg"
-				>
-					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home.mp4`} type="video/mp4" />
-					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto:low/marc/home.webm`} type="video/webm" />
-				</video>
+					src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home.mp4`}
+					type="video/mp4"
+				></video>
 			),
 		[isDesktop]
 	);
@@ -87,14 +85,13 @@ export default function Home() {
 					onEnded={() => {
 						setPlaying(false);
 					}}
-					onCanPlay={() => setIsLoaded(true)}
 					poster="/black.jpg"
 				>
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home-mob.mp4`} type="video/mp4" />
-					<source src="https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home-mob.mp4" type="video/mp4" />
+					<source src="https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto:low/marc/home-mob.webm" type="video/webm" />
 				</video>
 			),
-		[isLoaded, isMobile]
+		[isMobile]
 	);
 
 	return (
