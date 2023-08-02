@@ -64,7 +64,7 @@ export default function Home() {
 					onEnded={() => {
 						setPlaying(false);
 					}}
-					onCanPlay={() => setIsLoaded(true)}
+					onLoadStart={() => setIsLoaded(true)}
 					poster="/black.jpg"
 				>
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home.mp4`} type="video/mp4" />
