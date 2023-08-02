@@ -215,3 +215,9 @@
 	bottom: 30px;
 	transform: rotate(-225deg);
   }
+
+  .video-js{
+	height: 100vh!important;
+	width: 100%!important;
+	object-fit: cover!important;
+  }
