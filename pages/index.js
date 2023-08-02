@@ -118,22 +118,22 @@ export default function Home() {
 				<meta property="og:image" content="./logo.png" />
 			</Head>
 			<main className="">
-				<div className="hidden md:block">
+				<div className="hidden lg:block">
 					<CloudinaryContext cloud_name="amircloud" secure={true}>
 						{videoHome}
 					</CloudinaryContext>
 				</div>
 
-				<div className="md:hidden">
+				<div className="lg:hidden">
 					<NavBar />
 					<CloudinaryContext cloud_name="amircloud" secure={true}>
 						{videoHomeMob}
 					</CloudinaryContext>
 				</div>
-				<nav className="hidden md:block absolute text-white z-10 top-12 left-12">
+				<nav className="hidden lg:block absolute text-white z-10 top-12 left-12">
 					<Nav vRefHome={vRefHome} vRefHomeMob={vRefHomeMob} />
 				</nav>
-				<div className="md:hidden">
+				<div className="lg:hidden">
 					<div className="flex gap-3 absolute bottom-10 right-10 items-center">
 						<motion.button
 							onClick={() => handleSoundMob()}
@@ -154,7 +154,7 @@ export default function Home() {
 						</motion.button>
 					</div>
 				</div>
-				<div className="hidden md:block">
+				<div className="hidden lg:block">
 					<div className="flex gap-3 absolute bottom-10 right-10 items-center">
 						{!playing && (
 							<div>
