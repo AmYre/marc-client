@@ -1,6 +1,5 @@
 import React, { useRef, useEffect, useMemo, useState } from "react";
 import { useGlobalContext } from "../components/GlobalContext";
-import MyVideo from "../components/MyVideo";
 
 import { motion } from "framer-motion";
 import { GiSpeaker, GiSpeakerOff } from "react-icons/gi";
@@ -54,41 +53,23 @@ export default function Home() {
 	const videoHome = useMemo(
 		() =>
 			isDesktop && (
-				<MyVideo
-					options={{
-						autoplay: true,
-						controls: false,
-						preload: "auto",
-						muted: true,
-						loop: true,
-						playsinline: true,
-						poster: "/black.jpg",
-						sources: [
-							{
-								src: "https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home.mp4",
-								type: "video/mp4",
-							},
-						],
+				<video
+					ref={vRefHome}
+					className="h-screen w-full object-cover"
+					autoPlay
+					preload="auto"
+					playsInline
+					muted
+					loop
+					onEnded={() => {
+						setPlaying(false);
 					}}
-					onReady={() => setIsLoaded(true)}
-				/>
-				// <video
-				// 	ref={vRefHome}
-				// 	className="h-screen w-full object-cover"
-				// 	autoPlay
-				// 	preload="auto"
-				// 	playsInline
-				// 	muted
-				// 	loop
-				// 	onEnded={() => {
-				// 		setPlaying(false);
-				// 	}}
-				// 	onCanPlay={() => setIsLoaded(true)}
-				// 	poster={{ startOffset: "0" }}
-				// >
-				// 	<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home.mp4`} type="video/mp4" />
-				// 	<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto:low/marc/home.webm`} type="video/webm" />
-				// </video>
+					onCanPlay={() => setIsLoaded(true)}
+					poster="/black.jpg"
+				>
+					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home.mp4`} type="video/mp4" />
+					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto:low/marc/home.webm`} type="video/webm" />
+				</video>
 			),
 		[isLoaded, isDesktop]
 	);
@@ -108,7 +89,7 @@ export default function Home() {
 						setPlaying(false);
 					}}
 					onCanPlay={() => setIsLoaded(true)}
-					poster={{ startOffset: "0" }}
+					poster="/black.jpg"
 				>
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home-mob.mp4`} type="video/mp4" />
 					<source src="https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/home-mob.mp4" type="video/mp4" />
