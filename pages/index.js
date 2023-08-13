@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useMemo, useState } from "react";
-import { useGlobalContext } from "../components/GlobalContext";
 
 import { motion } from "framer-motion";
 import { GiSpeaker, GiSpeakerOff } from "react-icons/gi";
@@ -10,7 +9,6 @@ import NavBar from "../components/NavBar";
 import { CloudinaryContext } from "cloudinary-react";
 
 export default function Home() {
-	const { lang, texts } = useGlobalContext();
 	const [playing, setPlaying] = useState(false);
 	const [isDesktop, setIsDesktop] = useState(false);
 	const [isMobile, setIsMobile] = useState(false);

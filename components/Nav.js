@@ -15,17 +15,19 @@ import flagCN from "../public/cn.png";
 const Nav = ({ isProduct, vRefHome, vRefHomeMob }) => {
 	const { drawer, setDrawer, lang, setLang, tagLang, setTagLang, texts, setTexts } = useGlobalContext();
 	const [localDrawer, setLocalDrawer] = useState(drawer);
+	const [isWide, setIsWide] = useState(false);
 
 	useEffect(() => {
 		isProduct && setLocalDrawer(false);
+		window?.innerHeight < 830 && setIsWide(true);
 	}, []);
 
 	const pausePrevVideo = () => {
-		if (vRefHome.current) {
+		if (vRefHome?.current) {
 			vRefHome.current.load();
 		}
 
-		if (vRefHomeMob.current) {
+		if (vRefHomeMob?.current) {
 			vRefHomeMob.current.load();
 		}
 	};
@@ -119,9 +121,9 @@ const Nav = ({ isProduct, vRefHome, vRefHomeMob }) => {
 									height="30"
 								/>
 							</div>
-							<p className="text-md mt-6 mb-6 font-nunito tracking-widest ">PARIS</p>
+							<p className={`${isWide && "hidden"} text-md mt-6 mb-6 font-nunito tracking-widest`}>PARIS</p>
 
-							<div className="flex justify-center items-center gap-6">
+							<div className={`${isWide && "hidden"} flex justify-center items-center gap-6`}>
 								<Link href="https://www.facebook.com/marcmaisongalerie/" aria-label="Facebook button link" target="_blank">
 									<ImFacebook2 />
 								</Link>
@@ -132,7 +134,7 @@ const Nav = ({ isProduct, vRefHome, vRefHomeMob }) => {
 									<BsYoutube className="text-[22px]" />
 								</Link>
 							</div>
-							<p className="text-xs mt-3 text-gray-400 tracking-widest font-thin">ALL RIGHTS RESERVED © 2023</p>
+							<p className={`${isWide && "hidden"} text-xs mt-3 text-gray-400 tracking-widest font-thin`}>ALL RIGHTS RESERVED © 2023</p>
 						</div>
 						<div>
 							<div
