@@ -1,24 +1,41 @@
-import React, { useEffect } from "react"
-import Image from "next/image"
-import { sanityClient } from "../lib/sanityClient"
+import React, { useEffect } from "react";
+import Image from "next/image";
+import Head from "next/head";
 
-import logo from "../public/logo.png"
-import { useGlobalContext } from "../components/GlobalContext"
+import { sanityClient } from "../lib/sanityClient";
 
-import Nav from "../components/Nav"
-import NavBar from "../components/NavBar"
-import Products from "../components/Products"
+import logo from "../public/logo.png";
+import { useGlobalContext } from "../components/GlobalContext";
+
+import Nav from "../components/Nav";
+import NavBar from "../components/NavBar";
+import Products from "../components/Products";
 
 const Creations = ({ products, vignette }) => {
-	const { nav, setNav, lang, setLang, isOpen, setIsOpen, ended, setEnded, currentProduct, setCurrentProduct } = useGlobalContext()
+	const { nav, setNav, lang, setLang, isOpen, setIsOpen, ended, setEnded, currentProduct, setCurrentProduct } = useGlobalContext();
 
 	useEffect(() => {
-		setEnded(false)
-		setCurrentProduct(false)
-	}, [])
+		setEnded(false);
+		setCurrentProduct(false);
+	}, []);
 
 	return (
 		<div className={`flex ${isOpen ? "h-screen overflow-hidden" : "min-h-screen"} md:gap-8 bg-bg md:p-12`}>
+			<Head>
+				<title>MarcMaison.Art | Notre galerie vidéos avant-gardiste des oeuvres du 19ème</title>
+				<meta name="description" content="Plongez dans une collection captivante de vidéos présentant des chefs-d'œuvre emblématiques de cette période artistique influente." />
+				<meta name="keywords" content="Marc Maison 19ème, Oeuvres 19ème, Vidéo documenté avec audio en plusieurs langues" />
+				<meta name="author" content="Galerie Marc Maison" />
+				<link rel="icon" href="/favicon.ico" />
+				<link rel="alternate" href="/" hrefLang="x-default" />
+				<link rel="alternate" href="/" hrefLang="fr" />
+				<meta property="og:title" content="MarcMaison.Art | Notre galerie vidéos avant-gardiste des oeuvres du 19ème" />
+				<meta
+					property="og:description"
+					content="Plongez dans une collection captivante de vidéos présentant des chefs-d'œuvre emblématiques de cette période artistique influente. Découvrez les mouvements artistiques, les techniques et les artistes qui ont façonné cette époque dorée de la créativité."
+				/>
+				<meta property="og:image" content="./logo.png" />
+			</Head>
 			<div className="md:hidden">
 				<NavBar />
 			</div>
@@ -37,19 +54,19 @@ const Creations = ({ products, vignette }) => {
 				</div>
 			</main>
 		</div>
-	)
-}
+	);
+};
 
 export const getServerSideProps = async () => {
-	const products = await sanityClient.fetch(`*[_type=="products" && references(*[_type=="category" && slug.current != 'sold']._id)] | order(_updatedAt desc) {..., category->}`)
-	const vignette = await sanityClient.fetch(`*[_type=="walls" && title == 'vignette']{...}`)
+	const products = await sanityClient.fetch(`*[_type=="products" && references(*[_type=="category" && slug.current != 'sold']._id)] | order(_updatedAt desc) {..., category->}`);
+	const vignette = await sanityClient.fetch(`*[_type=="walls" && title == 'vignette']{...}`);
 
 	return {
 		props: {
 			products,
 			vignette,
 		},
-	}
-}
+	};
+};
 
-export default Creations
+export default Creations;

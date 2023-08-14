@@ -3,6 +3,8 @@ import { useGlobalContext } from "../components/GlobalContext";
 import { CloudinaryContext } from "cloudinary-react";
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
+
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import { MdEuro } from "react-icons/md";
@@ -153,6 +155,18 @@ const DetailProduct = () => {
 
 	return (
 		<main className="bg-black">
+			<Head>
+				<title>MarcMaison.Art | {currentProduct ? currentProduct.slugfr.current : router?.query?.slug}</title>
+				<meta name="description" content={currentProduct ? currentProduct.slugfr.current : router?.query?.slug} />
+				<meta name="keywords" content={`Marc Maison 19ème, Oeuvres 19ème, ${currentProduct ? currentProduct.slugfr.current : router?.query?.slug}`} />
+				<meta name="author" content="Galerie Marc Maison" />
+				<link rel="icon" href="/favicon.ico" />
+				<link rel="alternate" href="/" hrefLang="x-default" />
+				<link rel="alternate" href="/" hrefLang="fr" />
+				<meta property="og:title" content={`MarcMaisonArt | ${currentProduct ? currentProduct.slugfr.current : router?.query?.slug}`} />
+				<meta property="og:description" content={currentProduct ? currentProduct.slugfr.current : router?.query?.slug} />
+				<meta property="og:image" content="./logo.png" />
+			</Head>
 			<div className="lg:hidden">
 				<NavBar />
 			</div>
