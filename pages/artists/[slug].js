@@ -78,12 +78,11 @@ const DetailArtist = ({ vignette }) => {
 									animate={{ y: 0, opacity: 1, scale: 1 }}
 									transition={{ duration: 0.5, ease: "easeOut" }}
 								>
-									<Image src={urlFor(artist?.image)?.url()} alt="Image produit" width="500" height="500" />
+									<Image src={urlFor(artist?.image)?.url()} alt={artist?.title} width="500" height="500" />
 								</motion.div>
 							)}
 						</div>
 					</div>
-					{creation && console.log(creation.sold)}
 					<div className="flex flex-wrap justify-center items-center gap-10 ">
 						{creation &&
 							creation?.map((creation, index) => (

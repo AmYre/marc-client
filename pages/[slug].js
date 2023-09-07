@@ -4,6 +4,8 @@ import { CloudinaryContext } from "cloudinary-react";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
+import { sanityClient } from "../lib/sanityClient";
+import { PortableText } from "@portabletext/react";
 
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
@@ -42,7 +44,7 @@ const DetailProduct = () => {
 	const [mobLoaded, setMobLoaded] = useState(false);
 	const [isDesktop, setIsDesktop] = useState(false);
 	const [isMobile, setIsMobile] = useState(false);
-	const [isIOS, setIsIOS] = useState(false);
+	const [localProduct, setLocalProduct] = useState();
 
 	const router = useRouter();
 	const slug = router.query.slug;
@@ -66,6 +68,27 @@ const DetailProduct = () => {
 		}
 	};
 
+	function toPlainText(blocks) {
+		if (blocks) {
+			return (
+				blocks
+					// loop through each block
+					.map((block) => {
+						// if it's not a text block with children,
+						// return nothing
+						if (block._type !== "block" || !block.children) {
+							return "";
+						}
+						// loop through the children spans, and join the
+						// text strings
+						return block.children.map((child) => child.text).join("");
+					})
+					// join the paragraphs leaving split by two linebreaks
+					.join("\n\n")
+			);
+		}
+	}
+
 	useEffect(() => {
 		const handleResize = () => {
 			setIsDesktop(window.innerWidth >= 1024);
@@ -75,6 +98,7 @@ const DetailProduct = () => {
 		handleResize();
 
 		window.addEventListener("resize", handleResize);
+
 		return () => {
 			window.removeEventListener("resize", handleResize);
 			if (vRefDesk.current) {
@@ -86,6 +110,12 @@ const DetailProduct = () => {
 			}
 		};
 	}, []);
+
+	useEffect(() => {
+		sanityClient.fetch(`*[_type=="products" && slugfr.current == "${slug?.replace(/-\w{2}$/, "")}" ]{...}`).then((res) => {
+			setLocalProduct(res[0]);
+		});
+	}, [slug]);
 
 	let flags = [
 		{ name: "français", pic: flagfr, lang: "fr", tagLang: "", mobtag: "-mob" },
@@ -157,7 +187,7 @@ const DetailProduct = () => {
 		<main className="bg-black">
 			<Head>
 				<title>MarcMaison.Art | {currentProduct ? currentProduct.slugfr.current : router?.query?.slug}</title>
-				<meta name="description" content={currentProduct ? currentProduct.slugfr.current : router?.query?.slug} />
+				<meta name="description" content={localProduct ? toPlainText(localProduct.description[lang]) : router?.query?.slug} />
 				<meta name="keywords" content={`Marc Maison 19ème, Oeuvres 19ème, ${currentProduct ? currentProduct.slugfr.current : router?.query?.slug}`} />
 				<meta name="author" content="Galerie Marc Maison" />
 				<link rel="icon" href="/favicon.ico" />
@@ -169,6 +199,10 @@ const DetailProduct = () => {
 			</Head>
 			<div className="lg:hidden">
 				<NavBar />
+			</div>
+
+			<div className="absolute -z-20">
+				<PortableText value={localProduct?.description[lang]} />
 			</div>
 
 			<div key={slug} className="lg:hidden">

@@ -6,4 +6,4 @@ Disallow: /undefined*
 User-agent: *
 Allow: /
 
-Sitemap: https://marcmaison.art//sitemap.xml
+Sitemap: https://marcmaison.art/sitemap.xml
