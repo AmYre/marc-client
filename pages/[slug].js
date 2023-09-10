@@ -194,7 +194,7 @@ const DetailProduct = () => {
 				<link rel="alternate" href="/" hrefLang="x-default" />
 				<link rel="alternate" href="/" hrefLang="fr" />
 				<meta property="og:title" content={`MarcMaisonArt | ${currentProduct ? currentProduct.slugfr.current : router?.query?.slug}`} />
-				<meta property="og:description" content={currentProduct ? currentProduct.slugfr.current : router?.query?.slug} />
+				<meta property="og:description" content={localProduct ? toPlainText(localProduct.description[lang]) : router?.query?.slug} />
 				<meta property="og:image" content="./logo.png" />
 			</Head>
 			<div className="lg:hidden">

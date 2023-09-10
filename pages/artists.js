@@ -1,16 +1,16 @@
-import React from "react"
-import { useGlobalContext } from "../components/GlobalContext"
-import Image from "next/image"
-import { sanityClient } from "../lib/sanityClient"
-import Head from "next/head"
+import React from "react";
+import { useGlobalContext } from "../components/GlobalContext";
+import Image from "next/image";
+import { sanityClient } from "../lib/sanityClient";
+import Head from "next/head";
 
-import logo from "../public/logo.png"
-import Nav from "../components/Nav"
-import NavBar from "../components/NavBar"
-import Artists from "../components/Artists"
+import logo from "../public/logo.png";
+import Nav from "../components/Nav";
+import NavBar from "../components/NavBar";
+import Artists from "../components/Artists";
 
 const ArtistPage = ({ artists, vignette }) => {
-	const { isOpen, setIsOpen } = useGlobalContext()
+	const { isOpen, setIsOpen } = useGlobalContext();
 
 	return (
 		<div className={`flex ${isOpen ? "h-screen overflow-hidden" : "min-h-screen"} md:gap-8 bg-bg md:p-12`}>
@@ -46,19 +46,19 @@ const ArtistPage = ({ artists, vignette }) => {
 				</div>
 			</main>
 		</div>
-	)
-}
+	);
+};
 
 export const getServerSideProps = async () => {
-	const artists = await sanityClient.fetch(`*[_type == "artists" && slug.current != 'hotel-particulier'] | order(title asc)`)
-	const vignette = await sanityClient.fetch(`*[_type=="walls" && title == 'vignette']{...}`)
+	const artists = await sanityClient.fetch(`*[_type == "artists" && slug.current != 'hotel-particulier'] | order(title asc)`);
+	const vignette = await sanityClient.fetch(`*[_type=="walls" && title == 'vignette']{...}`);
 
 	return {
 		props: {
 			artists,
 			vignette,
 		},
-	}
-}
+	};
+};
 
-export default ArtistPage
+export default ArtistPage;
