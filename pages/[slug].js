@@ -2,7 +2,6 @@ import React, { useState, useEffect, useMemo, useRef } from "react";
 import { useGlobalContext } from "../components/GlobalContext";
 import { CloudinaryContext } from "cloudinary-react";
 import Image from "next/image";
-import Link from "next/link";
 import Head from "next/head";
 import { sanityClient } from "../lib/sanityClient";
 import { PortableText } from "@portabletext/react";
@@ -68,26 +67,16 @@ const DetailProduct = () => {
 		}
 	};
 
-	function toPlainText(blocks) {
+	const toPlainText = (blocks) => {
 		if (blocks) {
-			return (
-				blocks
-					// loop through each block
-					.map((block) => {
-						// if it's not a text block with children,
-						// return nothing
-						if (block._type !== "block" || !block.children) {
-							return "";
-						}
-						// loop through the children spans, and join the
-						// text strings
-						return block.children.map((child) => child.text).join("");
-					})
-					// join the paragraphs leaving split by two linebreaks
-					.join("\n\n")
-			);
+			return blocks.map((block) => {
+				if (block._type !== "block" || !block.children) {
+					return "";
+				}
+				return block.children.map((child) => child.text).join("");
+			});
 		}
-	}
+	};
 
 	useEffect(() => {
 		const handleResize = () => {
@@ -173,7 +162,14 @@ const DetailProduct = () => {
 						setEnded(true);
 						setPlaying(false);
 					}}
-					onCanPlay={() => setMobLoaded(true)}
+					onCanPlayThrough={() => {
+						setMobLoaded(true);
+						console.log("first");
+					}}
+					onCanPlay={() => {
+						console.log("second");
+						setMobLoaded(true);
+					}}
 					poster={{ startOffset: "0" }}
 				>
 					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto/marc/${slug}-mob.mp4`} type="video/mp4" />
@@ -311,21 +307,20 @@ const DetailProduct = () => {
 						>
 							{flags.map((flag, index) => (
 								<div className="relative flex flex-col justify-center items-center mb-1 mt-1" key={index}>
-									<Link href={`${currentProduct ? currentProduct.slugfr.current : router?.query?.slug?.replace(/-\w{2}$/, "")}${flag.tagLang}`}>
-										<Image
-											onClick={() => {
-												setTagLang(flag.tagLang);
-												setPlaying(false);
-												setMobLoaded(false);
-												pausePrevVideo();
-											}}
-											className="hover:cursor-pointer transition-all duration-300"
-											src={flag.pic}
-											alt={flag.name}
-											width="35"
-											height="35"
-										/>
-									</Link>
+									<Image
+										onClick={() => {
+											setTagLang(flag.tagLang);
+											setPlaying(false);
+											setMobLoaded(false);
+											pausePrevVideo();
+											router.push(currentProduct ? currentProduct.slugfr.current : router?.query?.slug?.replace(/-\w{2}$/, "") + flag.tagLang);
+										}}
+										className="hover:cursor-pointer transition-all duration-300"
+										src={flag.pic}
+										alt={flag.name}
+										width="35"
+										height="35"
+									/>
 									{tagLang == flag.tagLang && (
 										<motion.div
 											initial={{ y: "50%", opacity: 0, scale: 0.5 }}
@@ -429,21 +424,20 @@ const DetailProduct = () => {
 							>
 								{flags.map((flag, index) => (
 									<div className="relative flex flex-col justify-center items-center mb-2 mt-2" key={index}>
-										<Link href={`${currentProduct ? currentProduct.slugfr.current : router?.query?.slug?.replace(/-\w{2}$/, "")}${flag.tagLang}`}>
-											<Image
-												onClick={() => {
-													setTagLang(flag.tagLang);
-													setPlaying(false);
-													setIsLoaded(false);
-													pausePrevVideo();
-												}}
-												className="hover:cursor-pointer transition-all duration-300"
-												src={flag.pic}
-												alt={flag.name}
-												width="30"
-												height="30"
-											/>
-										</Link>
+										<Image
+											onClick={() => {
+												setTagLang(flag.tagLang);
+												setPlaying(false);
+												setIsLoaded(false);
+												pausePrevVideo();
+												router.push(currentProduct ? currentProduct.slugfr.current : router?.query?.slug?.replace(/-\w{2}$/, "") + flag.tagLang);
+											}}
+											className="hover:cursor-pointer transition-all duration-300"
+											src={flag.pic}
+											alt={flag.name}
+											width="30"
+											height="30"
+										/>
 										{tagLang == flag.tagLang && (
 											<motion.div
 												initial={{ y: "50%", opacity: 0, scale: 0.5 }}

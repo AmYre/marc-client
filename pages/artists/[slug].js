@@ -30,26 +30,18 @@ const DetailArtist = ({ vignette }) => {
 	const router = useRouter();
 	const slug = router.query.slug;
 
-	function toPlainText(blocks) {
+	const toPlainText = (blocks) => {
 		if (blocks) {
-			return (
-				blocks
-					// loop through each block
-					.map((block) => {
-						// if it's not a text block with children,
-						// return nothing
-						if (block._type !== "block" || !block.children) {
-							return "";
-						}
-						// loop through the children spans, and join the
-						// text strings
-						return block.children.map((child) => child.text).join("");
-					})
-					// join the paragraphs leaving split by two linebreaks
-					.join("\n\n")
-			);
+			return blocks
+				.map((block) => {
+					if (block._type !== "block" || !block.children) {
+						return "";
+					}
+					return block.children.map((child) => child.text).join("");
+				})
+				.join("");
 		}
-	}
+	};
 
 	useEffect(() => {
 		sanityClient.fetch(`*[ _type == "artists" && slug.current == "${slug}" ]`).then((res) => {
