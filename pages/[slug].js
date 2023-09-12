@@ -196,7 +196,7 @@ const DetailProduct = () => {
 				<NavBar />
 			</div>
 
-			<div className="absolute -z-20">
+			<div className="absolute -z-20 text-xs">
 				<PortableText value={localProduct?.description[lang]} />
 			</div>
 
