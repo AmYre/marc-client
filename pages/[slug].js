@@ -43,6 +43,7 @@ const DetailProduct = () => {
 	const [mobLoaded, setMobLoaded] = useState(false);
 	const [isDesktop, setIsDesktop] = useState(false);
 	const [isMobile, setIsMobile] = useState(false);
+	const [isApple, setIsApple] = useState(false);
 	const [localProduct, setLocalProduct] = useState();
 
 	const router = useRouter();
@@ -79,6 +80,13 @@ const DetailProduct = () => {
 	};
 
 	useEffect(() => {
+		const userAgent = window?.navigator.userAgent;
+		if (userAgent.match(/Macintosh|Mac OS X/i)) {
+			setIsApple(true);
+		} else if (userAgent.match(/iPhone|iPad/i)) {
+			setIsApple(true);
+		}
+
 		const handleResize = () => {
 			setIsDesktop(window.innerWidth >= 1024);
 			setIsMobile(window.innerWidth < 1024);
@@ -296,47 +304,92 @@ const DetailProduct = () => {
 					)}
 				</motion.button>
 				{!playing && <p className="absolute bottom-[-20px] text-white text-center text-xl font-bodoni">{texts.btnSound[lang]}</p>}
-				<AnimatePresence>
-					{translate && (
-						<motion.div
-							className="absolute w-[60vw] right-[80px] bottom-0 top-0 p-3 flex flex-wrap justify-center items-center gap-3 bg-layout bg-opacity-70"
-							initial={{ x: "10px", opacity: 0 }}
-							animate={{ x: 0, opacity: 1 }}
-							transition={{ duration: 0.5, ease: "easeOut" }}
-							exit={{ x: "10px", opacity: 0 }}
-						>
-							{flags.map((flag, index) => (
-								<div className="relative flex flex-col justify-center items-center mb-1 mt-1" key={index}>
-									<Image
-										onClick={() => {
-											setTagLang(flag.tagLang);
-											setPlaying(false);
-											setMobLoaded(false);
-											pausePrevVideo();
-											router.push(currentProduct ? currentProduct.slugfr.current : router?.query?.slug?.replace(/-\w{2}$/, "") + flag.tagLang);
-										}}
-										className="hover:cursor-pointer transition-all duration-300"
-										src={flag.pic}
-										alt={flag.name}
-										width="35"
-										height="35"
-									/>
-									{tagLang == flag.tagLang && (
-										<motion.div
-											initial={{ y: "50%", opacity: 0, scale: 0.5 }}
-											animate={{ y: 0, opacity: 1, scale: 1 }}
-											transition={{ duration: 0.5, ease: "easeOut" }}
-											exit={{ opacity: 0, scale: 0.1 }}
-											className="absolute top-[30px] w-[8px] h-[8px] bg-white rounded-full"
-										></motion.div>
-									)}
-								</div>
-							))}
-						</motion.div>
-					)}
-				</AnimatePresence>
+				{isApple ? (
+					<AnimatePresence>
+						{translate && (
+							<motion.div
+								className="absolute w-[60vw] right-[80px] bottom-0 top-0 p-3 flex flex-wrap justify-center items-center gap-3 bg-layout bg-opacity-70"
+								initial={{ x: "10px", opacity: 0 }}
+								animate={{ x: 0, opacity: 1 }}
+								transition={{ duration: 0.5, ease: "easeOut" }}
+								exit={{ x: "10px", opacity: 0 }}
+							>
+								{flags.map((flag, index) => (
+									<div className="relative flex flex-col justify-center items-center mb-1 mt-1" key={index}>
+										<Image
+											onClick={() => {
+												setTagLang(flag.tagLang);
+												setPlaying(false);
+												setMobLoaded(false);
+												pausePrevVideo();
+												router.push(
+													`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto/marc/${
+														currentProduct ? currentProduct.slugfr.current : router?.query?.slug?.replace(/-\w{2}$/, "") + flag.tagLang
+													}.mp4`
+												);
+											}}
+											className="hover:cursor-pointer transition-all duration-300"
+											src={flag.pic}
+											alt={flag.name}
+											width="35"
+											height="35"
+										/>
+										{tagLang == flag.tagLang && (
+											<motion.div
+												initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+												animate={{ y: 0, opacity: 1, scale: 1 }}
+												transition={{ duration: 0.5, ease: "easeOut" }}
+												exit={{ opacity: 0, scale: 0.1 }}
+												className="absolute top-[30px] w-[8px] h-[8px] bg-white rounded-full"
+											></motion.div>
+										)}
+									</div>
+								))}
+							</motion.div>
+						)}
+					</AnimatePresence>
+				) : (
+					<AnimatePresence>
+						{translate && (
+							<motion.div
+								className="absolute w-[60vw] right-[80px] bottom-0 top-0 p-3 flex flex-wrap justify-center items-center gap-3 bg-layout bg-opacity-70"
+								initial={{ x: "10px", opacity: 0 }}
+								animate={{ x: 0, opacity: 1 }}
+								transition={{ duration: 0.5, ease: "easeOut" }}
+								exit={{ x: "10px", opacity: 0 }}
+							>
+								{flags.map((flag, index) => (
+									<div className="relative flex flex-col justify-center items-center mb-1 mt-1" key={index}>
+										<Image
+											onClick={() => {
+												setTagLang(flag.tagLang);
+												setPlaying(false);
+												setMobLoaded(false);
+												pausePrevVideo();
+												router.push(currentProduct ? currentProduct.slugfr.current : router?.query?.slug?.replace(/-\w{2}$/, "") + flag.tagLang);
+											}}
+											className="hover:cursor-pointer transition-all duration-300"
+											src={flag.pic}
+											alt={flag.name}
+											width="35"
+											height="35"
+										/>
+										{tagLang == flag.tagLang && (
+											<motion.div
+												initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+												animate={{ y: 0, opacity: 1, scale: 1 }}
+												transition={{ duration: 0.5, ease: "easeOut" }}
+												exit={{ opacity: 0, scale: 0.1 }}
+												className="absolute top-[30px] w-[8px] h-[8px] bg-white rounded-full"
+											></motion.div>
+										)}
+									</div>
+								))}
+							</motion.div>
+						)}
+					</AnimatePresence>
+				)}
 			</div>
-
 			<div className="hidden lg:block">
 				<div className="flex gap-3 absolute bottom-10 right-10 items-center">
 					{!playing && (
