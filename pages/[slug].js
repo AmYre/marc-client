@@ -324,7 +324,7 @@ const DetailProduct = () => {
 												pausePrevVideo();
 												router.push(
 													`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto/marc/${
-														currentProduct ? currentProduct.slugfr.current : router?.query?.slug?.replace(/-\w{2}$/, "") + flag.tagLang
+														currentProduct ? currentProduct.slugfr.current : router?.query?.slug?.replace(/-\w{2}$/, "") + flag.mobtag
 													}.mp4`
 												);
 											}}
@@ -483,7 +483,7 @@ const DetailProduct = () => {
 												setPlaying(false);
 												setIsLoaded(false);
 												pausePrevVideo();
-												router.push(currentProduct ? currentProduct.slugfr.current : router?.query?.slug?.replace(/-\w{2}$/, "") + flag.mobtag);
+												router.push(currentProduct ? currentProduct.slugfr.current : router?.query?.slug?.replace(/-\w{2}$/, "") + flag.tagLang);
 											}}
 											className="hover:cursor-pointer transition-all duration-300"
 											src={flag.pic}
