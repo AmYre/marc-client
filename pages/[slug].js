@@ -483,7 +483,7 @@ const DetailProduct = () => {
 												setPlaying(false);
 												setIsLoaded(false);
 												pausePrevVideo();
-												router.push(currentProduct ? currentProduct.slugfr.current : router?.query?.slug?.replace(/-\w{2}$/, "") + flag.tagLang);
+												router.push(currentProduct ? currentProduct.slugfr.current : router?.query?.slug?.replace(/-\w{2}$/, "") + flag.mobtag);
 											}}
 											className="hover:cursor-pointer transition-all duration-300"
 											src={flag.pic}
