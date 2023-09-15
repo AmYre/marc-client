@@ -147,8 +147,8 @@ const DetailProduct = () => {
 					onCanPlay={() => setIsLoaded(true)}
 					poster={{ startOffset: "0" }}
 				>
-					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${slug}.mp4`} type="video/mp4" />
-					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto:low/marc/${slug}.webm`} type="video/webm" />
+					<source src={`https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/${slug}.mp4`} type="video/mp4" />
+					<source src={`https://res.cloudinary.com/amircloud/video/upload/q_auto:low/marc/${slug}.webm`} type="video/webm" />
 				</video>
 			),
 		[lang, slug, replay, isDesktop]
@@ -180,8 +180,8 @@ const DetailProduct = () => {
 					}}
 					poster={{ startOffset: "0" }}
 				>
-					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto/marc/${slug}-mob.mp4`} type="video/mp4" />
-					<source src={`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto:low/marc/${slug}-mob.webm`} type="video/webm" />
+					<source src={`https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/${slug}-mob.mp4`} type="video/mp4" />
+					<source src={`https://res.cloudinary.com/amircloud/video/upload/q_auto:low/marc/${slug}-mob.webm`} type="video/webm" />
 				</video>
 			),
 		[lang, slug, replay, isMobile]
@@ -320,7 +320,7 @@ const DetailProduct = () => {
 											onClick={() => {
 												setTagLang(flag.tagLang);
 												router.push(
-													`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto/marc/${
+													`https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/${
 														currentProduct ? currentProduct.slugfr.current + flag.mobtag : router?.query?.slug?.replace(/-\w{2}$/, "") + flag.mobtag
 													}.mp4`
 												);
