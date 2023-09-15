@@ -321,7 +321,7 @@ const DetailProduct = () => {
 												setTagLang(flag.tagLang);
 												router.push(
 													`https://res.cloudinary.com/amircloud/video/upload/f_auto:video,q_auto/marc/${
-														currentProduct ? currentProduct.slugfr.current : router?.query?.slug?.replace(/-\w{2}$/, "") + flag.mobtag
+														currentProduct ? currentProduct.slugfr.current + flag.mobtag : router?.query?.slug?.replace(/-\w{2}$/, "") + flag.mobtag
 													}.mp4`
 												);
 											}}
