@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { useGlobalContext } from "../components/GlobalContext";
 import { CloudinaryContext } from "cloudinary-react";
+import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
 import { sanityClient } from "../lib/sanityClient";
@@ -136,6 +137,7 @@ const DetailProduct = () => {
 						setEnded(true);
 						setPlaying(false);
 					}}
+					onCanPlayThrough={() => setIsLoaded(true)}
 					onCanPlay={() => setIsLoaded(true)}
 					poster={{ startOffset: "0" }}
 				>
@@ -164,10 +166,8 @@ const DetailProduct = () => {
 					}}
 					onCanPlayThrough={() => {
 						setMobLoaded(true);
-						console.log("first");
 					}}
 					onCanPlay={() => {
-						console.log("second");
 						setMobLoaded(true);
 					}}
 					poster={{ startOffset: "0" }}
@@ -420,20 +420,21 @@ const DetailProduct = () => {
 							>
 								{flags.map((flag, index) => (
 									<div className="relative flex flex-col justify-center items-center mb-2 mt-2" key={index}>
-										<Image
-											onClick={() => {
-												setTagLang(flag.tagLang);
-												setPlaying(false);
-												setIsLoaded(false);
-												pausePrevVideo();
-												router.push(currentProduct ? currentProduct.slugfr.current : router?.query?.slug?.replace(/-\w{2}$/, "") + flag.tagLang);
-											}}
-											className="hover:cursor-pointer transition-all duration-300"
-											src={flag.pic}
-											alt={flag.name}
-											width="30"
-											height="30"
-										/>
+										<Link href={`${currentProduct ? currentProduct.slugfr.current : router?.query?.slug?.replace(/-\w{2}$/, "")}${flag.tagLang}`}>
+											<Image
+												onClick={() => {
+													setTagLang(flag.tagLang);
+													setPlaying(false);
+													setIsLoaded(false);
+													pausePrevVideo();
+												}}
+												className="hover:cursor-pointer transition-all duration-300"
+												src={flag.pic}
+												alt={flag.name}
+												width="30"
+												height="30"
+											/>
+										</Link>
 										{tagLang == flag.tagLang && (
 											<motion.div
 												initial={{ y: "50%", opacity: 0, scale: 0.5 }}
