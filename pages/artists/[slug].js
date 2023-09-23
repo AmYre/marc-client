@@ -145,6 +145,15 @@ const DetailArtist = ({ vignette }) => {
 	);
 };
 
+export const getStaticPaths = async () => {
+	const artists = await sanityClient.fetch(`*[_type == "artists"]`);
+	const slugs = await artists.map((artist) => artist.slug.current);
+	return {
+		paths: slugs.map((slug) => ({ params: { slug } })),
+		fallback: false,
+	};
+};
+
 export const getStaticProps = async () => {
 	const vignette = await sanityClient.fetch(`*[_type=="walls" && title == 'vignette']{...}`);
 
