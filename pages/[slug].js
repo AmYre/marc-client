@@ -454,4 +454,24 @@ const DetailProduct = () => {
 	);
 };
 
+export const getStaticPaths = async () => {
+	const products = await sanityClient.fetch(`*[_type == "products"]`);
+	const slugs = await products.map((product) => product.slugfr.current);
+	console.log(slugs);
+	return {
+		paths: slugs.map((slug) => ({ params: { slug } })),
+		fallback: false,
+	};
+};
+
+export const getStaticProps = async () => {
+	const vignette = await sanityClient.fetch(`*[_type=="walls" && title == 'vignette']{...}`);
+
+	return {
+		props: {
+			vignette,
+		},
+	};
+};
+
 export default DetailProduct;
