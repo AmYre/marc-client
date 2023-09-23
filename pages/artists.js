@@ -20,8 +20,6 @@ const ArtistPage = ({ artists, vignette }) => {
 				<meta name="keywords" content="Marc Maison 19ème, Oeuvres 19ème, Artistes du 19ème siècle" />
 				<meta name="author" content="Galerie Marc Maison" />
 				<link rel="icon" href="/favicon.ico" />
-				<link rel="alternate" href="/" hrefLang="x-default" />
-				<link rel="alternate" href="/" hrefLang="fr" />
 				<meta property="og:title" content="MarcMaison.Art | Explorez les merveilles de l'art du 19ème siècle" />
 				<meta
 					property="og:description"
@@ -49,7 +47,7 @@ const ArtistPage = ({ artists, vignette }) => {
 	);
 };
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
 	const artists = await sanityClient.fetch(`*[_type == "artists" && slug.current != 'hotel-particulier'] | order(title asc)`);
 	const vignette = await sanityClient.fetch(`*[_type=="walls" && title == 'vignette']{...}`);
 

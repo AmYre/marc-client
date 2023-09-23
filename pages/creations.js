@@ -27,8 +27,6 @@ const Creations = ({ products, vignette }) => {
 				<meta name="keywords" content="Marc Maison 19ème, Oeuvres 19ème, Vidéo documenté avec audio en plusieurs langues" />
 				<meta name="author" content="Galerie Marc Maison" />
 				<link rel="icon" href="/favicon.ico" />
-				<link rel="alternate" href="/" hrefLang="x-default" />
-				<link rel="alternate" href="/" hrefLang="fr" />
 				<meta property="og:title" content="MarcMaison.Art | Notre galerie vidéos avant-gardiste des oeuvres du 19ème" />
 				<meta
 					property="og:description"
@@ -57,7 +55,7 @@ const Creations = ({ products, vignette }) => {
 	);
 };
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
 	const products = await sanityClient.fetch(`*[_type=="products" && references(*[_type=="category" && slug.current != 'sold']._id)] | order(_updatedAt desc) {..., category->}`);
 	const vignette = await sanityClient.fetch(`*[_type=="walls" && title == 'vignette']{...}`);
 

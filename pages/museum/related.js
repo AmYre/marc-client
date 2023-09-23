@@ -1,26 +1,26 @@
-import React, { useState } from "react"
-import { useGlobalContext } from "../../components/GlobalContext"
+import React, { useState } from "react";
+import { useGlobalContext } from "../../components/GlobalContext";
 
-import Link from "next/link"
-import Image from "next/image"
-import Masonry from "react-masonry-css"
+import Link from "next/link";
+import Image from "next/image";
+import Masonry from "react-masonry-css";
 
-import { motion } from "framer-motion"
-import { sanityClient } from "../../lib/sanityClient"
-import imageUrlBuilder from "@sanity/image-url"
+import { motion } from "framer-motion";
+import { sanityClient } from "../../lib/sanityClient";
+import imageUrlBuilder from "@sanity/image-url";
 
-import Nav from "../../components/Nav"
-import NavBar from "../../components/NavBar"
+import Nav from "../../components/Nav";
+import NavBar from "../../components/NavBar";
 
 const Related = ({ products, vignette }) => {
-	const { lang, setLang, isOpen, setIsOpen, texts, setTexts } = useGlobalContext()
+	const { lang, setLang, isOpen, setIsOpen, texts, setTexts } = useGlobalContext();
 
-	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })
+	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" });
 
 	const urlFor = (source) => {
-		return imageBuilder.image(source)
-	}
-	const vig = urlFor(vignette[0].image).url()
+		return imageBuilder.image(source);
+	};
+	const vig = urlFor(vignette[0].image).url();
 
 	return (
 		<div className={`flex ${isOpen ? "h-screen overflow-hidden" : "min-h-screen"} md:gap-8 bg-bg md:p-12`}>
@@ -44,7 +44,8 @@ const Related = ({ products, vignette }) => {
 											initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
 											animate={{ y: 0, opacity: 1, scale: 1, borderRadius: "50%" }}
 											transition={{ duration: 0.5, ease: "easeOut" }}
-											exit={{ opacity: 0, scale: 0.1 }}>
+											exit={{ opacity: 0, scale: 0.1 }}
+										>
 											{product?.slugfr && (
 												<Link key={index} href={`/${product.slugfr.current}`}>
 													<div className="vig-wrapper relative w-full overflow-hidden mb-8">
@@ -76,7 +77,8 @@ const Related = ({ products, vignette }) => {
 											initial={{ y: "50%", opacity: 0, scale: 0.5, borderRadius: "1000%" }}
 											animate={{ y: 0, opacity: 1, scale: 1, borderRadius: "50%" }}
 											transition={{ duration: 0.5, ease: "easeOut" }}
-											exit={{ opacity: 0, scale: 0.1 }}>
+											exit={{ opacity: 0, scale: 0.1 }}
+										>
 											{product?.slugfr && (
 												<Link key={index} href={`/${product.slugfr.current}`}>
 													<div className="w-full overflow-hidden">
@@ -107,19 +109,19 @@ const Related = ({ products, vignette }) => {
 				</div>
 			</main>
 		</div>
-	)
-}
+	);
+};
 
-export const getServerSideProps = async () => {
-	const products = await sanityClient.fetch(`*[_type=="products" && references(*[_type=="category" && slug.current == 'museum']._id)] | order(_updatedAt desc) {..., category->}`)
-	const vignette = await sanityClient.fetch(`*[_type=="walls" && title == 'vignette']{...}`)
+export const getStaticProps = async () => {
+	const products = await sanityClient.fetch(`*[_type=="products" && references(*[_type=="category" && slug.current == 'museum']._id)] | order(_updatedAt desc) {..., category->}`);
+	const vignette = await sanityClient.fetch(`*[_type=="walls" && title == 'vignette']{...}`);
 
 	return {
 		props: {
 			products,
 			vignette,
 		},
-	}
-}
+	};
+};
 
-export default Related
+export default Related;

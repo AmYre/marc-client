@@ -187,7 +187,6 @@ const DetailProduct = () => {
 				<meta name="keywords" content={`Marc Maison 19ème, Oeuvres 19ème, ${currentProduct ? currentProduct.slugfr.current : router?.query?.slug}`} />
 				<meta name="author" content="Galerie Marc Maison" />
 				<link rel="icon" href="/favicon.ico" />
-				<link rel="canonical" href={router?.query?.slug} hrefLang="fr" />
 				<meta property="og:title" content={`MarcMaisonArt | ${currentProduct ? currentProduct.slugfr.current : router?.query?.slug}`} />
 				<meta property="og:description" content={localProduct ? toPlainText(localProduct.description[lang]) : router?.query?.slug} />
 				<meta property="og:image" content="./logo.png" />

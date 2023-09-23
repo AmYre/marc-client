@@ -66,7 +66,6 @@ const DetailArtist = ({ vignette }) => {
 				<meta name="keywords" content={`${artist ? artist.title : router?.query?.slug} Marc Maison 19ème, Oeuvres 19ème, Artistes du 19ème siècle`} />
 				<meta name="author" content="Galerie Marc Maison" />
 				<link rel="icon" href="/favicon.ico" />
-				<link rel="canonical" href={`/artists/${router?.query?.slug}`} />
 				<meta property="og:title" content={`MarcMaison.Art | ${artist ? artist.title : router?.query?.slug}`} />
 				<meta property="og:description" content={artist ? toPlainText(artist.description[lang]) : router?.query?.slug} />
 				<meta property="og:image" content="./logo.png" />
@@ -146,7 +145,7 @@ const DetailArtist = ({ vignette }) => {
 	);
 };
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
 	const vignette = await sanityClient.fetch(`*[_type=="walls" && title == 'vignette']{...}`);
 
 	return {
