@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import { MdEuro } from "react-icons/md";
 import { GiSpeaker, GiSpeakerOff } from "react-icons/gi";
 import { BsTranslate } from "react-icons/bs";
+import { FaPlay } from "react-icons/fa";
 import { AnimatePresence } from "framer-motion";
 
 import Nav from "../components/Nav";
@@ -44,6 +45,7 @@ const DetailProduct = () => {
 	const [mobLoaded, setMobLoaded] = useState(false);
 	const [isDesktop, setIsDesktop] = useState(false);
 	const [isMobile, setIsMobile] = useState(false);
+	const [isPaused, setIsPaused] = useState(false);
 	const [localProduct, setLocalProduct] = useState();
 
 	const router = useRouter();
@@ -250,7 +252,18 @@ const DetailProduct = () => {
 						</div>
 					</div>
 				)}
-
+				{console.log("test", vRefDesk?.current?.paused)}
+				{isPaused && (
+					<div
+						onClick={() => {
+							vRefDesk.current.play();
+							setIsPaused(false);
+						}}
+						className="absolute z-[9999] top-[50%] right-[50%] w-[80px] h-[80px] m-auto bg-yellow rounded-full border-2 border-white p-2 opacity-95 flex items-center justify-center"
+					>
+						<FaPlay role="button" aria-label="Sound" className="text-5xl text-white pl-2 hover:scale-110 transition-all duration-300 cursor-pointer" />
+					</div>
+				)}
 				<CloudinaryContext cloud_name="amircloud" secure={true}>
 					{videoDesktop}
 				</CloudinaryContext>
@@ -308,7 +321,6 @@ const DetailProduct = () => {
 								<div className="relative flex flex-col justify-center items-center mb-1 mt-1" key={index}>
 									<Image
 										onClick={() => {
-											setTagLang(flag.tagLang);
 											router.push(`https://res.cloudinary.com/amircloud/video/upload/marc/${router?.query?.slug?.replace(/-\w{2}$/, "") + flag.mobtag}.mp4`);
 										}}
 										className="hover:cursor-pointer transition-all duration-300"
@@ -317,7 +329,7 @@ const DetailProduct = () => {
 										width="35"
 										height="35"
 									/>
-									{tagLang == flag.tagLang && (
+									{/* 						{tagLang == flag.tagLang && (
 										<motion.div
 											initial={{ y: "50%", opacity: 0, scale: 0.5 }}
 											animate={{ y: 0, opacity: 1, scale: 1 }}
@@ -325,7 +337,7 @@ const DetailProduct = () => {
 											exit={{ opacity: 0, scale: 0.1 }}
 											className="absolute top-[30px] w-[8px] h-[8px] bg-white rounded-full"
 										></motion.div>
-									)}
+									)} */}
 								</div>
 							))}
 						</motion.div>
@@ -419,18 +431,20 @@ const DetailProduct = () => {
 							>
 								{flags.map((flag, index) => (
 									<div className="relative flex flex-col justify-center items-center mb-2 mt-2" key={index}>
-										<Image
-											onClick={() => {
-												setTagLang(flag.tagLang);
-												router.push(`https://res.cloudinary.com/amircloud/video/upload/marc/${router?.query?.slug?.replace(/-\w{2}$/, "") + flag.tagLang}.mp4`);
-											}}
-											className="hover:cursor-pointer transition-all duration-300"
-											src={flag.pic}
-											alt={flag.name}
-											width="30"
-											height="30"
-										/>
-										{tagLang == flag.tagLang && (
+										<Link href={`https://res.cloudinary.com/amircloud/video/upload/marc/${router?.query?.slug?.replace(/-\w{2}$/, "") + flag.tagLang}.mp4`} target="_blank">
+											<Image
+												onClick={() => {
+													vRefDesk.current.pause();
+													setIsPaused(true);
+												}}
+												className="hover:cursor-pointer transition-all duration-300"
+												src={flag.pic}
+												alt={flag.name}
+												width="30"
+												height="30"
+											/>
+										</Link>
+										{/* 					{tagLang == flag.tagLang && (
 											<motion.div
 												initial={{ y: "50%", opacity: 0, scale: 0.5 }}
 												animate={{ y: 0, opacity: 1, scale: 1 }}
@@ -438,7 +452,7 @@ const DetailProduct = () => {
 												exit={{ opacity: 0, scale: 0.1 }}
 												className="absolute top-[30px] w-[8px] h-[8px] bg-white rounded-full"
 											></motion.div>
-										)}
+										)} */}
 									</div>
 								))}
 							</motion.div>
