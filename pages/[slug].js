@@ -419,21 +419,17 @@ const DetailProduct = () => {
 							>
 								{flags.map((flag, index) => (
 									<div className="relative flex flex-col justify-center items-center mb-2 mt-2" key={index}>
-										<Link href={`${currentProduct ? currentProduct.slugfr.current : router?.query?.slug?.replace(/-\w{2}$/, "")}${flag.tagLang}`}>
-											<Image
-												onClick={() => {
-													setTagLang(flag.tagLang);
-													setPlaying(false);
-													setIsLoaded(false);
-													pausePrevVideo();
-												}}
-												className="hover:cursor-pointer transition-all duration-300"
-												src={flag.pic}
-												alt={flag.name}
-												width="30"
-												height="30"
-											/>
-										</Link>
+										<Image
+											onClick={() => {
+												setTagLang(flag.tagLang);
+												router.push(`https://res.cloudinary.com/amircloud/video/upload/marc/${router?.query?.slug?.replace(/-\w{2}$/, "") + flag.tagLang}.mp4`);
+											}}
+											className="hover:cursor-pointer transition-all duration-300"
+											src={flag.pic}
+											alt={flag.name}
+											width="30"
+											height="30"
+										/>
 										{tagLang == flag.tagLang && (
 											<motion.div
 												initial={{ y: "50%", opacity: 0, scale: 0.5 }}
