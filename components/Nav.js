@@ -101,7 +101,6 @@ const Nav = ({ isProduct, vRefHome, vRefHomeMob }) => {
 								<Image
 									onClick={() => {
 										setLang("en");
-										setTagLang("-en");
 									}}
 									className="hover:cursor-pointer"
 									src={flagEN}
@@ -112,7 +111,6 @@ const Nav = ({ isProduct, vRefHome, vRefHomeMob }) => {
 								<Image
 									onClick={() => {
 										setLang("cn");
-										setTagLang("-cn");
 									}}
 									className="hover:cursor-pointer"
 									src={flagCN}

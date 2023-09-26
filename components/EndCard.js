@@ -1,51 +1,51 @@
-import React, { useRef, useState, useEffect } from "react"
-import { useGlobalContext } from "../components/GlobalContext"
-import { sanityClient } from "../lib/sanityClient"
-import { useRouter } from "next/router"
-import imageUrlBuilder from "@sanity/image-url"
-import { motion } from "framer-motion"
-import Image from "next/image"
-import Link from "next/link"
+import React, { useRef, useState, useEffect } from "react";
+import { useGlobalContext } from "../components/GlobalContext";
+import { sanityClient } from "../lib/sanityClient";
+import { useRouter } from "next/router";
+import imageUrlBuilder from "@sanity/image-url";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 
-import { MutatingDots } from "react-loader-spinner"
-import TextField from "@mui/material/TextField"
-import emailjs from "@emailjs/browser"
+import { MutatingDots } from "react-loader-spinner";
+import TextField from "@mui/material/TextField";
+import emailjs from "@emailjs/browser";
 
-import ImgLoader from "./ImgLoader"
+import ImgLoader from "./ImgLoader";
 
-import { AiOutlineCloseCircle } from "react-icons/ai"
-import { IoMdRefreshCircle } from "react-icons/io"
+import { AiOutlineCloseCircle } from "react-icons/ai";
+import { IoMdRefreshCircle } from "react-icons/io";
 
-import cnes from "../public/cnes.png"
-import cefa from "../public/cefa.png"
-import flages from "../public/es.png"
-import flagpo from "../public/po.png"
-import flagkr from "../public/kr.png"
-import flagar from "../public/ar.png"
-import flagjp from "../public/jp.png"
-import flagit from "../public/it.png"
-import flagtu from "../public/tu.png"
-import flagru from "../public/ru.png"
-import logo from "../public/logo.png"
+import cnes from "../public/cnes.png";
+import cefa from "../public/cefa.png";
+import flages from "../public/es.png";
+import flagpo from "../public/po.png";
+import flagkr from "../public/kr.png";
+import flagar from "../public/ar.png";
+import flagjp from "../public/jp.png";
+import flagit from "../public/it.png";
+import flagtu from "../public/tu.png";
+import flagru from "../public/ru.png";
+import logo from "../public/logo.png";
 
 const EndCard = () => {
-	const { lang, setLang, texts, setTexts, ended, setEnded, replay, setReplay, currentProduct, setCurrentProduct } = useGlobalContext()
+	const { lang, setLang, texts, setTexts, ended, setEnded, replay, setReplay, currentProduct, setCurrentProduct } = useGlobalContext();
 
-	const [isOpen, setIsOpen] = useState(false)
-	const [products, setProducts] = useState()
-	const [related, setRelated] = useState()
-	const [currentLang, setCurrentLang] = useState()
-	const [sent, setSent] = useState()
-	const [dialog, setDialog] = useState(false)
-	const [delay, setDelay] = useState(false)
-	const form = useRef()
+	const [isOpen, setIsOpen] = useState(false);
+	const [products, setProducts] = useState();
+	const [related, setRelated] = useState();
+	const [currentLang, setCurrentLang] = useState();
+	const [sent, setSent] = useState();
+	const [dialog, setDialog] = useState(false);
+	const [delay, setDelay] = useState(false);
+	const form = useRef();
 
-	const router = useRouter()
-	const url = router.query.slug
+	const router = useRouter();
+	const url = router.query.slug;
 
 	const imageLoader = ({ src, width, quality }) => {
-		return `${src}?w=${width}&q=${quality || 75}`
-	}
+		return `${src}?w=${width}&q=${quality || 75}`;
+	};
 
 	let relatedLangs = [
 		{ name: "spanish", pic: flages, tag: "-es" },
@@ -56,48 +56,48 @@ const EndCard = () => {
 		{ name: "italian", pic: flagit, tag: "-it" },
 		{ name: "turkish", pic: flagtu, tag: "-tu" },
 		{ name: "russian", pic: flagru, tag: "-ru" },
-	]
+	];
 
 	const getVids = async () => {
-		const products = await sanityClient.fetch(`*[_type == "products"]`)
-		setProducts(products)
-		return products
-	}
+		const products = await sanityClient.fetch(`*[_type == "products"]`);
+		setProducts(products);
+		return products;
+	};
 
 	const getVidLang = async (lang) => {
-		setCurrentLang(lang)
-		setRelated(products.filter((product) => product.variants && product.variants.includes(lang)))
-	}
+		setCurrentLang(lang);
+		setRelated(products.filter((product) => product.variants && product.variants.includes(lang)));
+	};
 
 	useEffect(() => {
 		getVids().then((products) => {
-			setCurrentProduct(products.filter((product) => product.slugfr.current == url?.replace(/-\w{2}$/, ""))[0])
-		})
-	}, [])
+			setCurrentProduct(products.filter((product) => product.slugfr.current == url?.replace(/-\w{2}$/, ""))[0]);
+		});
+	}, []);
 
-	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" })
+	const imageBuilder = imageUrlBuilder({ projectId: "r1wp5yv2", dataset: "production" });
 
 	const urlFor = (source) => {
-		return imageBuilder.image(source)
-	}
+		return imageBuilder.image(source);
+	};
 
 	const sendEmail = (e) => {
-		setSent(true)
-		setDelay(true)
+		setSent(true);
+		setDelay(true);
 		setTimeout(() => {
-			setDelay(false)
-		}, 2000)
-		e.preventDefault()
+			setDelay(false);
+		}, 2000);
+		e.preventDefault();
 
 		emailjs.sendForm("service_kmun1ds", "template_kzoezx5", form.current, "mI6zt6KbO8qA65ye9").then(
 			(result) => {
-				console.log("Mail sent : ", result.text)
+				console.log("Mail sent : ", result.text);
 			},
 			(error) => {
-				console.log("Mail error : ", error.text)
+				console.log("Mail error : ", error.text);
 			}
-		)
-	}
+		);
+	};
 
 	return (
 		<>
@@ -106,7 +106,8 @@ const EndCard = () => {
 					initial={{ opacity: 0, scale: 0.5 }}
 					animate={{ opacity: 1, scale: 1 }}
 					transition={{ duration: 0.25 }}
-					className="absolute top-0 w-full h-full z-20 flex justify-around items-center bg-bg">
+					className="absolute top-0 w-full h-full z-20 flex justify-around items-center bg-bg"
+				>
 					<div className="w-screen h-screen flex flex-col justify-around items-center p-12 bg-layout">
 						<p className="text-white font-bold mt-6 text-center">{texts.formLang[lang]}</p>
 						<div className="flex flex-wrap justify-center items-center gap-4 mb-4">
@@ -114,8 +115,8 @@ const EndCard = () => {
 								<Image
 									key={index}
 									onClick={() => {
-										setIsOpen((prev) => !prev)
-										getVidLang(lang.tag)
+										setIsOpen((prev) => !prev);
+										getVidLang(lang.tag);
 									}}
 									className="hover:cursor-pointer"
 									src={lang.pic}
@@ -138,14 +139,15 @@ const EndCard = () => {
 								<IoMdRefreshCircle
 									className="bg-white rounded-full text-secondary hover:text-[#e2b250] transition-all duration-300 absolute text-gold text-[5vh] cursor-pointer opacity-90"
 									onClick={() => {
-										setEnded(false)
-										setReplay(Math.random() * (10 - 1) + 1)
+										setEnded(false);
+										setReplay(Math.random() * (10 - 1) + 1);
 									}}
 								/>
 							</div>
 							<div
 								onClick={() => setDialog(true)}
-								className="hover:bg-[#e2b250] bg-secondary text-white px-8 py-3 cursor-pointer shadow hover:shadow-none transition-all duration-300 border-white border-2">
+								className="hover:bg-[#e2b250] bg-secondary text-white px-8 py-3 cursor-pointer shadow hover:shadow-none transition-all duration-300 border-white border-2"
+							>
 								{texts.report[lang]}
 							</div>
 						</div>
@@ -166,7 +168,8 @@ const EndCard = () => {
 						initial={{ opacity: 0, scale: 0.5 }}
 						animate={{ opacity: 1, scale: 1 }}
 						transition={{ duration: 0.25 }}
-						className="absolute top-0 w-full h-full z-30 flex flex-col gap-10 justify-center items-center bg-layout bg-opacity-95 p-6 overflow-y-scroll">
+						className="absolute top-0 w-full h-full z-30 flex flex-col gap-10 justify-center items-center bg-layout bg-opacity-95 p-6 overflow-y-scroll"
+					>
 						<AiOutlineCloseCircle className="text-white text-3xl cursor-pointer bg-secondary rounded-full mt-6" onClick={() => setIsOpen(false)} />
 						<div className="flex flex-wrap justify-center items-center gap-4">
 							{currentProduct && (
@@ -174,10 +177,12 @@ const EndCard = () => {
 									initial={{ y: "50%", opacity: 0, scale: 0.5 }}
 									animate={{ y: 0, opacity: 1, scale: 1 }}
 									transition={{ duration: 0.5, ease: "easeOut" }}
-									exit={{ opacity: 0, scale: 0.1 }}>
+									exit={{ opacity: 0, scale: 0.1 }}
+								>
 									<Link
 										target="_blank"
-										href={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${currentProduct?.slugfr?.current.replace(/-mob/g, "")}${currentLang}-mob.mp4`}>
+										href={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${currentProduct?.slugfr?.current.replace(/-mob/g, "")}${currentLang}-mob.mp4`}
+									>
 										<div className="h-[80px] w-[80px] overflow-hidden">
 											<Image
 												className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
@@ -200,10 +205,12 @@ const EndCard = () => {
 											initial={{ y: "50%", opacity: 0, scale: 0.5 }}
 											animate={{ y: 0, opacity: 1, scale: 1 }}
 											transition={{ duration: 0.5, ease: "easeOut" }}
-											exit={{ opacity: 0, scale: 0.1 }}>
+											exit={{ opacity: 0, scale: 0.1 }}
+										>
 											<Link
 												target="_blank"
-												href={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${product.slugfr.current.replace(/-mob/g, "")}${currentLang}-mob.mp4`}>
+												href={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${product.slugfr.current.replace(/-mob/g, "")}${currentLang}-mob.mp4`}
+											>
 												<div className="h-[80px] w-[80px] overflow-hidden">
 													<Image
 														className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
@@ -227,7 +234,8 @@ const EndCard = () => {
 						initial={{ opacity: 0, scale: 0.5 }}
 						animate={{ opacity: 1, scale: 1 }}
 						transition={{ duration: 0.25 }}
-						className="absolute top-0 w-full h-full z-30 flex justify-center items-center bg-layout">
+						className="absolute top-0 w-full h-full z-30 flex justify-center items-center bg-layout"
+					>
 						<div onClick={() => setDialog(false)} className="absolute top-[10vh]">
 							<AiOutlineCloseCircle className="text-white text-3xl cursor-pointer mt-12 mb-4" />
 						</div>
@@ -272,7 +280,8 @@ const EndCard = () => {
 								initial={{ y: "50%", opacity: 0, scale: 0.5 }}
 								animate={{ y: 0, opacity: 1, scale: 1 }}
 								transition={{ duration: 0.5, ease: "easeOut" }}
-								exit={{ opacity: 0, scale: 0.1 }}>
+								exit={{ opacity: 0, scale: 0.1 }}
+							>
 								{texts.confirm[lang]}
 							</motion.div>
 						)}
@@ -284,15 +293,21 @@ const EndCard = () => {
 					initial={{ opacity: 0, scale: 0.5 }}
 					animate={{ opacity: 1, scale: 1 }}
 					transition={{ duration: 0.25 }}
-					className="absolute top-0 w-full h-full z-20 flex justify-center items-center bg-layout">
+					className="absolute top-0 w-full h-full z-20 flex justify-center items-center bg-layout"
+				>
 					<div className="w-fit h-fit p-12 bg-layout">
 						<div>
 							<div className="flex flex-col justify-center items-center">
 								<h1 className="mb-0 pb-0 text-[2rem] text-gray-200 pt-6 px-6 font-bodoni tracking-wide">Galerie Marc Maison</h1>
 								<h2 className="font-splash text-[#c49d50] text-[1.3rem] tracking-wide pb-4 text-gold">- 19ème -</h2>
-								<Link href="/creations" onClick={() => setEnded(false)} className="absolute right-[50px] top-0">
+								<div
+									onClick={() => {
+										setEnded(false);
+									}}
+									className="absolute right-[50px] top-0"
+								>
 									<AiOutlineCloseCircle className="text-white text-3xl cursor-pointer mt-12 mb-4 bg-secondary rounded-full" />
-								</Link>
+								</div>
 							</div>
 						</div>
 						<p className="text-white text-xl font-thin mb-4 text-center">{texts.formLang[lang]}</p>
@@ -302,8 +317,8 @@ const EndCard = () => {
 								<Image
 									key={index}
 									onClick={() => {
-										setIsOpen((prev) => !prev)
-										getVidLang(lang.tag)
+										setIsOpen((prev) => !prev);
+										getVidLang(lang.tag);
 									}}
 									className="hover:cursor-pointer"
 									src={lang.pic}
@@ -326,14 +341,15 @@ const EndCard = () => {
 								<IoMdRefreshCircle
 									className="bg-white rounded-full text-secondary hover:text-[#e2b250] transition-all duration-300 absolute text-gold text-8xl cursor-pointer opacity-90"
 									onClick={() => {
-										setEnded(false)
-										setReplay(Math.random() * (10 - 1) + 1)
+										setEnded(false);
+										setReplay(Math.random() * (10 - 1) + 1);
 									}}
 								/>
 							</div>
 							<div
 								onClick={() => setDialog(true)}
-								className="hover:bg-[#e2b250] bg-secondary text-white px-8 py-4 cursor-pointer shadow hover:shadow-none transition-all duration-300 border-white border-2">
+								className="hover:bg-[#e2b250] bg-secondary text-white px-8 py-4 cursor-pointer shadow hover:shadow-none transition-all duration-300 border-white border-2"
+							>
 								{texts.report[lang]}
 							</div>
 						</div>
@@ -375,7 +391,8 @@ const EndCard = () => {
 						initial={{ opacity: 0, scale: 0.5 }}
 						animate={{ opacity: 1, scale: 1 }}
 						transition={{ duration: 0.25 }}
-						className="absolute top-0 w-full h-full z-30 flex flex-col justify-center items-center bg-layout bg-opacity-9 overflow-scroll-y p-8">
+						className="absolute top-0 w-full h-full z-30 flex flex-col justify-center items-center bg-layout bg-opacity-9 overflow-scroll-y p-8"
+					>
 						<AiOutlineCloseCircle className="text-white text-3xl cursor-pointer bg-secondary mb-4 rounded-full" onClick={() => setIsOpen(false)} />
 
 						<div className="flex flex-wrap justify-center items-center gap-10">
@@ -385,7 +402,8 @@ const EndCard = () => {
 									animate={{ y: 0, opacity: 1, scale: 1 }}
 									transition={{ duration: 0.5, ease: "easeOut" }}
 									exit={{ opacity: 0, scale: 0.1 }}
-									className="mb-8">
+									className="mb-8"
+								>
 									<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${currentProduct.slugfr.current}${currentLang}.mp4`}>
 										<div className="h-[100px] w-[100px] overflow-hidden">
 											<Image
@@ -413,7 +431,8 @@ const EndCard = () => {
 											animate={{ y: 0, opacity: 1, scale: 1 }}
 											transition={{ duration: 0.5, ease: "easeOut" }}
 											exit={{ opacity: 0, scale: 0.1 }}
-											className="mb-8">
+											className="mb-8"
+										>
 											<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${product.slugfr.current}${currentLang}.mp4`}>
 												<div className="h-[100px] w-[100px] overflow-hidden">
 													<Image
@@ -441,7 +460,8 @@ const EndCard = () => {
 						initial={{ opacity: 0, scale: 0.5 }}
 						animate={{ opacity: 1, scale: 1 }}
 						transition={{ duration: 0.25 }}
-						className="absolute top-0 w-full h-full z-30 flex justify-center items-center bg-layout">
+						className="absolute top-0 w-full h-full z-30 flex justify-center items-center bg-layout"
+					>
 						<div onClick={() => setDialog(false)} className="absolute right-[50px] top-0">
 							<AiOutlineCloseCircle className="text-white text-3xl cursor-pointer mt-12 mb-4" />
 						</div>
@@ -486,7 +506,8 @@ const EndCard = () => {
 								initial={{ y: "50%", opacity: 0, scale: 0.5 }}
 								animate={{ y: 0, opacity: 1, scale: 1 }}
 								transition={{ duration: 0.5, ease: "easeOut" }}
-								exit={{ opacity: 0, scale: 0.1 }}>
+								exit={{ opacity: 0, scale: 0.1 }}
+							>
 								{texts.confirm[lang]}
 							</motion.div>
 						)}
@@ -494,7 +515,7 @@ const EndCard = () => {
 				)}
 			</div>
 		</>
-	)
-}
+	);
+};
 
-export default EndCard
+export default EndCard;

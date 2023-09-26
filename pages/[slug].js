@@ -252,14 +252,13 @@ const DetailProduct = () => {
 						</div>
 					</div>
 				)}
-				{console.log("test", vRefDesk?.current?.paused)}
 				{isPaused && (
 					<div
 						onClick={() => {
 							vRefDesk.current.play();
 							setIsPaused(false);
 						}}
-						className="absolute z-[9999] top-[50%] right-[50%] w-[80px] h-[80px] m-auto bg-yellow rounded-full border-2 border-white p-2 opacity-95 flex items-center justify-center"
+						className="absolute z-[20] top-[50%] right-[47%] w-[80px] h-[80px] m-auto bg-yellow rounded-full border-2 border-white p-2 opacity-95 flex items-center justify-center"
 					>
 						<FaPlay role="button" aria-label="Sound" className="text-5xl text-white pl-2 hover:scale-110 transition-all duration-300 cursor-pointer" />
 					</div>
@@ -285,7 +284,7 @@ const DetailProduct = () => {
 						onClick={() => {
 							setEnded(true);
 							setPlaying(false);
-							isDesktop ? (vRefDesk.current.muted = true) : (vRefMob.current.muted = true);
+							vRefMob.current.muted = true;
 						}}
 						className="text-2xl text-amber-700 hover:scale-110 transition-all duration-300 cursor-pointer"
 					/>
@@ -386,8 +385,8 @@ const DetailProduct = () => {
 							<MdEuro
 								onClick={() => {
 									setEnded(true);
-									setPlaying(false);
-									isDesktop ? (vRefDesk.current.muted = true) : (vRefMob.current.muted = true);
+									vRefDesk.current.pause();
+									setIsPaused(true);
 								}}
 								className="text-2xl text-amber-600 hover:scale-110 transition-all duration-300 cursor-pointer"
 							/>
