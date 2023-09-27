@@ -14,7 +14,7 @@ import emailjs from "@emailjs/browser";
 import ImgLoader from "./ImgLoader";
 
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import { IoMdRefreshCircle } from "react-icons/io";
+import { TiArrowBack } from "react-icons/ti";
 
 import cnes from "../public/cnes.png";
 import cefa from "../public/cefa.png";
@@ -136,11 +136,10 @@ const EndCard = () => {
 							</Link>
 							<div className="relative flex justify-center items-center">
 								<Image src={logo} alt="Logo Marc Maison" className="w-[20vh]" width="50" height="50" />
-								<IoMdRefreshCircle
+								<TiArrowBack
 									className="bg-white rounded-full text-secondary hover:text-[#e2b250] transition-all duration-300 absolute text-gold text-[5vh] cursor-pointer opacity-90"
 									onClick={() => {
 										setEnded(false);
-										setReplay(Math.random() * (10 - 1) + 1);
 									}}
 								/>
 							</div>
@@ -338,11 +337,10 @@ const EndCard = () => {
 							</Link>
 							<div className="relative flex justify-center items-center">
 								<Image src={logo} alt="Logo Marc Maison" />
-								<IoMdRefreshCircle
+								<TiArrowBack
 									className="bg-white rounded-full text-secondary hover:text-[#e2b250] transition-all duration-300 absolute text-gold text-8xl cursor-pointer opacity-90"
 									onClick={() => {
 										setEnded(false);
-										setReplay(Math.random() * (10 - 1) + 1);
 									}}
 								/>
 							</div>
