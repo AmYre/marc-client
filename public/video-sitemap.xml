@@ -1,1335 +1,1662 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 
-<url>
-  <loc>https://marcmaison.art/</loc>
-  <video:video>
-       <video:thumbnail_loc>https://res.cloudinary.com/amircloud/image/upload/marc/home-thumbnail.png</video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Oeuvres du 19ème</video:title>
-       <video:description>
-        Plongez dans une collection captivante de vidéos présentant des chefs-d'œuvre emblématiques du 19ème siècle.</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/marc/home.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/marc/home.mp4
-       </video:player_loc>
-       <video:duration>437</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/pierre-adrien-dalpayrat-1896</loc>
+  <url>
+    <loc>https://marcmaison.art/</loc>
     <video:video>
-       <video:thumbnail_loc>https://res.cloudinary.com/amircloud/image/upload/marc/pierre-adrien-dalpayrat-1896.png</video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Une œuvre prodigieuse de Pierre-Adrien Dalpayrat</video:title>
-       <video:description>
-        Très rare, notre jardinière est l’œuvre d’Adrien Dalpayrat, l’un des plus grands céramistes européens de la fin du XIXe siècle. Elle porte sa marque, une grenade éclatée, en creux sous la base.,
-,Le style de cette pièce répond pleinement à l’esthétique symboliste de la Belle Epoque.,
-,Contemporaine de La Vague de Camille Claudel, elle précède les esquisses symphoniques de Debussy en 1905 (La Mer).,
-,Dalpayrat était réputé pour ses créations inspirées par les formes animalières et naturelles d’une grande originalité, d’une invention chimérique et foisonnante.,
-,Sa notoriété tient aussi à sa maîtrise exceptionnelle du grès flammé et de la teinte rouge qu’il emploie, dit « Rouge Dalpayrat ».,
-,Plus qu’un simple vase, notre jardinière est une composition sculpturale en hommage aux mouvements de la mer.,
-,Le céramiste magnifie le tourbillon des vagues et de l’écume, qui met à découvert un beau crabe marin traité en haut-relief.,
-,Le mariage entre les couleurs vert et noir des flots océaniques et le rouge lumineux du crabe est d’une grande virtuosité.,
-,Notre jardinière formait la pièce maîtresse d’une garniture de cheminée, comptant également deux vases. L’un se trouve au Saint Louis Art Museum et le second dans une collection privée.,
-,Cet ensemble fut publié dans La Revue Illustrée le 15 juin 1896. Le modèle de notre jardinière fut exposé au Salon de la Société Nationale des Beaux-Arts en 1898.,
-,Modèles en plâtre ayant servi pour notre garniture.</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/pierre-adrien-dalpayrat-1896.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/pierre-adrien-dalpayrat-1896.mp4
-       </video:player_loc>
-       <video:duration>214</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://marcmaison.art/andre-fernand-thesmar-et-barbedienne-1873</loc>
+      <video:thumbnail_loc>https://res.cloudinary.com/amircloud/image/upload/marc/home-thumbnail.png</video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Oeuvres du 19ème</video:title>
+      <video:description>
+        Plongez dans une collection captivante de vidéos présentant des chefs-d'œuvre emblématiques
+        du 19ème siècle.</video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/marc/home.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/marc/home.mp4
+      </video:player_loc>
+      <video:duration>437</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/pierre-adrien-dalpayrat-1896</loc>
     <video:video>
-       <video:thumbnail_loc>https://res.cloudinary.com/amircloud/image/upload/marc/Andre-Fernand-Thesmar-et-Barbedienne-1873.png</video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Le chef-d’œuvre japonisant de André-Fernand Thesmar et Barbedienne</video:title>
-       <video:description>
-        Pièce rarissime, ce grand vase est l’œuvre d’André-Fernand Thesmar. Il fut réalisé en 1873.,Thesmar est un peintre et émailleur français travaillant pour la Fonderie Barbedienne. En 1875, il est honoré de la médaille d’or de l’Union centrale des arts décoratifs.,Le nom de Barbedienne est, quant à lui, un monument dans l’histoire de la fonderie d’art (petits bronze d’édition et objets décoratifs).,De forme ovoïdale et de taille impressionnante, ce vase est une prouesse technique. La cuisson d’une pièce de cette ampleur dans un four est extrêmement difficile.,Son décor japonisant est d’une grande magnificence. Il représente des colverts et des libellules volant à fleur d’étang au milieu des roseaux et des fleurs de nénuphars.,Le bleu du ciel, par son rendu atmosphérique, offre des dégradés subtils tirant jusqu’au rose.,Thesmar utilise une technique proche de celle du cloisonné, s’inspirant de l’émaillage japonais. Elle demande une grande habilité et une profonde délicatesse.,A ce jour, nous pouvons affirmer qu’il s’agit d’une pièce unique, qui ne connaît aucun équivalent dans la production de Thesmar.,Sa rareté est confirmée par la signature complète de l’artiste en toutes lettres.,Un plat réalisé par Thesmar pour Barbedienne, exposé au Salon de 1875, présente un décor tout à fait similaire. Il est conservé au musée national de la Céramique de Sèvres.,
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/andre-fernand-thesmar-et-barbedienne-1873.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/andre-fernand-thesmar-et-barbedienne-1873.mp4
-       </video:player_loc>
-       <video:duration>203</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/charles-stanislas-matifat-1851</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/pierre-adrien-dalpayrat-1896.png</video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Une œuvre prodigieuse de Pierre-Adrien Dalpayrat</video:title>
+      <video:description>
+        Très rare, notre jardinière est l’œuvre d’Adrien Dalpayrat, l’un des plus grands céramistes
+        européens de la fin du XIXe siècle. Elle porte sa marque, une grenade éclatée, en creux sous
+        la base.,
+        ,Le style de cette pièce répond pleinement à l’esthétique symboliste de la Belle Epoque.,
+        ,Contemporaine de La Vague de Camille Claudel, elle précède les esquisses symphoniques de
+        Debussy en 1905 (La Mer).,
+        ,Dalpayrat était réputé pour ses créations inspirées par les formes animalières et
+        naturelles d’une grande originalité, d’une invention chimérique et foisonnante.,
+        ,Sa notoriété tient aussi à sa maîtrise exceptionnelle du grès flammé et de la teinte rouge
+        qu’il emploie, dit « Rouge Dalpayrat ».,
+        ,Plus qu’un simple vase, notre jardinière est une composition sculpturale en hommage aux
+        mouvements de la mer.,
+        ,Le céramiste magnifie le tourbillon des vagues et de l’écume, qui met à découvert un beau
+        crabe marin traité en haut-relief.,
+        ,Le mariage entre les couleurs vert et noir des flots océaniques et le rouge lumineux du
+        crabe est d’une grande virtuosité.,
+        ,Notre jardinière formait la pièce maîtresse d’une garniture de cheminée, comptant également
+        deux vases. L’un se trouve au Saint Louis Art Museum et le second dans une collection
+        privée.,
+        ,Cet ensemble fut publié dans La Revue Illustrée le 15 juin 1896. Le modèle de notre
+        jardinière fut exposé au Salon de la Société Nationale des Beaux-Arts en 1898.,
+        ,Modèles en plâtre ayant servi pour notre garniture.</video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/pierre-adrien-dalpayrat-1896.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/pierre-adrien-dalpayrat-1896.mp4
+      </video:player_loc>
+      <video:duration>214</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+
+  </url>
+  <url>
+    <loc>https://marcmaison.art/andre-fernand-thesmar-et-barbedienne-1873</loc>
     <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Charles_Stanislas_Matifat_1851.jpg</video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Un modèle orientalisant de Matifat présenté au Crystal Palace en 1851</video:title>
-       <video:description>
-        La pendule aux éléphants. Emblématique des créations de Charles Stanislas Matifat, cette spectaculaire pendule témoigne d’une inspiration orientalisante.,
-,Evoquant une architecture royale des Mille et une nuits, mêlant or et couleurs, elle se caractérise par ses deux éléphants ornant la base.,
-,Le modèle de cette pendule riche et précieuse fut présenté lors de la première exposition universelle, organisée à Londres en 1851.,
-,Il fut exposé sur le stand de Matifat au sein du prestigieux Crystal Palace. A cette occasion, Matifat fut récompensé par une médaille de 2e Classe.,
-,Charles Stanislas Matifat était loin d’être inconnu. Fondateur d’une fabrique et d’un magasin de bronzes décoratifs en 1820, il jouit d’une belle notoriété.,
-,Ses talents sont loués dans la presse, ainsi que par la commission française de l'Exposition de 1851.,
-,« M. Matifat s'est appliqué à chercher des formes nouvelles, variées et élégantes. Ce fabricant intelligent et d'un goût délicat apporte autant de soin dans l’exécution que dans le choix des modèles ».,
-,A ce moment, Matifat invente un procédé d’émail vitreux sur bronze, qui lui permettra de créer des décors d’une grande finesse.,
-,Charles Stanislas Matifat présenta ses créations à l’occasion d’autre expositions internationales ou universelles, toujours élégantes, gracieuses et d’une grande délicatesse d’exécution.,
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/charles-stanislas-matifat-1851.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/charles-stanislas-matifat-1851.mp4
-       </video:player_loc>
-       <video:duration>198</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/sauve-qui-peut</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/profil_tugx25.jpg </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - “Sauve qui peut” : Une création de Louis-Robert Carrier-Belleuse pour la Faïencerie de Choisy-le-Roi </video:title>
-       <video:description>
-        Vase d’une grande originalité, cette œuvre est de la main de Louis-Robert Carrier-Belleuse, fils de l’éminent sculpteur Albert-Ernest Carrier-Belleuse.
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Andre-Fernand-Thesmar-et-Barbedienne-1873.png</video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Le chef-d’œuvre japonisant de André-Fernand Thesmar et
+        Barbedienne</video:title>
+      <video:description>
+        Pièce rarissime, ce grand vase est l’œuvre d’André-Fernand Thesmar. Il fut réalisé en
+        1873.,Thesmar est un peintre et émailleur français travaillant pour la Fonderie Barbedienne.
+        En 1875, il est honoré de la médaille d’or de l’Union centrale des arts décoratifs.,Le nom
+        de Barbedienne est, quant à lui, un monument dans l’histoire de la fonderie d’art (petits
+        bronze d’édition et objets décoratifs).,De forme ovoïdale et de taille impressionnante, ce
+        vase est une prouesse technique. La cuisson d’une pièce de cette ampleur dans un four est
+        extrêmement difficile.,Son décor japonisant est d’une grande magnificence. Il représente des
+        colverts et des libellules volant à fleur d’étang au milieu des roseaux et des fleurs de
+        nénuphars.,Le bleu du ciel, par son rendu atmosphérique, offre des dégradés subtils tirant
+        jusqu’au rose.,Thesmar utilise une technique proche de celle du cloisonné, s’inspirant de
+        l’émaillage japonais. Elle demande une grande habilité et une profonde délicatesse.,A ce
+        jour, nous pouvons affirmer qu’il s’agit d’une pièce unique, qui ne connaît aucun équivalent
+        dans la production de Thesmar.,Sa rareté est confirmée par la signature complète de
+        l’artiste en toutes lettres.,Un plat réalisé par Thesmar pour Barbedienne, exposé au Salon
+        de 1875, présente un décor tout à fait similaire. Il est conservé au musée national de la
+        Céramique de Sèvres.,
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/andre-fernand-thesmar-et-barbedienne-1873.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/andre-fernand-thesmar-et-barbedienne-1873.mp4
+      </video:player_loc>
+      <video:duration>203</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/charles-stanislas-matifat-1851</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
 
-Portant le titre de Sauve qui peut (inscrit dans la base), ce vase de couleur rouge présente un décor de putti fuyant, formant une ronde.
-
-Ils semblent craindre un être hybride placé plus haut sur la panse, tout droit sorti du romantisme noir.
-
-L’ensemble est plein de fantaisie et d’humour.
-
-La version en plâtre de ce vase fut exposée pour la première fois au Salon de la Société Nationale des Beaux-Arts de 1896. L’œuvre est médaillée.
-
-Au Salon de 1898, Carrier-Belleuse présente sa version en grès, aux côtés de trois autres vases intitulés Hercule et Omphale, Enfants et papillons et Musique.
-
-En 1900, notre vase fut reproduit dans la revue La Décoration ancienne et moderne.
-
-Louis-Robert Carrier-Belleuse connut une très belle carrière dans le domaine des arts décoratifs.
-
-Pour la faïencerie de Choisy-le-Roi, il conçut de nombreux modèles de grande qualité, dont ce vase couvert est un témoin exceptionnel.
-
-Formé par son père, ainsi que par Gustave Boulanger et Alexandre Cabanel à l’école des Beaux-Arts, il dirigea les travaux d’art de la faïencerie de Choisy-le-Roi.
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/sauve-qui-peut.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/sauve-qui-peut.mp4
-       </video:player_loc>
-       <video:duration>179</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/charles-stanislas-matifat-milieu-du-xixe-siecle</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
     <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/IMG_6736_yrqzxq.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Pendule double face persane de Charles Stanislas Matifat  </video:title>
-       <video:description>
-  
-Réalisée pour le marché européen et ottoman-perse, notre pendule porte la signature de Charles Stanislas Matifat et la date de 1851.
-Matifat est considéré comme l’un des plus notables fondeurs d’art parisien du milieu du XIXssiècle.
-Ses pendules vases, lustres, fontaines et objets décoratifs étaient réputées pour leur précision, leur raffinement et leurs finitions soignées.
-Le modèle de notre pendule fut présenté dans la section française de l'Exposition Universelle de Londres de 1851.
-Le stand de Matifat se trouvait au cœur du célèbre Crystal Palace et suscita une grande admiration de la presse et du jury de l’Exposition.
-Richement ornementée, évoquant les arts décoratifs persans, cette création présente les qualités d’une pièce d’orfèvrerie. Elle offre deux cadrans en émail blanc.
-Cette particularité permet d’afficher à la fois l’heure européenne (celle de Paris ou de Londres) et l’heure en chiffres turcs.
-A ce moment, Matifat invente un procédé l’émail vitreux sur bronze, qui lui permettra de créer des décors d’une grande finesse.
-Matifat est connu pour ses pièces d’art décoratif, appréciées par Charles Garnier, mais il fondit aussi des sculptures monumentales signées Carpeaux ou Frémiet.
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Charles_Stanislas_Matifat_1851.jpg</video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Un modèle orientalisant de Matifat présenté au Crystal Palace en
+        1851</video:title>
+      <video:description>
+        La pendule aux éléphants. Emblématique des créations de Charles Stanislas Matifat, cette
+        spectaculaire pendule témoigne d’une inspiration orientalisante.,
+        ,Evoquant une architecture royale des Mille et une nuits, mêlant or et couleurs, elle se
+        caractérise par ses deux éléphants ornant la base.,
+        ,Le modèle de cette pendule riche et précieuse fut présenté lors de la première exposition
+        universelle, organisée à Londres en 1851.,
+        ,Il fut exposé sur le stand de Matifat au sein du prestigieux Crystal Palace. A cette
+        occasion, Matifat fut récompensé par une médaille de 2e Classe.,
+        ,Charles Stanislas Matifat était loin d’être inconnu. Fondateur d’une fabrique et d’un
+        magasin de bronzes décoratifs en 1820, il jouit d’une belle notoriété.,
+        ,Ses talents sont loués dans la presse, ainsi que par la commission française de
+        l'Exposition de 1851.,
+        ,« M. Matifat s'est appliqué à chercher des formes nouvelles, variées et élégantes. Ce
+        fabricant intelligent et d'un goût délicat apporte autant de soin dans l’exécution que dans
+        le choix des modèles ».,
+        ,A ce moment, Matifat invente un procédé d’émail vitreux sur bronze, qui lui permettra de
+        créer des décors d’une grande finesse.,
+        ,Charles Stanislas Matifat présenta ses créations à l’occasion d’autre expositions
+        internationales ou universelles, toujours élégantes, gracieuses et d’une grande délicatesse
+        d’exécution.,
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/charles-stanislas-matifat-1851.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/charles-stanislas-matifat-1851.mp4
+      </video:player_loc>
+      <video:duration>198</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/sauve-qui-peut</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
 
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/charles-stanislas-matifat-milieu-du-xixe-siecle.mp4
-       </video:content_loc>
-       <video:player_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/charles-stanislas-matifat-milieu-du-xixe-siecle.mp4
-       </video:player_loc>
-       <video:duration>177</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/ernest-chaplet-et-ringel-d-illzach-1895</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Ernest-chaplet-et-ringel-d-illzach-1895.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Élégance et virtuosité : Le Vase des Acrobates, une collaboration d'exception entre Ernest Chaplet et Ringel d’Illzach  </video:title>
-       <video:description>
-  
-Son apparence métallique est le fruit d'une technique de terre cuite extraordinaire.
-Le décor tournant en ronde bosse est précis et finement exécuté.
-Des personnages en mouvement, adoptant des poses acrobatiques singulières évoluent dans un décor délicatement gravé d'or et d'émail.
-Des papillons virevoltants ajoutent une touche de poésie.
-La marque en forme de chapelet, en or et émail, orne le sommet du col.
-Le vase porte la signature d’Ernest Chaplet et celui de la faïencerie Haviland. Cette oeuvre témoigne du talent exceptionnel d'Ernest Chaplet.
-Cette pièce s'inscrit dans la période de l'Atelier Haviland dirigé par Ernest Chaplet .
-Deux autres exemplaires, légèrement différents, sont connus. L'un est exposé au Musée d'Orsay et l'autre au Musée Bertrand à Châteauroux.
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/ernest-chaplet-et-ringel-d-illzach-1895.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/ernest-chaplet-et-ringel-d-illzach-1895.mp4
-       </video:player_loc>
-       <video:duration>111</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/ernest-chaplet-et-ringel-d-illzach-1884</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Ernest-chaplet-et-ringel-d-illzach-1884.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Une pièce unique d’Ernest Chaplet et de Ringel d’Illzach: La Grande Tombola des nations  </video:title>
-       <video:description>
-  
-Ce vase ovoïde est une pièce unique dans la production d'Ernest Chaplet, l'un des plus talentueux céramistes du XIXe siècle.
-Fruit de la collaboration entre Ernest Chaplet et la faîencerie Haviland.
-Notre vase porte la signature du céramiste Ringel d’Illzach.
-Son décor original représente une scène de loterie et de fête urbaine, se développant sur la panse tel un véritable tableau.
-Dans ce décor vivant, l’ambiance est aux festivités populaires, sur fond de cheminées d’usine. Le jeu de la tombola est symbolisé par une roue de loterie, dite aussi de la chance.
-Dans la foule, la présence d’un soldat évoque l’ambiance des années 1870-1871. Peut-être s’agit-il d’une tombola au bénéfice des militaires français, Paris ayant subi un siège puis l’évènement de la Commune.
-D’autres personnages assistent aux préparatifs de numéros de cirque (la danseuse, l’homme fort). Le thème fut illustré, à la même époque, par Eugène Grasset, Toulouse-Lautrec ou Georges Seurat.
-D’un aspect mat et minéral, ce vase est traité à l’engobe turquoise, en relief et gravé, rehaussé de dorure. Son exécution est précise, fine et audacieuse.
-La Galerie Marc Maison présente également sur son site un plat en grès de 1884, signé par Chaplet et Ringel d’Illzach. Cette pièce fut acquise par le prestigieux musée d’Orsay en 2022.
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/ernest-chaplet-et-ringel-d-illzach-1884.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/ernest-chaplet-et-ringel-d-illzach-1884.mp4
-       </video:player_loc>
-       <video:duration>188</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/plat-au-canard-qui-s-envole</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Plat-au-canard-qui-s-envole.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Théodore Deck (1823-1891) : Plat au canard qui s'envole.  </video:title>
-       <video:description>
-  
-Ce plat est un bel exemple du travail de Théodore Deck.Il porte la signature «TH.DECK.».
-Le fond du plat relève d’une grande maîtrise technique.
-Les œuvres de Deck sont conservées aux musée d’Orsay, au musée des Arts Décoratifs et au Metropolitan Museum de New-York.
-La galerie présente un autre plat de Théodore Deck figurant également un canard et un soleil d’or issu d’une série similaire.
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/plat-au-canard-qui-s-envole.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/plat-au-canard-qui-s-envole.mp4
-       </video:player_loc>
-       <video:duration>99</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/jeanne-lemerle-soyer-1900</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Jeanne-lemerle-soyer-1900.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Daphnis et Chloé : Un tableau de Jeanne Lemerle-Soyer en émail  </video:title>
-       <video:description>
-  
-Présentée comme un véritable tableau, cette plaque rectangulaire émaillée est l’œuvre de Jeanne Lemerle-Soyer. Elle est signée et datée de 1900.
-La scène représente Daphnis et Chloé, sujet bucolique et charmant symbolisant la naissance de l’amour. Le thème est issu d’une pastorale de l’écrivain antique Longus.
-Cette œuvre littéraire célèbre a inspiré de très nombreux artistes tels que Jean-Baptiste Carpeaux, le Baron Gérard, Mathurin Moreau ou Marc Chagall. Elle inspira aussi le compositeur Ravel.
-Ode à la jeunesse, le couple est représenté de manière tendre, dans un décor naturel.
-Cette belle scène est ceinte dans un cadre formé de plaques d’émail ornées dans le style Art nouveau.
-Née Soyer, Jeanne Lemerle est la fille du célèbre émailleur du XIXe siècle, Théophile Soyer. Présente dans les Salons artistiques de la Belle Epoque, elle est l’un des talents féminins de son époque.
-Plusieurs de ses œuvres sont conservées au musée d’Orsay, à Paris.
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/jeanne-lemerle-soyer-1900.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/jeanne-lemerle-soyer-1900.mp4
-       </video:player_loc>
-       <video:duration>162</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/jules-brateau-horloge-a-quatre-faces-sur-pied</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
     <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Jeanne-lemerle-soyer-1900.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Daphnis et Chloé : Un tableau de Jeanne Lemerle-Soyer en émail  </video:title>
-       <video:description>
-  
-Présentée comme un véritable tableau, cette plaque rectangulaire émaillée est l’œuvre de Jeanne Lemerle-Soyer. Elle est signée et datée de 1900.
-La scène représente Daphnis et Chloé, sujet bucolique et charmant symbolisant la naissance de l’amour. Le thème est issu d’une pastorale de l’écrivain antique Longus.
-Cette œuvre littéraire célèbre a inspiré de très nombreux artistes tels que Jean-Baptiste Carpeaux, le Baron Gérard, Mathurin Moreau ou Marc Chagall. Elle inspira aussi le compositeur Ravel.
-Ode à la jeunesse, le couple est représenté de manière tendre, dans un décor naturel.
-Cette belle scène est ceinte dans un cadre formé de plaques d’émail ornées dans le style Art nouveau.
-Née Soyer, Jeanne Lemerle est la fille du célèbre émailleur du XIXe siècle, Théophile Soyer. Présente dans les Salons artistiques de la Belle Epoque, elle est l’un des talents féminins de son époque.
-Plusieurs de ses œuvres sont conservées au musée d’Orsay, à Paris.
+      <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/profil_tugx25.jpg </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - “Sauve qui peut” : Une création de Louis-Robert Carrier-Belleuse
+        pour la Faïencerie de Choisy-le-Roi </video:title>
+      <video:description>
+        Vase d’une grande originalité, cette œuvre est de la main de Louis-Robert Carrier-Belleuse,
+        fils de l’éminent sculpteur Albert-Ernest Carrier-Belleuse.
 
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/jeanne-lemerle-soyer-1900.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/jeanne-lemerle-soyer-1900.mp4
-       </video:player_loc>
-       <video:duration>162</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/emile-galle-1884</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-      <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Emile-galle-1884.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Fleurs et paillettes : un beau vase en céramique conçu par Emile Gallé. </video:title>
-       <video:description>
-  
- Notre vase est une pièce rare, fabriquée à Nancy en 1884 et signée par Emile Gallé. Cette pièce est antérieure à la vague de l'Art nouveau et révèle le talent de Calais bien avant l'heure. A cette époque, Gallet étudie la minéralogie et développe un vif intérêt pour les sciences naturelles.
+        Portant le titre de Sauve qui peut (inscrit dans la base), ce vase de couleur rouge présente
+        un décor de putti fuyant, formant une ronde.
 
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/emile-galle-1884.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/emile-galle-1884.mp4
-       </video:player_loc>
-       <video:duration>137</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/theodore-deck-et-eugene-gluck-1866</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority><video:video>
+        Ils semblent craindre un être hybride placé plus haut sur la panse, tout droit sorti du
+        romantisme noir.
+
+        L’ensemble est plein de fantaisie et d’humour.
+
+        La version en plâtre de ce vase fut exposée pour la première fois au Salon de la Société
+        Nationale des Beaux-Arts de 1896. L’œuvre est médaillée.
+
+        Au Salon de 1898, Carrier-Belleuse présente sa version en grès, aux côtés de trois autres
+        vases intitulés Hercule et Omphale, Enfants et papillons et Musique.
+
+        En 1900, notre vase fut reproduit dans la revue La Décoration ancienne et moderne.
+        Louis-Robert Carrier-Belleuse connut une très belle carrière dans le domaine des arts
+        décoratifs.
+
+        Pour la faïencerie de Choisy-le-Roi, il conçut de nombreux modèles de grande qualité, dont
+        ce vase couvert est un témoin exceptionnel.
+
+        Formé par son père, ainsi que par Gustave Boulanger et Alexandre Cabanel à l’école des
+        Beaux-Arts, il dirigea les travaux d’art de la faïencerie de Choisy-le-Roi.
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/sauve-qui-peut.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/sauve-qui-peut.mp4
+      </video:player_loc>
+      <video:duration>179</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/charles-stanislas-matifat-milieu-du-xixe-siecle</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
     <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/DSC_5354_copie_bc2t7v.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Scène bucolique à l’escarpolette : Une fantaisie décorative de Théodore Deck et Eugène Gluck </video:title>
-       <video:description>
-  
-Ce grand plat, façonné par le grand céramiste Théodore Deck et peint par Eugène Gluck, est une création datée de 1866.
-Entièrement décorative, notre pièce présente une scène digne d’un tableau d’Antoine Watteau. Il s’agit d’une fête galante dans un cadre bucolique. Les costumes renvoient à l’imaginaire de la Renaissance.
-
-Le centre du décor est occupé par une jeune fille sur une escarpolette, un siège suspendu par des cordes permettant de se balancer.
-Il s’agit d’un jeu pouvant s’avérer mutin, lorsque le caleçon long ou les jupons sont dévoilés par le vent.
-
-Deux jeunes femmes, richement parées, sont en conversation tandis qu’un couple se conte amourette.
-Le céramiste Théodore Deck est réputé pour son savoir-faire technique et ses collaborations avec les artistes. Ici, il s’attache le talent d’Eugène Gluck, peintre et illustrateur, originaire comme lui du Haut-Rhin.
-
-Théodore Deck et Eugène Gluck collaborent à partir de 1862. A cette époque, Gluck présente au Salon des scènes historiques pittoresques, dans la veine de ce décor.
-Des œuvres de Deck sont conservées au musée d’Orsay et au musée des Arts Décoratifs à Paris, ainsi qu’au Metropolitan Museum de New-York.
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/theodore-deck-et-eugene-gluck-1866.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/theodore-deck-et-eugene-gluck-1866.mp4
-       </video:player_loc>
-       <video:duration>136</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/plat-circulaire-a-decor-de-fleurs-et-papillons</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-<video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Plat-circulaire-a-decor-de-fleurs-et-papillons.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Beauté et simplicité : Plat à décor floral de Théodore Deck </video:title>
-       <video:description>
-  
-Réalisé vers 1880-1890, ce grand plat décoratif est l’œuvre de Théodore Deck.
-Théodore Deck est un céramiste très réputé de la seconde moitié du XIXe siècle. Il est connu pour sa technique virtuose et sa science des couleurs.
-Le décor foisonne de détails en lien avec la nature. Fleurs, papillons, feuillages délicats ornent avec délicatesse et harmonie un fond blanc d’une grande sobriété.
-Conformément à son goût, Deck trouve son inspiration dans les motifs d’Extrême-Orient.
-Le musée des Arts Décoratifs conserve un plat similaire, également à fond blanc, réalisé en 1867.
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/plat-circulaire-a-decor-de-fleurs-et-papillons.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/plat-circulaire-a-decor-de-fleurs-et-papillons.mp4
-       </video:player_loc>
-       <video:duration>108</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/alphonse-chaignon-1882</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-  <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Alphonse-chaignon-1882.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Vues imaginaires de Paris au XVIe siècle : Deux peintures sur porcelaine d’Alphonse Chaignon </video:title>
-       <video:description>
-  
-Signées et datées de 1882, ces deux peintures sur porcelaine de forme circulaire sont l’œuvre du peintre Alphonse Chaignon.
-Formé par Jean-Hilaire Belloc, puis élève d’Eugène Viollet-le-Duc, Chaignon est connu pour ses vues urbaines idéalisant le passé, en particulier le Paris médiéval et renaissant.
-Dans l’œuvre que nous présentons à gauche, le clocher gothique flamboyant de la Tour Saint-Jacques (achevé en 1523) est identifiable. On aperçoit également l’enseigne d’une taverne, «Au Lion d’Or», signalant une cuisine raffinée.
-
-Si les costumes évoquent clairement la Renaissance, la ville est encore plongée dans une ambiance médiévale.
-Les maisons à colombages, les ornements gothiques, les activités séculaires des femmes traduisent la passion archéologique de Chaignon.
-Certains détails, comme la femme portant une cruche, témoigne de l’influence de la peinture italienne sur Chaignon.
-
-Le passé médiéval et renaissant passionne de nombreux écrivains (Victor Hugo), architectes (Viollet-Le-Duc) et artistes (Jules Adeline, Alphonse Chaignon, Albert Robida) du XIXe siècle.
-L’Exposition universelle de 1900 célébra d’ailleurs cet imaginaire en proposant une reconstitution de Paris au Moyen-Âge.
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/alphonse-chaignon-1882.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/alphonse-chaignon-1882.mp4
-       </video:player_loc>
-       <video:duration>155</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/julien-nicolas-rivart-1861</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Julien-nicolas-rivart-1861.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Les Pivoines de Julien-Nicolas Rivart : Un décor de marqueterie de porcelaine pour une table de style Louis XV.
-
- </video:title>
-       <video:description>
-  
-Notre table de style Louis XV est ornée d’un décor de marqueterie de porcelaine représentant des pivoines.
-
-Admirées par l’Impératrice Eugénie, félicitées par Napoléon III, les créations de Rivart sont d’une très grande délicatesse et d’une élégance parfaite.
-
-Julien-Nicolas Rivart est célèbre pour avoir breveté cette technique de marqueterie précieuse en 1849.
-
-Ce procédé, d’un grand raffinement, est remarqué aux Expositions Universelles de 1851, 1855 et 1867 auxquelles Rivart participe.
-
-Les thèmes floraux ont la prédilection de Rivart. Ici, l’ébéniste joue avec le motif de la pivoine, fleur épanouie dont la couleur se marie avec la chaleur du bois de rose.
-
-La peinture des fleurs incrustées n'est pas signée, mais nous pouvons les attribuer à Pierre-Joseph Guérou, peintre de la Manufacture de Sèvres qui collabora régulièrement avec Rivart.
-
-Un décor floral comparable a été acquis par le comte de Manneville en 1861 et conservée à la Cité de la Céramique de Sèvres.
-
-Notre table présente deux tiroirs, ainsi que des éléments d’ornementation dorés dans l’esprit du temps de louis XV.
-
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/julien-nicolas-rivart-1861.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/julien-nicolas-rivart-1861.mp4
-       </video:player_loc>
-       <video:duration>170</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/theophile-soyer-1875-1880</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Theophile-soyer-1875-1880.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Un grand cabinet de style Néo-Renaissance le décor d’émaux peints par Théophile Soyer </video:title>
-       <video:description>
-  
-De style néo-renaissance, ce luxueux cabinet de présentation en noyer ciré a été façonné entre 1875 et 1880.
-Monumental, il est composé de deux corps et de deux portes vitrées.
-Riches de sculptures et d’ornements, notre cabinet fait référence au mobilier d’apparat de style Henri II.
-Son remarquable décor de plaques en émail peint est signé par Théophile Soyer, l’un des plus grands émailleurs de la seconde moitié du XIXe siècle.
-Formé en tant que peintre à l’Ecole des Beaux-arts et spécialisé dans les créations d’inspiration historique, Soyer était un grand érudit.
-En noir et blanc, ces émaux furent réalisés dans les premiers temps de la carrière de Soyer. Plus tard, l’artiste sera médaillé aux expositions universelles de 1889 et 1900.
-Deux plaques ovales bombées en émail représentent d’un côté Apollon terrassant le serpent python, de l’autre Diane chasseresse.
-Quatre panneaux ornés de plaques rectangulaires en émail représentent les saisons incarnées par des putti.
-Les pièces de marbre en noir marquina carrées et rectangulaires viennent joliment compléter le décor d’émail.
-Des éléments de couleur or, tels que les carquois du Dieu et de la Déesse, rehaussent l’ensemble.
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/theophile-soyer-1875-1880.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/theophile-soyer-1875-1880.mp4
-       </video:player_loc>
-       <video:duration>123</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/albert-leon-lebarque-19eme-siecle</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Albert-leon-lebarque-19eme-siecle.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Le vase au Ara royal peint par Albert-Léon Lebarque et sa sellette d’origine. </video:title>
-       <video:description>
-  
-Exemplaire de la fascination du XIXe siècle pour l’Asie, le décor de ce vase spectaculaire est l’œuvre d’Albert-Léon Lebarque.
-Peintre et sculpteur, Lebarque est connu pour avoir dessiné les médailles de la Compagnie du Chemin de Fer du Nord.
-
-Lebarque travailla également en tant que peintre sur faïence pour des céramistes de renom, exposant notamment dans les expositions universelles.
-Notre vase est présenté sur sa sellette d’origine. En bois, elle se caractérise par son style japonisant, ses formes complexes et sa grande élégance.
-
-Le vase est orné d’un décor très riche en motifs et couleurs, peint sur une céramique émaillée et signé par l’artiste.
-Il associe des lilium épanouis, des papillons et un magistral Ara à la robe bleue et or.
-
-Il s’agit d’un perroquet royal, un animal symbole de liberté, de pouvoir et de longévité dans la culture asiatique.
-La panse joufflue de notre vase présente également deux têtes de grotesque, placées symétriquement. Leur présence souligne le caractère merveilleux de ce décor.
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/albert-leon-lebarque-19eme-siecle.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/albert-leon-lebarque-19eme-siecle.mp4
-       </video:player_loc>
-       <video:duration>119</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/theophile-soyer-1890</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Theophile-soyer-1890.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Le Printemps Une œuvre de Théophile Soyer d’après Eugène Grasset </video:title>
-       <video:description>
-  
-Ce tableau en émail polychrome, peint sur une plaque de cuivre, est l’œuvre de l’émailleur de renom Théophile Soyer. Signé, il date des années 1890.
-Fils de Paul Soyer, Théophile Soyer appartient à l’une des plus importantes dynasties d'émailleurs du XIXe siècle.
-La scène représente une jeune femme cueillant des iris. Dans un paysage bucolique, la draperie au vent, elle est une allégorie du printemps.
-Rappelant l’esthétique préraphaélite, son corps diaphane et les traits doux de son visage évoquent les œuvres de Botticelli
-Son bord ajouré, translucide, simule un effet de plique-à-jour. Ce cadre apporte légèreté et préciosité à l’ensemble.
-Théophile Soyer s’est inspiré d’un dessin d’Eugène Grasset, célèbre auteur d’affiches, de bijoux, de vitraux et d’illustrations dans le style Art Nouveau.
-Le dessin de Grasset est également à l’origine d’une verrière intitulée Le Printemps et conservée au Musée des Arts Décoratifs à Paris.
-Cette verrière fut exposée, avec son pendant Après-midi d’Automne, dans la section d’architecture du Salon du Champ de Mars en 1894.
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/theophile-soyer-1890.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/theophile-soyer-1890.mp4
-       </video:player_loc>
-       <video:duration>123</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/amalric-walter-1900</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Amalric-walter-1900.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Un décor floral sur fond or : un plat en céramique émaillée d’Amalric Walter. </video:title>
-       <video:description>
-  
-Créé vers 1900, ce plat en céramique émaillée s’inscrit dans la mouvance de l’Art Nouveau. Il est redevable au talent d’Amalric Walter.
-Formé à la Manufacture de Sèvres, Amalric Walter est un maître-verrier célèbre pour ses faïences et ses pâtes de verre. A partir de 1905, il devient un collaborateur précieux au sein de la cristallerie Daum.
-Walter est connu pour son talent technique, salué pour sa maîtrise des dégradés de couleurs, d’effets allant de l’opaque au translucide, sa science des détails.
-Le jeu des matières et des couleurs fait la beauté de cette pièce. Le fond or, conçu grâce à la technique des paillons d’or sous glaçure, est d’une remarquable préciosité.
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/amalric-walter-1900.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/amalric-walter-1900.mp4
-       </video:player_loc>
-       <video:duration>85</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/paul-soyer-1875</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Paul-soyer-1875.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Une garniture de cheminée dans l’esprit de la Renaissance Par Paul Soyer </video:title>
-       <video:description>
-  
-Cette garniture de cheminée se compose d’une pendule et de deux cassolettes. L’ensemble fut réalisé vers 1875.
-Chaque pièce présente une combinaison subtile de bronze doré et argenté ainsi que d’émaux peints.
-Les cassolettes (formant vases ou urnes) sont ornées d’un décor de putti en ronde bosse en bronze ainsi que d’émaux figurant des personnages de la Renaissance.
-La pendule adopte une forme architecturale ouvragée évoquant le style de la Renaissance.
-Elle est ornée de panneaux d’émaux peints représentant un masque grotesque et deux chérubins encadrant un vase à fleurs.
-Paul Soyer est l'un des plus importants émailleurs du XIXe siècle.
-Cet ensemble, particulièrement riche et décoratif, s’inscrit dans le goût du Second Empire.
-Un modèle de pendule similaire, daté des années 1875, est conservé au musée d’Orsay.
-La galerie Marc maison présente un modèle analogue dont la taille est plus importante.
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/paul-soyer-1875.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/paul-soyer-1875.mp4
-       </video:player_loc>
-       <video:duration>135</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/vase-carre-bossele-en-ceramique-emaillee</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-  <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Vase-carre-bossele-en-ceramique-emaillee.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Pierre-Adrien Dalpayrat (1844-1910) : Vase carré bosselé en céramique émaillée </video:title>
-       <video:description>
-  
-Ce vase est un magnifique exemple du talent d’un des plus important céramiste de la fin du XIXe siècle. Il est signée et numéroté «40».
-
-Le décor coloré est magnifié par le fameux «rouge Dalpayrat», nuance qui fera la renommée internationale du céramiste.
-
-Les œuvres de Dalpayrat sont conservées dans les plus grands musées du monde tels que le musée d’Orsay à Paris, le Metropolitan Museum de New-York, ou le musée de l’Ermitage de Saint-Pétersbourg.
-Le modèle de ce vase fut présenté sur une banquette d’Eugène Gaillard lors de l’Exposition Universelle de Paris en 1900.
-
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/vase-carre-bossele-en-ceramique-emaillee.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/vase-carre-bossele-en-ceramique-emaillee.mp4
-       </video:player_loc>
-       <video:duration>132</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/manufacture-de-sevres-1874</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Manufacture-de-sevres-1874.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Les vases persans de la Manufacture de Sèvres : un modèle historique </video:title>
-       <video:description>
-  
-Notre paire de vases compte parmi les belles pièces du décor bourgeois de la Belle Epoque.
-Le modèle, dit «Bouteille persane», fut créé par la Manufacture de Sèvres en 1874, d’après un prototype (en métal) perse.
-La Manufacture de Sèvres édita d’autres exemplaires de ce modèle, comportant des variantes de teintes et d’ornements.
-Il fut choisi par Ernest Carrier-Belleuse, sculpteur de renom qui prit la direction artistique de la Manufacture entre 1874 et 1887.
-La particularité de la bouteille persane est de présenter un goulot très allongé, en porcelaine blanche généralement ornée de motifs ou d’aplats de couleur bleue.
-La paire de vases que nous présentons fut façonnée en 1887. Ils sont en porcelaine sous couverte bleu cobalt unie. Le décor, composé de fins liserés dorés, date de 1888.
-Le bleu est considéré comme la couleur fétiche de la céramique venue de Perse, culture qui intéresse de près les faïenciers de la seconde moitié du XIXe siècle.
-L’époque, fatiguée par les fantaisies néo-grecques et néo-étrusques, est en effet férue de références exotiques et orientales.
-
-
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/manufacture-de-sevres-1874.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/manufacture-de-sevres-1874.mp4
-       </video:player_loc>
-       <video:duration>154</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/galle-plat-lune</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Galle-plat-lune.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Une pièce rare d’Emile Gallé : Lune et fantaisie paysagère d’après Joseph Vernet </video:title>
-       <video:description>
-  
-Sa forme est originale. En relief, le rebord du plat circulaire reprend le motif du croissant de lune, symbolisé par un visage.
-Cette iconographie a des racines anciennes, les récits mythologiques associant volontiers la lune à un personnage masculin.
-Il s’agit d’une paréidolie (illusion d’optique), soit la propension à voir une forme identifiable dans un élément naturel (dans les nuages, sur la surface éclairée de la lune, dans un rocher...).
-Cette pièce rare d’Emile Gallé, portant sa signature, est une création des années 1863-1877.
-L’intérieur du plat est orné d’une scène paysagère inspirée d’un tableau de Joseph Vernet, Le Rocher percé, diffusé par la gravure.
-Une feuille d’étude de la main de Gallé représentant une même pièce de forme lunaire avec un décor différent se trouve au musée d’Orsay, à Paris.
-La création de ce modèle de cadre lunaire revient à Gengoult Prouvé, qui travailla au service du père d’Emile Gallé, à la tête de l’entreprise familiale de verrerie que développe son fils dans les années 1870.
-Ce modèle servit également à la création de cendriers en verre soufflé, moulé et gravé à la roue, dits Clair de lune.
-Le musée national des Arts et Métiers conserve une œuvre identique, représentant Pierrot et Colombine, connue sous le titre La Lune rousse.
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/galle-plat-lune.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/galle-plat-lune.mp4
-       </video:player_loc>
-       <video:duration>118</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/plat-a-decor-egyptien-en-faience-representant-une-reine-egyptienne</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Z72_2260_ef5gkd.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Théodore Deck (céramiste) et Albert Anker (peintre): Plat à décor égyptien en faïence, représentant une reine égyptienne </video:title>
-       <video:description>
-  
-Ce plat d’inspiration égyptienne est l’une des plus belles collaborations entre le céramiste Théodore Deck et le peintre Albert Anker. Il est signé et daté de 1869.
-A partir de 1866, Théodore Deck et Albert Anker réalisent de nombreuses collaborations.
-Ce partage de savoir-faire illustre le phénomène, qui se produit durant la fin du second Empire et dans les années 1870, de l’association des Beaux-Arts à la production d'objets d’arts décoratifs.
-Le musée d’Orsay conserve une œuvre similaire. Il s’agit du «Plat à décor assyrien» de 1870,issu de la même collaboration entre Anker et Deck.
-A ce jour, on ne connaît pas d’équivalent à ces deux plats.
-
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/plat-a-decor-egyptien-en-faience-representant-une-reine-egyptienne.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/plat-a-decor-egyptien-en-faience-representant-une-reine-egyptienne.mp4
-       </video:player_loc>
-       <video:duration>137</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/emile-galle-1863-1890</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Emile-galle-1863-1890.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Variation nocturne : une création rare d’Emile Gallé </video:title>
-       <video:description>
-  
-Notre plat en faïence, rehaussé de dorure, est un objet d’exception. Réalisé entre 1863 et 1890, il porte la signature d’Emile Gallé, fondateur de l’Ecole de Nancy.
-
-Sa forme singulière peut tout d’abord évoquer un nuage. Mais l’explication est plus subtile encore.
-
-Il représente un ancien château médiéval, gagné par les feuillages, au bord de l’eau. Des chauves-souris volent dans le ciel. Elles apportent un air de mystère à ce paysage inspiré du romantisme noir.
-
-En effet, le décor évoque à tout point de vue les dessins de Victor Hugo, dont les vers ont souvent inspiré Gallé.
-
-A présent, nous comprenons les formes curieuses qui bordent le plat et entourent la scène : il s’agit de deux silhouettes de chauve-souris.
-
-Un plat comparable est conservé au musée de l’Ecole de Nancy. Mais notre exemplaire est plus riche. Il est le seul exemple connu présentant l’application d’une dorure, ce qui entraîne une cuisson supplémentaire. Il s’agit d’une pièce tout à fait exceptionnelle.
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/emile-galle-1863-1890.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/emile-galle-1863-1890.mp4
-       </video:player_loc>
-       <video:duration>129</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/paul-soyer-1880</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Paul-soyer-1880.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Quand l’émail devient portrait. Les deux jeunes filles, par Paul Soyer </video:title>
-       <video:description>
-  
-Conçus comme un pendant, ces deux portraits de jeunes filles sont signés Paul Soyer, graveur et émailleur parisien. Ils datent des années 1880.
-
-Ils relèvent d’une technique particulière, que Soyer apprit à maîtriser aux côtés de son maître Claudius Popelin: l’émail en teinte or et grisaille sur cuivre.
-
-Sur une plaque de cuivre préparée, le portrait est délicatement peint au pinceau par l’artiste.
-
-La plaque est ensuite émaillée suivant une technique très ancienne, dite du blanc ou de la grisaille , qui permet d’obtenir des détails d’une grande finesse, parfois réalisés à l’aiguille.
-
-La cuisson de la plaque requiert des températures plus douces que pour les émaux traditionnels. L’opération est répétée jusqu’à trois ou quatre fois pour obtenir un résultat d’une telle qualité.
-
-Observons la beauté des chairs de ces deux élégantes de la Belle Epoque, l’intensité de leur regard, la finesse de leur chevelure et la précision dans le rendu des tissus et bijoux.
-
-A la même époque, Popelin continue lui aussi de pratiquer cette technique rare. Le musée d’Orsay conserve ainsi quelques émaux peints en teinte or sur cuivre, dont le portrait du prince Louis-Napoléon.
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/paul-soyer-1880.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/paul-soyer-1880.mp4
-       </video:player_loc>
-       <video:duration>142</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/j-and-l-lobmeyr-fin-1870</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/J-and-l-lobmeyr-fin-1870.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Vase de style oriental en verre émaillé au nom de Mohamed. Une création de J et L Lobmeyr </video:title>
-       <video:description>
-  
-Portant en miroir sur sa panse le chiffre du nom de Mohamed, notre vase s’inscrit dans le goût orientaliste de la seconde moitié du XIXe siècle.
-
-En verre à décor d’émail et d’or, notre vase date de la fin des années 1870 et porte la signature de Lobmeyr.
-
-J. et L. Lobmeyr était une cristallerie autrichienne d’importance internationale, fondée en 1823 et représentée durant les Expositions Universelles.
-
-Célèbre pour ses lustres en cristal et ses objets décoratifs, elle fournissait la cour impériale viennoise, ainsi que la couronne de Belgique et celle des Flandres.
-
-Les motifs qui décorent notre vase sont librement inspirés du répertoire ornemental du Proche-Orient.
-
-Conformément à la tradition orientale, ces motifs sont non figuratifs. Ils magnifient le jeu des entrelacs, des arabesques et des couleurs.
-
-Un modèle semblable fut présenté dans le stand de Lobmeyr à Paris lors de l’Exposition Universelle de 1878.
-
-Une pièce similaire est conservée au musée des Arts Décoratifs à Paris.
-
-
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/j-and-l-lobmeyr-fin-1870.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/j-and-l-lobmeyr-fin-1870.mp4
-       </video:player_loc>
-       <video:duration>137</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/rubelles-1842-1844</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Rubelles-1842-1844.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Un guéridon au décor d’émail rarissime de la faïencerie de Rubelles </video:title>
-       <video:description>
-  
-Notre guéridon plaqué de palissandre, au plateau orné d’émaux ombrants d’un beau vert profond, est une pièce tout à fait exceptionnelle.
-
-Réalisé entre 1842 et 1844, ce décor d’émail est l’œuvre de la faïencerie artistique de Rubelles, près de Fontainebleau.
-
-Possiblement retiré de l’Exposition du commerce et des produits de l’industrie en 1844, notre guéridon est le seul exemplaire connu à ce jour.
-
-A la fin du XIXe siècle, ses créations sont très prisés des connaisseurs qui se les disputent « à prix d’or ». Elles étaient comparées aux plus belles porcelaines anglaises.
-
-Très rare, ce décor est en faïence lithophanique, une technique mise au point par le baron de Bourgoing en association avec Alexis du Tremblay, propriétaire du château de Rubelles.
-
-Directeurs de la Manufacture de Rubelles, les deux associés exploitèrent ce procédé original durant une quinzaine d’années.
-
-Il permet d’obtenir des effets de transparence dans la porcelaine. Les dessins sont rendus en dégradés, depuis les ombres opaques jusqu’à des lumières très translucides.
-
-
-
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/rubelles-1842-1844.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/rubelles-1842-1844.mp4
-       </video:player_loc>
-       <video:duration>162</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/ch-pillivuyt-and-cie-1867</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Ch-pillivuyt-and-cie-1867.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - « Le village secret des souris » : un ensemble japonisant de la Maison Ch. Pillivuyt et Cie </video:title>
-       <video:description>
-  
-SNos douze assiettes en porcelaine sont une création originale de la manufacture Ch. Pillivuyt et Cie, médaillée à l’exposition universelle de 1867.
-
-Le thème s’inspire de deux œuvres du maître de l’estampe japonaise, Hokusai. Elles appartiennent à la Manga, son célèbre ensemble de croquis.
-
-Ce décor est caractéristique de l’essor du Japonisme dans les arts occidentaux à compter des années 1860.
-
-A l’image d’une fable, ce décor met en scène un peuple de souris occupées à diverses activités propres à l’humain.
-
-Les petits personnages sont vêtus à la japonaise. Le paysage, au travers du mont Fuji, évoque également le pays du Soleil levant.
-
-Importante manufacture, la maison Pillivuy a modernisé l’art de la porcelaine. Charles Pillivuyt fut un pionnier dans la fabrication de pâtes de qualité, sans recours à la traditionnelle terre de Limoges.
-
-A partir de terres du Cher et de l’Allier, il perfectionna la cuisson de la porcelaine en délaissant le bois au profit de la houille.
-
-La manufacture est connue pour l’excellence de ses décors en couleurs, réputés d’un éclat vif et inaltérables.
-
-Une collection de cinq assiettes et un plat à gâteau relevant de ce modèle sont aujourd’hui conservés au Cooper Hewitt Smithsonian Museum de New York.
-
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/ch-pillivuyt-and-cie-1867.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/ch-pillivuyt-and-cie-1867.mp4
-       </video:player_loc>
-       <video:duration>145</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/le-vase-d-opaline-la-magie-de-baccarat-au-xixe-siecle</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Le-vase-d-opaline-la-magie-de-baccarat-au-xixe-siecle.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Le vase d’Opaline : la magie de Baccarat au XIXe siècle</video:title>
-       <video:description>
-  
-La cristallerie Baccarat, manufacture de cristal française de renommée internationale, fut fondée sous Louis XV.
-
-Notre vase, réalisé au XIXe siècle, est en opaline. Laiteux, ce verre précieux est orné d’un décor poétique et animalier peint à la main.
-
-Il s’agit de mésanges, symboles du bonheur conjugal et de la fidélité, s’ébattant sur des branches.
-
-Ce vase est ceint d’une riche monture en bronze argenté. Elle fut conçue spécifiquement pour cette pièce.
-
-Cet objet richement décoré est le fruit de l’alliance de la magie du verre et du cristal à celle des bronziers spécialisés dans les arts décoratifs.
-
-Dits en « pattes de lion », les pieds renvoient à l’imaginaire de la Renaissance, très apprécié au XIXe siècle. La monture est ornée de figures et de détails ornementaux d’un grand raffinement.
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/le-vase-d-opaline-la-magie-de-baccarat-au-xixe-siecle.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/le-vase-d-opaline-la-magie-de-baccarat-au-xixe-siecle.mp4
-       </video:player_loc>
-       <video:duration>114</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/le-vase-a-la-grecque-de-la-cristallerie-baccarat</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-  <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/cristallerie-de-baccarat-vase-de-forme-cratere-neo-grec-en-cristal-double-et-grave-a-l-acide-fluorhydrique-exposition-universelle-de-1867-13171_01_big_2x_iwgpbe.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Splendeur des arts décoratifs sous le Second Empire : Le vase à la grecque de la cristallerie Baccarat</video:title>
-       <video:description>
-  
-Chef-d’œuvre de la cristallerie Baccarat, notre vase en cristal doublé emprunte la forme d’un cratère grec. Il fut réalisé entre 1864 et 1867.   Lors de l’exposition universelle de 1867, la célèbre cristallerie exposa des modèles relevant de ce style décoratif néogrec, très en faveur sous le Second Empire.   Elle plaçait alors une partie de sa production sous le signe de Dionysos, figure majeure du panthéon mythologique.   Notre exemplaire est le seul connu à ce jour à allier la forme d’un cratère et la couleur rose. Certains modèles présentant un décor similaire, mais de couleur bleue ou jaune, sont répertoriés par les spécialistes.   Le décor, qui met en scène des motifs liés aux libations et aux agapes, est le fruit d’une technique complexe.   Sur fond blanc opale, personnages et ornements sont gravés à l’acide fluorhydrique, selon la technique mise au point par le chimiste allemand Louis Kessler en 1855, dont Baccarat acheta le brevet en 1864.   D’autres pièces de la cristallerie Baccarat présentant un décor comparable sont conservées dans d’importants musées, tels que le Corning Museum of glass, le Chrysler Museum à Norfolk ou le musée d’Orsay. 
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/le-vase-a-la-grecque-de-la-cristallerie-baccarat.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/le-vase-a-la-grecque-de-la-cristallerie-baccarat.mp4
-       </video:player_loc>
-       <video:duration>136</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/emile-galle-1879-1890</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Emile-galle-1879-1890.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Le vase d’Emile Gallé : Ode à la nature de l’Egypte pharaonique </video:title>
-       <video:description>
-  
-Ce vase signé par Emile Gallé, entre 1879 et 1890, est un chef d’œuvre des arts décoratifs de la Belle Epoque.
-La pièce d’exception fut façonnée à Nancy, terre d’Emile Gallé. Cet artiste est l’un des plus grands maîtres-verriers et céramiste de l’Art Nouveau.
-L’iconographie et le décor sont une Ode à l’Egypte ancienne, source d’inspiration d’Emile Gallé, fasciné par cette culture.
-Notre pièce s’inspire des techniques traditionnelles de la céramique japonaise, en reprenant le principe des fausses coulures.
-Les couleurs complémentaires, marron et bleu, créent une harmonie chromatique.
-Admirons l’originalité du décor représentant des papyrus. Un petit scarabée s’ébat en vol, unissant thème animal et végétal.
-Une pièce comparable, présentant un autre décor à thème japonisant, est passée en vente chez Tajan, à Paris, le 26 février 2013. Une autre est conservée au musée de l’Ecole de Nancy.
-Chaque décor est unique.
-
-
-
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/emile-galle-1879-1890.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/emile-galle-1879-1890.mp4
-       </video:player_loc>
-       <video:duration>118</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/emile-galle-1846-1904-vase-en-faience-aux-fleurs-et-paillons-d-or</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Emile-galle-1846-1904-vase-en-faience-aux-fleurs-et-paillons-d-or2.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Fleurs et paillons d’or : un vase en céramique d’exception d’Emile Gallé</video:title>
-       <video:description>
-  
-Signé du nom d’Emile Gallé, notre vase est une pièce rare. Il fut façonné à Nancy en 1884.
-
-Cette œuvre, juste antérieure à la vague de l’art nouveau, révèle le talent précoce de Gallé. A cette époque, Gallé étudie la minéralogie et développe sa passion pour les sciences naturelles.
-
-Afin d’évoquer la nature, l’artiste n’hésite pas à user de techniques complexes. La faïence comporte des inclusions de parcelles métalliques qui lui donnent un caractère précieux.
-
-Le décor floral est ainsi illuminé par des paillons d’or. Du rouge-brun vers le jaune d’or, le dégradé de couleurs est particulièrement chaleureux et élégant.
-
-Le bord du vase est orné d’un décor végétal. A l’image de nombreuses créations de Gallé, ce vase est plus proche de l’œuvre d’art que du simple objet décoratif. Source d’émotion, il s’adresse autant à l’œil qu’à l’esprit.
-
-On connaît un vase d'une taille plus importante, qui a été présenté à l'exposition de l'union centrale des arts décoratifs de 1884.
-
-Dessinée par Gallé, une étude préparatoire d’un vase de la même période est conservée au musée d’Orsay.
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/emile-galle-1846-1904-vase-en-faience-aux-fleurs-et-paillons-d-or.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/emile-galle-1846-1904-vase-en-faience-aux-fleurs-et-paillons-d-or.mp4
-       </video:player_loc>
-       <video:duration>104</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/un-porte-document-au-precieux-decor-de-porcelaine</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Un-porte-document-au-precieux-decor-de-porcelaine.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Un porte-document au précieux décor de porcelaine par Julien-Nicolas Rivart </video:title>
-       <video:description>
-  
-Pièce extrêmement rare, notre porte-document en cuir présente un décor en marqueterie de porcelaine d’une grande finesse.
-Il s’agit d’un travail très original, les porcelaines de Rivart étant habituellement incrustées sur des pièces de mobilier en bois.
-Ses décors forment de véritables tableaux de fleurs. L’objet se métamorphose en bijou.
-Recouvert de cuir, ce porte document comporte deux compartiments doublés de tissus moirés. La porcelaine apporte délicatesse et brillance au cuir mat.
-Rivart, grand nom des arts décoratifs sous le Second Empire, avait renouvelé l’art de la marqueterie en remplaçant le traditionnel placage en bois par une fine marqueterie en porcelaine.Dans les années 1850, Rivart est salué dans la presse pour son brevet et sa maîtrise technique.
-Son brevet prévoyait l’incrustation de porcelaine sur différents supports, tels que le bois, le carton, le cuir ou le velours et même le marbre mais très peu de ses réalisations nous sont parvenues en dehors du mobilier.
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/un-porte-document-au-precieux-decor-de-porcelaine.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/un-porte-document-au-precieux-decor-de-porcelaine.mp4
-       </video:player_loc>
-       <video:duration>115</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/manufacture-vieillard-and-cie-1870</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Manufacture-vieillard-and-cie-1870.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Manufacture Vieillard et Cie : Plat à décor de poisson </video:title>
-       <video:description>
-  
-Ce plat d’inspiration extrême orientale est un exemple précoce du japonisme dans les arts décoratifs européen. Il date des années 1870.
-
-Vieillard et Cie est une importante manufacture de faïencerie bordelaise de la seconde moitié du XIXe siècle.
-
-La forme arrondie des poissons s’inspire probablement du décor d’une tsuba qui est la garde d’un sabre japonais.
-
-
-Les couleurs vives, dont le vert acide, sont peu fréquentent dans la gamme chromatique des faiences bordelaises et pourraient révéler l’influence de Christopher Dresser.
-
-A ce jour, un seul autre plat similaire, variant par ses couleurs, est connu. Il est conservé dans une collection particulière.
-
-
-Les œuvres de Vieillard et Cie sont conservées dans des prestigieuses institutions nationales comme le musée d’Orsay et le musée des Arts Décoratifs.
-
-
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/manufacture-vieillard-and-cie-1870.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/manufacture-vieillard-and-cie-1870.mp4
-       </video:player_loc>
-       <video:duration>125</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/emilie-galle-1863-1880</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/Emilie-galle-1863-1880.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - La nature faite vase : Attribué à Émile Gallé pour la manufacture de Lunéville </video:title>
-       <video:description>
-  
-Daté entre 1863 et 1880, ce vase est attribué au grand céramiste et maître-verrier nancéien Emile Gallé.
-
-Il fut très certainement édité par Keller et Guérin, propriétaires de la manufacture de Lunéville, avant que Gallé ne dépose ses propres modèles.
-
-D’une forme très recherchée, notre vase présente une panse quadrilobée ornée de branches, de feuilles et de papillons dans des couleurs or et argent sur un fond bleu de Prusse.
-
-Le vase repose sur une base imitant des branchages, très naturalistes, évoquant les études de feuillages et de fleurs de Gallé conservées au musée d’Orsay.
-
-L’institution parisienne possède d’ailleurs un dessin préparatoire de Gallé pour une pièce proche de notre vase.
-
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/emilie-galle-1863-1880.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/emilie-galle-1863-1880.mp4
-       <video:duration>100</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
-<url>
-  <loc>https://marcmaison.art/inspire-des-arts-de-l-extreme-orient-le-grand-vase-bleu-de-theodore-deck</loc>
-  <lastmod>2023-07-01T23:55:41+00:00</lastmod>
-  <priority>0.64</priority>
-   <video:video>
-       <video:thumbnail_loc> https://res.cloudinary.com/amircloud/image/upload/marc/DSC_5306_ydmzcz.png </video:thumbnail_loc>
-       <video:title>MarcMaison.Art - Inspiré des arts de l’Extrême-Orient : Le grand vase bleu de Théodore Deck </video:title>
-       <video:description>
-  
-Signé et portant le cachet du céramiste, ce grand vase turquoise est une création de Théodore Deck.
-
-Ce bleu, dit « bleu de Deck », est devenu la signature esthétique de ce céramiste de renom.
-
-Catalogué comme un cache-pot, ce grand vase est en faïence émaillée.
-
-Pour ses pièces originales et innovantes, Deck fut médaillé d’argent à l’Exposition universelle de 1867.
-
-Le décor témoigne de sa fascination pour les arts d’Extrême-Orient. Inspiré de vases japonais de la fin du XIXe siècle, il représente des dragons, créatures fantastiques venues de l’imaginaire asiatique.
-
-Une pièce ornée d’un décor comparable, et du même bleu éclatant, est conservée au Metropolitan Museum à New York.
-</video:description>
-       <video:content_loc>
-          https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/inspire-des-arts-de-l-extreme-orient-le-grand-vase-bleu-de-theodore-deck.mp4
-       </video:content_loc>
-       <video:player_loc>
-         https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/inspire-des-arts-de-l-extreme-orient-le-grand-vase-bleu-de-theodore-deck.mp4
-       </video:player_loc>
-       <video:duration>106</video:duration>
-       <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
-       <video:family_friendly>yes</video:family_friendly>
-       <video:uploader
-         info="https://www.marcmaison.fr/about">Marc Maison
-       </video:uploader>
-       <video:live>no</video:live>
-     </video:video>
-</url>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/IMG_6736_yrqzxq.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Pendule double face persane de Charles Stanislas Matifat </video:title>
+      <video:description>
+
+        Réalisée pour le marché européen et ottoman-perse, notre pendule porte la signature de
+        Charles Stanislas Matifat et la date de 1851.
+        Matifat est considéré comme l’un des plus notables fondeurs d’art parisien du milieu du
+        XIXssiècle.
+        Ses pendules vases, lustres, fontaines et objets décoratifs étaient réputées pour leur
+        précision, leur raffinement et leurs finitions soignées.
+        Le modèle de notre pendule fut présenté dans la section française de l'Exposition
+        Universelle de Londres de 1851.
+        Le stand de Matifat se trouvait au cœur du célèbre Crystal Palace et suscita une grande
+        admiration de la presse et du jury de l’Exposition.
+        Richement ornementée, évoquant les arts décoratifs persans, cette création présente les
+        qualités d’une pièce d’orfèvrerie. Elle offre deux cadrans en émail blanc.
+        Cette particularité permet d’afficher à la fois l’heure européenne (celle de Paris ou de
+        Londres) et l’heure en chiffres turcs.
+        A ce moment, Matifat invente un procédé l’émail vitreux sur bronze, qui lui permettra de
+        créer des décors d’une grande finesse.
+        Matifat est connu pour ses pièces d’art décoratif, appréciées par Charles Garnier, mais il
+        fondit aussi des sculptures monumentales signées Carpeaux ou Frémiet.
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/charles-stanislas-matifat-milieu-du-xixe-siecle.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/charles-stanislas-matifat-milieu-du-xixe-siecle.mp4
+      </video:player_loc>
+      <video:duration>177</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/ernest-chaplet-et-ringel-d-illzach-1895</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Ernest-chaplet-et-ringel-d-illzach-1895.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Élégance et virtuosité : Le Vase des Acrobates, une
+        collaboration d'exception entre Ernest Chaplet et Ringel d’Illzach </video:title>
+      <video:description>
+
+        Son apparence métallique est le fruit d'une technique de terre cuite extraordinaire.
+        Le décor tournant en ronde bosse est précis et finement exécuté.
+        Des personnages en mouvement, adoptant des poses acrobatiques singulières évoluent dans un
+        décor délicatement gravé d'or et d'émail.
+        Des papillons virevoltants ajoutent une touche de poésie.
+        La marque en forme de chapelet, en or et émail, orne le sommet du col.
+        Le vase porte la signature d’Ernest Chaplet et celui de la faïencerie Haviland. Cette oeuvre
+        témoigne du talent exceptionnel d'Ernest Chaplet.
+        Cette pièce s'inscrit dans la période de l'Atelier Haviland dirigé par Ernest Chaplet .
+        Deux autres exemplaires, légèrement différents, sont connus. L'un est exposé au Musée
+        d'Orsay et l'autre au Musée Bertrand à Châteauroux.
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/ernest-chaplet-et-ringel-d-illzach-1895.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/ernest-chaplet-et-ringel-d-illzach-1895.mp4
+      </video:player_loc>
+      <video:duration>111</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/ernest-chaplet-et-ringel-d-illzach-1884</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Ernest-chaplet-et-ringel-d-illzach-1884.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Une pièce unique d’Ernest Chaplet et de Ringel d’Illzach: La
+        Grande Tombola des nations </video:title>
+      <video:description>
+
+        Ce vase ovoïde est une pièce unique dans la production d'Ernest Chaplet, l'un des plus
+        talentueux céramistes du XIXe siècle.
+        Fruit de la collaboration entre Ernest Chaplet et la faîencerie Haviland.
+        Notre vase porte la signature du céramiste Ringel d’Illzach.
+        Son décor original représente une scène de loterie et de fête urbaine, se développant sur la
+        panse tel un véritable tableau.
+        Dans ce décor vivant, l’ambiance est aux festivités populaires, sur fond de cheminées
+        d’usine. Le jeu de la tombola est symbolisé par une roue de loterie, dite aussi de la
+        chance.
+        Dans la foule, la présence d’un soldat évoque l’ambiance des années 1870-1871. Peut-être
+        s’agit-il d’une tombola au bénéfice des militaires français, Paris ayant subi un siège puis
+        l’évènement de la Commune.
+        D’autres personnages assistent aux préparatifs de numéros de cirque (la danseuse, l’homme
+        fort). Le thème fut illustré, à la même époque, par Eugène Grasset, Toulouse-Lautrec ou
+        Georges Seurat.
+        D’un aspect mat et minéral, ce vase est traité à l’engobe turquoise, en relief et gravé,
+        rehaussé de dorure. Son exécution est précise, fine et audacieuse.
+        La Galerie Marc Maison présente également sur son site un plat en grès de 1884, signé par
+        Chaplet et Ringel d’Illzach. Cette pièce fut acquise par le prestigieux musée d’Orsay en
+        2022.
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/ernest-chaplet-et-ringel-d-illzach-1884.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/ernest-chaplet-et-ringel-d-illzach-1884.mp4
+      </video:player_loc>
+      <video:duration>188</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/plat-au-canard-qui-s-envole</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Plat-au-canard-qui-s-envole.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Théodore Deck (1823-1891) : Plat au canard qui s'envole. </video:title>
+      <video:description>
+
+        Ce plat est un bel exemple du travail de Théodore Deck.Il porte la signature «TH.DECK.».
+        Le fond du plat relève d’une grande maîtrise technique.
+        Les œuvres de Deck sont conservées aux musée d’Orsay, au musée des Arts Décoratifs et au
+        Metropolitan Museum de New-York.
+        La galerie présente un autre plat de Théodore Deck figurant également un canard et un soleil
+        d’or issu d’une série similaire.
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/plat-au-canard-qui-s-envole.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/plat-au-canard-qui-s-envole.mp4
+      </video:player_loc>
+      <video:duration>99</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/jeanne-lemerle-soyer-1900</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Jeanne-lemerle-soyer-1900.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Daphnis et Chloé : Un tableau de Jeanne Lemerle-Soyer en émail </video:title>
+      <video:description>
+
+        Présentée comme un véritable tableau, cette plaque rectangulaire émaillée est l’œuvre de
+        Jeanne Lemerle-Soyer. Elle est signée et datée de 1900.
+        La scène représente Daphnis et Chloé, sujet bucolique et charmant symbolisant la naissance
+        de l’amour. Le thème est issu d’une pastorale de l’écrivain antique Longus.
+        Cette œuvre littéraire célèbre a inspiré de très nombreux artistes tels que Jean-Baptiste
+        Carpeaux, le Baron Gérard, Mathurin Moreau ou Marc Chagall. Elle inspira aussi le
+        compositeur Ravel.
+        Ode à la jeunesse, le couple est représenté de manière tendre, dans un décor naturel.
+        Cette belle scène est ceinte dans un cadre formé de plaques d’émail ornées dans le style Art
+        nouveau.
+        Née Soyer, Jeanne Lemerle est la fille du célèbre émailleur du XIXe siècle, Théophile Soyer.
+        Présente dans les Salons artistiques de la Belle Epoque, elle est l’un des talents féminins
+        de son époque.
+        Plusieurs de ses œuvres sont conservées au musée d’Orsay, à Paris.
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/jeanne-lemerle-soyer-1900.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/jeanne-lemerle-soyer-1900.mp4
+      </video:player_loc>
+      <video:duration>162</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/jules-brateau-horloge-a-quatre-faces-sur-pied</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Jeanne-lemerle-soyer-1900.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Daphnis et Chloé : Un tableau de Jeanne Lemerle-Soyer en émail </video:title>
+      <video:description>
+
+        Présentée comme un véritable tableau, cette plaque rectangulaire émaillée est l’œuvre de
+        Jeanne Lemerle-Soyer. Elle est signée et datée de 1900.
+        La scène représente Daphnis et Chloé, sujet bucolique et charmant symbolisant la naissance
+        de l’amour. Le thème est issu d’une pastorale de l’écrivain antique Longus.
+        Cette œuvre littéraire célèbre a inspiré de très nombreux artistes tels que Jean-Baptiste
+        Carpeaux, le Baron Gérard, Mathurin Moreau ou Marc Chagall. Elle inspira aussi le
+        compositeur Ravel.
+        Ode à la jeunesse, le couple est représenté de manière tendre, dans un décor naturel.
+        Cette belle scène est ceinte dans un cadre formé de plaques d’émail ornées dans le style Art
+        nouveau.
+        Née Soyer, Jeanne Lemerle est la fille du célèbre émailleur du XIXe siècle, Théophile Soyer.
+        Présente dans les Salons artistiques de la Belle Epoque, elle est l’un des talents féminins
+        de son époque.
+        Plusieurs de ses œuvres sont conservées au musée d’Orsay, à Paris.
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/jeanne-lemerle-soyer-1900.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/jeanne-lemerle-soyer-1900.mp4
+      </video:player_loc>
+      <video:duration>162</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/emile-galle-1884</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Emile-galle-1884.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Fleurs et paillettes : un beau vase en céramique conçu par Emile
+        Gallé. </video:title>
+      <video:description>
+
+        Notre vase est une pièce rare, fabriquée à Nancy en 1884 et signée par Emile Gallé. Cette
+        pièce est antérieure à la vague de l'Art nouveau et révèle le talent de Calais bien avant
+        l'heure. A cette époque, Gallet étudie la minéralogie et développe un vif intérêt pour les
+        sciences naturelles.
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/emile-galle-1884.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/emile-galle-1884.mp4
+      </video:player_loc>
+      <video:duration>137</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/theodore-deck-et-eugene-gluck-1866</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/DSC_5354_copie_bc2t7v.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Scène bucolique à l’escarpolette : Une fantaisie décorative de
+        Théodore Deck et Eugène Gluck </video:title>
+      <video:description>
+
+        Ce grand plat, façonné par le grand céramiste Théodore Deck et peint par Eugène Gluck, est
+        une création datée de 1866.
+        Entièrement décorative, notre pièce présente une scène digne d’un tableau d’Antoine Watteau.
+        Il s’agit d’une fête galante dans un cadre bucolique. Les costumes renvoient à l’imaginaire
+        de la Renaissance.
+
+        Le centre du décor est occupé par une jeune fille sur une escarpolette, un siège suspendu
+        par des cordes permettant de se balancer.
+        Il s’agit d’un jeu pouvant s’avérer mutin, lorsque le caleçon long ou les jupons sont
+        dévoilés par le vent.
+
+        Deux jeunes femmes, richement parées, sont en conversation tandis qu’un couple se conte
+        amourette.
+        Le céramiste Théodore Deck est réputé pour son savoir-faire technique et ses collaborations
+        avec les artistes. Ici, il s’attache le talent d’Eugène Gluck, peintre et illustrateur,
+        originaire comme lui du Haut-Rhin.
+
+        Théodore Deck et Eugène Gluck collaborent à partir de 1862. A cette époque, Gluck présente
+        au Salon des scènes historiques pittoresques, dans la veine de ce décor.
+        Des œuvres de Deck sont conservées au musée d’Orsay et au musée des Arts Décoratifs à Paris,
+        ainsi qu’au Metropolitan Museum de New-York.
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/theodore-deck-et-eugene-gluck-1866.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/theodore-deck-et-eugene-gluck-1866.mp4
+      </video:player_loc>
+      <video:duration>136</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/plat-circulaire-a-decor-de-fleurs-et-papillons</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Plat-circulaire-a-decor-de-fleurs-et-papillons.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Beauté et simplicité : Plat à décor floral de Théodore Deck </video:title>
+      <video:description>
+
+        Réalisé vers 1880-1890, ce grand plat décoratif est l’œuvre de Théodore Deck.
+        Théodore Deck est un céramiste très réputé de la seconde moitié du XIXe siècle. Il est connu
+        pour sa technique virtuose et sa science des couleurs.
+        Le décor foisonne de détails en lien avec la nature. Fleurs, papillons, feuillages délicats
+        ornent avec délicatesse et harmonie un fond blanc d’une grande sobriété.
+        Conformément à son goût, Deck trouve son inspiration dans les motifs d’Extrême-Orient.
+        Le musée des Arts Décoratifs conserve un plat similaire, également à fond blanc, réalisé en
+        1867.
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/plat-circulaire-a-decor-de-fleurs-et-papillons.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/plat-circulaire-a-decor-de-fleurs-et-papillons.mp4
+      </video:player_loc>
+      <video:duration>108</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/alphonse-chaignon-1882</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Alphonse-chaignon-1882.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Vues imaginaires de Paris au XVIe siècle : Deux peintures sur
+        porcelaine d’Alphonse Chaignon </video:title>
+      <video:description>
+
+        Signées et datées de 1882, ces deux peintures sur porcelaine de forme circulaire sont
+        l’œuvre du peintre Alphonse Chaignon.
+        Formé par Jean-Hilaire Belloc, puis élève d’Eugène Viollet-le-Duc, Chaignon est connu pour
+        ses vues urbaines idéalisant le passé, en particulier le Paris médiéval et renaissant.
+        Dans l’œuvre que nous présentons à gauche, le clocher gothique flamboyant de la Tour
+        Saint-Jacques (achevé en 1523) est identifiable. On aperçoit également l’enseigne d’une
+        taverne, «Au Lion d’Or», signalant une cuisine raffinée.
+
+        Si les costumes évoquent clairement la Renaissance, la ville est encore plongée dans une
+        ambiance médiévale.
+        Les maisons à colombages, les ornements gothiques, les activités séculaires des femmes
+        traduisent la passion archéologique de Chaignon.
+        Certains détails, comme la femme portant une cruche, témoigne de l’influence de la peinture
+        italienne sur Chaignon.
+
+        Le passé médiéval et renaissant passionne de nombreux écrivains (Victor Hugo), architectes
+        (Viollet-Le-Duc) et artistes (Jules Adeline, Alphonse Chaignon, Albert Robida) du XIXe
+        siècle.
+        L’Exposition universelle de 1900 célébra d’ailleurs cet imaginaire en proposant une
+        reconstitution de Paris au Moyen-Âge.
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/alphonse-chaignon-1882.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/alphonse-chaignon-1882.mp4
+      </video:player_loc>
+      <video:duration>155</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/julien-nicolas-rivart-1861</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Julien-nicolas-rivart-1861.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Les Pivoines de Julien-Nicolas Rivart : Un décor de marqueterie
+        de porcelaine pour une table de style Louis XV.
+
+      </video:title>
+      <video:description>
+
+        Notre table de style Louis XV est ornée d’un décor de marqueterie de porcelaine représentant
+        des pivoines.
+
+        Admirées par l’Impératrice Eugénie, félicitées par Napoléon III, les créations de Rivart
+        sont d’une très grande délicatesse et d’une élégance parfaite.
+
+        Julien-Nicolas Rivart est célèbre pour avoir breveté cette technique de marqueterie
+        précieuse en 1849.
+
+        Ce procédé, d’un grand raffinement, est remarqué aux Expositions Universelles de 1851, 1855
+        et 1867 auxquelles Rivart participe.
+
+        Les thèmes floraux ont la prédilection de Rivart. Ici, l’ébéniste joue avec le motif de la
+        pivoine, fleur épanouie dont la couleur se marie avec la chaleur du bois de rose.
+
+        La peinture des fleurs incrustées n'est pas signée, mais nous pouvons les attribuer à
+        Pierre-Joseph Guérou, peintre de la Manufacture de Sèvres qui collabora régulièrement avec
+        Rivart.
+
+        Un décor floral comparable a été acquis par le comte de Manneville en 1861 et conservée à la
+        Cité de la Céramique de Sèvres.
+
+        Notre table présente deux tiroirs, ainsi que des éléments d’ornementation dorés dans
+        l’esprit du temps de louis XV.
+
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/julien-nicolas-rivart-1861.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/julien-nicolas-rivart-1861.mp4
+      </video:player_loc>
+      <video:duration>170</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/theophile-soyer-1875-1880</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Theophile-soyer-1875-1880.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Un grand cabinet de style Néo-Renaissance le décor d’émaux
+        peints par Théophile Soyer </video:title>
+      <video:description>
+
+        De style néo-renaissance, ce luxueux cabinet de présentation en noyer ciré a été façonné
+        entre 1875 et 1880.
+        Monumental, il est composé de deux corps et de deux portes vitrées.
+        Riches de sculptures et d’ornements, notre cabinet fait référence au mobilier d’apparat de
+        style Henri II.
+        Son remarquable décor de plaques en émail peint est signé par Théophile Soyer, l’un des plus
+        grands émailleurs de la seconde moitié du XIXe siècle.
+        Formé en tant que peintre à l’Ecole des Beaux-arts et spécialisé dans les créations
+        d’inspiration historique, Soyer était un grand érudit.
+        En noir et blanc, ces émaux furent réalisés dans les premiers temps de la carrière de Soyer.
+        Plus tard, l’artiste sera médaillé aux expositions universelles de 1889 et 1900.
+        Deux plaques ovales bombées en émail représentent d’un côté Apollon terrassant le serpent
+        python, de l’autre Diane chasseresse.
+        Quatre panneaux ornés de plaques rectangulaires en émail représentent les saisons incarnées
+        par des putti.
+        Les pièces de marbre en noir marquina carrées et rectangulaires viennent joliment compléter
+        le décor d’émail.
+        Des éléments de couleur or, tels que les carquois du Dieu et de la Déesse, rehaussent
+        l’ensemble.
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/theophile-soyer-1875-1880.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/theophile-soyer-1875-1880.mp4
+      </video:player_loc>
+      <video:duration>123</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/albert-leon-lebarque-19eme-siecle</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Albert-leon-lebarque-19eme-siecle.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Le vase au Ara royal peint par Albert-Léon Lebarque et sa
+        sellette d’origine. </video:title>
+      <video:description>
+
+        Exemplaire de la fascination du XIXe siècle pour l’Asie, le décor de ce vase spectaculaire
+        est l’œuvre d’Albert-Léon Lebarque.
+        Peintre et sculpteur, Lebarque est connu pour avoir dessiné les médailles de la Compagnie du
+        Chemin de Fer du Nord.
+
+        Lebarque travailla également en tant que peintre sur faïence pour des céramistes de renom,
+        exposant notamment dans les expositions universelles.
+        Notre vase est présenté sur sa sellette d’origine. En bois, elle se caractérise par son
+        style japonisant, ses formes complexes et sa grande élégance.
+
+        Le vase est orné d’un décor très riche en motifs et couleurs, peint sur une céramique
+        émaillée et signé par l’artiste.
+        Il associe des lilium épanouis, des papillons et un magistral Ara à la robe bleue et or.
+
+        Il s’agit d’un perroquet royal, un animal symbole de liberté, de pouvoir et de longévité
+        dans la culture asiatique.
+        La panse joufflue de notre vase présente également deux têtes de grotesque, placées
+        symétriquement. Leur présence souligne le caractère merveilleux de ce décor.
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/albert-leon-lebarque-19eme-siecle.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/albert-leon-lebarque-19eme-siecle.mp4
+      </video:player_loc>
+      <video:duration>119</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/theophile-soyer-1890</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Theophile-soyer-1890.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Le Printemps Une œuvre de Théophile Soyer d’après Eugène Grasset </video:title>
+      <video:description>
+
+        Ce tableau en émail polychrome, peint sur une plaque de cuivre, est l’œuvre de l’émailleur
+        de renom Théophile Soyer. Signé, il date des années 1890.
+        Fils de Paul Soyer, Théophile Soyer appartient à l’une des plus importantes dynasties
+        d'émailleurs du XIXe siècle.
+        La scène représente une jeune femme cueillant des iris. Dans un paysage bucolique, la
+        draperie au vent, elle est une allégorie du printemps.
+        Rappelant l’esthétique préraphaélite, son corps diaphane et les traits doux de son visage
+        évoquent les œuvres de Botticelli
+        Son bord ajouré, translucide, simule un effet de plique-à-jour. Ce cadre apporte légèreté et
+        préciosité à l’ensemble.
+        Théophile Soyer s’est inspiré d’un dessin d’Eugène Grasset, célèbre auteur d’affiches, de
+        bijoux, de vitraux et d’illustrations dans le style Art Nouveau.
+        Le dessin de Grasset est également à l’origine d’une verrière intitulée Le Printemps et
+        conservée au Musée des Arts Décoratifs à Paris.
+        Cette verrière fut exposée, avec son pendant Après-midi d’Automne, dans la section
+        d’architecture du Salon du Champ de Mars en 1894.
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/theophile-soyer-1890.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/theophile-soyer-1890.mp4
+      </video:player_loc>
+      <video:duration>123</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/amalric-walter-1900</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Amalric-walter-1900.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Un décor floral sur fond or : un plat en céramique émaillée
+        d’Amalric Walter. </video:title>
+      <video:description>
+
+        Créé vers 1900, ce plat en céramique émaillée s’inscrit dans la mouvance de l’Art Nouveau.
+        Il est redevable au talent d’Amalric Walter.
+        Formé à la Manufacture de Sèvres, Amalric Walter est un maître-verrier célèbre pour ses
+        faïences et ses pâtes de verre. A partir de 1905, il devient un collaborateur précieux au
+        sein de la cristallerie Daum.
+        Walter est connu pour son talent technique, salué pour sa maîtrise des dégradés de couleurs,
+        d’effets allant de l’opaque au translucide, sa science des détails.
+        Le jeu des matières et des couleurs fait la beauté de cette pièce. Le fond or, conçu grâce à
+        la technique des paillons d’or sous glaçure, est d’une remarquable préciosité.
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/amalric-walter-1900.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/amalric-walter-1900.mp4
+      </video:player_loc>
+      <video:duration>85</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/paul-soyer-1875</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Paul-soyer-1875.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Une garniture de cheminée dans l’esprit de la Renaissance Par
+        Paul Soyer </video:title>
+      <video:description>
+
+        Cette garniture de cheminée se compose d’une pendule et de deux cassolettes. L’ensemble fut
+        réalisé vers 1875.
+        Chaque pièce présente une combinaison subtile de bronze doré et argenté ainsi que d’émaux
+        peints.
+        Les cassolettes (formant vases ou urnes) sont ornées d’un décor de putti en ronde bosse en
+        bronze ainsi que d’émaux figurant des personnages de la Renaissance.
+        La pendule adopte une forme architecturale ouvragée évoquant le style de la Renaissance.
+        Elle est ornée de panneaux d’émaux peints représentant un masque grotesque et deux chérubins
+        encadrant un vase à fleurs.
+        Paul Soyer est l'un des plus importants émailleurs du XIXe siècle.
+        Cet ensemble, particulièrement riche et décoratif, s’inscrit dans le goût du Second Empire.
+        Un modèle de pendule similaire, daté des années 1875, est conservé au musée d’Orsay.
+        La galerie Marc maison présente un modèle analogue dont la taille est plus importante.
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/paul-soyer-1875.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/paul-soyer-1875.mp4
+      </video:player_loc>
+      <video:duration>135</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/vase-carre-bossele-en-ceramique-emaillee</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Vase-carre-bossele-en-ceramique-emaillee.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Pierre-Adrien Dalpayrat (1844-1910) : Vase carré bosselé en
+        céramique émaillée </video:title>
+      <video:description>
+
+        Ce vase est un magnifique exemple du talent d’un des plus important céramiste de la fin du
+        XIXe siècle. Il est signée et numéroté «40».
+
+        Le décor coloré est magnifié par le fameux «rouge Dalpayrat», nuance qui fera la renommée
+        internationale du céramiste.
+
+        Les œuvres de Dalpayrat sont conservées dans les plus grands musées du monde tels que le
+        musée d’Orsay à Paris, le Metropolitan Museum de New-York, ou le musée de l’Ermitage de
+        Saint-Pétersbourg.
+        Le modèle de ce vase fut présenté sur une banquette d’Eugène Gaillard lors de l’Exposition
+        Universelle de Paris en 1900.
+
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/vase-carre-bossele-en-ceramique-emaillee.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/vase-carre-bossele-en-ceramique-emaillee.mp4
+      </video:player_loc>
+      <video:duration>132</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/manufacture-de-sevres-1874</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Manufacture-de-sevres-1874.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Les vases persans de la Manufacture de Sèvres : un modèle
+        historique </video:title>
+      <video:description>
+
+        Notre paire de vases compte parmi les belles pièces du décor bourgeois de la Belle Epoque.
+        Le modèle, dit «Bouteille persane», fut créé par la Manufacture de Sèvres en 1874, d’après
+        un prototype (en métal) perse.
+        La Manufacture de Sèvres édita d’autres exemplaires de ce modèle, comportant des variantes
+        de teintes et d’ornements.
+        Il fut choisi par Ernest Carrier-Belleuse, sculpteur de renom qui prit la direction
+        artistique de la Manufacture entre 1874 et 1887.
+        La particularité de la bouteille persane est de présenter un goulot très allongé, en
+        porcelaine blanche généralement ornée de motifs ou d’aplats de couleur bleue.
+        La paire de vases que nous présentons fut façonnée en 1887. Ils sont en porcelaine sous
+        couverte bleu cobalt unie. Le décor, composé de fins liserés dorés, date de 1888.
+        Le bleu est considéré comme la couleur fétiche de la céramique venue de Perse, culture qui
+        intéresse de près les faïenciers de la seconde moitié du XIXe siècle.
+        L’époque, fatiguée par les fantaisies néo-grecques et néo-étrusques, est en effet férue de
+        références exotiques et orientales.
+
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/manufacture-de-sevres-1874.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/manufacture-de-sevres-1874.mp4
+      </video:player_loc>
+      <video:duration>154</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/galle-plat-lune</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Galle-plat-lune.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Une pièce rare d’Emile Gallé : Lune et fantaisie paysagère
+        d’après Joseph Vernet </video:title>
+      <video:description>
+
+        Sa forme est originale. En relief, le rebord du plat circulaire reprend le motif du
+        croissant de lune, symbolisé par un visage.
+        Cette iconographie a des racines anciennes, les récits mythologiques associant volontiers la
+        lune à un personnage masculin.
+        Il s’agit d’une paréidolie (illusion d’optique), soit la propension à voir une forme
+        identifiable dans un élément naturel (dans les nuages, sur la surface éclairée de la lune,
+        dans un rocher...).
+        Cette pièce rare d’Emile Gallé, portant sa signature, est une création des années 1863-1877.
+        L’intérieur du plat est orné d’une scène paysagère inspirée d’un tableau de Joseph Vernet,
+        Le Rocher percé, diffusé par la gravure.
+        Une feuille d’étude de la main de Gallé représentant une même pièce de forme lunaire avec un
+        décor différent se trouve au musée d’Orsay, à Paris.
+        La création de ce modèle de cadre lunaire revient à Gengoult Prouvé, qui travailla au
+        service du père d’Emile Gallé, à la tête de l’entreprise familiale de verrerie que développe
+        son fils dans les années 1870.
+        Ce modèle servit également à la création de cendriers en verre soufflé, moulé et gravé à la
+        roue, dits Clair de lune.
+        Le musée national des Arts et Métiers conserve une œuvre identique, représentant Pierrot et
+        Colombine, connue sous le titre La Lune rousse.
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/galle-plat-lune.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/galle-plat-lune.mp4
+      </video:player_loc>
+      <video:duration>118</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/plat-a-decor-egyptien-en-faience-representant-une-reine-egyptienne</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Z72_2260_ef5gkd.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Théodore Deck (céramiste) et Albert Anker (peintre): Plat à
+        décor égyptien en faïence, représentant une reine égyptienne </video:title>
+      <video:description>
+
+        Ce plat d’inspiration égyptienne est l’une des plus belles collaborations entre le céramiste
+        Théodore Deck et le peintre Albert Anker. Il est signé et daté de 1869.
+        A partir de 1866, Théodore Deck et Albert Anker réalisent de nombreuses collaborations.
+        Ce partage de savoir-faire illustre le phénomène, qui se produit durant la fin du second
+        Empire et dans les années 1870, de l’association des Beaux-Arts à la production d'objets
+        d’arts décoratifs.
+        Le musée d’Orsay conserve une œuvre similaire. Il s’agit du «Plat à décor assyrien» de
+        1870,issu de la même collaboration entre Anker et Deck.
+        A ce jour, on ne connaît pas d’équivalent à ces deux plats.
+
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/plat-a-decor-egyptien-en-faience-representant-une-reine-egyptienne.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/plat-a-decor-egyptien-en-faience-representant-une-reine-egyptienne.mp4
+      </video:player_loc>
+      <video:duration>137</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/emile-galle-1863-1890</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Emile-galle-1863-1890.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Variation nocturne : une création rare d’Emile Gallé </video:title>
+      <video:description>
+
+        Notre plat en faïence, rehaussé de dorure, est un objet d’exception. Réalisé entre 1863 et
+        1890, il porte la signature d’Emile Gallé, fondateur de l’Ecole de Nancy.
+
+        Sa forme singulière peut tout d’abord évoquer un nuage. Mais l’explication est plus subtile
+        encore.
+
+        Il représente un ancien château médiéval, gagné par les feuillages, au bord de l’eau. Des
+        chauves-souris volent dans le ciel. Elles apportent un air de mystère à ce paysage inspiré
+        du romantisme noir.
+
+        En effet, le décor évoque à tout point de vue les dessins de Victor Hugo, dont les vers ont
+        souvent inspiré Gallé.
+
+        A présent, nous comprenons les formes curieuses qui bordent le plat et entourent la scène :
+        il s’agit de deux silhouettes de chauve-souris.
+
+        Un plat comparable est conservé au musée de l’Ecole de Nancy. Mais notre exemplaire est plus
+        riche. Il est le seul exemple connu présentant l’application d’une dorure, ce qui entraîne
+        une cuisson supplémentaire. Il s’agit d’une pièce tout à fait exceptionnelle.
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/emile-galle-1863-1890.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/emile-galle-1863-1890.mp4
+      </video:player_loc>
+      <video:duration>129</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/paul-soyer-1880</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Paul-soyer-1880.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Quand l’émail devient portrait. Les deux jeunes filles, par Paul
+        Soyer </video:title>
+      <video:description>
+
+        Conçus comme un pendant, ces deux portraits de jeunes filles sont signés Paul Soyer, graveur
+        et émailleur parisien. Ils datent des années 1880.
+
+        Ils relèvent d’une technique particulière, que Soyer apprit à maîtriser aux côtés de son
+        maître Claudius Popelin: l’émail en teinte or et grisaille sur cuivre.
+
+        Sur une plaque de cuivre préparée, le portrait est délicatement peint au pinceau par
+        l’artiste.
+
+        La plaque est ensuite émaillée suivant une technique très ancienne, dite du blanc ou de la
+        grisaille , qui permet d’obtenir des détails d’une grande finesse, parfois réalisés à
+        l’aiguille.
+
+        La cuisson de la plaque requiert des températures plus douces que pour les émaux
+        traditionnels. L’opération est répétée jusqu’à trois ou quatre fois pour obtenir un résultat
+        d’une telle qualité.
+
+        Observons la beauté des chairs de ces deux élégantes de la Belle Epoque, l’intensité de leur
+        regard, la finesse de leur chevelure et la précision dans le rendu des tissus et bijoux.
+
+        A la même époque, Popelin continue lui aussi de pratiquer cette technique rare. Le musée
+        d’Orsay conserve ainsi quelques émaux peints en teinte or sur cuivre, dont le portrait du
+        prince Louis-Napoléon.
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/paul-soyer-1880.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/paul-soyer-1880.mp4
+      </video:player_loc>
+      <video:duration>142</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/j-and-l-lobmeyr-fin-1870</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/J-and-l-lobmeyr-fin-1870.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Vase de style oriental en verre émaillé au nom de Mohamed. Une
+        création de J et L Lobmeyr </video:title>
+      <video:description>
+
+        Portant en miroir sur sa panse le chiffre du nom de Mohamed, notre vase s’inscrit dans le
+        goût orientaliste de la seconde moitié du XIXe siècle.
+
+        En verre à décor d’émail et d’or, notre vase date de la fin des années 1870 et porte la
+        signature de Lobmeyr.
+
+        J. et L. Lobmeyr était une cristallerie autrichienne d’importance internationale, fondée en
+        1823 et représentée durant les Expositions Universelles.
+
+        Célèbre pour ses lustres en cristal et ses objets décoratifs, elle fournissait la cour
+        impériale viennoise, ainsi que la couronne de Belgique et celle des Flandres.
+
+        Les motifs qui décorent notre vase sont librement inspirés du répertoire ornemental du
+        Proche-Orient.
+
+        Conformément à la tradition orientale, ces motifs sont non figuratifs. Ils magnifient le jeu
+        des entrelacs, des arabesques et des couleurs.
+
+        Un modèle semblable fut présenté dans le stand de Lobmeyr à Paris lors de l’Exposition
+        Universelle de 1878.
+
+        Une pièce similaire est conservée au musée des Arts Décoratifs à Paris.
+
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/j-and-l-lobmeyr-fin-1870.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/j-and-l-lobmeyr-fin-1870.mp4
+      </video:player_loc>
+      <video:duration>137</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/rubelles-1842-1844</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Rubelles-1842-1844.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Un guéridon au décor d’émail rarissime de la faïencerie de
+        Rubelles </video:title>
+      <video:description>
+
+        Notre guéridon plaqué de palissandre, au plateau orné d’émaux ombrants d’un beau vert
+        profond, est une pièce tout à fait exceptionnelle.
+
+        Réalisé entre 1842 et 1844, ce décor d’émail est l’œuvre de la faïencerie artistique de
+        Rubelles, près de Fontainebleau.
+
+        Possiblement retiré de l’Exposition du commerce et des produits de l’industrie en 1844,
+        notre guéridon est le seul exemplaire connu à ce jour.
+
+        A la fin du XIXe siècle, ses créations sont très prisés des connaisseurs qui se les
+        disputent « à prix d’or ». Elles étaient comparées aux plus belles porcelaines anglaises.
+        Très rare, ce décor est en faïence lithophanique, une technique mise au point par le baron
+        de Bourgoing en association avec Alexis du Tremblay, propriétaire du château de Rubelles.
+        Directeurs de la Manufacture de Rubelles, les deux associés exploitèrent ce procédé original
+        durant une quinzaine d’années.
+
+        Il permet d’obtenir des effets de transparence dans la porcelaine. Les dessins sont rendus
+        en dégradés, depuis les ombres opaques jusqu’à des lumières très translucides.
+
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/rubelles-1842-1844.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/rubelles-1842-1844.mp4
+      </video:player_loc>
+      <video:duration>162</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/ch-pillivuyt-and-cie-1867</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Ch-pillivuyt-and-cie-1867.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - « Le village secret des souris » : un ensemble japonisant de la
+        Maison Ch. Pillivuyt et Cie </video:title>
+      <video:description>
+
+        SNos douze assiettes en porcelaine sont une création originale de la manufacture Ch.
+        Pillivuyt et Cie, médaillée à l’exposition universelle de 1867.
+
+        Le thème s’inspire de deux œuvres du maître de l’estampe japonaise, Hokusai. Elles
+        appartiennent à la Manga, son célèbre ensemble de croquis.
+
+        Ce décor est caractéristique de l’essor du Japonisme dans les arts occidentaux à compter des
+        années 1860.
+
+        A l’image d’une fable, ce décor met en scène un peuple de souris occupées à diverses
+        activités propres à l’humain.
+
+        Les petits personnages sont vêtus à la japonaise. Le paysage, au travers du mont Fuji,
+        évoque également le pays du Soleil levant.
+
+        Importante manufacture, la maison Pillivuy a modernisé l’art de la porcelaine. Charles
+        Pillivuyt fut un pionnier dans la fabrication de pâtes de qualité, sans recours à la
+        traditionnelle terre de Limoges.
+
+        A partir de terres du Cher et de l’Allier, il perfectionna la cuisson de la porcelaine en
+        délaissant le bois au profit de la houille.
+
+        La manufacture est connue pour l’excellence de ses décors en couleurs, réputés d’un éclat
+        vif et inaltérables.
+
+        Une collection de cinq assiettes et un plat à gâteau relevant de ce modèle sont aujourd’hui
+        conservés au Cooper Hewitt Smithsonian Museum de New York.
+
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/ch-pillivuyt-and-cie-1867.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/ch-pillivuyt-and-cie-1867.mp4
+      </video:player_loc>
+      <video:duration>145</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/le-vase-d-opaline-la-magie-de-baccarat-au-xixe-siecle</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Le-vase-d-opaline-la-magie-de-baccarat-au-xixe-siecle.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Le vase d’Opaline : la magie de Baccarat au XIXe siècle</video:title>
+      <video:description>
+
+        La cristallerie Baccarat, manufacture de cristal française de renommée internationale, fut
+        fondée sous Louis XV.
+
+        Notre vase, réalisé au XIXe siècle, est en opaline. Laiteux, ce verre précieux est orné d’un
+        décor poétique et animalier peint à la main.
+
+        Il s’agit de mésanges, symboles du bonheur conjugal et de la fidélité, s’ébattant sur des
+        branches.
+
+        Ce vase est ceint d’une riche monture en bronze argenté. Elle fut conçue spécifiquement pour
+        cette pièce.
+
+        Cet objet richement décoré est le fruit de l’alliance de la magie du verre et du cristal à
+        celle des bronziers spécialisés dans les arts décoratifs.
+
+        Dits en « pattes de lion », les pieds renvoient à l’imaginaire de la Renaissance, très
+        apprécié au XIXe siècle. La monture est ornée de figures et de détails ornementaux d’un
+        grand raffinement.
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/le-vase-d-opaline-la-magie-de-baccarat-au-xixe-siecle.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/le-vase-d-opaline-la-magie-de-baccarat-au-xixe-siecle.mp4
+      </video:player_loc>
+      <video:duration>114</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/le-vase-a-la-grecque-de-la-cristallerie-baccarat</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/cristallerie-de-baccarat-vase-de-forme-cratere-neo-grec-en-cristal-double-et-grave-a-l-acide-fluorhydrique-exposition-universelle-de-1867-13171_01_big_2x_iwgpbe.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Splendeur des arts décoratifs sous le Second Empire : Le vase à
+        la grecque de la cristallerie Baccarat</video:title>
+      <video:description>
+
+        Chef-d’œuvre de la cristallerie Baccarat, notre vase en cristal doublé emprunte la forme
+        d’un cratère grec. Il fut réalisé entre 1864 et 1867. Lors de l’exposition universelle de
+        1867, la célèbre cristallerie exposa des modèles relevant de ce style décoratif néogrec,
+        très en faveur sous le Second Empire. Elle plaçait alors une partie de sa production sous le
+        signe de Dionysos, figure majeure du panthéon mythologique. Notre exemplaire est le seul
+        connu à ce jour à allier la forme d’un cratère et la couleur rose. Certains modèles
+        présentant un décor similaire, mais de couleur bleue ou jaune, sont répertoriés par les
+        spécialistes. Le décor, qui met en scène des motifs liés aux libations et aux agapes, est le
+        fruit d’une technique complexe. Sur fond blanc opale, personnages et ornements sont gravés à
+        l’acide fluorhydrique, selon la technique mise au point par le chimiste allemand Louis
+        Kessler en 1855, dont Baccarat acheta le brevet en 1864. D’autres pièces de la cristallerie
+        Baccarat présentant un décor comparable sont conservées dans d’importants musées, tels que
+        le Corning Museum of glass, le Chrysler Museum à Norfolk ou le musée d’Orsay.
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/le-vase-a-la-grecque-de-la-cristallerie-baccarat.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/le-vase-a-la-grecque-de-la-cristallerie-baccarat.mp4
+      </video:player_loc>
+      <video:duration>136</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/emile-galle-1879-1890</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Emile-galle-1879-1890.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Le vase d’Emile Gallé : Ode à la nature de l’Egypte pharaonique </video:title>
+      <video:description>
+
+        Ce vase signé par Emile Gallé, entre 1879 et 1890, est un chef d’œuvre des arts décoratifs
+        de la Belle Epoque.
+        La pièce d’exception fut façonnée à Nancy, terre d’Emile Gallé. Cet artiste est l’un des
+        plus grands maîtres-verriers et céramiste de l’Art Nouveau.
+        L’iconographie et le décor sont une Ode à l’Egypte ancienne, source d’inspiration d’Emile
+        Gallé, fasciné par cette culture.
+        Notre pièce s’inspire des techniques traditionnelles de la céramique japonaise, en reprenant
+        le principe des fausses coulures.
+        Les couleurs complémentaires, marron et bleu, créent une harmonie chromatique.
+        Admirons l’originalité du décor représentant des papyrus. Un petit scarabée s’ébat en vol,
+        unissant thème animal et végétal.
+        Une pièce comparable, présentant un autre décor à thème japonisant, est passée en vente chez
+        Tajan, à Paris, le 26 février 2013. Une autre est conservée au musée de l’Ecole de Nancy.
+        Chaque décor est unique.
+
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/emile-galle-1879-1890.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/emile-galle-1879-1890.mp4
+      </video:player_loc>
+      <video:duration>118</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/emile-galle-1846-1904-vase-en-faience-aux-fleurs-et-paillons-d-or</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Emile-galle-1846-1904-vase-en-faience-aux-fleurs-et-paillons-d-or2.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Fleurs et paillons d’or : un vase en céramique d’exception
+        d’Emile Gallé</video:title>
+      <video:description>
+
+        Signé du nom d’Emile Gallé, notre vase est une pièce rare. Il fut façonné à Nancy en 1884.
+        Cette œuvre, juste antérieure à la vague de l’art nouveau, révèle le talent précoce de
+        Gallé. A cette époque, Gallé étudie la minéralogie et développe sa passion pour les sciences
+        naturelles.
+
+        Afin d’évoquer la nature, l’artiste n’hésite pas à user de techniques complexes. La faïence
+        comporte des inclusions de parcelles métalliques qui lui donnent un caractère précieux.
+
+        Le décor floral est ainsi illuminé par des paillons d’or. Du rouge-brun vers le jaune d’or,
+        le dégradé de couleurs est particulièrement chaleureux et élégant.
+
+        Le bord du vase est orné d’un décor végétal. A l’image de nombreuses créations de Gallé, ce
+        vase est plus proche de l’œuvre d’art que du simple objet décoratif. Source d’émotion, il
+        s’adresse autant à l’œil qu’à l’esprit.
+
+        On connaît un vase d'une taille plus importante, qui a été présenté à l'exposition de
+        l'union centrale des arts décoratifs de 1884.
+
+        Dessinée par Gallé, une étude préparatoire d’un vase de la même période est conservée au
+        musée d’Orsay.
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/emile-galle-1846-1904-vase-en-faience-aux-fleurs-et-paillons-d-or.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/emile-galle-1846-1904-vase-en-faience-aux-fleurs-et-paillons-d-or.mp4
+      </video:player_loc>
+      <video:duration>104</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/un-porte-document-au-precieux-decor-de-porcelaine</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Un-porte-document-au-precieux-decor-de-porcelaine.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Un porte-document au précieux décor de porcelaine par
+        Julien-Nicolas Rivart </video:title>
+      <video:description>
+
+        Pièce extrêmement rare, notre porte-document en cuir présente un décor en marqueterie de
+        porcelaine d’une grande finesse.
+        Il s’agit d’un travail très original, les porcelaines de Rivart étant habituellement
+        incrustées sur des pièces de mobilier en bois.
+        Ses décors forment de véritables tableaux de fleurs. L’objet se métamorphose en bijou.
+        Recouvert de cuir, ce porte document comporte deux compartiments doublés de tissus moirés.
+        La porcelaine apporte délicatesse et brillance au cuir mat.
+        Rivart, grand nom des arts décoratifs sous le Second Empire, avait renouvelé l’art de la
+        marqueterie en remplaçant le traditionnel placage en bois par une fine marqueterie en
+        porcelaine.Dans les années 1850, Rivart est salué dans la presse pour son brevet et sa
+        maîtrise technique.
+        Son brevet prévoyait l’incrustation de porcelaine sur différents supports, tels que le bois,
+        le carton, le cuir ou le velours et même le marbre mais très peu de ses réalisations nous
+        sont parvenues en dehors du mobilier.
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/un-porte-document-au-precieux-decor-de-porcelaine.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/un-porte-document-au-precieux-decor-de-porcelaine.mp4
+      </video:player_loc>
+      <video:duration>115</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/manufacture-vieillard-and-cie-1870</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Manufacture-vieillard-and-cie-1870.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Manufacture Vieillard et Cie : Plat à décor de poisson </video:title>
+      <video:description>
+
+        Ce plat d’inspiration extrême orientale est un exemple précoce du japonisme dans les arts
+        décoratifs européen. Il date des années 1870.
+
+        Vieillard et Cie est une importante manufacture de faïencerie bordelaise de la seconde
+        moitié du XIXe siècle.
+
+        La forme arrondie des poissons s’inspire probablement du décor d’une tsuba qui est la garde
+        d’un sabre japonais.
+
+
+        Les couleurs vives, dont le vert acide, sont peu fréquentent dans la gamme chromatique des
+        faiences bordelaises et pourraient révéler l’influence de Christopher Dresser.
+
+        A ce jour, un seul autre plat similaire, variant par ses couleurs, est connu. Il est
+        conservé dans une collection particulière.
+
+
+        Les œuvres de Vieillard et Cie sont conservées dans des prestigieuses institutions
+        nationales comme le musée d’Orsay et le musée des Arts Décoratifs.
+
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/manufacture-vieillard-and-cie-1870.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/manufacture-vieillard-and-cie-1870.mp4
+      </video:player_loc>
+      <video:duration>125</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://marcmaison.art/emilie-galle-1863-1880</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/Emilie-galle-1863-1880.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - La nature faite vase : Attribué à Émile Gallé pour la
+        manufacture de Lunéville </video:title>
+      <video:description>
+
+        Daté entre 1863 et 1880, ce vase est attribué au grand céramiste et maître-verrier nancéien
+        Emile Gallé.
+
+        Il fut très certainement édité par Keller et Guérin, propriétaires de la manufacture de
+        Lunéville, avant que Gallé ne dépose ses propres modèles.
+
+        D’une forme très recherchée, notre vase présente une panse quadrilobée ornée de branches, de
+        feuilles et de papillons dans des couleurs or et argent sur un fond bleu de Prusse.
+
+        Le vase repose sur une base imitant des branchages, très naturalistes, évoquant les études
+        de feuillages et de fleurs de Gallé conservées au musée d’Orsay.
+
+        L’institution parisienne possède d’ailleurs un dessin préparatoire de Gallé pour une pièce
+        proche de notre vase.
+
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/emilie-galle-1863-1880.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/emilie-galle-1863-1880.mp4
+      </video:player_loc>
+      <video:duration>100</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+  <url>
+    <loc>
+      https://marcmaison.art/inspire-des-arts-de-l-extreme-orient-le-grand-vase-bleu-de-theodore-deck</loc>
+    <lastmod>2023-07-01T23:55:41+00:00</lastmod>
+
+    <video:video>
+      <video:thumbnail_loc>
+        https://res.cloudinary.com/amircloud/image/upload/marc/DSC_5306_ydmzcz.png </video:thumbnail_loc>
+      <video:title>MarcMaison.Art - Inspiré des arts de l’Extrême-Orient : Le grand vase bleu de
+        Théodore Deck </video:title>
+      <video:description>
+
+        Signé et portant le cachet du céramiste, ce grand vase turquoise est une création de
+        Théodore Deck.
+
+        Ce bleu, dit « bleu de Deck », est devenu la signature esthétique de ce céramiste de renom.
+        Catalogué comme un cache-pot, ce grand vase est en faïence émaillée.
+
+        Pour ses pièces originales et innovantes, Deck fut médaillé d’argent à l’Exposition
+        universelle de 1867.
+
+        Le décor témoigne de sa fascination pour les arts d’Extrême-Orient. Inspiré de vases
+        japonais de la fin du XIXe siècle, il représente des dragons, créatures fantastiques venues
+        de l’imaginaire asiatique.
+
+        Une pièce ornée d’un décor comparable, et du même bleu éclatant, est conservée au
+        Metropolitan Museum à New York.
+      </video:description>
+      <video:content_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/inspire-des-arts-de-l-extreme-orient-le-grand-vase-bleu-de-theodore-deck.mp4
+      </video:content_loc>
+      <video:player_loc>
+        https://res.cloudinary.com/amircloud/video/upload/q_auto/marc/inspire-des-arts-de-l-extreme-orient-le-grand-vase-bleu-de-theodore-deck.mp4
+      </video:player_loc>
+      <video:duration>106</video:duration>
+      <video:publication_date>2023-08-05T19:20:30+08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader
+        info="https://www.marcmaison.fr/about">Marc Maison
+      </video:uploader>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
 
 </urlset>
