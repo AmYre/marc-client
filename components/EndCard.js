@@ -40,6 +40,7 @@ const EndCard = () => {
 	const [delay, setDelay] = useState(false);
 	const form = useRef();
 	const myDialog = useRef();
+	const myMobDialog = useRef();
 
 	const router = useRouter();
 	const url = router.query.slug;
@@ -58,8 +59,6 @@ const EndCard = () => {
 		{ name: "turkish", pic: flagtu, tag: "-tu" },
 		{ name: "russian", pic: flagru, tag: "-ru" },
 	];
-
-	console.log(myDialog)
 
 	const getVids = async () => {
 		const products = await sanityClient.fetch(`*[_type == "products"]`);
@@ -118,7 +117,7 @@ const EndCard = () => {
 								<Image
 									key={index}
 									onClick={() => {
-										setIsOpen((prev) => !prev);
+										myMobDialog.current.showModal();
 										getVidLang(lang.tag);
 									}}
 									className="hover:cursor-pointer"
@@ -165,15 +164,9 @@ const EndCard = () => {
 						</div>
 					</div>
 				</motion.div>
-				{isOpen && (
-					<motion.div
-						initial={{ opacity: 0, scale: 0.5 }}
-						animate={{ opacity: 1, scale: 1 }}
-						transition={{ duration: 0.25 }}
-						className="absolute top-0 w-full h-full z-30 flex flex-col gap-10 justify-center items-center bg-layout bg-opacity-95 p-6 overflow-y-scroll"
-					>
-						<AiOutlineCloseCircle className="text-white text-3xl cursor-pointer bg-secondary rounded-full mt-6" onClick={() => setIsOpen(false)} />
-						<div className="flex flex-wrap justify-center items-center gap-4">
+				<dialog ref={myMobDialog} className="bg-layout">
+					<AiOutlineCloseCircle onClick={() => myMobDialog.current.close()} className="text-white text-3xl cursor-pointer mt-4 mb-4" />
+					<Masonry breakpointCols={1} className="my-masonry-grid pt-8" columnClassName="my-masonry-grid_column">
 							{currentProduct && (
 								<motion.div
 									initial={{ y: "50%", opacity: 0, scale: 0.5 }}
@@ -185,13 +178,11 @@ const EndCard = () => {
 										target="_blank"
 										href={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${currentProduct?.slugfr?.current.replace(/-mob/g, "")}${currentLang}-mob.mp4`}
 									>
-										<div className="h-[80px] w-[80px] overflow-hidden">
-											<Image
+										<div className="overflow-hidden">
+											<img
 												className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
 												src={urlFor(currentProduct?.image)?.url()}
 												alt="Image produit"
-												width="80"
-												height="80"
 												loader={imageLoader}
 												placeholder={<ImgLoader />}
 											/>
@@ -199,7 +190,7 @@ const EndCard = () => {
 									</Link>
 								</motion.div>
 							)}
-							{related.map(
+							{related?.map(
 								(product, index) =>
 									product.slugfr.current !== currentProduct?.slugfr?.current && (
 										<motion.div
@@ -213,13 +204,11 @@ const EndCard = () => {
 												target="_blank"
 												href={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${product.slugfr.current.replace(/-mob/g, "")}${currentLang}-mob.mp4`}
 											>
-												<div className="h-[80px] w-[80px] overflow-hidden">
-													<Image
+												<div className="overflow-hidden">
+													<img
 														className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
 														src={urlFor(product.image).url()}
 														alt="Image produit"
-														width="80"
-														height="80"
 														loader={imageLoader}
 														placeholder={<ImgLoader />}
 													/>
@@ -228,9 +217,9 @@ const EndCard = () => {
 										</motion.div>
 									)
 							)}
-						</div>
-					</motion.div>
-				)}
+					</Masonry>
+				</dialog>
+
 				{dialog && (
 					<motion.dialog
 						initial={{ opacity: 0, scale: 0.5 }}
