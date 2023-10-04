@@ -6,7 +6,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-
+import Masonry from "react-masonry-css";
 import { MutatingDots } from "react-loader-spinner";
 import TextField from "@mui/material/TextField";
 import emailjs from "@emailjs/browser";
@@ -39,6 +39,7 @@ const EndCard = () => {
 	const [dialog, setDialog] = useState(false);
 	const [delay, setDelay] = useState(false);
 	const form = useRef();
+	const myDialog = useRef();
 
 	const router = useRouter();
 	const url = router.query.slug;
@@ -57,6 +58,8 @@ const EndCard = () => {
 		{ name: "turkish", pic: flagtu, tag: "-tu" },
 		{ name: "russian", pic: flagru, tag: "-ru" },
 	];
+
+	console.log(myDialog)
 
 	const getVids = async () => {
 		const products = await sanityClient.fetch(`*[_type == "products"]`);
@@ -316,7 +319,7 @@ const EndCard = () => {
 								<Image
 									key={index}
 									onClick={() => {
-										setIsOpen((prev) => !prev);
+										myDialog.current.showModal();
 										getVidLang(lang.tag);
 									}}
 									className="hover:cursor-pointer"
@@ -384,43 +387,36 @@ const EndCard = () => {
 						</div>
 					</div>
 				</motion.div>
-				{isOpen && (
-					<motion.div
-						initial={{ opacity: 0, scale: 0.5 }}
-						animate={{ opacity: 1, scale: 1 }}
-						transition={{ duration: 0.25 }}
-						className="absolute top-0 w-full h-full z-30 flex flex-col justify-center items-center bg-layout bg-opacity-9 overflow-scroll-y p-8"
-					>
-						<AiOutlineCloseCircle className="text-white text-3xl cursor-pointer bg-secondary mb-4 rounded-full" onClick={() => setIsOpen(false)} />
 
-						<div className="flex flex-wrap justify-center items-center gap-10">
+					<dialog ref={myDialog} className="bg-layout">
+						<AiOutlineCloseCircle onClick={() => myDialog.current.close()} className="text-white text-3xl cursor-pointer mt-4 mb-4" />
+						<Masonry breakpointCols={4} className="my-masonry-grid pt-8" columnClassName="my-masonry-grid_column">
+
 							{currentProduct && (
 								<motion.div
 									initial={{ y: "50%", opacity: 0, scale: 0.5 }}
 									animate={{ y: 0, opacity: 1, scale: 1 }}
 									transition={{ duration: 0.5, ease: "easeOut" }}
 									exit={{ opacity: 0, scale: 0.1 }}
-									className="mb-8"
 								>
-									<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${currentProduct.slugfr.current}${currentLang}.mp4`}>
-										<div className="h-[100px] w-[100px] overflow-hidden">
-											<Image
+									<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${currentProduct?.slugfr.current}${currentLang}.mp4`}>
+										<div className="overflow-hidden mb-8">
+											<img
 												className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
-												src={urlFor(currentProduct.image).url()}
+												src={urlFor(currentProduct?.image).url()}
 												alt="Image produit"
-												width="100"
-												height="100"
 												loader={imageLoader}
 												placeholder={<ImgLoader />}
 											/>
-											<div className="absolute w-[100px] bg-black bg-opacity-50 p-[10px] shadow ellipse2 font-thin">
-												<h2 className="ellipse2 text-center text-white font-thin text-xs">{currentProduct.title[lang] || currentProduct.title.en}</h2>
+											<div className="absolute w-full bg-black bg-opacity-50 p-[10px] shadow ellipse2 font-thin">
+												<h2 className="ellipse2 text-center text-white font-thin text-xs">{currentProduct?.title[lang] || currentProduct?.title.en}</h2>
 											</div>
 										</div>
 									</Link>
+									<div className="h-6"></div>
 								</motion.div>
 							)}
-							{related.map(
+							{related?.map(
 								(product, index) =>
 									product.slugfr.current != currentProduct?.slugfr?.current && (
 										<motion.div
@@ -432,27 +428,26 @@ const EndCard = () => {
 											className="mb-8"
 										>
 											<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${product.slugfr.current}${currentLang}.mp4`}>
-												<div className="h-[100px] w-[100px] overflow-hidden">
-													<Image
+												<div className="overflow-hidden mb-8">
+													<img
 														className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
 														src={urlFor(product.image).url()}
 														alt="Image produit"
-														width="100"
-														height="100"
 														loader={imageLoader}
 														placeholder={<ImgLoader />}
 													/>
-													<div className="absolute w-[100px] bg-black bg-opacity-50 p-[10px] shadow ellipse2 font-thin">
-														<h2 className="ellipse2 text-center text-xs text-white font-thin ">{product.title[lang] || product.title.en}</h2>
+													<div className="absolute w-full bg-black bg-opacity-50 p-[10px] shadow ellipse2 font-thin">
+														<h2 className="ellipse2 text-center text-xs text-white font-thin ">{product?.title[lang] || product.title.en}</h2>
 													</div>
 												</div>
 											</Link>
+																				<div className="h-[1px]"></div>
 										</motion.div>
 									)
 							)}
-						</div>
-					</motion.div>
-				)}
+						</Masonry>
+					</dialog>
+
 				{dialog && (
 					<motion.dialog
 						initial={{ opacity: 0, scale: 0.5 }}
