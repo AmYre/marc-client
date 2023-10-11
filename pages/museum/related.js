@@ -49,7 +49,12 @@ const Related = ({ products, vignette }) => {
 											{product?.slugfr && (
 												<Link key={index} href={`/${product.slugfr.current}`}>
 													<div className="vig-wrapper relative w-full overflow-hidden mb-8">
-														<Image
+														{product.sold && (
+																	<div className="ribbon ribbon-top-right">
+																		<span>{texts.vendu[lang]}</span>
+																	</div>
+																)}
+																<Image
 															className="hover:scale-105 transition-all duration-1000"
 															src={urlFor(product.image).url()}
 															alt="Image produit"
@@ -83,6 +88,11 @@ const Related = ({ products, vignette }) => {
 												<Link key={index} href={`/${product.slugfr.current}`}>
 													<div className="w-full overflow-hidden">
 														<figure className="mb-8">
+															{product.sold && (
+																	<div className="ribbon ribbon-top-right">
+																		<span>{texts.vendu[lang]}</span>
+																	</div>
+																)}
 															<Image
 																className="hover:scale-105 transition-all duration-1000"
 																src={urlFor(product.image).url()}
