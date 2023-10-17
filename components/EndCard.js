@@ -14,6 +14,7 @@ import emailjs from "@emailjs/browser";
 import ImgLoader from "./ImgLoader";
 
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import { TiRefresh } from "react-icons/ti";
 import { TiArrowBack } from "react-icons/ti";
 
 import cnes from "../public/cnes.png";
@@ -138,12 +139,19 @@ const EndCard = () => {
 							</Link>
 							<div className="relative flex justify-center items-center">
 								<Image src={logo} alt="Logo Marc Maison" className="w-[20vh]" width="50" height="50" />
-								<TiArrowBack
+								{	ended ? <TiRefresh className="bg-white rounded-full text-secondary hover:text-[#e2b250] transition-all duration-300 absolute text-gold text-[10vh] cursor-pointer opacity-90"
+									onClick={() => {
+										router.reload();
+									}}
+								/>
+									:
+									<TiArrowBack
 									className="bg-white rounded-full text-secondary hover:text-[#e2b250] transition-all duration-300 absolute text-gold text-[5vh] cursor-pointer opacity-90"
 									onClick={() => {
 										setEnded(false);
 									}}
 								/>
+								}
 							</div>
 							<div
 								onClick={() => setDialog(true)}
@@ -329,12 +337,20 @@ const EndCard = () => {
 							</Link>
 							<div className="relative flex justify-center items-center">
 								<Image src={logo} alt="Logo Marc Maison" />
-								<TiArrowBack
+								<Image src={logo} alt="Logo Marc Maison" className="w-[20vh]" width="50" height="50" />
+								{	ended ? <TiRefresh className="bg-white rounded-full text-secondary hover:text-[#e2b250] transition-all duration-300 absolute text-[15vh] cursor-pointer opacity-90"
+									onClick={() => {
+										router.reload();
+									}}
+								/>
+									:
+									<TiArrowBack
 									className="bg-white rounded-full text-secondary hover:text-[#e2b250] transition-all duration-300 absolute text-gold text-8xl cursor-pointer opacity-90"
 									onClick={() => {
 										setEnded(false);
 									}}
 								/>
+								}
 							</div>
 							<div
 								onClick={() => setDialog(true)}
