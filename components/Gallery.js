@@ -36,10 +36,17 @@ const Gallery = () => {
 				)}
 				<div className="font-roboto text-justify">{judic?.description && <PortableText value={judic?.description[lang] || judic?.description.en} />}</div>
 			</div>
-			<div className="flex flex-col md:flex-row justify-around items-center gap-4">
-				<Link target="_blank" href="https://www.calameo.com/read/00672831782014e6b2b41">
-					<button className="bg-secondary hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300">{texts?.ad[lang]}</button>
-				</Link>
+			<div className="flex flex-col justify-around items-center gap-4">
+				<div className="flex flex-col md:flex-row justify-around items-center gap-4">
+					<Link target="_blank" href="https://www.calameo.com/read/00672831782014e6b2b41">
+						<button className="bg-secondary hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300">{texts?.ad[lang]}</button>
+					</Link>
+				</div>
+				<div className="flex flex-col md:flex-row justify-around items-center gap-4">
+					<Link target="_blank" href="https://www.calameo.com/read/007497858f0af1b600713">
+						<button className="bg-secondary hover:cursor-pointer hover:scale-[1.02] hover:shadow-md text-white px-8 py-4 rounded transition-all duration-300">{texts?.pov[lang]}</button>
+					</Link>
+				</div>
 			</div>
 		</main>
 	)

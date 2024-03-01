@@ -55,6 +55,12 @@ const locales = {
 		ru: "Read the AD article",
 		cn: "Read the AD article",
 	},
+	pov: {
+		fr: "Consulter l'article POINT DE VUE",
+		en: "Read the POINT DE VUE article",
+		ru: "Read the POINT DE VUE article",
+		cn: "Read the POINT DE VUE article",
+	},
 	btnSound: {
 		fr: "Son",
 		en: "Sound",
