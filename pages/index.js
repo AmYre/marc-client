@@ -69,6 +69,7 @@ export default function Home() {
 		[isDesktop]
 	);
 
+
 	const videoHomeMob = useMemo(
 		() =>
 			isMobile && (
