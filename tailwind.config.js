@@ -11,11 +11,11 @@ module.exports = {
 			},
 			backgroundColor: {
 				layout: "#6A2147",
-				bg: "#dfdee9",
+				bg: "black",
 				secondary: "#a87e2d",
 				yellow: "#DEA627",
 			},
 		},
 	},
 	plugins: [],
-}
+};

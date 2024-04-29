@@ -6,6 +6,6 @@ const nextConfig = {
 	images: {
 		domains: ["cdn.sanity.io", "marc.sanity.studio", "v.calameo.com", "calameo.com", "res.cloudinary.com"],
 	},
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
