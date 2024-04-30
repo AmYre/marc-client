@@ -139,19 +139,21 @@ const EndCard = () => {
 							</Link>
 							<div className="relative flex justify-center items-center">
 								<Image src={logo} alt="Logo Marc Maison" className="w-[20vh]" width="50" height="50" />
-								{	ended ? <TiRefresh className="bg-white rounded-full text-secondary hover:text-[#e2b250] transition-all duration-300 absolute text-gold text-[10vh] cursor-pointer opacity-90"
-									onClick={() => {
-										router.reload();
-									}}
-								/>
-									:
+								{ended ? (
+									<TiRefresh
+										className="bg-white rounded-full text-secondary hover:text-[#e2b250] transition-all duration-300 absolute text-gold text-[10vh] cursor-pointer opacity-90"
+										onClick={() => {
+											router.reload();
+										}}
+									/>
+								) : (
 									<TiArrowBack
-									className="bg-white rounded-full text-secondary hover:text-[#e2b250] transition-all duration-300 absolute text-gold text-[5vh] cursor-pointer opacity-90"
-									onClick={() => {
-										setEnded(false);
-									}}
-								/>
-								}
+										className="bg-white rounded-full text-secondary hover:text-[#e2b250] transition-all duration-300 absolute text-gold text-[5vh] cursor-pointer opacity-90"
+										onClick={() => {
+											setEnded(false);
+										}}
+									/>
+								)}
 							</div>
 							<div
 								onClick={() => setDialog(true)}
@@ -175,56 +177,56 @@ const EndCard = () => {
 				<dialog ref={myMobDialog} className="bg-layout">
 					<AiOutlineCloseCircle onClick={() => myMobDialog.current.close()} className="text-white text-3xl cursor-pointer mt-4 mb-4" />
 					<Masonry breakpointCols={1} className="my-masonry-grid pt-8" columnClassName="my-masonry-grid_column">
-							{currentProduct && (
-								<motion.div
-									initial={{ y: "50%", opacity: 0, scale: 0.5 }}
-									animate={{ y: 0, opacity: 1, scale: 1 }}
-									transition={{ duration: 0.5, ease: "easeOut" }}
-									exit={{ opacity: 0, scale: 0.1 }}
+						{currentProduct && (
+							<motion.div
+								initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+								animate={{ y: 0, opacity: 1, scale: 1 }}
+								transition={{ duration: 0.5, ease: "easeOut" }}
+								exit={{ opacity: 0, scale: 0.1 }}
+							>
+								<Link
+									target="_blank"
+									href={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${currentProduct?.slugfr?.current.replace(/-mob/g, "")}${currentLang}-mob.mp4`}
 								>
-									<Link
-										target="_blank"
-										href={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${currentProduct?.slugfr?.current.replace(/-mob/g, "")}${currentLang}-mob.mp4`}
+									<div className="overflow-hidden">
+										<img
+											className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
+											src={urlFor(currentProduct?.image)?.url()}
+											alt="Image produit"
+											loader={imageLoader}
+											placeholder={<ImgLoader />}
+										/>
+									</div>
+								</Link>
+							</motion.div>
+						)}
+						{related?.map(
+							(product, index) =>
+								product.slugfr.current !== currentProduct?.slugfr?.current && (
+									<motion.div
+										key={index}
+										initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+										animate={{ y: 0, opacity: 1, scale: 1 }}
+										transition={{ duration: 0.5, ease: "easeOut" }}
+										exit={{ opacity: 0, scale: 0.1 }}
 									>
-										<div className="overflow-hidden">
-											<img
-												className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
-												src={urlFor(currentProduct?.image)?.url()}
-												alt="Image produit"
-												loader={imageLoader}
-												placeholder={<ImgLoader />}
-											/>
-										</div>
-									</Link>
-								</motion.div>
-							)}
-							{related?.map(
-								(product, index) =>
-									product.slugfr.current !== currentProduct?.slugfr?.current && (
-										<motion.div
-											key={index}
-											initial={{ y: "50%", opacity: 0, scale: 0.5 }}
-											animate={{ y: 0, opacity: 1, scale: 1 }}
-											transition={{ duration: 0.5, ease: "easeOut" }}
-											exit={{ opacity: 0, scale: 0.1 }}
+										<Link
+											target="_blank"
+											href={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${product.slugfr.current.replace(/-mob/g, "")}${currentLang}-mob.mp4`}
 										>
-											<Link
-												target="_blank"
-												href={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${product.slugfr.current.replace(/-mob/g, "")}${currentLang}-mob.mp4`}
-											>
-												<div className="overflow-hidden">
-													<img
-														className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
-														src={urlFor(product.image).url()}
-														alt="Image produit"
-														loader={imageLoader}
-														placeholder={<ImgLoader />}
-													/>
-												</div>
-											</Link>
-										</motion.div>
-									)
-							)}
+											<div className="overflow-hidden">
+												<img
+													className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
+													src={urlFor(product.image).url()}
+													alt="Image produit"
+													loader={imageLoader}
+													placeholder={<ImgLoader />}
+												/>
+											</div>
+										</Link>
+									</motion.div>
+								)
+						)}
 					</Masonry>
 				</dialog>
 
@@ -294,7 +296,7 @@ const EndCard = () => {
 					transition={{ duration: 0.25 }}
 					className="absolute top-0 w-full h-full z-20 flex justify-center items-center bg-layout"
 				>
-					<div className="w-fit h-fit p-12 bg-layout">
+					<div className="w-full h-fit p-12 bg-layout">
 						<div>
 							<div className="flex flex-col justify-center items-center">
 								<h1 className="mb-0 pb-0 text-[2rem] text-gray-200 pt-6 px-6 font-bodoni tracking-wide">Galerie Marc Maison</h1>
@@ -338,19 +340,21 @@ const EndCard = () => {
 							<div className="relative flex justify-center items-center">
 								<Image src={logo} alt="Logo Marc Maison" />
 								<Image src={logo} alt="Logo Marc Maison" className="w-[20vh]" width="50" height="50" />
-								{	ended ? <TiRefresh className="bg-white rounded-full text-secondary hover:text-[#e2b250] transition-all duration-300 absolute text-[15vh] cursor-pointer opacity-90"
-									onClick={() => {
-										router.reload();
-									}}
-								/>
-									:
+								{ended ? (
+									<TiRefresh
+										className="bg-white rounded-full text-secondary hover:text-[#e2b250] transition-all duration-300 absolute text-[15vh] cursor-pointer opacity-90"
+										onClick={() => {
+											router.reload();
+										}}
+									/>
+								) : (
 									<TiArrowBack
-									className="bg-white rounded-full text-secondary hover:text-[#e2b250] transition-all duration-300 absolute text-gold text-8xl cursor-pointer opacity-90"
-									onClick={() => {
-										setEnded(false);
-									}}
-								/>
-								}
+										className="bg-white rounded-full text-secondary hover:text-[#e2b250] transition-all duration-300 absolute text-gold text-8xl cursor-pointer opacity-90"
+										onClick={() => {
+											setEnded(false);
+										}}
+									/>
+								)}
 							</div>
 							<div
 								onClick={() => setDialog(true)}
@@ -393,65 +397,64 @@ const EndCard = () => {
 					</div>
 				</motion.div>
 
-					<dialog ref={myDialog} className="bg-layout">
-						<AiOutlineCloseCircle onClick={() => myDialog.current.close()} className="text-white text-3xl cursor-pointer mt-4 mb-4" />
-						<Masonry breakpointCols={4} className="my-masonry-grid pt-8" columnClassName="my-masonry-grid_column">
-
-							{currentProduct && (
-								<motion.div
-									initial={{ y: "50%", opacity: 0, scale: 0.5 }}
-									animate={{ y: 0, opacity: 1, scale: 1 }}
-									transition={{ duration: 0.5, ease: "easeOut" }}
-									exit={{ opacity: 0, scale: 0.1 }}
-								>
-									<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${currentProduct?.slugfr.current}${currentLang}.mp4`}>
-										<div className="overflow-hidden mb-8">
-											<img
-												className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
-												src={urlFor(currentProduct?.image).url()}
-												alt="Image produit"
-												loader={imageLoader}
-												placeholder={<ImgLoader />}
-											/>
-											<div className="absolute w-full bg-black bg-opacity-50 p-[10px] shadow ellipse2 font-thin">
-												<h2 className="ellipse2 text-center text-white font-thin text-xs">{currentProduct?.title[lang] || currentProduct?.title.en}</h2>
-											</div>
+				<dialog ref={myDialog} className="bg-layout">
+					<AiOutlineCloseCircle onClick={() => myDialog.current.close()} className="text-white text-3xl cursor-pointer mt-4 mb-4" />
+					<Masonry breakpointCols={4} className="my-masonry-grid pt-8" columnClassName="my-masonry-grid_column">
+						{currentProduct && (
+							<motion.div
+								initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+								animate={{ y: 0, opacity: 1, scale: 1 }}
+								transition={{ duration: 0.5, ease: "easeOut" }}
+								exit={{ opacity: 0, scale: 0.1 }}
+							>
+								<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${currentProduct?.slugfr.current}${currentLang}.mp4`}>
+									<div className="overflow-hidden mb-8">
+										<img
+											className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
+											src={urlFor(currentProduct?.image).url()}
+											alt="Image produit"
+											loader={imageLoader}
+											placeholder={<ImgLoader />}
+										/>
+										<div className="absolute w-full bg-black bg-opacity-50 p-[10px] shadow ellipse2 font-thin">
+											<h2 className="ellipse2 text-center text-white font-thin text-xs">{currentProduct?.title[lang] || currentProduct?.title.en}</h2>
 										</div>
-									</Link>
-									<div className="h-6"></div>
-								</motion.div>
-							)}
-							{related?.map(
-								(product, index) =>
-									product.slugfr.current != currentProduct?.slugfr?.current && (
-										<motion.div
-											key={index}
-											initial={{ y: "50%", opacity: 0, scale: 0.5 }}
-											animate={{ y: 0, opacity: 1, scale: 1 }}
-											transition={{ duration: 0.5, ease: "easeOut" }}
-											exit={{ opacity: 0, scale: 0.1 }}
-											className="mb-8"
-										>
-											<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${product.slugfr.current}${currentLang}.mp4`}>
-												<div className="overflow-hidden mb-8">
-													<img
-														className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
-														src={urlFor(product.image).url()}
-														alt="Image produit"
-														loader={imageLoader}
-														placeholder={<ImgLoader />}
-													/>
-													<div className="absolute w-full bg-black bg-opacity-50 p-[10px] shadow ellipse2 font-thin">
-														<h2 className="ellipse2 text-center text-xs text-white font-thin ">{product?.title[lang] || product.title.en}</h2>
-													</div>
+									</div>
+								</Link>
+								<div className="h-6"></div>
+							</motion.div>
+						)}
+						{related?.map(
+							(product, index) =>
+								product.slugfr.current != currentProduct?.slugfr?.current && (
+									<motion.div
+										key={index}
+										initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+										animate={{ y: 0, opacity: 1, scale: 1 }}
+										transition={{ duration: 0.5, ease: "easeOut" }}
+										exit={{ opacity: 0, scale: 0.1 }}
+										className="mb-8"
+									>
+										<Link target="_blank" href={`https://res.cloudinary.com/amircloud/video/upload/f_auto,q_auto/marc/${product.slugfr.current}${currentLang}.mp4`}>
+											<div className="overflow-hidden mb-8">
+												<img
+													className="h-full bg-gradient-to-r from-gray-200 to-gray-500 w-full object-contain hover:scale-105 transition-all duration-1000"
+													src={urlFor(product.image).url()}
+													alt="Image produit"
+													loader={imageLoader}
+													placeholder={<ImgLoader />}
+												/>
+												<div className="absolute w-full bg-black bg-opacity-50 p-[10px] shadow ellipse2 font-thin">
+													<h2 className="ellipse2 text-center text-xs text-white font-thin ">{product?.title[lang] || product.title.en}</h2>
 												</div>
-											</Link>
-																				<div className="h-[1px]"></div>
-										</motion.div>
-									)
-							)}
-						</Masonry>
-					</dialog>
+											</div>
+										</Link>
+										<div className="h-[1px]"></div>
+									</motion.div>
+								)
+						)}
+					</Masonry>
+				</dialog>
 
 				{dialog && (
 					<motion.dialog

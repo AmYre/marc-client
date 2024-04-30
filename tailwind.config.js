@@ -6,6 +6,7 @@ module.exports = {
 			fontFamily: {
 				splash: ["Splash"],
 				bodoni: ["Libre Bodoni"],
+				merri: ["Merriweather"],
 				nunito: ["Nunito", "sans-serif"],
 				roboto: ["Roboto", "sans-serif"],
 			},

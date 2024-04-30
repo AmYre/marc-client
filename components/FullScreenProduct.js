@@ -148,8 +148,8 @@ const FullScreenProduct = () => {
 			),
 		[lang, slug, replay, isMobile]
 	);
-  return (
-	<>
+	return (
+		<>
 			<div className="lg:hidden">
 				<NavBar />
 			</div>
@@ -280,15 +280,6 @@ const FullScreenProduct = () => {
 										width="35"
 										height="35"
 									/>
-									{/* 						{tagLang == flag.tagLang && (
-										<motion.div
-											initial={{ y: "50%", opacity: 0, scale: 0.5 }}
-											animate={{ y: 0, opacity: 1, scale: 1 }}
-											transition={{ duration: 0.5, ease: "easeOut" }}
-											exit={{ opacity: 0, scale: 0.1 }}
-											className="absolute top-[30px] w-[8px] h-[8px] bg-white rounded-full"
-										></motion.div>
-									)} */}
 								</div>
 							))}
 						</motion.div>
@@ -410,8 +401,9 @@ const FullScreenProduct = () => {
 						)}
 					</AnimatePresence>
 				</div>
-			</div></>
-  )
-}
+			</div>
+		</>
+	);
+};
 
-export default FullScreenProduct
+export default FullScreenProduct;
