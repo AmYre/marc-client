@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useGlobalContext } from "../components/GlobalContext";
 import FullScreenProduct from "../components/FullScreenProduct";
-import YouTubeProduct from "../components/YouTubeProduct";
+import YouTubeProduct from "../components/YoutubeProduct";
 import Head from "next/head";
 import { sanityClient } from "../lib/sanityClient";
 import { useRouter } from "next/router";
