@@ -18,9 +18,6 @@ const DetailProduct = ({ vignette }) => {
 		});
 	}, [slug]);
 
-	console.log("currentProduct", currentProduct);
-	console.log("localProduct", localProduct);
-
 	const toPlainText = (blocks) => {
 		if (blocks) {
 			return blocks.map((block) => {
@@ -49,23 +46,23 @@ const DetailProduct = ({ vignette }) => {
 	);
 };
 
-// export const getStaticPaths = async () => {
-// 	const products = await sanityClient.fetch(`*[_type == "products"]`);
-// 	const slugs = await products.map((product) => product.slugfr.current);
-// 	return {
-// 		paths: slugs.map((slug) => ({ params: { slug } })),
-// 		fallback: false,
-// 	};
-// };
+export const getStaticPaths = async () => {
+	const products = await sanityClient.fetch(`*[_type == "products"]`);
+	const slugs = await products.map((product) => product.slugfr.current);
+	return {
+		paths: slugs.map((slug) => ({ params: { slug } })),
+		fallback: false,
+	};
+};
 
-// export const getStaticProps = async () => {
-// 	const vignette = await sanityClient.fetch(`*[_type=="walls" && title == 'vignette']{...}`);
+export const getStaticProps = async () => {
+	const vignette = await sanityClient.fetch(`*[_type=="walls" && title == 'vignette']{...}`);
 
-// 	return {
-// 		props: {
-// 			vignette,
-// 		},
-// 	};
-// };
+	return {
+		props: {
+			vignette,
+		},
+	};
+};
 
 export default DetailProduct;
