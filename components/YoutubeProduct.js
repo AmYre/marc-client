@@ -28,14 +28,14 @@ const YoutubeProduct = ({ localProduct }) => {
 	setCurrentProduct(localProduct);
 
 	let flags = [
-		{ name: "spanish", pic: flages, lang: "es", tagLang: "-es", mobtag: "-es-mob", ytlang: "es" },
-		{ name: "polish", pic: flagpo, lang: "po", tagLang: "-po", mobtag: "-po-mob", ytlang: "po" },
-		{ name: "korean", pic: flagkr, lang: "kr", tagLang: "-kr", mobtag: "-kr-mob", ytlang: "kr" },
-		{ name: "arabic", pic: flagar, lang: "ar", tagLang: "-ar", mobtag: "-ar-mob", ytlang: "ar" },
-		{ name: "japanese", pic: flagjp, lang: "jp", tagLang: "-jp", mobtag: "-jp-mob", ytlang: "jp" },
-		{ name: "italian", pic: flagit, lang: "it", tagLang: "-it", mobtag: "-it-mob", ytlang: "it" },
-		{ name: "turkish", pic: flagtu, lang: "tu", tagLang: "-tu", mobtag: "-tu-mob", ytlang: "tu" },
 		{ name: "russian", pic: flagru, lang: "ru", tagLang: "-ru", mobtag: "-ru-mob", ytlang: "ru" },
+		{ name: "arabic", pic: flagar, lang: "ar", tagLang: "-ar", mobtag: "-ar-mob", ytlang: "ar" },
+		{ name: "spanish", pic: flages, lang: "es", tagLang: "-es", mobtag: "-es-mob", ytlang: "es" },
+		{ name: "italian", pic: flagit, lang: "it", tagLang: "-it", mobtag: "-it-mob", ytlang: "it" },
+		{ name: "japanese", pic: flagjp, lang: "jp", tagLang: "-jp", mobtag: "-jp-mob", ytlang: "jp" },
+		{ name: "korean", pic: flagkr, lang: "kr", tagLang: "-kr", mobtag: "-kr-mob", ytlang: "kr" },
+		{ name: "turkish", pic: flagtu, lang: "tu", tagLang: "-tu", mobtag: "-tu-mob", ytlang: "tu" },
+		{ name: "polish", pic: flagpo, lang: "po", tagLang: "-po", mobtag: "-po-mob", ytlang: "po" },
 	];
 
 	const imageBuilder = imageUrlBuilder({
