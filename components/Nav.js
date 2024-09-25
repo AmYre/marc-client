@@ -71,13 +71,13 @@ const Nav = ({ isProduct, vRefHome, vRefHomeMob }) => {
 							>
 								{texts.menu3[lang]}
 							</Link>
-							<Link
+							{/* <Link
 								onClick={() => pausePrevVideo()}
 								href="/gallery"
 								className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-bg"
 							>
 								{texts.menu4[lang]}
-							</Link>
+							</Link> */}
 							<Link
 								onClick={() => pausePrevVideo()}
 								href="/contact"

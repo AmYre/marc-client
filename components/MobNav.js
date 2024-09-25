@@ -63,7 +63,7 @@ const MobNav = ({ vRefHome, vRefHomeMob }) => {
 					>
 						{texts.menu3[lang]}
 					</Link>
-					<Link
+					{/* <Link
 						href="/gallery"
 						className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-gray-900"
 						onClick={() => {
@@ -72,7 +72,7 @@ const MobNav = ({ vRefHome, vRefHomeMob }) => {
 						}}
 					>
 						{texts.menu4[lang]}
-					</Link>
+					</Link> */}
 					<Link
 						href="/contact"
 						className="p-6 font-nunito text-sm hover:font-medium transition-all ease-in-out duration-300tracking-widest font-thin uppercase border-b-[1px] border-gray-900"
